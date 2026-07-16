@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Supply Chain Project</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@700;800;900&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- Header -->
+    <header class="header" id="header">
+        <div class="header-inner">
+            <a href="/" class="logo">
+                <img src="images/logo-white-text.png" alt="The Supply Chain Project">
+            </a>
+            <nav class="main-nav" id="mainNav">
+                <ul class="nav-list">
+                    <li><a href="/">Home</a></li>
+                    <li><a href="https://app.thesupplychainproject.org">Marketplace</a></li>
+                    <li class="has-dropdown">
+                        <a href="javascript:void(0)">About Us <span class="arrow">&#9662;</span></a>
+                        <ul class="dropdown">
+                            <li><a href="/our-story.html">Our Story</a></li>
+                            <li><a href="/our-mission.html">Mission</a></li>
+                            <li><a href="/our-services.html">Services</a></li>
+                            <li><a href="/our-technology.html">Technology</a></li>
+                            <li><a href="/our-team.html">Team</a></li>
+                            <li><a href="/blog">Blogs</a></li>
+                            <li><a href="/video-gallery">Videos</a></li>
+                            <li><a href="/subject-matter-directory">FAQ's</a></li>
+                            <li><a href="/contact-us.html">Contact Us</a></li>
+                        </ul>
+                    </li>
+                    <li class="has-dropdown">
+                        <a href="javascript:void(0)">Get Involved <span class="arrow">&#9662;</span></a>
+                        <ul class="dropdown">
+                            <li><a href="/non-profits.html">I'm a Nonprofit</a></li>
+                            <li><a href="/donors.html">I'm a Donor</a></li>
+                            <li><a href="/non-profits.html">I'm a Professional</a></li>
+                            <li><a href="/non-profits.html">I'm a Corporation</a></li>
+                            <li><a href="/service-provider.html">I'm a Logistics Provider</a></li>
+                            <li><a href="/service-provider.html">I'm a Service Provider</a></li>
+                            <li><a href="/service-provider.html">I'm a Technology Provider</a></li>
+                            <li><a href="/non-profits.html">I'm a Student</a></li>
+                            <li><a href="/non-profits.html">I'm a Volunteer</a></li>
+                        </ul>
+                    </li>
+                    <li class="has-dropdown">
+                        <a href="javascript:void(0)">Support <span class="arrow">&#9662;</span></a>
+                        <ul class="dropdown">
+                            <li><a href="/our-technology.html">Control Tower</a></li>
+                            <li><a href="/contact-us.html">Membership</a></li>
+                            <li><a href="/donors.html">Donations</a></li>
+                            <li><a href="/our-services.html">Logistics</a></li>
+                            <li><a href="/our-technology.html">Technology</a></li>
+                        </ul>
+                    </li>
+                    <li class="has-dropdown">
+                        <a href="javascript:void(0)">Portals <span class="arrow">&#9662;</span></a>
+                        <ul class="dropdown">
+                            <li><a href="/emergency-main">Emergency</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+            <div class="header-actions">
+                <a href="https://app.thesupplychainproject.org" class="btn-marketplace">Enter Marketplace</a>
+                <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Slider -->
+    <section class="hero" id="hero">
+        <!-- Floating geometric shapes -->
+        <div class="hero-shapes" aria-hidden="true">
+            <div class="shape shape-1"></div>
+            <div class="shape shape-2"></div>
+            <div class="shape shape-3"></div>
+            <div class="shape shape-4"></div>
+            <div class="shape shape-5"></div>
+        </div>
+
+        <div class="hero-slides">
+            <div class="hero-slide active" data-slide="0">
+                <div class="hero-bg parallax-bg" style="background-image: url('images/cover-tscp-1.jpg')"></div>
+                <div class="hero-overlay"></div>
+                <div class="hero-content">
+                    <span class="hero-badge">Nonprofit Supply Chain Innovation</span>
+                    <h1 class="hero-title split-text">Just 1%</h1>
+                    <div class="hero-divider"></div>
+                    <h2 class="hero-subtitle">If just 1% of all logistics capacity<br>was dedicated to humanitarian aid</h2>
+                    <p class="hero-tagline">The world would be forever changed.</p>
+                    <p class="hero-cta-text">We can do this by investing in Nonprofit supply chain capability.</p>
+                    <div class="hero-buttons">
+                        <a href="/non-profits.html" class="btn-hero"><span>Nonprofits</span></a>
+                        <a href="/service-provider.html" class="btn-hero"><span>Service Providers</span></a>
+                        <a href="/donors.html" class="btn-hero"><span>Donors</span></a>
+                        <a href="/non-profits.html" class="btn-hero"><span>Volunteers</span></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="hero-slide" data-slide="1">
+                <div class="hero-bg parallax-bg" style="background-image: url('images/cover-tscp-2.jpg')"></div>
+                <div class="hero-overlay"></div>
+                <div class="hero-content">
+                    <span class="hero-badge">Restoring Hope Worldwide</span>
+                    <h1 class="hero-title split-text">Transform Lives</h1>
+                    <div class="hero-divider"></div>
+                    <h2 class="hero-subtitle">We can transform countless lives<br>and restore hope where it was once lost.</h2>
+                    <p class="hero-tagline">Start your journey here.</p>
+                    <div class="hero-buttons">
+                        <a href="/non-profits.html" class="btn-hero"><span>Nonprofits</span></a>
+                        <a href="/service-provider.html" class="btn-hero"><span>Service Providers</span></a>
+                        <a href="/donors.html" class="btn-hero"><span>Donors</span></a>
+                        <a href="/non-profits.html" class="btn-hero"><span>Volunteers</span></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="hero-slide" data-slide="2">
+                <div class="hero-bg parallax-bg" style="background-image: url('images/cover-tscp-3.jpg')"></div>
+                <div class="hero-overlay"></div>
+                <div class="hero-content">
+                    <span class="hero-badge">Logistics For Good</span>
+                    <h1 class="hero-title split-text">Make a Difference</h1>
+                    <div class="hero-divider"></div>
+                    <h2 class="hero-subtitle">Where logistics providers view their work<br>as an opportunity to make a real difference.</h2>
+                    <p class="hero-tagline">Start your journey here.</p>
+                    <div class="hero-buttons">
+                        <a href="/non-profits.html" class="btn-hero"><span>Nonprofits</span></a>
+                        <a href="/service-provider.html" class="btn-hero"><span>Service Providers</span></a>
+                        <a href="/donors.html" class="btn-hero"><span>Donors</span></a>
+                        <a href="/non-profits.html" class="btn-hero"><span>Volunteers</span></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="hero-slide" data-slide="3">
+                <div class="hero-bg parallax-bg" style="background-image: url('images/cover-tscp-4.jpg')"></div>
+                <div class="hero-overlay"></div>
+                <div class="hero-content">
+                    <span class="hero-badge">Generational Impact</span>
+                    <h1 class="hero-title split-text">Ripple Effect</h1>
+                    <div class="hero-divider"></div>
+                    <h2 class="hero-subtitle">The power of logistics is not just in moving goods&mdash;<br>but in the impact it can create.</h2>
+                    <p class="hero-tagline">Let's create a ripple effect of positive change.</p>
+                    <div class="hero-buttons">
+                        <a href="/non-profits.html" class="btn-hero"><span>Nonprofits</span></a>
+                        <a href="/service-provider.html" class="btn-hero"><span>Service Providers</span></a>
+                        <a href="/donors.html" class="btn-hero"><span>Donors</span></a>
+                        <a href="/non-profits.html" class="btn-hero"><span>Volunteers</span></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slider Controls -->
+        <button class="slider-arrow slider-prev" aria-label="Previous slide">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+        </button>
+        <button class="slider-arrow slider-next" aria-label="Next slide">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+        </button>
+
+        <!-- Slide counter + progress -->
+        <div class="slider-progress-wrap">
+            <span class="slide-counter"><span class="slide-current">01</span> / <span class="slide-total">04</span></span>
+            <div class="slider-progress-bar">
+                <div class="slider-progress-fill"></div>
+            </div>
+        </div>
+
+        <div class="slider-dots">
+            <button class="dot active" data-slide="0" aria-label="Go to slide 1"></button>
+            <button class="dot" data-slide="1" aria-label="Go to slide 2"></button>
+            <button class="dot" data-slide="2" aria-label="Go to slide 3"></button>
+            <button class="dot" data-slide="3" aria-label="Go to slide 4"></button>
+        </div>
+
+        <!-- Scroll indicator -->
+        <div class="scroll-indicator">
+            <span>Scroll</span>
+            <div class="scroll-line">
+                <div class="scroll-dot"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Info Bar -->
+    <section class="info-bar" id="infoBar">
+        <div class="container">
+            <div class="info-bar-inner">
+                <div class="info-tabs">
+                    <button class="info-tab active" data-tab="activities">Activities</button>
+                    <button class="info-tab" data-tab="services">Services</button>
+                    <button class="info-tab" data-tab="marketplace">Marketplace</button>
+                </div>
+                <div class="info-content">
+                    <div class="info-panel active" data-panel="activities">
+                        <p>We bring global corporations, regional businesses, and global and local nonprofit partners together. Our technology-driven platform connects stakeholders across the supply chain ecosystem to drive measurable impact.</p>
+                    </div>
+                    <div class="info-panel" data-panel="services">
+                        <p>Partner with The Supply Chain Project to increase supply chain efficiency for Nonprofits and Charitable organizations. Access expert consulting, logistics optimization, and technology solutions.</p>
+                    </div>
+                    <div class="info-panel" data-panel="marketplace">
+                        <p>The Supply Chain Project provides an online marketplace with tools and resources to make managing and executing projects easier. Connect with service providers and access cutting-edge supply chain tools.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Impact Section -->
+    <section class="impact-section" id="impactSection">
+        <div class="impact-bg parallax-section-bg" style="background-image: url('images/cover-tscp-3.jpg')"></div>
+        <div class="impact-overlay"></div>
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Driving Impact Through Supply Chain Innovation</h2>
+                <p class="section-subtitle">Connecting nonprofits with the logistics expertise they need to maximize their mission.</p>
+            </div>
+            <div class="impact-grid">
+                <div class="impact-card">
+                    <div class="impact-icon">
+                        <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="32" cy="32" r="30" stroke="currentColor" stroke-width="2"/>
+                            <path d="M20 32L28 40L44 24" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                    <h3>For Nonprofits</h3>
+                    <p>Reduce operational costs and improve supply chain efficiency with expert guidance and cutting-edge tools.</p>
+                    <a href="/non-profits.html" class="card-link">Learn More &rarr;</a>
+                </div>
+                <div class="impact-card">
+                    <div class="impact-icon">
+                        <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect x="4" y="8" width="56" height="48" rx="4" stroke="currentColor" stroke-width="2"/>
+                            <path d="M4 20H60M20 20V56M44 20V56" stroke="currentColor" stroke-width="2"/>
+                        </svg>
+                    </div>
+                    <h3>For Service Providers</h3>
+                    <p>Connect with nonprofits and offer your logistics expertise to organizations making a real difference in the world.</p>
+                    <a href="/service-provider.html" class="card-link">Learn More &rarr;</a>
+                </div>
+                <div class="impact-card">
+                    <div class="impact-icon">
+                        <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M32 6L38 24H56L42 34L46 52L32 42L18 52L22 34L8 24H26L32 6Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                    <h3>For Donors</h3>
+                    <p>See the direct impact of your contributions through transparent reporting and measurable supply chain improvements.</p>
+                    <a href="/donors.html" class="card-link">Learn More &rarr;</a>
+                </div>
+                <div class="impact-card">
+                    <div class="impact-icon">
+                        <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="32" cy="20" r="12" stroke="currentColor" stroke-width="2"/>
+                            <path d="M12 56C12 44 21 36 32 36C43 36 52 44 52 56" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                        </svg>
+                    </div>
+                    <h3>For Volunteers</h3>
+                    <p>Leverage your professional skills to help nonprofits build stronger, more efficient supply chains.</p>
+                    <a href="/non-profits.html" class="card-link">Learn More &rarr;</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Parallax CTA Section -->
+    <section class="parallax-cta" id="parallaxCta">
+        <div class="parallax-cta-bg" style="background-image: url('images/cover-tscp-2.jpg')"></div>
+        <div class="parallax-cta-overlay"></div>
+        <div class="parallax-cta-content">
+            <h2>Ready to Make a Difference?</h2>
+            <p>Join the movement to transform nonprofit supply chains worldwide.</p>
+            <div class="parallax-cta-buttons">
+                <a href="https://app.thesupplychainproject.org" class="btn-cta">Enter Marketplace</a>
+                <a href="/contact-us.html" class="btn-cta btn-cta-outline">Need Help?</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats-section" id="statsSection">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <span class="stat-number" data-target="1">0</span><span class="stat-suffix">%</span>
+                    <p class="stat-label">Of Logistics Capacity Can Change the World</p>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number" data-target="100">0</span><span class="stat-suffix">+</span>
+                    <p class="stat-label">Nonprofit Partners</p>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number" data-target="50">0</span><span class="stat-suffix">+</span>
+                    <p class="stat-label">Service Providers</p>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number" data-target="30">0</span><span class="stat-suffix">+</span>
+                    <p class="stat-label">Countries Reached</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Recent Posts Section -->
+    <section class="posts-section" id="postsSection">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Recent Posts</h2>
+                <p class="section-subtitle">Stay updated with the latest from The Supply Chain Project.</p>
+            </div>
+            <div class="posts-grid">
+                <article class="post-card">
+                    <div class="post-date">
+                        <span class="post-month">Feb</span>
+                        <span class="post-day">23</span>
+                        <span class="post-year">2026</span>
+                    </div>
+                    <div class="post-body">
+                        <h3><a href="/blog-widget/turning-waste-into-impact-dmsca-and-the-supply-chain-project">Turning Waste into Impact: DMSCA and The Supply Chain Project</a></h3>
+                        <p>Discover how the partnership between DMSCA and The Supply Chain Project is turning waste into meaningful impact for communities worldwide.</p>
+                        <a href="/blog-widget/turning-waste-into-impact-dmsca-and-the-supply-chain-project" class="read-more">Read More &rarr;</a>
+                    </div>
+                </article>
+                <article class="post-card">
+                    <div class="post-date">
+                        <span class="post-month">Jun</span>
+                        <span class="post-day">06</span>
+                        <span class="post-year">2024</span>
+                    </div>
+                    <div class="post-body">
+                        <h3><a href="/blog-widget/non-profit-supply-chains-why-do-they-need-capability-and-why-now">Non-Profit Supply Chains - Why Do They Need Capability? And Why Now?</a></h3>
+                        <p>An exploration of why nonprofit organizations must invest in supply chain capability to fulfill their missions more effectively.</p>
+                        <a href="/blog-widget/non-profit-supply-chains-why-do-they-need-capability-and-why-now" class="read-more">Read More &rarr;</a>
+                    </div>
+                </article>
+                <article class="post-card">
+                    <div class="post-date">
+                        <span class="post-month">Apr</span>
+                        <span class="post-day">26</span>
+                        <span class="post-year">2024</span>
+                    </div>
+                    <div class="post-body">
+                        <h3><a href="/blog-widget/the-dominican-republic-logistics-summit-a-proof-of-the-dra-s-commitment-to-the-regional-development">The Dominican Republic Logistics Summit</a></h3>
+                        <p>A proof of the DR's commitment to the regional development through logistics innovation and cross-border collaboration.</p>
+                        <a href="/blog-widget/the-dominican-republic-logistics-summit-a-proof-of-the-dra-s-commitment-to-the-regional-development" class="read-more">Read More &rarr;</a>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer" id="footer">
+        <div class="footer-top">
+            <div class="container">
+                <div class="footer-grid">
+                    <div class="footer-col footer-about">
+                        <a href="/" class="footer-logo">
+                            <img src="images/logo-white-text.png" alt="The Supply Chain Project">
+                        </a>
+                        <p>The Supply Chain Project enables innovative partnerships between non-profits, businesses, service providers, and industry professionals that helps them drive measurable improvements.</p>
+                        <form class="footer-newsletter" id="newsletterForm">
+                            <input type="email" placeholder="Your Email" required>
+                            <input type="number" placeholder="What is 6 + 3 ?" required>
+                            <button type="submit" class="btn-newsletter">Mailing List</button>
+                        </form>
+                    </div>
+                    <div class="footer-col">
+                        <h4>Recent Posts</h4>
+                        <ul class="footer-posts">
+                            <li>
+                                <a href="/blog-widget/turning-waste-into-impact-dmsca-and-the-supply-chain-project">Turning Waste into Impact: DMSCA and The Supply Chain Project</a>
+                                <span class="post-meta">February 23, 2026</span>
+                            </li>
+                            <li>
+                                <a href="/blog-widget/non-profit-supply-chains-why-do-they-need-capability-and-why-now">Non-Profit Supply Chains - Why Do They Need Capability? And Why Now?</a>
+                                <span class="post-meta">June 6, 2024</span>
+                            </li>
+                            <li>
+                                <a href="/blog-widget/the-dominican-republic-logistics-summit-a-proof-of-the-dra-s-commitment-to-the-regional-development">The Dominican Republic Logistics Summit</a>
+                                <span class="post-meta">April 26, 2024</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="footer-col">
+                        <h4>Resources</h4>
+                        <ul class="footer-links">
+                            <li><a href="/policy">Privacy Policy</a></li>
+                            <li><a href="/terms-of-use">Terms of Use</a></li>
+                            <li><a href="/nfpo-level">Non-For-Profit Organization Solutions</a></li>
+                            <li><a href="https://networked.co/c/the-supply-chain-project/">Community Discussions</a></li>
+                            <li><a href="https://supplino.com/tscp-supply-chain-assessment-questionnaire/">Supply Chain Assessment</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-col">
+                        <h4>Upcoming Events</h4>
+                        <p class="no-events">There are no upcoming calendar events.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container">
+                <div class="footer-bottom-inner">
+                    <p>&copy; The Supply Chain Project | <a href="/policy">Policy</a> | <a href="/terms-of-use">Terms of Use</a></p>
+                    <div class="social-links">
+                        <a href="https://www.facebook.com/thesupplychainproject" aria-label="Facebook" target="_blank" rel="noopener">
+                            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+                        </a>
+                        <a href="javascript:void(0)" aria-label="Twitter">
+                            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"/></svg>
+                        </a>
+                        <a href="javascript:void(0)" aria-label="LinkedIn">
+                            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2zM4 2a2 2 0 1 1 0 4 2 2 0 0 1 0-4z"/></svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- GSAP CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
