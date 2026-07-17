@@ -204,6 +204,48 @@
     background: var(--gray-100);
 }
 
+/* How to Connect Section */
+.connect-section {
+    padding: 60px 0;
+    background: var(--white);
+}
+
+.connect-intro {
+    font-size: 1rem;
+    color: var(--gray-700);
+    margin-bottom: 24px;
+    text-align: center;
+}
+
+.connect-list {
+    list-style: none;
+    padding: 0;
+    margin: 0 auto;
+    max-width: 600px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.connect-list li {
+    font-size: 0.95rem;
+    color: var(--gray-700);
+    padding: 12px 20px;
+    background: var(--gray-100);
+    border-radius: 6px;
+    border-left: 3px solid var(--primary);
+}
+
+.connect-list li a {
+    color: var(--primary);
+    font-weight: 600;
+    text-decoration: underline;
+}
+
+.connect-list li a:hover {
+    color: var(--primary-dark);
+}
+
 /* =============================================
    Our Mission Responsive
    ============================================= */

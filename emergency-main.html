@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nonprofits - The Supply Chain Project</title>
+    <title>Emergency Preparedness - The Supply Chain Project</title>
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="css/ourstory.css">
     <link rel="stylesheet" href="css/responsive.css">
@@ -11,56 +11,114 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@700;800;900&display=swap" rel="stylesheet">
     <style>
-        .quotes-section {
-            background: var(--dark);
-            padding: 64px 0;
-            color: white;
-        }
-        .quotes-grid {
+        /* Emergency stat cards */
+        .emergency-stats-grid {
             display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 40px;
-            max-width: 1000px;
-            margin: 0 auto;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 24px;
+            margin-top: 48px;
         }
-        .quote-card {
+
+        .emergency-stat-card {
+            background: var(--dark);
+            border-radius: 8px;
+            padding: 32px 24px;
             text-align: center;
-            padding: 24px;
+            border-bottom: 4px solid var(--accent);
         }
-        .quote-card blockquote {
-            font-size: 1.0625rem;
-            line-height: 1.8;
-            color: rgba(255, 255, 255, 0.85);
-            font-style: italic;
-            margin-bottom: 20px;
-            position: relative;
-        }
-        .quote-card cite {
-            font-size: 0.875rem;
-            font-weight: 600;
-            color: var(--accent);
-            font-style: normal;
-        }
-        .service-block {
-            padding: 20px 0;
-            border-bottom: 1px solid var(--gray-200);
-        }
-        .service-block:last-child {
-            border-bottom: none;
-        }
-        .service-block h4 {
+
+        .emergency-stat-card h3 {
             font-size: 1rem;
+            font-weight: 800;
+            color: var(--white);
+            letter-spacing: 1px;
+            margin-bottom: 10px;
+        }
+
+        .emergency-stat-card p {
+            font-size: 0.8125rem;
+            color: var(--accent);
+            font-weight: 600;
+            letter-spacing: 0.5px;
+        }
+
+        /* Preparation cards */
+        .prep-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 28px;
+            margin-top: 48px;
+        }
+
+        .prep-card {
+            background: var(--white);
+            border-radius: 8px;
+            padding: 32px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+            border-top: 4px solid var(--primary);
+        }
+
+        .prep-card h3 {
+            font-size: 1.125rem;
             font-weight: 700;
             color: var(--dark);
-            margin-bottom: 8px;
+            margin-bottom: 12px;
         }
-        .service-block p {
+
+        .prep-card p {
             font-size: 0.9375rem;
-            color: var(--gray-700);
+            color: var(--gray-700, #555);
             line-height: 1.7;
         }
-        @media (max-width: 768px) {
-            .quotes-grid {
+
+        .prep-card .inline-link {
+            color: var(--primary);
+            font-weight: 600;
+            text-decoration: none;
+        }
+
+        /* Big stats band */
+        .disaster-stats-band {
+            background: var(--dark);
+            padding: 72px 0;
+        }
+
+        .disaster-stats-inner {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 48px;
+            text-align: center;
+        }
+
+        .disaster-stat h3 {
+            font-family: var(--font-display);
+            font-size: clamp(2rem, 4vw, 3rem);
+            font-weight: 900;
+            color: var(--accent);
+            margin-bottom: 10px;
+        }
+
+        .disaster-stat p {
+            font-size: 0.9375rem;
+            color: rgba(255, 255, 255, 0.75);
+            letter-spacing: 1.5px;
+            font-weight: 600;
+        }
+
+        @media (max-width: 992px) {
+            .emergency-stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .prep-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 640px) {
+            .emergency-stats-grid,
+            .prep-grid,
+            .disaster-stats-inner {
                 grid-template-columns: 1fr;
             }
         }
@@ -140,165 +198,113 @@
         <div class="page-hero-bg" style="background-image: url('images/cover-tscp-2.jpg')"></div>
         <div class="page-hero-overlay"></div>
         <div class="page-hero-content">
-            <h1>Empowering Nonprofits</h1>
+            <h1>Emergency Preparedness</h1>
             <div class="breadcrumb">
-                <a href="/">GET INVOLVED</a> / <span>NONPROFITS</span>
+                <a href="/">PORTALS</a> / <span>RESPONSE PLANNER</span>
             </div>
         </div>
     </section>
 
-    <!-- Nonprofits Intro Section -->
+    <!-- Intro + Stat Cards -->
     <section class="story-section">
         <div class="container">
-            <div class="story-grid">
-                <!-- Left Column -->
-                <div class="story-col">
-                    <h2 class="story-heading">Empowering Nonprofits</h2>
-                    <div class="story-divider"></div>
+            <div style="max-width: 860px; margin: 0 auto; text-align: center;">
+                <h2 class="story-heading" style="text-align: center;">A DISASTER CAN STRIKE WITH LITTLE OR NO NOTICE. COMMUNICATING THE NEED FOR A DISASTER PLAN IS A CRITICAL FIRST STEP IN THE PROCESS OF SURVIVAL</h2>
+                <div class="story-divider" style="margin: 16px auto 24px;"></div>
+                <p class="story-text" style="text-align: center;">Focusing on preparing families, businesses, equipment and procedures for use when a disaster or disruption in daily life occurs.</p>
+            </div>
 
-                    <p class="story-text">We're focused on non-profit capability building&mdash;because every day is a disaster for persons below the poverty line and the non-profits that support them.</p>
-
-                    <p class="story-highlight"><strong>What support are you seeking?</strong></p>
-
-                    <p class="story-text">If you are needing marketplace support you must have an account.</p>
-
-                    <ul class="story-list">
-                        <li>
-                            <span class="list-icon">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v4M12 16h.01"/></svg>
-                            </span>
-                            <span>Logistics support</span>
-                        </li>
-                        <li>
-                            <span class="list-icon">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v4M12 16h.01"/></svg>
-                            </span>
-                            <span>Technology support</span>
-                        </li>
-                        <li>
-                            <span class="list-icon">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v4M12 16h.01"/></svg>
-                            </span>
-                            <span>Specialized training</span>
-                        </li>
-                        <li>
-                            <span class="list-icon">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v4M12 16h.01"/></svg>
-                            </span>
-                            <span>Consulting</span>
-                        </li>
-                    </ul>
-
-                    <p class="story-highlight"><strong>Start here.</strong></p>
-                    <p class="story-text">We have everything a distribution-intense non-profit needs to make a greater impact!</p>
-
-                    <a href="/non-profits.html" class="btn-become-member">CREATE A PROFILE</a>
-                    <a href="/contact-us.html" class="inline-link" style="margin-left: 16px;">Already a Member?</a>
+            <div class="emergency-stats-grid">
+                <div class="emergency-stat-card">
+                    <h3>FLOOD PREPARATION</h3>
+                    <p>14 MILLIION PEOPLE AFFECTED</p>
                 </div>
-
-                <!-- Right Column -->
-                <div class="story-col">
-                    <h2 class="story-heading">Our Services for Nonprofits</h2>
-                    <div class="story-divider"></div>
-
-                    <div class="service-block">
-                        <h4>Logistics Support</h4>
-                        <p>We provide the tools to facilitate local, regional and international transportation and distribution - on your behalf. We streamline the burden of finding logistics service providers off your shoulders, which allows you to focus on your core mission. Join to take advantage of our support to save funds and reach new levels of impact.</p>
-                    </div>
-
-                    <div class="service-block">
-                        <h4>Technology Support</h4>
-                        <p>We provide a network of technology and solution providers that provide great tools to help facilitate and streamline your operations. Join our marketplace and expose your non-profit to world-class software.</p>
-                    </div>
-
-                    <div class="service-block">
-                        <h4>Specialized Training</h4>
-                        <p>We facilitate basic training designed to equip your team with industry best practices. Join our marketplace to gain access to the skills and knowledge needed to optimize your operations and reach new heights of success.</p>
-                    </div>
-
-                    <div class="service-block">
-                        <h4>Consulting</h4>
-                        <p>Let us match you to consultants and/or industry professionals that can advise you on how to better manage on how to evolve your supply chain and logistics processes. By leveraging our community, you can elevate your non-profit organization to new heights of efficiency and impact.</p>
-                    </div>
+                <div class="emergency-stat-card">
+                    <h3>HURRICANE PREPARATION</h3>
+                    <p>3 MAJOR | DAMAGE $11.98 BILLION</p>
+                </div>
+                <div class="emergency-stat-card">
+                    <h3>WILD FIRE PREPARTION</h3>
+                    <p>5,980 FIRES | 177,003 ACRES</p>
+                </div>
+                <div class="emergency-stat-card">
+                    <h3>TORNADO PREPARATION</h3>
+                    <p>1,121 HAVE BEEN CONFIRMED</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Leadership Quotes Section -->
-    <section class="quotes-section">
+    <!-- Preparedness Planner Section -->
+    <section class="community-section">
         <div class="container">
-            <div class="quotes-grid">
-                <div class="quote-card">
-                    <blockquote>&ldquo;Our focus is to take the best from the for-profit supply chain world and marry it with the best of the nonprofit arena to create solutions that evens the playing field for Nonprofits. Today no NGO is too small or too big to benefit from an improved supply chain.&rdquo;</blockquote>
-                    <cite>Steve Robinson, CEO and Founder</cite>
+            <h2 class="activities-title">Emergency Preparedness Planner<br>&mdash;TSCP Marketplace Portal</h2>
+            <div class="activities-divider"></div>
+
+            <p class="story-highlight" style="max-width: 900px; margin: 0 auto 24px; text-align: center;">COMMUNICATION IS KEY TO OBTAINING EFFECTIVE SITUATIONAL AWARENESS BECAUSE OF A DISASTER&rsquo;S NEED FOR INTERDISCIPLINARY RELATIONSHIPS BETWEEN ORGANIZATIONS, INDIVIDUALS, OR A COMBINATION OF BOTH.</p>
+
+            <div class="prep-grid">
+                <div class="prep-card">
+                    <h3>Disease Preparation</h3>
+                    <p>Infectious disease emergencies are circumstances caused by biological agents, including organisms such as bacteria, viruses or toxins with the potential for significant illness or death in the population. Infectious disease emergencies may include naturally occurring outbreaks, emerging infectious diseases, and bioterrorism. | <a href="/contact-us.html" class="inline-link">read more</a></p>
                 </div>
-                <div class="quote-card">
-                    <blockquote>&ldquo;Improving and streamlining supply chain activities is critical to non-profit organizations. Simplifying work, streamlining operations, and professionalizing services allow non-profits to spend more of their scarce resources on their mission.&rdquo;</blockquote>
-                    <cite>Carol Wylie, Co-Founder and COO</cite>
+                <div class="prep-card">
+                    <h3>Tornado Preparation</h3>
+                    <p>Tornadic events are often accompanied by other forms of severe weather, including strong thunderstorms, strong winds, and hail. There have been 1,587 preliminary filtered reports of tornadoes in the United States in 2019, of which at least 1,121 have been confirmed. | <a href="/contact-us.html" class="inline-link">read more</a></p>
                 </div>
-                <div class="quote-card">
-                    <blockquote>&ldquo;The TSCP team partnered with one of its portfolio companies Kountable, and found a local distributor in Rwanda. The Supply Chain Project brought together its network of global experts and logistics partners to to deliver over 9 million malaria test kits to Rwanda.&rdquo;</blockquote>
-                    <cite>Christopher Hale, CEO and Founder Kountable</cite>
+                <div class="prep-card">
+                    <h3>Flood Preparation</h3>
+                    <p>The Midwestern United States has been experiencing major floods since mid-March 2019, primarily along the Missouri River and its tributaries in Nebraska, Missouri, South Dakota, Iowa, and Kansas. The Mississippi River has also seen flooding, although starting later and ending earlier. | <a href="/contact-us.html" class="inline-link">read more</a></p>
+                </div>
+                <div class="prep-card">
+                    <h3>Hurricane Preparation</h3>
+                    <p>The 2019 Atlantic hurricane season is an ongoing event in the annual formation of tropical cyclones in the Northern Hemisphere and also the fourth consecutive year of above-average and damaging seasons dating back to 2016, although many of the storms were weak and short-lived. | <a href="/contact-us.html" class="inline-link">read more</a></p>
+                </div>
+                <div class="prep-card">
+                    <h3>Wildfire Preparation</h3>
+                    <p>Wildfires can ruin homes and cause injuries or death to people and animals. A wildfire is an unplanned fire that burns in a natural area such as a forest, grassland, or prairie. Sign up for your community&rsquo;s warning system. The Emergency Alert System (EAS) and National Oceanic and Atmospheric Administration (NOAA) Weather Radio also provide emergency alerts. | <a href="/contact-us.html" class="inline-link">read more</a></p>
+                </div>
+                <div class="prep-card">
+                    <h3>Earthquake Preparation</h3>
+                    <p>An earthquake is a sudden and rapid shaking of the ground caused by the shifting of rocks deep underneath the earth&rsquo;s surface. Earthquakes can happen without warning and result in injuries and damage to property and roads. Earthquakes can cause fires, tsunamis, landslides, or avalanches. Stay Safe During an Earthquake: Drop, Cover, and Hold On | <a href="/contact-us.html" class="inline-link">read more</a></p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Marketplace Parallax Section -->
+    <!-- How to Prepare Section -->
+    <section class="story-section" style="background: var(--gray-50, #f7f7f7);">
+        <div class="container" style="text-align: center; max-width: 800px;">
+            <h2 class="story-heading" style="text-align: center;">How to prepare, Today!</h2>
+            <div class="story-divider" style="margin: 16px auto 24px;"></div>
+            <p class="story-highlight" style="text-align: center;">ENERGENCY RESPONSE&mdash;SCP PLANNER FOCUSES ON PREPARING RESOURCES AND PROCEDURES FOR USE WHEN A DISASTER OCCURS.</p>
+            <a href="https://app.thesupplychainproject.org" class="btn-become-member" style="margin-top: 24px;">LET'S GET STARTED!</a>
+        </div>
+    </section>
+
+    <!-- Disaster Stats Band -->
+    <section class="disaster-stats-band">
+        <div class="container">
+            <div class="disaster-stats-inner">
+                <div class="disaster-stat">
+                    <h3>100/second</h3>
+                    <p>LIGHTING STRIKES THE EARTH&rsquo;S SURFACE</p>
+                </div>
+                <div class="disaster-stat">
+                    <h3>Disaster Events</h3>
+                    <p>AVERAGE YEARLY COST $15 BILLION</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Marketplace Parallax -->
     <section class="marketplace-parallax">
-        <div class="marketplace-parallax-bg" style="background-image: url('images/cover-tscp-4.jpg')"></div>
+        <div class="marketplace-parallax-bg" style="background-image: url('images/cover-tscp-3.jpg')"></div>
         <div class="marketplace-parallax-overlay"></div>
         <div class="marketplace-parallax-content">
-            <h2>The Supply Chain Project Marketplace</h2>
-            <p>Discover a whole new approach to problem-solving for non-profits that can benefit from industry professionals, service providers and distribution software providers.</p>
-        </div>
-    </section>
-
-    <!-- Marketplace Provider Categories -->
-    <section class="story-section">
-        <div class="container">
-            <div class="story-grid" style="grid-template-columns: 1fr 1fr;">
-                <div class="story-col">
-                    <div class="service-block">
-                        <h4>Consultants</h4>
-                        <p>Consultants bring a wealth of knowledge and experience to the table and help non-profits to identify opportunities for growth and improvement.</p>
-                    </div>
-                    <div class="service-block">
-                        <h4>Logistics Providers</h4>
-                        <p>Logistics providers are focused on streamlining distribution, allowing you to focus on your mission and vision. Increase operational efficiency, reduce costs, and ultimately make a bigger impact in your community.</p>
-                    </div>
-                </div>
-                <div class="story-col">
-                    <div class="service-block">
-                        <h4>Software providers</h4>
-                        <p>Software providers are focused on providing you with the tools you need to effectively manage and track your operations, allowing you to focus on achieving your goals.</p>
-                    </div>
-                    <div class="service-block">
-                        <h4>Industry Professionals</h4>
-                        <p>Industry professionals bring a wealth of knowledge and experience to the table, and their focus is on providing expert guidance and support to help non-profits achieve their goals.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Collaborate & Optimize Section -->
-    <section class="collab-section">
-        <div class="container">
-            <div class="collab-grid">
-                <div class="collab-item">
-                    <h3>Collaborate</h3>
-                    <p>Build strategic relationships with marketplace participants.</p>
-                </div>
-                <div class="collab-item">
-                    <h3>Optimize</h3>
-                    <p>Improve your processes to increase your impact</p>
-                </div>
-            </div>
-            <div class="collab-cta">
-                <a href="/contact-us.html" class="btn-connect">CONNECT WITH US</a>
-            </div>
+            <p>Emergency Preparedness Planner&mdash;SCP Marketplace Access Portal for assisting in being prepared for disasters and daily life disruptions.</p>
+            <a href="https://app.thesupplychainproject.org" class="btn-become-member" style="background: var(--accent); color: var(--dark); align-self: flex-start; margin-top: 20px;">LEARN MORE</a>
         </div>
     </section>
 
@@ -375,6 +381,6 @@
     <!-- GSAP CDN -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
-    <script src="js/nonprofits.js"></script>
+    <script src="js/emergency.js"></script>
 </body>
 </html>
