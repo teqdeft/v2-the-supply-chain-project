@@ -9,6 +9,311 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@700;800;900&display=swap" rel="stylesheet">
+    <style>
+        /* ===== Strategy sections ===== */
+        .strategy-section {
+            padding: 100px 0;
+            background: var(--white);
+        }
+
+        .strategy-section.strategy-alt {
+            background: var(--gray-100);
+        }
+
+        .strategy-section.strategy-dark {
+            background: var(--dark);
+        }
+
+        .strategy-dark .section-title {
+            color: var(--white);
+        }
+
+        .strategy-dark .section-subtitle {
+            color: rgba(255, 255, 255, 0.78);
+        }
+
+        .strategy-lede {
+            max-width: 780px;
+        }
+
+        /* Opportunity stat cards */
+        .opportunity-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 24px;
+        }
+
+        .opportunity-card {
+            background: var(--dark);
+            border-radius: 16px;
+            padding: 40px 28px;
+            text-align: center;
+            border-bottom: 4px solid var(--accent);
+        }
+
+        .strategy-stat-value {
+            display: block;
+            font-family: var(--font-display);
+            font-size: clamp(2.25rem, 4vw, 3.25rem);
+            font-weight: 900;
+            color: var(--accent);
+            line-height: 1;
+            margin-bottom: 14px;
+        }
+
+        .opportunity-card p {
+            font-size: 0.9375rem;
+            color: rgba(255, 255, 255, 0.78);
+            line-height: 1.6;
+        }
+
+        /* Closing statement */
+        .strategy-closing {
+            margin-top: 56px;
+            text-align: center;
+        }
+
+        .strategy-closing .closing-accent {
+            display: block;
+            width: 60px;
+            height: 4px;
+            margin: 0 auto 24px;
+            background: linear-gradient(90deg, var(--primary), var(--accent));
+            border-radius: 2px;
+        }
+
+        .strategy-closing p {
+            font-family: var(--font-display);
+            font-size: clamp(1.25rem, 2.2vw, 1.75rem);
+            font-weight: 800;
+            color: var(--dark);
+            line-height: 1.45;
+            max-width: 860px;
+            margin: 0 auto;
+        }
+
+        .strategy-dark .strategy-closing p {
+            color: var(--white);
+        }
+
+        /* Vision pillars */
+        .pillars-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+        }
+
+        .pillar-card {
+            background: var(--dark-light);
+            border-radius: 16px;
+            padding: 40px 28px;
+            text-align: center;
+            border-top: 4px solid var(--accent);
+        }
+
+        .pillar-card h3 {
+            font-size: 1.0625rem;
+            font-weight: 800;
+            color: var(--white);
+            letter-spacing: 1.5px;
+            margin-bottom: 10px;
+        }
+
+        .pillar-card p {
+            font-size: 0.9375rem;
+            color: rgba(255, 255, 255, 0.78);
+            line-height: 1.6;
+        }
+
+        /* Mission steps */
+        .mission-grid {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 20px;
+        }
+
+        .mission-step {
+            background: var(--white);
+            border-radius: 12px;
+            padding: 32px 20px;
+            text-align: center;
+            box-shadow: var(--shadow-sm);
+            border-top: 4px solid var(--primary);
+        }
+
+        .mission-step h3 {
+            font-size: 1rem;
+            font-weight: 800;
+            color: var(--primary);
+            letter-spacing: 2px;
+            margin-bottom: 10px;
+        }
+
+        .mission-step p {
+            font-size: 0.875rem;
+            color: var(--gray-600);
+            line-height: 1.6;
+        }
+
+        /* Operating model flow */
+        .model-flow {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 16px 20px;
+        }
+
+        .model-node {
+            background: var(--primary);
+            color: var(--white);
+            padding: 22px 34px;
+            border-radius: 12px;
+            font-size: 0.9375rem;
+            font-weight: 800;
+            letter-spacing: 1.5px;
+            text-align: center;
+        }
+
+        .model-node.model-node-accent {
+            background: var(--accent);
+            color: var(--dark);
+        }
+
+        .model-arrow {
+            font-size: 1.75rem;
+            font-weight: 700;
+            color: var(--accent);
+            line-height: 1;
+        }
+
+        .model-core {
+            margin-top: 36px;
+            text-align: center;
+        }
+
+        .model-core h3 {
+            display: inline-block;
+            padding: 12px 32px;
+            border: 2px solid var(--accent);
+            border-radius: 50px;
+            font-size: 0.9375rem;
+            font-weight: 800;
+            letter-spacing: 2px;
+            color: var(--dark);
+            margin-bottom: 12px;
+        }
+
+        .model-core p {
+            font-size: 0.9375rem;
+            color: var(--gray-600);
+        }
+
+        .ecosystem-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 12px;
+            margin-top: 40px;
+        }
+
+        .ecosystem-chip {
+            padding: 12px 26px;
+            background: var(--gray-100);
+            border: 1px solid var(--gray-300);
+            border-radius: 50px;
+            font-size: 0.8125rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+            color: var(--gray-800);
+        }
+
+        /* Why pillars */
+        .why-grid {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 20px;
+        }
+
+        .why-card {
+            background: var(--white);
+            border-radius: 12px;
+            padding: 28px 20px;
+            text-align: center;
+            box-shadow: var(--shadow-sm);
+            border-top: 4px solid var(--accent);
+        }
+
+        .why-card h3 {
+            font-size: 0.9375rem;
+            font-weight: 800;
+            color: var(--dark);
+            letter-spacing: 1px;
+            margin-bottom: 10px;
+        }
+
+        .why-card p {
+            font-size: 0.875rem;
+            color: var(--gray-600);
+            line-height: 1.6;
+        }
+
+        /* Scale stats */
+        .scale-grid {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 24px;
+            text-align: center;
+        }
+
+        .scale-stat h3 {
+            font-family: var(--font-display);
+            font-size: clamp(2rem, 3.5vw, 2.75rem);
+            font-weight: 900;
+            color: var(--accent);
+            line-height: 1;
+            margin-bottom: 10px;
+        }
+
+        .scale-stat p {
+            font-size: 0.9375rem;
+            color: rgba(255, 255, 255, 0.75);
+            line-height: 1.6;
+        }
+
+        @media (max-width: 992px) {
+            .opportunity-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .mission-grid,
+            .why-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+
+            .scale-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 640px) {
+            .opportunity-grid,
+            .pillars-grid,
+            .mission-grid,
+            .why-grid,
+            .scale-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .model-flow {
+                flex-direction: column;
+            }
+
+            .model-arrow {
+                transform: rotate(90deg);
+            }
+        }
+    </style>
 </head>
 <body>
 
@@ -221,6 +526,38 @@
         </div>
     </section>
 
+    <!-- The Unseen Opportunity Section -->
+    <section class="strategy-section" id="opportunitySection">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">The Unseen Opportunity. The Urgent Imperative.</h2>
+                <p class="section-subtitle strategy-lede">Every day, billions in resources sit idle while communities and organizations go without.</p>
+            </div>
+            <div class="opportunity-grid">
+                <div class="opportunity-card">
+                    <span class="strategy-stat-value">$890B+</span>
+                    <p>in returned &amp; excess inventory in the U.S. annually</p>
+                </div>
+                <div class="opportunity-card">
+                    <span class="strategy-stat-value">$1T+</span>
+                    <p>in food wasted globally each year</p>
+                </div>
+                <div class="opportunity-card">
+                    <span class="strategy-stat-value">40%</span>
+                    <p>of nonprofits lack consistent access to critical resources</p>
+                </div>
+                <div class="opportunity-card">
+                    <span class="strategy-stat-value">$200B+</span>
+                    <p>in avoidable logistics and disposal costs each year</p>
+                </div>
+            </div>
+            <div class="strategy-closing">
+                <span class="closing-accent" aria-hidden="true"></span>
+                <p>The world doesn't have a scarcity problem. It has a visibility and coordination problem.</p>
+            </div>
+        </div>
+    </section>
+
     <!-- Impact Section -->
     <section class="impact-section" id="impactSection">
         <div class="impact-bg parallax-section-bg" style="background-image: url('images/cover-tscp-3.jpg')"></div>
@@ -278,6 +615,70 @@
         </div>
     </section>
 
+    <!-- Our Vision Section -->
+    <section class="strategy-section strategy-dark" id="visionSection">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Our Vision</h2>
+                <p class="section-subtitle strategy-lede">A world where every available resource reaches the people and places that need it most.</p>
+            </div>
+            <div class="pillars-grid">
+                <div class="pillar-card">
+                    <h3>STRONGER COMMUNITIES</h3>
+                    <p>More capacity. Better outcomes.</p>
+                </div>
+                <div class="pillar-card">
+                    <h3>RESILIENT SYSTEMS</h3>
+                    <p>Less waste. More readiness.</p>
+                </div>
+                <div class="pillar-card">
+                    <h3>SUSTAINABLE IMPACT</h3>
+                    <p>Better for people. Better for the planet.</p>
+                </div>
+            </div>
+            <div class="strategy-closing">
+                <span class="closing-accent" aria-hidden="true"></span>
+                <p>We connect good to good&mdash;at the speed of need.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Our Mission Section -->
+    <section class="strategy-section strategy-alt" id="missionSection">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Our Mission</h2>
+                <p class="section-subtitle strategy-lede">To orchestrate the movement of surplus and underutilized resources to strengthen communities, reduce waste, and create measurable impact.</p>
+            </div>
+            <div class="mission-grid">
+                <div class="mission-step">
+                    <h3>SEE</h3>
+                    <p>Make hidden resources visible.</p>
+                </div>
+                <div class="mission-step">
+                    <h3>ASSESS</h3>
+                    <p>Understand needs and capacity.</p>
+                </div>
+                <div class="mission-step">
+                    <h3>MATCH</h3>
+                    <p>Intelligently connect supply to need.</p>
+                </div>
+                <div class="mission-step">
+                    <h3>MOBILIZE</h3>
+                    <p>Move resources efficiently.</p>
+                </div>
+                <div class="mission-step">
+                    <h3>MEASURE</h3>
+                    <p>Prove impact and drive improvement.</p>
+                </div>
+            </div>
+            <div class="strategy-closing">
+                <span class="closing-accent" aria-hidden="true"></span>
+                <p>Right resource. Right place. Right time. Right impact.</p>
+            </div>
+        </div>
+    </section>
+
     <!-- Parallax CTA Section -->
     <section class="parallax-cta" id="parallaxCta">
         <div class="parallax-cta-bg" style="background-image: url('images/cover-tscp-2.jpg')"></div>
@@ -288,6 +689,71 @@
             <div class="parallax-cta-buttons">
                 <a href="https://app.thesupplychainproject.org" class="btn-cta">Enter Marketplace</a>
                 <a href="/contact-us.html" class="btn-cta btn-cta-outline">Need Help?</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Our Operating Model Section -->
+    <section class="strategy-section" id="operatingModelSection">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Our Operating Model</h2>
+                <p class="section-subtitle strategy-lede">A closed-loop system that transforms surplus into measurable impact.</p>
+            </div>
+            <div class="model-flow">
+                <div class="model-node">RESHAPE DEMAND</div>
+                <span class="model-arrow" aria-hidden="true">&rarr;</span>
+                <div class="model-node model-node-accent">MATCH + MOBILIZE</div>
+                <span class="model-arrow" aria-hidden="true">&rarr;</span>
+                <div class="model-node">RESHAPE SUPPLY</div>
+            </div>
+            <div class="model-core">
+                <h3>ANGELIC INTELLIGENCE</h3>
+                <p>Governed with human reasoning and AI</p>
+            </div>
+            <div class="ecosystem-grid">
+                <span class="ecosystem-chip">BUSINESSES &amp; MANUFACTURERS</span>
+                <span class="ecosystem-chip">NONPROFITS &amp; NGOs</span>
+                <span class="ecosystem-chip">LOGISTICS &amp; TRANSPORTATION</span>
+                <span class="ecosystem-chip">TECHNOLOGY PARTNERS</span>
+                <span class="ecosystem-chip">COMMUNITIES</span>
+                <span class="ecosystem-chip">ACADEMIA &amp; RESEARCH</span>
+            </div>
+            <div class="strategy-closing">
+                <span class="closing-accent" aria-hidden="true"></span>
+                <p>One system. Shared standards. Collective impact.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why No One Else Can Do This Section -->
+    <section class="strategy-section strategy-alt" id="whySection">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Why No One Else Can Do This</h2>
+                <p class="section-subtitle strategy-lede">TSCP is the only neutral, human-centered operating system that orchestrates the entire resource flow.</p>
+            </div>
+            <div class="why-grid">
+                <div class="why-card">
+                    <h3>NEUTRAL &amp; INDEPENDENT</h3>
+                    <p>We serve all sides without competing for resources.</p>
+                </div>
+                <div class="why-card">
+                    <h3>HUMAN + AI DECISIONING</h3>
+                    <p>Ethical, explainable, and accountable orchestration.</p>
+                </div>
+                <div class="why-card">
+                    <h3>END-TO-END ORCHESTRATION</h3>
+                    <p>From visibility to impact&mdash;one integrated system.</p>
+                </div>
+                <div class="why-card">
+                    <h3>TRUST &amp; GOVERNANCE</h3>
+                    <p>Secure, compliance, and built for public trust.</p>
+                </div>
+                <div class="why-card">
+                    <h3>SHARED VALUE FOR ALL</h3>
+                    <p>Creates enterprise value and human well-being.</p>
+                </div>
             </div>
         </div>
     </section>
@@ -312,6 +778,42 @@
                     <span class="stat-number" data-target="30">0</span><span class="stat-suffix">+</span>
                     <p class="stat-label">Countries Reached</p>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- The Scale of What's Possible Section -->
+    <section class="strategy-section strategy-dark" id="scaleSection">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">The Scale of What's Possible</h2>
+                <p class="section-subtitle strategy-lede">A system-level opportunity with enterprise, social, and environmental returns.</p>
+            </div>
+            <div class="scale-grid">
+                <div class="scale-stat">
+                    <h3>$890B+</h3>
+                    <p>In returned &amp; excess inventory in the U.S. annually</p>
+                </div>
+                <div class="scale-stat">
+                    <h3>$1T+</h3>
+                    <p>In food wasted globally each year</p>
+                </div>
+                <div class="scale-stat">
+                    <h3>$200B+</h3>
+                    <p>In avoidable logistics and disposal costs each year</p>
+                </div>
+                <div class="scale-stat">
+                    <h3>1.6B+</h3>
+                    <p>People experiencing material hardship worldwide</p>
+                </div>
+                <div class="scale-stat">
+                    <h3>1.6B</h3>
+                    <p>Tons of CO2e from wasted goods annually</p>
+                </div>
+            </div>
+            <div class="strategy-closing">
+                <span class="closing-accent" aria-hidden="true"></span>
+                <p>This is not charity. This is smart economics and human progress.</p>
             </div>
         </div>
     </section>

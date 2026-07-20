@@ -64,6 +64,186 @@
                 grid-template-columns: 1fr;
             }
         }
+        /* Tier 1: Reshape Demand */
+        .tier-section {
+            padding: 80px 0;
+            background: var(--gray-100);
+        }
+        .section-sub {
+            font-size: 1.0625rem;
+            color: var(--gray-600);
+            font-style: italic;
+            text-align: center;
+            margin-bottom: 16px;
+        }
+        .section-intro {
+            font-size: 1rem;
+            color: var(--gray-700);
+            line-height: 1.8;
+            text-align: center;
+            max-width: 760px;
+            margin: 0 auto 48px;
+        }
+        .tier-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 28px;
+            margin-bottom: 48px;
+        }
+        .tier-card,
+        .eco-step {
+            background: var(--white);
+            border-top: 3px solid var(--primary);
+            border-radius: 8px;
+            padding: 28px 24px;
+            box-shadow: 0 4px 16px rgba(26, 26, 46, 0.06);
+        }
+        .tier-card h4,
+        .eco-step h4,
+        .eco-side h4 {
+            font-size: 0.8125rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: var(--primary);
+            margin-bottom: 12px;
+        }
+        .tier-card p,
+        .eco-step p,
+        .eco-side p {
+            font-size: 0.9375rem;
+            color: var(--gray-700);
+            line-height: 1.7;
+        }
+        .section-closing {
+            font-size: 1.0625rem;
+            color: var(--dark);
+            line-height: 1.7;
+            text-align: center;
+            max-width: 760px;
+            margin: 0 auto;
+        }
+        /* The Complete TSCP Ecosystem */
+        .ecosystem-section {
+            padding: 80px 0;
+            background: var(--gray-100);
+        }
+        .eco-flow {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 28px;
+            margin-bottom: 32px;
+        }
+        .eco-step {
+            border-top-color: var(--accent);
+        }
+        .eco-step-num {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            background: var(--primary);
+            color: var(--white);
+            font-size: 0.875rem;
+            font-weight: 700;
+            margin-bottom: 14px;
+        }
+        .eco-govern {
+            background: var(--dark);
+            border-radius: 8px;
+            padding: 32px;
+            text-align: center;
+            margin-bottom: 32px;
+        }
+        .eco-govern h4 {
+            font-size: 0.9375rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--accent);
+            margin-bottom: 8px;
+        }
+        .eco-govern p {
+            font-size: 1rem;
+            color: rgba(255, 255, 255, 0.85);
+        }
+        .eco-sides {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 28px;
+            margin-bottom: 48px;
+        }
+        .eco-side {
+            background: var(--white);
+            border-left: 3px solid var(--primary);
+            border-radius: 8px;
+            padding: 24px 28px;
+            box-shadow: 0 4px 16px rgba(26, 26, 46, 0.06);
+        }
+        .eco-banner {
+            background: var(--primary);
+            border-radius: 8px;
+            padding: 40px;
+            text-align: center;
+            margin-bottom: 48px;
+        }
+        .eco-banner h3 {
+            font-family: var(--font-display);
+            font-size: 1.375rem;
+            font-weight: 800;
+            letter-spacing: 1px;
+            color: var(--white);
+            margin-bottom: 12px;
+        }
+        .eco-banner > p {
+            font-size: 1rem;
+            color: rgba(255, 255, 255, 0.9);
+            line-height: 1.7;
+            max-width: 640px;
+            margin: 0 auto 28px;
+        }
+        .eco-checklist {
+            list-style: none;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 16px;
+            max-width: 900px;
+            margin: 0 auto;
+            text-align: left;
+        }
+        .eco-checklist li {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            font-size: 0.9375rem;
+            color: rgba(255, 255, 255, 0.95);
+        }
+        .eco-checklist .list-icon {
+            color: var(--accent);
+        }
+        @media (max-width: 992px) {
+            .tier-grid,
+            .eco-flow {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .eco-checklist {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        @media (max-width: 768px) {
+            .tier-section,
+            .ecosystem-section {
+                padding: 56px 0;
+            }
+            .tier-grid,
+            .eco-flow,
+            .eco-sides,
+            .eco-checklist {
+                grid-template-columns: 1fr;
+            }
+        }
     </style>
 </head>
 <body>
@@ -225,6 +405,37 @@
         </div>
     </section>
 
+    <!-- Tier 1: Reshape Demand Section -->
+    <section class="tier-section">
+        <div class="container">
+            <h2 class="activities-title">Tier 1: Reshape Demand</h2>
+            <p class="section-sub">We begin with the needs of communities.</p>
+            <div class="activities-divider"></div>
+            <p class="section-intro">Nonprofits function as differently configured retail or distribution operations&mdash;focused on serving people, not profit.</p>
+
+            <div class="tier-grid">
+                <div class="tier-card">
+                    <h4>Community Needs</h4>
+                    <p>Understand real needs on the ground. Include who is affected, what is needed, and why.</p>
+                </div>
+                <div class="tier-card">
+                    <h4>Receiving, Storage, &amp; Fulfillment Capacity</h4>
+                    <p>Assess ability to receive, store, and fulfill goods. Consider space, equipment, people, and processes. Ensure safe, efficient, and equitable distribution.</p>
+                </div>
+                <div class="tier-card">
+                    <h4>Operational Preparedness</h4>
+                    <p>Evaluate operational readiness across people, processes, and systems. Plan for surge, continuity, and reliability.</p>
+                </div>
+                <div class="tier-card">
+                    <h4>Local Demand Planning</h4>
+                    <p>Define assortment and service discipline. Set categories, trade lanes, seasonality, and priorities. Avoid "send us anything" models.</p>
+                </div>
+            </div>
+
+            <p class="section-closing">We start by listening&mdash;so we can deliver what's needed, not what's left. <strong>Right resources. Right place. Right time.</strong></p>
+        </div>
+    </section>
+
     <!-- Leadership Quotes Section -->
     <section class="quotes-section">
         <div class="container">
@@ -280,6 +491,98 @@
                     </div>
                 </div>
             </div>
+        </div>
+    </section>
+
+    <!-- The Complete TSCP Ecosystem Section -->
+    <section class="ecosystem-section">
+        <div class="container">
+            <h2 class="activities-title">The Complete TSCP Ecosystem</h2>
+            <p class="section-sub">From visibility to impact&mdash;powered by people, technology, and collaboration.</p>
+            <div class="activities-divider"></div>
+            <p class="section-intro">An integrated system that connects supply to need, mobilizes resources, and delivers measurable, sustainable impact for people, communities, and the planet.</p>
+
+            <div class="eco-flow">
+                <div class="eco-step">
+                    <span class="eco-step-num">1</span>
+                    <h4>See</h4>
+                    <p>See hidden supply and waste. Know what's available and where it exists.</p>
+                </div>
+                <div class="eco-step">
+                    <span class="eco-step-num">2</span>
+                    <h4>Understand</h4>
+                    <p>Understand local demand. Identify needs, priorities, and opportunities.</p>
+                </div>
+                <div class="eco-step">
+                    <span class="eco-step-num">3</span>
+                    <h4>Assess</h4>
+                    <p>Assess readiness and capacity. Evaluate assets, capabilities, and constraints.</p>
+                </div>
+                <div class="eco-step">
+                    <span class="eco-step-num">4</span>
+                    <h4>Match &amp; Mobilize</h4>
+                    <p>Match resources to needs. Mobilize people, partners, and capacity.</p>
+                </div>
+                <div class="eco-step">
+                    <span class="eco-step-num">5</span>
+                    <h4>Deliver</h4>
+                    <p>Coordinate and deliver efficiently. Move resources safely and effectively.</p>
+                </div>
+                <div class="eco-step">
+                    <span class="eco-step-num">6</span>
+                    <h4>Measure Impact</h4>
+                    <p>Deliver measurable, sustainable impact. Prove value. Improve outcomes. Strengthen resilience.</p>
+                </div>
+            </div>
+
+            <div class="eco-govern">
+                <h4>Govern with Human Reasoning and AI</h4>
+                <p>Human insight. AI capability. Purpose-driven outcomes.</p>
+            </div>
+
+            <div class="eco-sides">
+                <div class="eco-side">
+                    <h4>Reshape Demand</h4>
+                    <p>Understand needs, context, and capacity. Focus on outcomes that matter.</p>
+                </div>
+                <div class="eco-side">
+                    <h4>Reshape Supply</h4>
+                    <p>Mobilize resources. Deliver impact. Strengthen communities.</p>
+                </div>
+            </div>
+
+            <div class="eco-banner">
+                <h3>YOU ARE PART OF THE ECOSYSTEM.</h3>
+                <p>Every organization has resources, capabilities, and relationships that can strengthen this system.</p>
+                <ul class="eco-checklist">
+                    <li>
+                        <span class="list-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>
+                        </span>
+                        <span>Resources &amp; assets</span>
+                    </li>
+                    <li>
+                        <span class="list-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>
+                        </span>
+                        <span>Capabilities &amp; services</span>
+                    </li>
+                    <li>
+                        <span class="list-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>
+                        </span>
+                        <span>Relationships &amp; networks</span>
+                    </li>
+                    <li>
+                        <span class="list-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>
+                        </span>
+                        <span>Innovation &amp; technology</span>
+                    </li>
+                </ul>
+            </div>
+
+            <p class="section-closing"><strong>What are you doing today&mdash;and how will you strengthen the system?</strong></p>
         </div>
     </section>
 

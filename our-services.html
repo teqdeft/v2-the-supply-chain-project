@@ -72,6 +72,293 @@
                 margin-right: auto;
             }
         }
+
+        /* TSCP Strategy sections */
+        .strategy-sub {
+            text-align: center;
+            font-size: 1.0625rem;
+            color: var(--primary);
+            font-weight: 600;
+            margin-bottom: 16px;
+        }
+        .strategy-intro {
+            max-width: 820px;
+            margin: 0 auto;
+            text-align: center;
+            font-size: 1rem;
+            color: var(--gray-700);
+            line-height: 1.8;
+        }
+        .tier-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 28px;
+            margin-top: 48px;
+        }
+        .tier-grid-3 {
+            grid-template-columns: repeat(3, 1fr);
+        }
+        .tier-grid-flex {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 28px;
+            margin-top: 48px;
+        }
+        .tier-grid-flex .tier-card {
+            flex: 0 1 calc(25% - 21px);
+            min-width: 240px;
+        }
+        .tier-card {
+            background: var(--white);
+            border-radius: 8px;
+            padding: 32px 28px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+            border-top: 4px solid var(--primary);
+        }
+        .tier-card h3 {
+            font-size: 1rem;
+            font-weight: 800;
+            letter-spacing: 1px;
+            color: var(--dark);
+            margin-bottom: 14px;
+        }
+        .tier-card p {
+            font-size: 0.9375rem;
+            color: var(--gray-700);
+            line-height: 1.7;
+        }
+        .tier-card ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+        .tier-card ul li {
+            position: relative;
+            padding-left: 18px;
+            font-size: 0.9375rem;
+            color: var(--gray-700);
+            line-height: 1.7;
+            margin-bottom: 10px;
+        }
+        .tier-card ul li::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 10px;
+            width: 7px;
+            height: 7px;
+            border-radius: 50%;
+            background: var(--accent);
+        }
+        .assess-num {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            background: var(--primary);
+            color: var(--white);
+            font-size: 0.875rem;
+            font-weight: 800;
+            margin-right: 10px;
+            flex-shrink: 0;
+        }
+        .strategy-closing {
+            margin-top: 48px;
+            background: var(--dark);
+            border-left: 4px solid var(--accent);
+            border-radius: 8px;
+            padding: 36px 40px;
+            text-align: center;
+        }
+        .strategy-closing p {
+            color: rgba(255, 255, 255, 0.85);
+            font-size: 1.0625rem;
+            line-height: 1.7;
+        }
+        .strategy-closing .closing-accent {
+            color: var(--accent);
+            font-weight: 800;
+            letter-spacing: 1px;
+            margin-top: 10px;
+        }
+        .mobilize-note {
+            max-width: 720px;
+            margin: 48px auto 0;
+            background: var(--gray-100);
+            border-left: 4px solid var(--accent);
+            border-radius: 8px;
+            padding: 28px 32px;
+            text-align: center;
+        }
+        .mobilize-note h4 {
+            font-size: 1rem;
+            font-weight: 800;
+            letter-spacing: 1px;
+            color: var(--dark);
+            margin-bottom: 8px;
+        }
+        .mobilize-note p {
+            font-size: 0.9375rem;
+            color: var(--gray-700);
+            line-height: 1.7;
+        }
+        .strategy-subheading {
+            font-family: var(--font-display);
+            font-size: 1.375rem;
+            font-weight: 800;
+            color: var(--dark);
+            text-align: center;
+            margin-top: 64px;
+            margin-bottom: 8px;
+        }
+        .service-area-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+            margin-top: 32px;
+        }
+        .service-area-card {
+            background: var(--dark);
+            border-radius: 8px;
+            padding: 32px 24px;
+            text-align: center;
+            border-bottom: 4px solid var(--accent);
+        }
+        .service-area-card h4 {
+            font-size: 1rem;
+            font-weight: 800;
+            color: var(--white);
+            letter-spacing: 1px;
+            margin-bottom: 6px;
+        }
+        .service-area-card .service-range {
+            display: block;
+            font-size: 0.875rem;
+            color: var(--accent);
+            font-weight: 700;
+            letter-spacing: 1px;
+            margin-bottom: 10px;
+        }
+        .service-area-card p {
+            font-size: 0.875rem;
+            color: rgba(255, 255, 255, 0.75);
+            line-height: 1.6;
+        }
+        .outcomes-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 24px;
+            margin-top: 32px;
+        }
+        .outcome-card {
+            background: var(--white);
+            border-radius: 8px;
+            padding: 24px;
+            text-align: center;
+            border-top: 3px solid var(--accent);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+        }
+        .outcome-card h4 {
+            font-size: 1rem;
+            font-weight: 800;
+            color: var(--primary);
+            margin-bottom: 8px;
+        }
+        .outcome-card p {
+            font-size: 0.875rem;
+            color: var(--gray-700);
+            line-height: 1.6;
+        }
+        .value-form-sub {
+            font-size: 0.8125rem;
+            color: var(--gray-600);
+            font-style: italic;
+            margin-bottom: 4px;
+        }
+        .pathway-label {
+            font-size: 0.6875rem;
+            font-weight: 800;
+            letter-spacing: 1.5px;
+            color: var(--primary);
+            margin: 14px 0 10px;
+        }
+        .pathway-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+        .pathway-tags span {
+            background: var(--gray-100);
+            color: var(--dark);
+            font-size: 0.75rem;
+            font-weight: 600;
+            padding: 5px 12px;
+            border-radius: 100px;
+        }
+        .value-band {
+            background: var(--dark);
+            border-radius: 8px;
+            padding: 40px;
+            margin-top: 48px;
+            text-align: center;
+        }
+        .value-band h3 {
+            font-family: var(--font-display);
+            font-size: clamp(1.25rem, 2.5vw, 1.75rem);
+            font-weight: 900;
+            color: var(--accent);
+            margin-bottom: 12px;
+        }
+        .value-band p {
+            font-size: 1rem;
+            color: rgba(255, 255, 255, 0.8);
+            line-height: 1.7;
+            max-width: 760px;
+            margin: 0 auto;
+        }
+        .value-cols {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 28px;
+            margin-top: 48px;
+        }
+        .value-impact {
+            font-family: var(--font-display);
+            font-size: 1.5rem;
+            font-weight: 900;
+            color: var(--primary);
+            text-align: center;
+            margin-top: 32px;
+        }
+        @media (max-width: 992px) {
+            .tier-grid,
+            .tier-grid-3,
+            .service-area-grid,
+            .outcomes-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .tier-grid-flex .tier-card {
+                flex-basis: calc(50% - 14px);
+            }
+        }
+        @media (max-width: 640px) {
+            .tier-grid,
+            .tier-grid-3,
+            .service-area-grid,
+            .outcomes-grid,
+            .value-cols {
+                grid-template-columns: 1fr;
+            }
+            .tier-grid-flex .tier-card {
+                flex-basis: 100%;
+            }
+            .strategy-closing {
+                padding: 28px 24px;
+            }
+        }
     </style>
 </head>
 <body>
@@ -344,6 +631,447 @@
             </div>
             <div class="collab-cta">
                 <a href="/contact-us.html" class="btn-connect">CONNECT WITH US</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tier 1: Reshape Demand -->
+    <section class="story-section">
+        <div class="container">
+            <h2 class="activities-title">Tier 1: Reshape Demand</h2>
+            <p class="strategy-sub">We begin with the needs of communities.</p>
+            <div class="activities-divider"></div>
+
+            <p class="strategy-intro">Nonprofits function as differently configured retail or distribution operations&mdash;focused on serving people, not profit.</p>
+
+            <div class="tier-grid">
+                <div class="tier-card">
+                    <h3>COMMUNITY NEEDS</h3>
+                    <ul>
+                        <li>Understand real needs on the ground.</li>
+                        <li>Include who is affected, what is needed, and why.</li>
+                    </ul>
+                </div>
+                <div class="tier-card">
+                    <h3>RECEIVING, STORAGE, &amp; FULFILLMENT CAPACITY</h3>
+                    <ul>
+                        <li>Assess ability to receive, store, and fulfill goods.</li>
+                        <li>Consider space, equipment, people, and processes.</li>
+                        <li>Ensure safe, efficient, and equitable distribution.</li>
+                    </ul>
+                </div>
+                <div class="tier-card">
+                    <h3>OPERATIONAL PREPAREDNESS</h3>
+                    <ul>
+                        <li>Evaluate operational readiness across people, processes, and systems.</li>
+                        <li>Plan for surge, continuity, and reliability.</li>
+                    </ul>
+                </div>
+                <div class="tier-card">
+                    <h3>LOCAL DEMAND PLANNING</h3>
+                    <ul>
+                        <li>Define assortment and service discipline.</li>
+                        <li>Set categories, trade lanes, seasonality, and priorities.</li>
+                        <li>Avoid "send us anything" models.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="strategy-closing">
+                <p>We start by listening&mdash;so we can deliver what's needed, not what's left.</p>
+                <p class="closing-accent">Right resources. Right place. Right time.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tier 2: Match + Mobilize -->
+    <section class="community-section">
+        <div class="container">
+            <h2 class="activities-title">Tier 2: Match + Mobilize</h2>
+            <p class="strategy-sub">We orchestrate the right match and mobilize resources.</p>
+            <div class="activities-divider"></div>
+
+            <p class="strategy-intro" style="margin-bottom: 48px;">TSCP connects available resources with vetted nonprofits and ecosystem partners to meet real needs&mdash;not by owning assets, but by mobilizing our network to deliver impact.</p>
+
+            <div class="story-grid">
+                <div class="story-col">
+                    <h3 class="story-heading" style="font-size: 1.25rem;">AVAILABLE RESOURCES</h3>
+                    <div class="story-divider"></div>
+                    <ul class="story-list">
+                        <li>
+                            <span class="list-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v4M12 16h.01"/></svg>
+                            </span>
+                            <span><strong>AVAILABLE GOODS &amp; INVENTORY</strong> &mdash; Identify and prepare excess goods, materials, and products for a purposeful second life.</span>
+                        </li>
+                        <li>
+                            <span class="list-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v4M12 16h.01"/></svg>
+                            </span>
+                            <span><strong>STORAGE &amp; FACILITY CAPACITY</strong> &mdash; Leverage warehouse space, storage, and facilities to receive, stage, and distribute.</span>
+                        </li>
+                        <li>
+                            <span class="list-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v4M12 16h.01"/></svg>
+                            </span>
+                            <span><strong>TRANSPORTATION CAPACITY</strong> &mdash; Mobilize fleet capacity, routes, and transportation assets to move resources efficiently.</span>
+                        </li>
+                        <li>
+                            <span class="list-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v4M12 16h.01"/></svg>
+                            </span>
+                            <span><strong>EXPERTISE</strong> &mdash; Engage knowledge and skills to solve complex operational and community challenges.</span>
+                        </li>
+                        <li>
+                            <span class="list-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v4M12 16h.01"/></svg>
+                            </span>
+                            <span><strong>TECHNOLOGY PARTNERS</strong> &mdash; Apply platforms and tools for visibility, matching, coordination, and reporting.</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="story-col">
+                    <h3 class="story-heading" style="font-size: 1.25rem;">PARTNERS &amp; EXECUTION POINTS</h3>
+                    <div class="story-divider"></div>
+                    <ul class="story-list">
+                        <li>
+                            <span class="list-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v4M12 16h.01"/></svg>
+                            </span>
+                            <span><strong>VETTED NONPROFITS</strong> &mdash; Trusted nonprofit partners who understand local needs and deliver to the communities they serve.</span>
+                        </li>
+                        <li>
+                            <span class="list-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v4M12 16h.01"/></svg>
+                            </span>
+                            <span><strong>LOGISTICS PARTNERS</strong> &mdash; 3PLs, warehouse operators, and fulfillment providers that enhance capacity and efficiency.</span>
+                        </li>
+                        <li>
+                            <span class="list-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v4M12 16h.01"/></svg>
+                            </span>
+                            <span><strong>TRANSPORTATION PARTNERS</strong> &mdash; Carriers, fleet operators, and mobility networks that expand reach and reduce cost.</span>
+                        </li>
+                        <li>
+                            <span class="list-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v4M12 16h.01"/></svg>
+                            </span>
+                            <span><strong>STRATEGIC MARKETPLACE PARTNERS</strong> &mdash; Retailers, manufacturers, and suppliers who provide product, funding, or in-kind support.</span>
+                        </li>
+                        <li>
+                            <span class="list-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v4M12 16h.01"/></svg>
+                            </span>
+                            <span><strong>OUTCOMES</strong> &mdash; Drive measurable results that improve lives, strengthen communities, and protect the planet.</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="mobilize-note">
+                <h4>WE MOBILIZE, NOT OWN</h4>
+                <p>TSCP does not own every asset or function. We mobilize our network to deliver impact at scale.</p>
+            </div>
+
+            <div class="strategy-closing">
+                <p class="closing-accent">WE DO NOT JUST MOVE GOODS. WE ORCHESTRATE SOLUTIONS THAT CREATE MEASURABLE IMPACT.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tier 3: Reshape Supply -->
+    <section class="story-section">
+        <div class="container">
+            <h2 class="activities-title">Tier 3: Reshape Supply</h2>
+            <p class="strategy-sub">We bring visibility and strategy to supply.</p>
+            <div class="activities-divider"></div>
+
+            <div class="tier-grid-flex">
+                <div class="tier-card">
+                    <h3>INVENTORY</h3>
+                    <p>See what's available to repurpose, mobilize, share, recover, or redirect.</p>
+                </div>
+                <div class="tier-card">
+                    <h3>TRANSPORTATION</h3>
+                    <p>Leverage existing assets and networks to move resources efficiently.</p>
+                </div>
+                <div class="tier-card">
+                    <h3>STORAGE AND FACILITIES</h3>
+                    <p>Maximize existing space and facilities to increase utilization.</p>
+                </div>
+                <div class="tier-card">
+                    <h3>LABOR AND EXPERTISE</h3>
+                    <p>Mobilize skills and expertise to strengthen capacity and delivery.</p>
+                </div>
+                <div class="tier-card">
+                    <h3>TIME AND MONEY</h3>
+                    <p>Align financial resources and time to drive greater impact faster.</p>
+                </div>
+                <div class="tier-card">
+                    <h3>MATERIALS AND RECOVERABLE WASTE</h3>
+                    <p>Reduce waste by capturing and redirecting recoverable materials.</p>
+                </div>
+                <div class="tier-card">
+                    <h3>TECHNOLOGY AND DATA</h3>
+                    <p>Use data and technology to match resources with needs in real time.</p>
+                </div>
+            </div>
+
+            <div class="strategy-closing">
+                <p>Supply visibility extends beyond inventory. It's about everything that can create value.</p>
+                <p class="closing-accent">Our challenge isn't a lack of resources&mdash; it's a lack of visibility into where unused resources exist.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- The Assessment Framework -->
+    <section class="community-section">
+        <div class="container">
+            <h2 class="activities-title">The Assessment Framework</h2>
+            <p class="strategy-sub">A comprehensive view to uncover value and ensure the right match.</p>
+            <div class="activities-divider"></div>
+
+            <div class="tier-grid tier-grid-3">
+                <div class="tier-card">
+                    <h3><span class="assess-num">1</span>SUPPLY-SOURCE ASSESSMENT</h3>
+                    <ul>
+                        <li>Supplier network reliability</li>
+                        <li>Source location &amp; distance</li>
+                        <li>Delivery frequency &amp; lead time</li>
+                        <li>Sustainability &amp; compliance</li>
+                    </ul>
+                </div>
+                <div class="tier-card">
+                    <h3><span class="assess-num">2</span>GOODS &amp; RESOURCE ASSESSMENT</h3>
+                    <ul>
+                        <li>Type, quantity, quality, and condition</li>
+                        <li>Shelf life / expiration &amp; seasonality</li>
+                        <li>Packaging, labeling, and compatibility</li>
+                        <li>Value &amp; replacement cost</li>
+                    </ul>
+                </div>
+                <div class="tier-card">
+                    <h3><span class="assess-num">3</span>TRANSPORTATION ASSESSMENT</h3>
+                    <ul>
+                        <li>Route options &amp; transport modes</li>
+                        <li>Capacity, frequency, and reliability</li>
+                        <li>Access constraints &amp; infrastructure</li>
+                        <li>Cost per mile &amp; emissions</li>
+                    </ul>
+                </div>
+                <div class="tier-card">
+                    <h3><span class="assess-num">4</span>CAPACITY &amp; PREPAREDNESS ASSESSMENT</h3>
+                    <ul>
+                        <li>Storage &amp; facility capacity</li>
+                        <li>People, skills, and operational readiness</li>
+                        <li>Systems, processes, and governance</li>
+                        <li>Risk, safety, and continuity</li>
+                    </ul>
+                </div>
+                <div class="tier-card">
+                    <h3><span class="assess-num">5</span>LOCAL DEMAND &amp; ASSORTMENT ASSESSMENT</h3>
+                    <ul>
+                        <li>Community priorities &amp; needs</li>
+                        <li>Assortment &amp; service discipline</li>
+                        <li>Trade lanes, seasonality &amp; timing</li>
+                        <li>Equity, access, and geographic fit</li>
+                    </ul>
+                </div>
+                <div class="tier-card">
+                    <h3><span class="assess-num">6</span>IMPACT ASSESSMENT</h3>
+                    <ul>
+                        <li>Lives &amp; communities impacted</li>
+                        <li>Resource utilization improvement</li>
+                        <li>Cost avoidance &amp; efficiency</li>
+                        <li>Environmental &amp; social outcomes</li>
+                    </ul>
+                </div>
+            </div>
+
+            <h3 class="strategy-subheading">CONCENTRIC SERVICE AREAS</h3>
+            <p class="strategy-sub">Understand constraints and opportunities at every distance.</p>
+
+            <div class="service-area-grid">
+                <div class="service-area-card">
+                    <h4>LOCAL</h4>
+                    <span class="service-range">0&ndash;50 miles</span>
+                    <p>Fast, frequent, low-cost.</p>
+                </div>
+                <div class="service-area-card">
+                    <h4>REGIONAL</h4>
+                    <span class="service-range">50&ndash;300 miles</span>
+                    <p>Balanced cost, capacity, and timing.</p>
+                </div>
+                <div class="service-area-card">
+                    <h4>LONG-DISTANCE</h4>
+                    <span class="service-range">300+ miles</span>
+                    <p>Specialized assets, higher cost, strategic value.</p>
+                </div>
+            </div>
+
+            <h3 class="strategy-subheading">BETTER ASSESSMENT = BETTER OUTCOMES</h3>
+
+            <div class="outcomes-grid">
+                <div class="outcome-card">
+                    <h4>Better Matches</h4>
+                    <p>Right resources for real needs.</p>
+                </div>
+                <div class="outcome-card">
+                    <h4>Fewer Miles</h4>
+                    <p>Smarter routes, lower emissions.</p>
+                </div>
+                <div class="outcome-card">
+                    <h4>Lower Cost</h4>
+                    <p>Less waste, more efficiency.</p>
+                </div>
+                <div class="outcome-card">
+                    <h4>Greater Impact</h4>
+                    <p>Stronger outcomes for communities.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Finding Hidden Value -->
+    <section class="story-section">
+        <div class="container">
+            <h2 class="activities-title">Finding Hidden Value</h2>
+            <p class="strategy-sub">We recover value in many forms.</p>
+            <div class="activities-divider"></div>
+
+            <p class="strategy-intro">Every organization holds resources with untapped potential. Earlier visibility and response turn what could be waste into impact&mdash;creating value for businesses and communities.</p>
+
+            <div class="tier-grid">
+                <div class="tier-card">
+                    <h3>INVENTORY</h3>
+                    <p class="value-form-sub">Excess, slow-moving, or seasonal goods</p>
+                    <p class="pathway-label">RECOVERY PATHWAYS</p>
+                    <div class="pathway-tags">
+                        <span>Donate</span>
+                        <span>Redistribute</span>
+                        <span>Resell</span>
+                        <span>Repurpose</span>
+                        <span>Recycle</span>
+                    </div>
+                </div>
+                <div class="tier-card">
+                    <h3>REAL ESTATE</h3>
+                    <p class="value-form-sub">Underutilized space &amp; infrastructure</p>
+                    <p class="pathway-label">RECOVERY PATHWAYS</p>
+                    <div class="pathway-tags">
+                        <span>Share</span>
+                        <span>Sublease</span>
+                        <span>Repurpose</span>
+                        <span>Co-locate</span>
+                        <span>Community use</span>
+                    </div>
+                </div>
+                <div class="tier-card">
+                    <h3>TRANSPORTATION</h3>
+                    <p class="value-form-sub">Vehicles, routes, &amp; capacity</p>
+                    <p class="pathway-label">RECOVERY PATHWAYS</p>
+                    <div class="pathway-tags">
+                        <span>Share capacity</span>
+                        <span>Backhaul use</span>
+                        <span>Route optimization</span>
+                        <span>Volunteer transport</span>
+                        <span>Asset repurposing</span>
+                    </div>
+                </div>
+                <div class="tier-card">
+                    <h3>LABOR</h3>
+                    <p class="value-form-sub">Skills, time, &amp; workforce</p>
+                    <p class="pathway-label">RECOVERY PATHWAYS</p>
+                    <div class="pathway-tags">
+                        <span>Volunteer</span>
+                        <span>Skills-based support</span>
+                        <span>Pro bono services</span>
+                        <span>Mentorship</span>
+                        <span>Workforce sharing</span>
+                    </div>
+                </div>
+                <div class="tier-card">
+                    <h3>KNOWLEDGE</h3>
+                    <p class="value-form-sub">Expertise, insights, &amp; know-how</p>
+                    <p class="pathway-label">RECOVERY PATHWAYS</p>
+                    <div class="pathway-tags">
+                        <span>Share expertise</span>
+                        <span>Training</span>
+                        <span>Best practices</span>
+                        <span>Advisory</span>
+                        <span>Open knowledge</span>
+                    </div>
+                </div>
+                <div class="tier-card">
+                    <h3>MATERIALS</h3>
+                    <p class="value-form-sub">Raw, used, or by-product materials</p>
+                    <p class="pathway-label">RECOVERY PATHWAYS</p>
+                    <div class="pathway-tags">
+                        <span>Recycle</span>
+                        <span>Reprocess</span>
+                        <span>Remanufacture</span>
+                        <span>Upcycle</span>
+                        <span>Industrial reuse</span>
+                    </div>
+                </div>
+                <div class="tier-card">
+                    <h3>TECHNOLOGY</h3>
+                    <p class="value-form-sub">Systems, tools, &amp; data assets</p>
+                    <p class="pathway-label">RECOVERY PATHWAYS</p>
+                    <div class="pathway-tags">
+                        <span>Share platforms</span>
+                        <span>Repurpose tools</span>
+                        <span>Open data</span>
+                        <span>Digital enablement</span>
+                        <span>Tech donation</span>
+                    </div>
+                </div>
+                <div class="tier-card">
+                    <h3>FINANCIAL CAPACITY</h3>
+                    <p class="value-form-sub">Funds, credit, &amp; financial assets</p>
+                    <p class="pathway-label">RECOVERY PATHWAYS</p>
+                    <div class="pathway-tags">
+                        <span>Grants</span>
+                        <span>Impact investing</span>
+                        <span>Loan programs</span>
+                        <span>Matching funds</span>
+                        <span>Guarantee support</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="value-band">
+                <h3>EARLIER VISIBILITY. FASTER RESPONSE. GREATER VALUE.</h3>
+                <p>The earlier we see what's available, the more value we can recover&mdash;and the more we can prevent from being lost.</p>
+            </div>
+
+            <div class="value-cols">
+                <div class="tier-card">
+                    <h3>BUSINESS VALUE</h3>
+                    <ul>
+                        <li>Lower costs</li>
+                        <li>New revenue</li>
+                        <li>Risk reduction</li>
+                        <li>Stronger resilience</li>
+                    </ul>
+                </div>
+                <div class="tier-card">
+                    <h3>COMMUNITY VALUE</h3>
+                    <ul>
+                        <li>More resources</li>
+                        <li>Greater access</li>
+                        <li>Better outcomes</li>
+                        <li>Stronger communities</li>
+                    </ul>
+                </div>
+            </div>
+
+            <p class="value-impact">= EXPONENTIAL IMPACT</p>
+
+            <div class="strategy-closing">
+                <p>Nothing is waste until its value is lost. Visibility reveals potential. Strategy unlocks value. Collaboration multiplies impact.</p>
+                <p class="closing-accent">We don't just move goods. We unlock the value that moves communities forward.</p>
             </div>
         </div>
     </section>

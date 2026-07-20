@@ -10,6 +10,215 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@700;800;900&display=swap" rel="stylesheet">
+    <style>
+        /* Partnership Ecosystem + Orchestration components */
+        .eco-sub {
+            text-align: center;
+            font-size: 1.0625rem;
+            color: var(--gray-700);
+            max-width: 720px;
+            margin: 0 auto 24px;
+        }
+        .eco-intro {
+            text-align: center;
+            max-width: 820px;
+            margin: 0 auto 48px;
+        }
+        .eco-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 24px;
+            margin-bottom: 32px;
+        }
+        .eco-card {
+            background: var(--gray-100);
+            border-radius: 8px;
+            padding: 24px;
+            border-top: 3px solid var(--primary);
+        }
+        .eco-card h4 {
+            font-size: 0.9375rem;
+            font-weight: 800;
+            letter-spacing: 0.04em;
+            color: var(--dark);
+            margin-bottom: 10px;
+        }
+        .eco-card p {
+            font-size: 0.9375rem;
+            color: var(--gray-700);
+            line-height: 1.7;
+        }
+        .eco-callout {
+            background: var(--gray-100);
+            border-left: 4px solid var(--accent);
+            border-radius: 8px;
+            padding: 24px 28px;
+            margin-bottom: 20px;
+        }
+        .eco-callout h4 {
+            font-size: 0.9375rem;
+            font-weight: 800;
+            letter-spacing: 0.04em;
+            color: var(--primary);
+            margin-bottom: 8px;
+        }
+        .eco-callout p {
+            font-size: 0.9375rem;
+            color: var(--gray-700);
+            line-height: 1.7;
+            margin: 0;
+        }
+        .eco-banner {
+            background: var(--dark);
+            border-radius: 8px;
+            padding: 40px 32px;
+            text-align: center;
+            color: var(--white);
+        }
+        .eco-banner h3 {
+            font-family: var(--font-display);
+            font-size: 1.375rem;
+            font-weight: 800;
+            color: var(--white);
+            margin-bottom: 8px;
+        }
+        .eco-banner > p {
+            font-size: 1rem;
+            color: rgba(255, 255, 255, 0.85);
+            margin-bottom: 24px;
+        }
+        .eco-chips {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 12px;
+        }
+        .eco-chips span {
+            display: inline-block;
+            padding: 8px 18px;
+            border: 1px solid rgba(255, 255, 255, 0.25);
+            border-radius: 999px;
+            font-size: 0.875rem;
+            font-weight: 600;
+            color: var(--white);
+        }
+        .orch-lead {
+            text-align: center;
+            font-size: 1.1875rem;
+            font-weight: 700;
+            color: var(--dark);
+            max-width: 720px;
+            margin: 0 auto 40px;
+        }
+        .orch-grid {
+            display: grid;
+            grid-template-columns: 240px 1fr 240px;
+            gap: 24px;
+            align-items: start;
+            margin-bottom: 32px;
+        }
+        .orch-rail-item {
+            background: var(--white);
+            border-radius: 8px;
+            padding: 20px;
+            border-left: 4px solid var(--accent);
+            margin-bottom: 16px;
+            box-shadow: var(--shadow-sm);
+        }
+        .orch-rail-item:last-child {
+            margin-bottom: 0;
+        }
+        .orch-rail-item h4 {
+            font-size: 0.8125rem;
+            font-weight: 800;
+            letter-spacing: 0.05em;
+            color: var(--primary);
+            margin-bottom: 6px;
+        }
+        .orch-rail-item p {
+            font-size: 0.875rem;
+            color: var(--gray-700);
+            line-height: 1.6;
+            margin: 0;
+        }
+        .orch-roles {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 16px;
+        }
+        .orch-role {
+            background: var(--white);
+            border-radius: 8px;
+            padding: 20px;
+            border-top: 3px solid var(--primary);
+            box-shadow: var(--shadow-sm);
+        }
+        .orch-role h4 {
+            font-size: 0.875rem;
+            font-weight: 800;
+            letter-spacing: 0.04em;
+            color: var(--dark);
+            margin-bottom: 10px;
+        }
+        .orch-role ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+        .orch-role li {
+            font-size: 0.875rem;
+            color: var(--gray-700);
+            padding: 3px 0 3px 16px;
+            position: relative;
+            line-height: 1.6;
+        }
+        .orch-role li::before {
+            content: "\2022";
+            position: absolute;
+            left: 0;
+            color: var(--primary);
+        }
+        .orch-banner {
+            background: var(--dark);
+            border-radius: 8px;
+            padding: 32px;
+            text-align: center;
+            margin-bottom: 32px;
+        }
+        .orch-banner p {
+            font-size: 1.125rem;
+            font-weight: 600;
+            color: var(--white);
+            line-height: 1.7;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .orch-closing {
+            text-align: center;
+            font-family: var(--font-display);
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--dark);
+            max-width: 720px;
+            margin: 0 auto;
+        }
+        @media (max-width: 1024px) {
+            .eco-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .orch-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        @media (max-width: 640px) {
+            .eco-grid {
+                grid-template-columns: 1fr;
+            }
+            .orch-roles {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
 </head>
 <body>
 
@@ -217,6 +426,71 @@
         </div>
     </section>
 
+    <!-- Partnership Ecosystem Section -->
+    <section class="story-section">
+        <div class="container">
+            <h2 class="activities-title">The Partnership Ecosystem</h2>
+            <p class="eco-sub">Partnering across sectors to create unified impact.</p>
+            <div class="activities-divider"></div>
+            <p class="story-text eco-intro">Our ecosystem is a network of capacity and capability. Together, we amplify resources, reduce waste, and deliver greater impact for people and communities.</p>
+
+            <div class="eco-grid">
+                <div class="eco-card">
+                    <h4>BUSINESSES &amp; MANUFACTURERS</h4>
+                    <p>Provide goods, services, expertise, and financial support. Embed impact into operations.</p>
+                </div>
+                <div class="eco-card">
+                    <h4>UNIVERSITIES</h4>
+                    <p>Advance research, develop talent, and co-create solutions for real-world challenges.</p>
+                </div>
+                <div class="eco-card">
+                    <h4>LOGISTICS &amp; TRANSPORTATION PARTNERS</h4>
+                    <p>Move goods efficiently and safely. Expand reach and reduce cost and emissions.</p>
+                </div>
+                <div class="eco-card">
+                    <h4>GOVERNMENT &amp; POLICY PARTNERS</h4>
+                    <p>Enable with policy, data, and infrastructure. Support, don't usurp, community solutions.</p>
+                </div>
+                <div class="eco-card">
+                    <h4>NONPROFITS</h4>
+                    <p>Deliver direct services and programs. Collaborate and refer&mdash;empower each other, don't compete.</p>
+                </div>
+                <div class="eco-card">
+                    <h4>TECHNOLOGY PARTNERS</h4>
+                    <p>Provide platforms, tools, and data solutions that drive visibility, intelligence, and efficiency.</p>
+                </div>
+                <div class="eco-card">
+                    <h4>ASSOCIATIONS &amp; NETWORKS</h4>
+                    <p>Convene members, set standards, and mobilize collective action across sectors.</p>
+                </div>
+                <div class="eco-card">
+                    <h4>COMMUNITIES</h4>
+                    <p>Define needs, share local knowledge, and lead solutions that build resilience and well-being.</p>
+                </div>
+            </div>
+
+            <div class="eco-callout">
+                <p><strong>Stronger together.</strong> We don't just partner&mdash;we partner with purpose. Referral over competition. Collective impact over isolated effort.</p>
+            </div>
+
+            <div class="eco-callout">
+                <h4>COOPERATIVE ADVANTAGE</h4>
+                <p>We aggregate buying power, share logistics capacity, and provide back-office support to amplify the impact of smaller organizations.</p>
+            </div>
+
+            <div class="eco-banner">
+                <h3>A NETWORK THAT MULTIPLIES IMPACT</h3>
+                <p>Shared resources. Shared knowledge. Shared commitment.</p>
+                <div class="eco-chips">
+                    <span>Greater Reach</span>
+                    <span>Lower Cost</span>
+                    <span>Reduced Risk</span>
+                    <span>Stronger Communities</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Marketplace Cards Section -->
     <section class="activities-section">
         <div class="container">
@@ -262,6 +536,103 @@
         <div class="marketplace-parallax-content">
             <h2>The Supply Chain Project Marketplace</h2>
             <p>Discover a whole new approach to connecting industry professionals, logistics providers and distribution software providers with the most at-risk non-profits that need the capability to rely on their supply chain.</p>
+        </div>
+    </section>
+
+    <!-- Orchestrating the Ecosystem Section -->
+    <section class="story-section" style="background: var(--gray-100);">
+        <div class="container">
+            <h2 class="activities-title">Orchestrating the Ecosystem</h2>
+            <p class="eco-sub">TSCP connects and mobilizes a trusted network to deliver measurable impact.</p>
+            <div class="activities-divider"></div>
+            <p class="orch-lead">We orchestrate. Our partners operate. Together, we multiply impact.</p>
+
+            <div class="orch-grid">
+                <aside class="orch-rail">
+                    <div class="orch-rail-item">
+                        <h4>WHERE DO YOU FIT?</h4>
+                        <p>Every organization has a role to play.</p>
+                    </div>
+                    <div class="orch-rail-item">
+                        <h4>WHAT CAN YOU CONTRIBUTE?</h4>
+                        <p>Share your resources, capabilities, and connections.</p>
+                    </div>
+                    <div class="orch-rail-item">
+                        <h4>TOGETHER, WE CREATE VALUE</h4>
+                        <p>Better matches. Fewer miles. Lower cost. Greater impact.</p>
+                    </div>
+                </aside>
+
+                <div class="orch-roles">
+                    <div class="orch-role">
+                        <h4>BUSINESSES</h4>
+                        <ul>
+                            <li>Supply resources</li>
+                            <li>Invest and innovate</li>
+                            <li>Create economic value</li>
+                        </ul>
+                    </div>
+                    <div class="orch-role">
+                        <h4>TECHNOLOGY PARTNERS</h4>
+                        <ul>
+                            <li>Provide tools</li>
+                            <li>Enable visibility</li>
+                            <li>Drive efficiency</li>
+                        </ul>
+                    </div>
+                    <div class="orch-role">
+                        <h4>LOGISTICS PARTNERS</h4>
+                        <ul>
+                            <li>Warehouse and fulfillment capacity</li>
+                            <li>Manage flow and efficiency</li>
+                        </ul>
+                    </div>
+                    <div class="orch-role">
+                        <h4>TRANSPORTATION PARTNERS</h4>
+                        <ul>
+                            <li>Move resources</li>
+                            <li>Expand reach</li>
+                            <li>Reduce miles</li>
+                        </ul>
+                    </div>
+                    <div class="orch-role">
+                        <h4>STRATEGIC MARKETPLACE PARTNERS</h4>
+                        <ul>
+                            <li>Retailers, manufacturers, suppliers, funders</li>
+                            <li>Provide products, funding, or in-kind support</li>
+                        </ul>
+                    </div>
+                    <div class="orch-role">
+                        <h4>NONPROFITS</h4>
+                        <ul>
+                            <li>Understand local needs</li>
+                            <li>Deliver solutions</li>
+                            <li>Strengthen communities</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <aside class="orch-rail">
+                    <div class="orch-rail-item">
+                        <h4>PRIVATE INDUSTRY LEADERSHIP</h4>
+                        <p>The TSCP model is private-sector led and impact driven.</p>
+                    </div>
+                    <div class="orch-rail-item">
+                        <h4>GOVERNMENT AS PARTNER</h4>
+                        <p>Government can enable through policy, data, and infrastructure&mdash;not by funding the ecosystem.</p>
+                    </div>
+                    <div class="orch-rail-item">
+                        <h4>THE ECONOMIC CASE STANDS ON ITS OWN</h4>
+                        <p>We build resilient systems that create value independently.</p>
+                    </div>
+                </aside>
+            </div>
+
+            <div class="orch-banner">
+                <p>We do not own every asset. We orchestrate the ecosystem. Our partners operate where they create the most value.</p>
+            </div>
+
+            <p class="orch-closing">Where does your organization fit? What resources or capabilities can you contribute?</p>
         </div>
     </section>
 

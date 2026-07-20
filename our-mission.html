@@ -11,6 +11,217 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@700;800;900&display=swap" rel="stylesheet">
+    <style>
+        /* =============================================
+           Strategy Sections (Vision, Mission, Capabilities, Enablers)
+           ============================================= */
+        .strategy-sub {
+            font-size: 1.0625rem;
+            color: var(--gray-600);
+            text-align: center;
+            margin: -32px auto 40px;
+            max-width: 720px;
+        }
+
+        .strategy-statement {
+            font-family: var(--font-display);
+            font-size: clamp(1.25rem, 2.2vw, 1.75rem);
+            font-weight: 700;
+            color: var(--dark);
+            text-align: center;
+            line-height: 1.5;
+            max-width: 860px;
+            margin: 0 auto 48px;
+        }
+
+        .strategy-intro {
+            text-align: center;
+            max-width: 820px;
+            margin: 0 auto 48px;
+        }
+
+        .strategy-grid {
+            display: grid;
+            gap: 28px;
+            margin-bottom: 48px;
+        }
+
+        .strategy-grid-3 {
+            grid-template-columns: repeat(3, 1fr);
+        }
+
+        .strategy-grid-4 {
+            grid-template-columns: repeat(4, 1fr);
+        }
+
+        .strategy-card {
+            background: var(--white);
+            border-radius: 8px;
+            border-top: 3px solid var(--primary);
+            padding: 32px 24px;
+            text-align: center;
+            box-shadow: var(--shadow-sm);
+            transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow var(--transition);
+        }
+
+        .strategy-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .strategy-card-title {
+            font-family: var(--font-primary);
+            font-size: 0.9375rem;
+            font-weight: 800;
+            letter-spacing: 1.5px;
+            color: var(--dark);
+            margin-bottom: 10px;
+        }
+
+        .strategy-card-text {
+            font-size: 0.9375rem;
+            color: var(--gray-700);
+            line-height: 1.7;
+        }
+
+        .strategy-icon {
+            width: 44px;
+            height: 44px;
+            margin: 0 auto 16px;
+            color: var(--primary);
+        }
+
+        .strategy-icon svg {
+            width: 100%;
+            height: 100%;
+        }
+
+        .strategy-closing {
+            font-family: var(--font-display);
+            font-size: clamp(1.125rem, 2vw, 1.5rem);
+            font-weight: 800;
+            color: var(--primary);
+            text-align: center;
+        }
+
+        /* Mission steps */
+        .strategy-steps {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 24px;
+            margin-bottom: 48px;
+        }
+
+        .strategy-step {
+            background: var(--gray-100);
+            border-radius: 8px;
+            padding: 28px 16px;
+            text-align: center;
+        }
+
+        .strategy-step-num {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            background: var(--primary);
+            color: var(--white);
+            font-weight: 800;
+            font-size: 1.125rem;
+            margin-bottom: 14px;
+        }
+
+        /* Formula banner */
+        .strategy-formula {
+            background: var(--dark);
+            color: var(--white);
+            border-left: 4px solid var(--accent);
+            border-radius: 8px;
+            padding: 28px 24px;
+            text-align: center;
+            font-family: var(--font-display);
+            font-weight: 800;
+            font-size: clamp(1.0625rem, 2vw, 1.375rem);
+            margin-bottom: 48px;
+        }
+
+        /* Enabler cards */
+        .strategy-enabler-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 28px;
+            margin-bottom: 48px;
+        }
+
+        .strategy-enabler {
+            background: var(--gray-100);
+            border-radius: 8px;
+            border-top: 3px solid var(--accent);
+            padding: 28px 24px;
+        }
+
+        .strategy-enabler-head {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 16px;
+        }
+
+        .strategy-enabler-num {
+            flex-shrink: 0;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 34px;
+            height: 34px;
+            border-radius: 50%;
+            background: var(--accent);
+            color: var(--dark);
+            font-weight: 800;
+            font-size: 0.9375rem;
+        }
+
+        .strategy-enabler .strategy-card-title {
+            margin-bottom: 0;
+        }
+
+        .strategy-enabler .story-list {
+            margin-bottom: 0;
+        }
+
+        .strategy-enabler .story-list li {
+            margin-bottom: 12px;
+        }
+
+        .strategy-enabler .story-list li:last-child {
+            margin-bottom: 0;
+        }
+
+        /* Strategy sections responsive */
+        @media (max-width: 992px) {
+            .strategy-grid-3 {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .strategy-grid-4 {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .strategy-steps {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .strategy-grid-3,
+            .strategy-grid-4,
+            .strategy-steps {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
 </head>
 <body>
 
@@ -301,6 +512,292 @@
                             </div>
                         </div>
                     </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Our Vision Section -->
+    <section class="story-section" style="background: var(--gray-100);">
+        <div class="container">
+            <h2 class="activities-title">Our Vision</h2>
+            <div class="activities-divider"></div>
+
+            <p class="strategy-statement">A world where every available resource reaches the people and places that need it most.</p>
+
+            <div class="strategy-grid strategy-grid-3">
+                <div class="strategy-card">
+                    <h3 class="strategy-card-title">STRONGER COMMUNITIES</h3>
+                    <p class="strategy-card-text">More capacity. Better outcomes.</p>
+                </div>
+                <div class="strategy-card">
+                    <h3 class="strategy-card-title">RESILIENT SYSTEMS</h3>
+                    <p class="strategy-card-text">Less waste. More readiness.</p>
+                </div>
+                <div class="strategy-card">
+                    <h3 class="strategy-card-title">SUSTAINABLE IMPACT</h3>
+                    <p class="strategy-card-text">Better for people. Better for the planet.</p>
+                </div>
+            </div>
+
+            <p class="strategy-closing">We connect good to good&mdash;at the speed of need.</p>
+        </div>
+    </section>
+
+    <!-- Our Mission Statement Section -->
+    <section class="story-section">
+        <div class="container">
+            <h2 class="activities-title">Our Mission</h2>
+            <div class="activities-divider"></div>
+
+            <p class="strategy-statement">To orchestrate the movement of surplus and underutilized resources to strengthen communities, reduce waste, and create measurable impact.</p>
+
+            <div class="strategy-steps">
+                <div class="strategy-step">
+                    <span class="strategy-step-num">1</span>
+                    <h3 class="strategy-card-title">SEE</h3>
+                    <p class="strategy-card-text">Make hidden resources visible.</p>
+                </div>
+                <div class="strategy-step">
+                    <span class="strategy-step-num">2</span>
+                    <h3 class="strategy-card-title">ASSESS</h3>
+                    <p class="strategy-card-text">Understand needs and capacity.</p>
+                </div>
+                <div class="strategy-step">
+                    <span class="strategy-step-num">3</span>
+                    <h3 class="strategy-card-title">MATCH</h3>
+                    <p class="strategy-card-text">Intelligently connect supply to need.</p>
+                </div>
+                <div class="strategy-step">
+                    <span class="strategy-step-num">4</span>
+                    <h3 class="strategy-card-title">MOBILIZE</h3>
+                    <p class="strategy-card-text">Move resources efficiently.</p>
+                </div>
+                <div class="strategy-step">
+                    <span class="strategy-step-num">5</span>
+                    <h3 class="strategy-card-title">MEASURE</h3>
+                    <p class="strategy-card-text">Prove impact and drive improvement.</p>
+                </div>
+            </div>
+
+            <p class="strategy-closing">Right resource. Right place. Right time. Right impact.</p>
+        </div>
+    </section>
+
+    <!-- Our Core Capabilities Section -->
+    <section class="story-section" style="background: var(--gray-100);">
+        <div class="container">
+            <h2 class="activities-title">Our Core Capabilities</h2>
+            <div class="activities-divider"></div>
+            <p class="strategy-sub">End-to-end capabilities that turn availability into impact.</p>
+
+            <div class="strategy-grid strategy-grid-3">
+                <div class="strategy-card">
+                    <span class="strategy-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+                    </span>
+                    <h3 class="strategy-card-title">VISIBILITY</h3>
+                    <p class="strategy-card-text">Surface hidden supply and waste.</p>
+                </div>
+                <div class="strategy-card">
+                    <span class="strategy-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><rect x="8" y="2" width="8" height="4" rx="1" ry="1"/></svg>
+                    </span>
+                    <h3 class="strategy-card-title">ASSESSMENT</h3>
+                    <p class="strategy-card-text">Understand local need and partner readiness.</p>
+                </div>
+                <div class="strategy-card">
+                    <span class="strategy-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+                    </span>
+                    <h3 class="strategy-card-title">MATCHING</h3>
+                    <p class="strategy-card-text">Intelligently pair resources with capacity.</p>
+                </div>
+                <div class="strategy-card">
+                    <span class="strategy-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+                    </span>
+                    <h3 class="strategy-card-title">ORCHESTRATION</h3>
+                    <p class="strategy-card-text">Coordinate logistics, partners, and compliance.</p>
+                </div>
+                <div class="strategy-card">
+                    <span class="strategy-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                    </span>
+                    <h3 class="strategy-card-title">GOVERNANCE</h3>
+                    <p class="strategy-card-text">Apply human judgment, ethics, and AI.</p>
+                </div>
+                <div class="strategy-card">
+                    <span class="strategy-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
+                    </span>
+                    <h3 class="strategy-card-title">MEASUREMENT</h3>
+                    <p class="strategy-card-text">Track outcomes and improve continuously.</p>
+                </div>
+            </div>
+
+            <p class="strategy-formula">People + Technology + Partners + Purpose = Measurable Impact</p>
+        </div>
+    </section>
+
+    <!-- Five Strategic Enablers Section -->
+    <section class="story-section">
+        <div class="container">
+            <h2 class="activities-title">Five Strategic Enablers</h2>
+            <div class="activities-divider"></div>
+            <p class="strategy-sub">The pillars that power our operating model.</p>
+
+            <p class="story-text strategy-intro">These enablers work together as an integrated system&mdash;not as sequential steps&mdash;to create measurable impact for people, communities, and the planet.</p>
+
+            <div class="strategy-enabler-grid">
+                <div class="strategy-enabler">
+                    <div class="strategy-enabler-head">
+                        <span class="strategy-enabler-num">1</span>
+                        <h3 class="strategy-card-title">VISIBILITY TO SUPPLY AND NEED</h3>
+                    </div>
+                    <ul class="story-list">
+                        <li>
+                            <span class="list-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v4M12 16h.01"/></svg>
+                            </span>
+                            <span>See across inventory, assets, capacity, and community needs</span>
+                        </li>
+                        <li>
+                            <span class="list-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v4M12 16h.01"/></svg>
+                            </span>
+                            <span>Real-time, multi-source visibility</span>
+                        </li>
+                        <li>
+                            <span class="list-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v4M12 16h.01"/></svg>
+                            </span>
+                            <span>Identify what&rsquo;s available, where it is, and who needs it.</span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="strategy-enabler">
+                    <div class="strategy-enabler-head">
+                        <span class="strategy-enabler-num">2</span>
+                        <h3 class="strategy-card-title">MATCHING AND ALLOCATION</h3>
+                    </div>
+                    <ul class="story-list">
+                        <li>
+                            <span class="list-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v4M12 16h.01"/></svg>
+                            </span>
+                            <span>Intelligent matching of supply to need</span>
+                        </li>
+                        <li>
+                            <span class="list-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v4M12 16h.01"/></svg>
+                            </span>
+                            <span>Prioritize by impact, equity, and urgency</span>
+                        </li>
+                        <li>
+                            <span class="list-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v4M12 16h.01"/></svg>
+                            </span>
+                            <span>Allocate the right resources to the right outcomes.</span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="strategy-enabler">
+                    <div class="strategy-enabler-head">
+                        <span class="strategy-enabler-num">3</span>
+                        <h3 class="strategy-card-title">ORCHESTRATION AND EXECUTION</h3>
+                    </div>
+                    <ul class="story-list">
+                        <li>
+                            <span class="list-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v4M12 16h.01"/></svg>
+                            </span>
+                            <span>Coordinate partners, resources, and activities</span>
+                        </li>
+                        <li>
+                            <span class="list-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v4M12 16h.01"/></svg>
+                            </span>
+                            <span>Optimize routes, schedules, and workflows</span>
+                        </li>
+                        <li>
+                            <span class="list-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v4M12 16h.01"/></svg>
+                            </span>
+                            <span>Execute with discipline, adaptability, and speed.</span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="strategy-enabler">
+                    <div class="strategy-enabler-head">
+                        <span class="strategy-enabler-num">4</span>
+                        <h3 class="strategy-card-title">RESOURCE MOBILIZATION AND SUSTAINABLE IMPACT</h3>
+                    </div>
+                    <ul class="story-list">
+                        <li>
+                            <span class="list-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v4M12 16h.01"/></svg>
+                            </span>
+                            <span>Secure and steward financial, material, and capacity resources</span>
+                        </li>
+                        <li>
+                            <span class="list-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v4M12 16h.01"/></svg>
+                            </span>
+                            <span>Build resilient, diversified support</span>
+                        </li>
+                        <li>
+                            <span class="list-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v4M12 16h.01"/></svg>
+                            </span>
+                            <span>Reinvest to expand impact over time.</span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="strategy-enabler">
+                    <div class="strategy-enabler-head">
+                        <span class="strategy-enabler-num">5</span>
+                        <h3 class="strategy-card-title">MEASUREMENT AND SUSTAINABLE IMPACT</h3>
+                    </div>
+                    <ul class="story-list">
+                        <li>
+                            <span class="list-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v4M12 16h.01"/></svg>
+                            </span>
+                            <span>Measure what matters across people, planet, and performance</span>
+                        </li>
+                        <li>
+                            <span class="list-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v4M12 16h.01"/></svg>
+                            </span>
+                            <span>Monitor outcomes and continuously improve</span>
+                        </li>
+                        <li>
+                            <span class="list-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v4M12 16h.01"/></svg>
+                            </span>
+                            <span>Drive long-term, sustainable impact at scale.</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="strategy-grid strategy-grid-4">
+                <div class="strategy-card">
+                    <h3 class="strategy-card-title">ENABLERS, NOT STEPS</h3>
+                    <p class="strategy-card-text">These enablers operate in concert, continuously reinforcing one another.</p>
+                </div>
+                <div class="strategy-card">
+                    <h3 class="strategy-card-title">HUMAN-CENTERED</h3>
+                    <p class="strategy-card-text">People and communities remain at the center of every decision and action.</p>
+                </div>
+                <div class="strategy-card">
+                    <h3 class="strategy-card-title">PRINCIPLES FIRST</h3>
+                    <p class="strategy-card-text">Ethics, equity, transparency, and trust guide how we operate.</p>
+                </div>
+                <div class="strategy-card">
+                    <h3 class="strategy-card-title">SYSTEMS THINKING</h3>
+                    <p class="strategy-card-text">Integrated enablers create exponential impact&mdash;not isolated activity.</p>
                 </div>
             </div>
         </div>
