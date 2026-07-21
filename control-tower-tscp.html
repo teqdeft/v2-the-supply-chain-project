@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Our Team - The Supply Chain Project</title>
+    <title>Control Tower - The Supply Chain Project</title>
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="css/ourstory.css">
     <link rel="stylesheet" href="css/responsive.css">
@@ -11,81 +11,65 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@700;800;900&display=swap" rel="stylesheet">
     <style>
-        /* Team Section Styles */
-        .team-section {
+        /* Control Tower intro */
+        .ct-intro {
+            max-width: 860px;
+            margin: 0 auto;
+        }
+        .ct-intro .story-divider {
+            margin-left: 0;
+        }
+        /* Key Capabilities section */
+        .capabilities-section {
             padding: 80px 0;
-            background: var(--white);
+            background: var(--gray-100);
         }
-
-        .team-grid {
-            display: grid;
-            grid-template-columns: repeat(5, 1fr);
-            gap: 28px;
+        .capabilities-inner {
+            max-width: 860px;
+            margin: 0 auto;
         }
-
-        .team-card {
-            text-align: center;
-            padding: 24px;
-        }
-
-        .team-avatar {
-            width: 100px;
-            height: 100px;
-            border-radius: 50%;
-            background: var(--primary);
-            color: white;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.5rem;
-            font-weight: 700;
-            margin: 0 auto 16px;
-            font-family: var(--font-display);
-        }
-
-        .team-photo {
-            width: 120px;
-            height: 120px;
-            border-radius: 50%;
-            object-fit: cover;
-            margin: 0 auto 16px;
-            display: block;
-            border: 3px solid var(--primary);
-        }
-
-        .team-card h3 {
+        .capabilities-intro {
             font-size: 1rem;
-            font-weight: 700;
+            color: var(--gray-700);
+            line-height: 1.8;
+            margin-bottom: 16px;
+        }
+        .capabilities-section .story-list {
+            margin-top: 24px;
+            margin-bottom: 32px;
+        }
+        .capabilities-section .story-list li {
+            background: var(--white);
+            border-left: 3px solid var(--primary);
+            border-radius: 8px;
+            padding: 16px 20px;
+            margin-bottom: 14px;
+            box-shadow: 0 4px 16px rgba(26, 26, 46, 0.06);
+        }
+        .capabilities-section .story-list li strong {
             color: var(--dark);
-            margin-bottom: 4px;
         }
-
-        .team-card p {
-            font-size: 0.8125rem;
-            color: var(--gray-600);
+        .ct-email {
+            font-size: 1.0625rem;
+            font-weight: 600;
+            color: var(--dark);
+            background: var(--white);
+            border-left: 4px solid var(--accent);
+            border-radius: 8px;
+            padding: 20px 24px;
+            box-shadow: 0 4px 16px rgba(26, 26, 46, 0.06);
         }
-
-        @media (max-width: 992px) {
-            .team-grid {
-                grid-template-columns: repeat(3, 1fr);
-            }
+        .ct-email a {
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 700;
         }
-
+        .ct-email a:hover {
+            color: var(--accent);
+        }
         @media (max-width: 768px) {
-            .team-section {
+            .capabilities-section {
                 padding: 56px 0;
-            }
-
-            .team-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-        }
-
-        @media (max-width: 480px) {
-            .team-grid {
-                grid-template-columns: 1fr;
-                max-width: 300px;
-                margin: 0 auto;
             }
         }
     </style>
@@ -158,150 +142,81 @@
 
     <!-- Page Hero Banner -->
     <section class="page-hero">
-        <div class="page-hero-bg" style="background-image: url('images/team/cover84.jpg')"></div>
+        <div class="page-hero-bg" style="background-image: url('images/cover-tscp-1.jpg')"></div>
         <div class="page-hero-overlay"></div>
         <div class="page-hero-content">
-            <h1>Our Team</h1>
+            <h1>Control Tower</h1>
             <div class="breadcrumb">
-                <a href="/">ABOUT US</a> / <span>OUR TEAM</span>
+                <a href="/">SUPPORT</a> / <span>SCP TOOL CONTROL TOWER</span>
             </div>
         </div>
     </section>
 
-    <!-- Intro Section -->
+    <!-- What is the Control Tower Section -->
     <section class="story-section">
         <div class="container">
-            <div class="story-grid">
-                <div class="story-col">
-                    <h2 class="story-heading">We are building a consortium of donor enterprises.</h2>
-                    <div class="story-divider"></div>
+            <div class="ct-intro">
+                <h2 class="story-heading">What is The Supply Chain Project's Control Tower?</h2>
+                <div class="story-divider"></div>
 
-                    <p class="story-text">Our goal is to engage global supply chains to help address the global disparities in access to food, medical equipment, and medical supplies.</p>
+                <p class="story-text">The Supply Chain Project's Intelligent Automated Control Tower provides visibility to monitor, manage, and controls decisions and execution across business workflows and across marketplace partners to optimize the entire network.</p>
 
-                    <p class="story-text">By creating a consortium of donor enterprises, service providers, supply chain practitioners, and technology solutions. We will together drive a more intelligent solution for other nonprofits engaged in supporting the delivery of basic human needs.</p>
-                </div>
-
-                <div class="story-col">
-                    <h2 class="story-heading">Our goal&mdash;to disrupt and reconfigure the &ldquo;Human Needs Supply Chain&rdquo;!</h2>
-                    <div class="story-divider"></div>
-
-                    <p class="story-highlight"><strong>Our aim is to serve those that serve others.</strong></p>
-
-                    <ul class="story-list">
-                        <li>
-                            <span class="list-icon">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v4M12 16h.01"/></svg>
-                            </span>
-                            <span>Bringing together a group of innovative multinational corporations, regional businesses, and nonprofit partners to develop a technology-based solution to increase supply chain efficiency for Non-Profits dramatically.</span>
-                        </li>
-                    </ul>
-
-                    <p class="story-text">Our team is composed of industry experts that aim to change the current reality of our industry for the benefit of humanity.</p>
-
-                    <p class="story-text">Our goal is to recruit a wide range of members from across the spectrum of food producers, medical equipment, clothing, and medical supply manufacturers. To include professionals from procurement, demand planning, sales, operations planning, distribution, transportation, and logistics. We will provide a matching service where local needs are paired with available advisory and execution resources.</p>
-
-                    <a href="/contact-us.html" class="btn-become-member">BECOME A MEMBER</a>
-                </div>
+                <p class="story-text">The Control Tower uses machine learning AI and delivers a global intelligent suite of supply chain workflow modules to engage non-profits to marketplace partners, and orchestrates companies, people and things to collaborate together in near real-time. With the development of multi-business, consumer-driven networks, advanced control towers provides real-time visibility, collaboration and powerful AI capabilities to move beyond decision-support to decision-making and autonomous control.</p>
             </div>
         </div>
     </section>
 
-    <!-- Team Grid Section -->
-    <section class="team-section">
+    <!-- Key Capabilities Section -->
+    <section class="capabilities-section">
         <div class="container">
-            <h2 class="activities-title">Meet the Team</h2>
+            <h2 class="activities-title">Key Capabilities of a Intelligent Automated Control Tower</h2>
             <div class="activities-divider"></div>
 
-            <div class="team-grid">
-                <div class="team-card">
-                    <img src="images/team/staff-001.jpg" alt="Steven Robinson" class="team-photo">
-                    <h3>Steven Robinson</h3>
-                    <p>Founder &amp; CEO</p>
-                </div>
+            <div class="capabilities-inner">
+                <p class="capabilities-intro">Control towers offer considerable benefits and capabilities, from end-to-end visibility to advanced automation.</p>
 
-                <div class="team-card">
-                    <img src="images/team/staff-005.jpg" alt="Carol Wylie" class="team-photo">
-                    <h3>Carol Wylie</h3>
-                    <p>Co-Founder &amp; COO</p>
-                </div>
+                <p class="capabilities-intro">Here are some of the key capabilities to look for in a control tower solution:</p>
 
-                <div class="team-card">
-                    <img src="images/team/Karen_Henken.jfif" alt="Karen Henken" class="team-photo">
-                    <h3>Karen Henken</h3>
-                    <p>Co-founder - Secretary</p>
-                </div>
+                <ul class="story-list">
+                    <li>
+                        <span class="list-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v4M12 16h.01"/></svg>
+                        </span>
+                        <span><strong>End-to-end Visibility</strong> &ndash; visibility across supply chain partners, including suppliers, contract manufacturers, transportation carriers, third-party logistics.</span>
+                    </li>
+                    <li>
+                        <span class="list-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v4M12 16h.01"/></svg>
+                        </span>
+                        <span><strong>Collaborative information sharing</strong> &ndash; share information and collaborate in real-time.</span>
+                    </li>
+                    <li>
+                        <span class="list-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v4M12 16h.01"/></svg>
+                        </span>
+                        <span><strong>Early warning alerts and exception management</strong> &ndash; resolve supply chain disruptions before they disrupt your business.</span>
+                    </li>
+                    <li>
+                        <span class="list-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v4M12 16h.01"/></svg>
+                        </span>
+                        <span><strong>Predictive and prescriptive decision-support</strong> &ndash; using predictive and prescriptive analytics.</span>
+                    </li>
+                    <li>
+                        <span class="list-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v4M12 16h.01"/></svg>
+                        </span>
+                        <span><strong>Autonomous decision-making and control</strong> &ndash; take the robot out of the human and boost productivity.</span>
+                    </li>
+                    <li>
+                        <span class="list-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v4M12 16h.01"/></svg>
+                        </span>
+                        <span><strong>Cognitive</strong> &ndash; the self-correcting supply chain with decision-making and machine learning.</span>
+                    </li>
+                </ul>
 
-                <div class="team-card">
-                    <img src="images/team/alanBarnard.jpg" alt="Dr. Alan Barnhard" class="team-photo">
-                    <h3>Dr. Alan Barnhard</h3>
-                    <p>Advisor: CEO, Goldratt Research Labs</p>
-                </div>
-
-                <div class="team-card">
-                    <img src="images/team/CJ_Nord.jpeg" alt="C.J. Nord" class="team-photo">
-                    <h3>C.J. Nord</h3>
-                    <p>Global Nonprofit Leader</p>
-                </div>
-
-                <div class="team-card">
-                    <img src="images/team/Chad_1.jpg" alt="Chad Stricklin" class="team-photo">
-                    <h3>Chad (&#26102;&#32858;&#26480;) Stricklin</h3>
-                    <p>Global Gifts and Inkind Donations</p>
-                </div>
-
-                <div class="team-card">
-                    <img src="images/team/Hale.jpg" alt="Christopher Hale" class="team-photo">
-                    <h3>Christopher Hale</h3>
-                    <p>Board Advisor</p>
-                </div>
-
-                <div class="team-card">
-                    <img src="images/team/Jill_photo.jpg" alt="Dr. Jillandra Rovaris" class="team-photo">
-                    <h3>Dr. Jillandra Rovaris</h3>
-                    <p>Board of Director</p>
-                </div>
-
-                <div class="team-card">
-                    <img src="images/team/virnia-photo.jpg" alt="Virnia Patzi" class="team-photo">
-                    <h3>Virnia Patzi</h3>
-                    <p>Program Director</p>
-                </div>
-
-                <div class="team-card">
-                    <img src="images/team/Rodger_Cravens.jpg" alt="Rodger Cravens" class="team-photo">
-                    <h3>Rodger Cravens</h3>
-                    <p>Distribution</p>
-                </div>
-
-                <div class="team-card">
-                    <img src="images/team/Simmons_E.jpg" alt="Erica Simmons" class="team-photo">
-                    <h3>Erica Simmons</h3>
-                    <p>Global Partnerships Practitioner Leader</p>
-                </div>
-
-                <div class="team-card">
-                    <img src="images/team/Deasy_Elena.png" alt="Deasy Helena" class="team-photo">
-                    <h3>Deasy Helena</h3>
-                    <p>Marketing &amp; Communications</p>
-                </div>
-
-                <div class="team-card">
-                    <img src="images/team/Elena_Lopez.png" alt="Elena Lopez" class="team-photo">
-                    <h3>Elena Lopez</h3>
-                    <p>Volunteers</p>
-                </div>
-
-                <div class="team-card">
-                    <img src="images/team/Naren_Baliga.png" alt="Naren Baliga" class="team-photo">
-                    <h3>Naren Baliga</h3>
-                    <p>Global Technology Leader</p>
-                </div>
-
-                <div class="team-card">
-                    <img src="images/team/Donnell.jpg" alt="Donnell Moorer Jr" class="team-photo">
-                    <h3>Donnell Moorer Jr</h3>
-                    <p>Consulting Practice Leader</p>
-                </div>
+                <p class="ct-email">eMail us: <a href="mailto:ControlTower@thesupplychainproject.org">ControlTower@thesupplychainproject.org</a></p>
             </div>
         </div>
     </section>
@@ -380,17 +295,6 @@
         </div>
     </section>
 
-    <!-- Marketplace Parallax -->
-    <section class="marketplace-parallax">
-        <div class="marketplace-parallax-bg" style="background-image: url('images/team/cover-tscp-140.jpg')"></div>
-        <div class="marketplace-parallax-overlay"></div>
-        <div class="marketplace-parallax-content">
-            <h2>The Supply Chain Project (TSCP) Multi-Collaborative Marketplace</h2>
-            <p>Did you know that by donating through The Supply Chain Project, you can help support a number of different non-profits? We facilitate contact with different non-profits, so you can be sure that your donation will go to a cause you care about. Plus, you will have access to impact reports that you can customize for your CSR projects. So not only will you be helping out a worthy cause, but you'll also be able to track the impact of your donation.</p>
-            <a href="https://app.thesupplychainproject.org" class="btn-become-member" style="background: var(--accent); color: var(--dark);">MARKETPLACES NEWS</a>
-        </div>
-    </section>
-
     <!-- Collaborate & Optimize Section -->
     <section class="collab-section">
         <div class="container">
@@ -430,15 +334,15 @@
                         <h4>Recent Posts</h4>
                         <ul class="footer-posts">
                             <li>
-                                <a href="https://thesupplychainproject.org/blog-widget/turning-waste-into-impact-dmsca-and-the-supply-chain-project">Turning Waste into Impact: DMSCA and The Supply Chain Project</a>
+                                <a href="/blog-widget/turning-waste-into-impact-dmsca-and-the-supply-chain-project">Turning Waste into Impact: DMSCA and The Supply Chain Project</a>
                                 <span class="post-meta">February 23, 2026</span>
                             </li>
                             <li>
-                                <a href="https://thesupplychainproject.org/blog-widget/non-profit-supply-chains-why-do-they-need-capability-and-why-now">Non-Profit Supply Chains - Why Do They Need Capability? And Why Now?</a>
+                                <a href="/blog-widget/non-profit-supply-chains-why-do-they-need-capability-and-why-now">Non-Profit Supply Chains - Why Do They Need Capability? And Why Now?</a>
                                 <span class="post-meta">June 6, 2024</span>
                             </li>
                             <li>
-                                <a href="https://thesupplychainproject.org/blog-widget/the-dominican-republic-logistics-summit-a-proof-of-the-dra-s-commitment-to-the-regional-development">The Dominican Republic Logistics Summit</a>
+                                <a href="/blog-widget/the-dominican-republic-logistics-summit-a-proof-of-the-dra-s-commitment-to-the-regional-development">The Dominican Republic Logistics Summit</a>
                                 <span class="post-meta">April 26, 2024</span>
                             </li>
                         </ul>
@@ -446,8 +350,8 @@
                     <div class="footer-col">
                         <h4>Resources</h4>
                         <ul class="footer-links">
-                            <li><a href="/policy.html">Privacy Policy</a></li>
-                            <li><a href="/terms-of-use.html">Terms of Use</a></li>
+                            <li><a href="/policy">Privacy Policy</a></li>
+                            <li><a href="/terms-of-use">Terms of Use</a></li>
                             <li><a href="/nfpo-level">Non-For-Profit Organization Solutions</a></li>
                             <li><a href="https://networked.co/c/the-supply-chain-project/">Community Discussions</a></li>
                             <li><a href="https://supplino.com/tscp-supply-chain-assessment-questionnaire/">Supply Chain Assessment</a></li>
@@ -463,7 +367,7 @@
         <div class="footer-bottom">
             <div class="container">
                 <div class="footer-bottom-inner">
-                    <p>&copy; The Supply Chain Project | <a href="/policy.html">Policy</a> | <a href="/terms-of-use.html">Terms of Use</a></p>
+                    <p>&copy; The Supply Chain Project | <a href="/policy">Policy</a> | <a href="/terms-of-use">Terms of Use</a></p>
                     <div class="social-links">
                         <a href="https://www.facebook.com/thesupplychainproject" aria-label="Facebook" target="_blank" rel="noopener">
                             <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
@@ -483,6 +387,6 @@
     <!-- GSAP CDN -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
-    <script src="js/ourteam.js"></script>
+    <script src="js/emergency.js"></script>
 </body>
 </html>

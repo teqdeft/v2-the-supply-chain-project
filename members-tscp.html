@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Membership - The Supply Chain Project</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/ourstory.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@700;800;900&display=swap" rel="stylesheet">
+    <style>
+        .quotes-section {
+            background: var(--dark);
+            padding: 64px 0;
+            color: white;
+        }
+        .quotes-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        .quote-card {
+            text-align: center;
+            padding: 24px;
+        }
+        .quote-card blockquote {
+            font-size: 1.0625rem;
+            line-height: 1.8;
+            color: rgba(255, 255, 255, 0.85);
+            font-style: italic;
+            margin-bottom: 20px;
+            position: relative;
+        }
+        .quote-card cite {
+            font-size: 0.875rem;
+            font-weight: 600;
+            color: var(--accent);
+            font-style: normal;
+        }
+        /* Which one are you? persona buttons */
+        .persona-section {
+            padding: 80px 0;
+            background: var(--white);
+            text-align: center;
+        }
+        .persona-question {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--dark);
+            margin: 32px 0 24px;
+        }
+        .persona-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+        /* Membership CTA band */
+        .member-cta-section {
+            padding: 80px 0;
+            background: var(--gray-100);
+            text-align: center;
+        }
+        .member-cta-section .section-intro {
+            font-size: 1.0625rem;
+            color: var(--gray-700);
+            line-height: 1.8;
+            max-width: 760px;
+            margin: 0 auto 32px;
+        }
+        /* Membership cards */
+        .member-cards-section {
+            padding: 80px 0;
+            background: var(--white);
+        }
+        .member-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 28px;
+        }
+        .member-card {
+            background: var(--white);
+            border-top: 4px solid var(--primary);
+            border-radius: 8px;
+            padding: 32px 28px;
+            box-shadow: 0 4px 16px rgba(26, 26, 46, 0.08);
+            display: flex;
+            flex-direction: column;
+        }
+        .member-card h3 {
+            font-family: var(--font-display);
+            font-size: 1.25rem;
+            font-weight: 800;
+            color: var(--dark);
+            margin-bottom: 14px;
+        }
+        .member-card p {
+            font-size: 0.9375rem;
+            color: var(--gray-700);
+            line-height: 1.7;
+            margin-bottom: 24px;
+            flex: 1;
+        }
+        .member-card .btn-become-member {
+            align-self: flex-start;
+        }
+        .marketplace-parallax-content .btn-become-member {
+            margin-top: 24px;
+            display: inline-block;
+        }
+        @media (max-width: 992px) {
+            .member-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        @media (max-width: 768px) {
+            .quotes-grid {
+                grid-template-columns: 1fr;
+            }
+            .member-grid {
+                grid-template-columns: 1fr;
+            }
+            .persona-section,
+            .member-cta-section,
+            .member-cards-section {
+                padding: 56px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header class="header scrolled" id="header">
+        <div class="header-inner">
+            <a href="/" class="logo">
+                <img src="images/logo-white-text.png" alt="The Supply Chain Project">
+            </a>
+            <nav class="main-nav" id="mainNav">
+                <ul class="nav-list">
+                    <li><a href="/">Home</a></li>
+                    <li><a href="https://app.thesupplychainproject.org">Marketplace</a></li>
+                    <li class="has-dropdown">
+                        <a href="javascript:void(0)">About Us <span class="arrow">&#9662;</span></a>
+                        <ul class="dropdown">
+                            <li><a href="/our-story.html">Our Story</a></li>
+                            <li><a href="/our-mission.html">Mission</a></li>
+                            <li><a href="/our-services.html">Services</a></li>
+                            <li><a href="/our-technology.html">Technology</a></li>
+                            <li><a href="/our-team.html">Team</a></li>
+                            <li><a href="/contact-us.html">Contact Us</a></li>
+                        </ul>
+                    </li>
+                    <li class="has-dropdown">
+                        <a href="javascript:void(0)">Get Involved <span class="arrow">&#9662;</span></a>
+                        <ul class="dropdown">
+                            <li><a href="/join-network-nonprofits.html">I'm a Nonprofit</a></li>
+                            <li><a href="/donors.html">I'm a Donor</a></li>
+                            <li><a href="/join-network-professional-provider.html">I'm a Professional</a></li>
+                            <li><a href="/cmn-members-access.html">I'm a Corporation</a></li>
+                            <li><a href="/join-network-logistics-provider.html">I'm a Logistics Provider</a></li>
+                            <li><a href="/join-network-service-provider.html">I'm a Service Provider</a></li>
+                            <li><a href="/join-network-technology-provider.html">I'm a Technology Provider</a></li>
+                            <li><a href="/smn-members-access.html">I'm a Student</a></li>
+                            <li><a href="/join-network-volunteer.html">I'm a Volunteer</a></li>
+                        </ul>
+                    </li>
+                    <li class="has-dropdown">
+                        <a href="javascript:void(0)">Support <span class="arrow">&#9662;</span></a>
+                        <ul class="dropdown">
+                            <li><a href="/control-tower-tscp.html">Control Tower</a></li>
+                            <li><a href="/members-tscp.html">Membership</a></li>
+                            <li><a href="/donors.html">Donations</a></li>
+                            <li><a href="/logistics-tscp.html">Logistics</a></li>
+                            <li><a href="/our-technology.html">Technology</a></li>
+                        </ul>
+                    </li>
+                    <li class="has-dropdown">
+                        <a href="javascript:void(0)">Portals <span class="arrow">&#9662;</span></a>
+                        <ul class="dropdown">
+                            <li><a href="/emergency-main.html">Emergency</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+            <div class="header-actions">
+                <a href="https://app.thesupplychainproject.org" class="btn-marketplace">Enter Marketplace</a>
+                <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Page Hero Banner -->
+    <section class="page-hero">
+        <div class="page-hero-bg" style="background-image: url('images/cover-tscp-3.jpg')"></div>
+        <div class="page-hero-overlay"></div>
+        <div class="page-hero-content">
+            <h1>Become a member, unleash your inner changemaker.</h1>
+            <div class="breadcrumb">
+                <a href="/">SUPPORT</a> / <span>MEMBERSHIP</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Which One Are You Section -->
+    <section class="persona-section">
+        <div class="container">
+            <h2 class="activities-title">Create new opportunities for growth while engaging in social impact</h2>
+            <div class="activities-divider"></div>
+            <p class="persona-question">Which one are you?</p>
+            <div class="persona-buttons">
+                <a href="/smn-members-access.html" class="btn-become-member">STUDENT</a>
+                <a href="/join-network-professional-provider.html" class="btn-become-member">PROFESSIONAL</a>
+                <a href="/cmn-members-access.html" class="btn-become-member">CORPORATION</a>
+                <a href="/join-network-volunteer.html" class="btn-become-member">VOLUNTEER</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Membership CTA Section -->
+    <section class="member-cta-section">
+        <div class="container">
+            <h2 class="activities-title">You're a supply chain badass. Put your superpowers to work!</h2>
+            <div class="activities-divider"></div>
+            <p class="section-intro">Join our community, you'll have the opportunity to connect with other like-minded individuals, provide support, and participate in meaningful projects that make a real difference.</p>
+            <a href="https://app.thesupplychainproject.org" class="btn-become-member">REVIEW MEMBERSHIP PLANS</a>
+        </div>
+    </section>
+
+    <!-- Membership Cards Section -->
+    <section class="member-cards-section">
+        <div class="container">
+            <div class="member-grid">
+                <div class="member-card">
+                    <h3>Students</h3>
+                    <p>We seek students who are passionate about making a difference through non-profit work. By joining our community, you'll have access to resources, mentorship and networking opportunities to help you kick-start your career in the non-profit sector.</p>
+                    <a href="/smn-members-access.html" class="btn-become-member">JOIN AS A STUDENT</a>
+                </div>
+                <div class="member-card">
+                    <h3>Industry Professionals</h3>
+                    <p>We seek professionals who are committed to making a positive impact in their communities. By becoming a member, you will have access to exclusive resources, networking opportunities, and consulting projects that can help you make a real difference. Join us today and unlock the full potential of your impact.</p>
+                    <a href="/join-network-professional-provider.html" class="btn-become-member">JOIN AS A PROFESSIONAL</a>
+                </div>
+                <div class="member-card">
+                    <h3>Corporate Enterprises</h3>
+                    <p>We seek corporate enterprises who are committed to the corporate social responsibility in their communities. By joining, you have the opportunity to join forces with like-minded organizations at groundbreaking events.</p>
+                    <a href="/cmn-members-access.html" class="btn-become-member">JOIN AS A CORPORATION</a>
+                </div>
+                <div class="member-card">
+                    <h3>Volunteers</h3>
+                    <p>We seek corporate enterprises who are committed to the corporate social responsibility in their communities. By joining, you have the opportunity to join forces with like-minded organizations at groundbreaking events.</p>
+                    <a href="/join-network-volunteer.html" class="btn-become-member">JOIN AS A VOLUNTEER</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Marketplace Parallax Section -->
+    <section class="marketplace-parallax">
+        <div class="marketplace-parallax-bg" style="background-image: url('images/cover-tscp-4.jpg')"></div>
+        <div class="marketplace-parallax-overlay"></div>
+        <div class="marketplace-parallax-content">
+            <h2>The Supply Chain Project Marketplace</h2>
+            <p>Discover a whole new approach to connecting industry professionals, logistics providers and distribution software providers with the most at-risk non-profits that need the capability to rely on their supply chain.</p>
+            <a href="https://app.thesupplychainproject.org" class="btn-become-member">MARKETPLACE NEWS</a>
+        </div>
+    </section>
+
+    <!-- Marketplace Cards Section -->
+    <section class="activities-section">
+        <div class="container">
+            <h2 class="activities-title">Introducing the Supply Chain Project Marketplace</h2>
+            <div class="activities-divider"></div>
+            <div class="activities-grid">
+                <div class="activity-card">
+                    <div class="activity-img-wrap">
+                        <img src="images/cover-tscp-1.jpg" alt="Consultants">
+                    </div>
+                    <h3>Consultants</h3>
+                    <p class="activity-desc">Consultants bring a wealth of knowledge and experience to the table and help non-profits to identify opportunities for growth and improvement.</p>
+                </div>
+                <div class="activity-card">
+                    <div class="activity-img-wrap">
+                        <img src="images/cover-tscp-2.jpg" alt="Logistics Providers">
+                    </div>
+                    <h3>Logistics Providers</h3>
+                    <p class="activity-desc">Logistics providers are focused on streamlining distribution, allowing you to focus on your mission and vision. Increase operational efficiency, reduce costs, and ultimately make a bigger impact in your community.</p>
+                </div>
+                <div class="activity-card">
+                    <div class="activity-img-wrap">
+                        <img src="images/cover-tscp-3.jpg" alt="Software Providers">
+                    </div>
+                    <h3>Software Providers</h3>
+                    <p class="activity-desc">Software providers are focused on providing you with the tools you need to effectively manage and track your operations, allowing you to focus on achieving your goals.</p>
+                </div>
+                <div class="activity-card">
+                    <div class="activity-img-wrap">
+                        <img src="images/cover-tscp-4.jpg" alt="Industry Professionals">
+                    </div>
+                    <h3>Industry Professionals</h3>
+                    <p class="activity-desc">Industry professionals bring a wealth of knowledge and experience to the table, and their focus is on providing expert guidance and support to help non-profits achieve their goals.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Leadership Quotes Section -->
+    <section class="quotes-section">
+        <div class="container">
+            <div class="quotes-grid">
+                <div class="quote-card">
+                    <blockquote>&ldquo;Our focus is to take the best from the for-profit supply chain world and marry it with the best of the nonprofit arena to create solutions that evens the playing field for Nonprofits. Today no NGO is too small or too big to benefit from an improved supply chain.&rdquo;</blockquote>
+                    <cite>Steve Robinson, CEO and Founder</cite>
+                </div>
+                <div class="quote-card">
+                    <blockquote>&ldquo;Improving and streamlining supply chain activities is critical to non-profit organizations. Simplifying work, streamlining operations, and professionalizing services allow non-profits to spend more of their scarce resources on their mission.&rdquo;</blockquote>
+                    <cite>Carol Wylie, Co-Founder and COO</cite>
+                </div>
+                <div class="quote-card">
+                    <blockquote>&ldquo;The TSCP team partnered with one of its portfolio companies Kountable, and found a local distributor in Rwanda. The Supply Chain Project brought together its network of global experts and logistics partners to to deliver over 9 million malaria test kits to Rwanda.&rdquo;</blockquote>
+                    <cite>Christopher Hale, CEO and Founder Kountable</cite>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Collaborate & Optimize Section -->
+    <section class="collab-section">
+        <div class="container">
+            <div class="collab-grid">
+                <div class="collab-item">
+                    <h3>Collaborate</h3>
+                    <p>Build strategic relationships with marketplace participants.</p>
+                </div>
+                <div class="collab-item">
+                    <h3>Optimize</h3>
+                    <p>Improve your processes to increase your impact</p>
+                </div>
+            </div>
+            <div class="collab-cta">
+                <a href="/contact-us.html" class="btn-connect">CONNECT WITH US</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer" id="footer">
+        <div class="footer-top">
+            <div class="container">
+                <div class="footer-grid">
+                    <div class="footer-col footer-about">
+                        <a href="/" class="footer-logo">
+                            <img src="images/logo-white-text.png" alt="The Supply Chain Project">
+                        </a>
+                        <p>The Supply Chain Project enables innovative partnerships between non-profits, businesses, service providers, and industry professionals that helps them drive measurable improvements.</p>
+                        <form class="footer-newsletter" id="newsletterForm">
+                            <input type="email" placeholder="Your Email" required>
+                            <input type="number" placeholder="What is 6 + 3 ?" required>
+                            <button type="submit" class="btn-newsletter">Mailing List</button>
+                        </form>
+                    </div>
+                    <div class="footer-col">
+                        <h4>Recent Posts</h4>
+                        <ul class="footer-posts">
+                            <li>
+                                <a href="/blog-widget/turning-waste-into-impact-dmsca-and-the-supply-chain-project">Turning Waste into Impact: DMSCA and The Supply Chain Project</a>
+                                <span class="post-meta">February 23, 2026</span>
+                            </li>
+                            <li>
+                                <a href="/blog-widget/non-profit-supply-chains-why-do-they-need-capability-and-why-now">Non-Profit Supply Chains - Why Do They Need Capability? And Why Now?</a>
+                                <span class="post-meta">June 6, 2024</span>
+                            </li>
+                            <li>
+                                <a href="/blog-widget/the-dominican-republic-logistics-summit-a-proof-of-the-dra-s-commitment-to-the-regional-development">The Dominican Republic Logistics Summit</a>
+                                <span class="post-meta">April 26, 2024</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="footer-col">
+                        <h4>Resources</h4>
+                        <ul class="footer-links">
+                            <li><a href="/policy">Privacy Policy</a></li>
+                            <li><a href="/terms-of-use">Terms of Use</a></li>
+                            <li><a href="/nfpo-level">Non-For-Profit Organization Solutions</a></li>
+                            <li><a href="https://networked.co/c/the-supply-chain-project/">Community Discussions</a></li>
+                            <li><a href="https://supplino.com/tscp-supply-chain-assessment-questionnaire/">Supply Chain Assessment</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-col">
+                        <h4>Upcoming Events</h4>
+                        <p class="no-events">There are no upcoming calendar events.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container">
+                <div class="footer-bottom-inner">
+                    <p>&copy; The Supply Chain Project | <a href="/policy">Policy</a> | <a href="/terms-of-use">Terms of Use</a></p>
+                    <div class="social-links">
+                        <a href="https://www.facebook.com/thesupplychainproject" aria-label="Facebook" target="_blank" rel="noopener">
+                            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+                        </a>
+                        <a href="javascript:void(0)" aria-label="Twitter">
+                            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"/></svg>
+                        </a>
+                        <a href="javascript:void(0)" aria-label="LinkedIn">
+                            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2zM4 2a2 2 0 1 1 0 4 2 2 0 0 1 0-4z"/></svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- GSAP CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script src="js/emergency.js"></script>
+</body>
+</html>

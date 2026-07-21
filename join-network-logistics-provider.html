@@ -1,0 +1,648 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Join Logistics Service Providers - The Supply Chain Project</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/ourstory.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@700;800;900&display=swap" rel="stylesheet">
+    <style>
+        .quotes-section {
+            background: var(--dark);
+            padding: 64px 0;
+            color: white;
+        }
+        .quotes-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        .quote-card {
+            text-align: center;
+            padding: 24px;
+        }
+        .quote-card blockquote {
+            font-size: 1.0625rem;
+            line-height: 1.8;
+            color: rgba(255, 255, 255, 0.85);
+            font-style: italic;
+            margin-bottom: 20px;
+            position: relative;
+        }
+        .quote-card cite {
+            font-size: 0.875rem;
+            font-weight: 600;
+            color: var(--accent);
+            font-style: normal;
+        }
+        /* Join form */
+        .join-form-section {
+            padding: 80px 0;
+            background: var(--gray-100);
+        }
+        .join-form-card {
+            background: white;
+            border-radius: 12px;
+            padding: 48px;
+            max-width: 900px;
+            margin: 0 auto;
+            box-shadow: 0 4px 16px rgba(26, 26, 46, 0.06);
+        }
+        .contact-form {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+        }
+        .form-group label {
+            display: block;
+            font-size: 0.8125rem;
+            font-weight: 600;
+            color: var(--dark);
+            margin-bottom: 6px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px 16px;
+            border: 1px solid var(--gray-300);
+            border-radius: 8px;
+            font-family: var(--font-primary);
+            font-size: 0.9375rem;
+            transition: border-color 0.3s;
+            outline: none;
+            box-sizing: border-box;
+        }
+        .form-group input:focus,
+        .form-group textarea:focus {
+            border-color: var(--primary);
+        }
+        .form-group textarea {
+            resize: vertical;
+        }
+        .form-subheading {
+            font-size: 1rem;
+            font-weight: 700;
+            color: var(--primary);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin: 16px 0 0;
+            padding-top: 16px;
+            border-top: 1px solid var(--gray-200);
+        }
+        .form-subnote {
+            font-size: 0.875rem;
+            color: var(--gray-600);
+            margin: 0;
+        }
+        /* Checkbox grids */
+        .checkbox-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px 16px;
+        }
+        .checkbox-grid label {
+            display: flex;
+            align-items: flex-start;
+            gap: 8px;
+            font-size: 0.875rem;
+            color: var(--gray-700);
+            cursor: pointer;
+            line-height: 1.5;
+        }
+        .checkbox-grid input[type="checkbox"] {
+            width: 16px;
+            height: 16px;
+            margin-top: 2px;
+            flex-shrink: 0;
+            accent-color: var(--primary);
+        }
+        .form-buttons {
+            display: flex;
+            gap: 16px;
+            flex-wrap: wrap;
+            margin-top: 8px;
+        }
+        .btn-save-later {
+            display: inline-block;
+            padding: 14px 32px;
+            border: 2px solid var(--primary);
+            border-radius: 8px;
+            background: transparent;
+            color: var(--primary);
+            font-family: var(--font-primary);
+            font-size: 0.875rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+        .btn-save-later:hover {
+            background: var(--primary);
+            color: white;
+        }
+        @media (max-width: 768px) {
+            .quotes-grid {
+                grid-template-columns: 1fr;
+            }
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+            .checkbox-grid {
+                grid-template-columns: 1fr;
+            }
+            .join-form-section {
+                padding: 56px 0;
+            }
+            .join-form-card {
+                padding: 32px 24px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header class="header scrolled" id="header">
+        <div class="header-inner">
+            <a href="/" class="logo">
+                <img src="images/logo-white-text.png" alt="The Supply Chain Project">
+            </a>
+            <nav class="main-nav" id="mainNav">
+                <ul class="nav-list">
+                    <li><a href="/">Home</a></li>
+                    <li><a href="https://app.thesupplychainproject.org">Marketplace</a></li>
+                    <li class="has-dropdown">
+                        <a href="javascript:void(0)">About Us <span class="arrow">&#9662;</span></a>
+                        <ul class="dropdown">
+                            <li><a href="/our-story.html">Our Story</a></li>
+                            <li><a href="/our-mission.html">Mission</a></li>
+                            <li><a href="/our-services.html">Services</a></li>
+                            <li><a href="/our-technology.html">Technology</a></li>
+                            <li><a href="/our-team.html">Team</a></li>
+                            <li><a href="/contact-us.html">Contact Us</a></li>
+                        </ul>
+                    </li>
+                    <li class="has-dropdown">
+                        <a href="javascript:void(0)">Get Involved <span class="arrow">&#9662;</span></a>
+                        <ul class="dropdown">
+                            <li><a href="/join-network-nonprofits.html">I'm a Nonprofit</a></li>
+                            <li><a href="/donors.html">I'm a Donor</a></li>
+                            <li><a href="/join-network-professional-provider.html">I'm a Professional</a></li>
+                            <li><a href="/cmn-members-access.html">I'm a Corporation</a></li>
+                            <li><a href="/join-network-logistics-provider.html">I'm a Logistics Provider</a></li>
+                            <li><a href="/join-network-service-provider.html">I'm a Service Provider</a></li>
+                            <li><a href="/join-network-technology-provider.html">I'm a Technology Provider</a></li>
+                            <li><a href="/smn-members-access.html">I'm a Student</a></li>
+                            <li><a href="/join-network-volunteer.html">I'm a Volunteer</a></li>
+                        </ul>
+                    </li>
+                    <li class="has-dropdown">
+                        <a href="javascript:void(0)">Support <span class="arrow">&#9662;</span></a>
+                        <ul class="dropdown">
+                            <li><a href="/control-tower-tscp.html">Control Tower</a></li>
+                            <li><a href="/members-tscp.html">Membership</a></li>
+                            <li><a href="/donors.html">Donations</a></li>
+                            <li><a href="/logistics-tscp.html">Logistics</a></li>
+                            <li><a href="/our-technology.html">Technology</a></li>
+                        </ul>
+                    </li>
+                    <li class="has-dropdown">
+                        <a href="javascript:void(0)">Portals <span class="arrow">&#9662;</span></a>
+                        <ul class="dropdown">
+                            <li><a href="/emergency-main.html">Emergency</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+            <div class="header-actions">
+                <a href="https://app.thesupplychainproject.org" class="btn-marketplace">Enter Marketplace</a>
+                <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Page Hero Banner -->
+    <section class="page-hero">
+        <div class="page-hero-bg" style="background-image: url('images/cover-tscp-2.jpg')"></div>
+        <div class="page-hero-overlay"></div>
+        <div class="page-hero-content">
+            <h1>Create an account now.</h1>
+            <div class="breadcrumb">
+                <a href="/">GET INVOLVED</a> / <span>LOGISTICS PROVIDERS</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Intro + Benefits Section -->
+    <section class="story-section">
+        <div class="container">
+            <div class="story-grid">
+                <!-- Left Column -->
+                <div class="story-col">
+                    <h2 class="story-heading">JOIN LOGISTICS SERVICE PROVIDERS</h2>
+                    <div class="story-divider"></div>
+
+                    <p class="story-highlight"><strong>Your help is urgently needed!</strong></p>
+
+                    <p class="story-text">According to the Nonprofit Supply Chain Alliance, the average nonprofit organization spends about 6.4% of its total operating budget on supply chain costs.</p>
+
+                    <p class="story-text">Approximately 40% of those costs are associated with purchasing, and the remaining 60% are related to inventory management, transportation, and warehousing.</p>
+
+                    <p class="story-text">The average nonprofit organization spends about $1,500 per employee on supply chain costs. Additionally, nonprofits' average inventory turn rate is about 4.4 turns per year.</p>
+
+                    <p class="story-text">Our expertise in logistics, warehouse management, inventory control, and transportation planning enables us to provide measurable results for those driving world change. We incorporate training programs to deliver and advance supply chain knowledge and capacity building for NGOs and nonprofits, focusing on train-the-trainer for capacity building and scaling.</p>
+
+                    <p class="story-highlight"><strong>Join the marketplace as a logistics service provider&mdash;it's free</strong></p>
+
+                    <a href="https://app.thesupplychainproject.org" class="btn-become-member">ALREADY A MEMBER?</a>
+                    <a href="/donors.html" class="btn-become-member" style="margin-left: 16px;">MAKE A DONATION</a>
+                </div>
+
+                <!-- Right Column -->
+                <div class="story-col">
+                    <h2 class="story-heading">Benefits of our membership</h2>
+                    <div class="story-divider"></div>
+
+                    <ul class="story-list">
+                        <li>
+                            <span class="list-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>
+                            </span>
+                            <span>Collaborating with nonprofits enhances your company's reputation, improves its public image, increases goodwill, and generates brand equity.</span>
+                        </li>
+                        <li>
+                            <span class="list-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>
+                            </span>
+                            <span>By donating your services to The Supply Chain Project, you may be eligible for significant tax deductions, which can help reduce your tax liability and improve your bottom line.</span>
+                        </li>
+                        <li>
+                            <span class="list-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>
+                            </span>
+                            <span>By partnering with The Supply Chain Project, you can demonstrate your commitment to corporate social responsibility and give back to the community. This can help enhance your reputation and improve your brand image, ultimately leading to increased customer loyalty and business growth.</span>
+                        </li>
+                        <li>
+                            <span class="list-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>
+                            </span>
+                            <span>A "Logistics" badge on your professional profile indicating your company is ready, willing, and able to provide logistics services to non-profits.</span>
+                        </li>
+                        <li>
+                            <span class="list-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>
+                            </span>
+                            <span>One (1) space in the marketplace for a logistics profile</span>
+                        </li>
+                        <li>
+                            <span class="list-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>
+                            </span>
+                            <span>Access to multi-national non-profits and meaningful humanitarian projects.</span>
+                        </li>
+                        <li>
+                            <span class="list-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>
+                            </span>
+                            <span>Networking with other industry experts.</span>
+                        </li>
+                        <li>
+                            <span class="list-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>
+                            </span>
+                            <span>Lend your voice at our community discussions.</span>
+                        </li>
+                        <li>
+                            <span class="list-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>
+                            </span>
+                            <span>Access to our non-profit directory.</span>
+                        </li>
+                        <li>
+                            <span class="list-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>
+                            </span>
+                            <span>Improve employee morale through involvement.</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Information Form Section -->
+    <section class="join-form-section">
+        <div class="container">
+            <div class="join-form-card">
+                <h2 class="story-heading">Contact information</h2>
+                <div class="story-divider"></div>
+
+                <form class="contact-form" id="logisticsProviderForm">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="firstName">First Name:</label>
+                            <input type="text" id="firstName" name="firstName" placeholder="First Name:">
+                        </div>
+                        <div class="form-group">
+                            <label for="lastName">Last Name:</label>
+                            <input type="text" id="lastName" name="lastName" placeholder="Last Name:">
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="mainPhone">Main Phone</label>
+                            <input type="tel" id="mainPhone" name="mainPhone" placeholder="Main Phone">
+                        </div>
+                        <div class="form-group">
+                            <label for="businessFax">Business Fax</label>
+                            <input type="tel" id="businessFax" name="businessFax" placeholder="Business Fax">
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="email">E-mail Address:</label>
+                            <input type="email" id="email" name="email" placeholder="E-mail Address:">
+                        </div>
+                        <div class="form-group">
+                            <label for="companyWebsite">Company Website Address (www.companyName.com)</label>
+                            <input type="text" id="companyWebsite" name="companyWebsite" placeholder="Company Website Address (www.companyName.com)">
+                        </div>
+                    </div>
+
+                    <h3 class="form-subheading">Physical address</h3>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="businessAddress">Business Address</label>
+                            <input type="text" id="businessAddress" name="businessAddress" placeholder="Business Address">
+                        </div>
+                        <div class="form-group">
+                            <label for="businessCity">Business City:</label>
+                            <input type="text" id="businessCity" name="businessCity" placeholder="Business City:">
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="businessState">Business State</label>
+                            <input type="text" id="businessState" name="businessState" placeholder="Business State">
+                        </div>
+                        <div class="form-group">
+                            <label for="businessPostal">Business Postal</label>
+                            <input type="text" id="businessPostal" name="businessPostal" placeholder="Business Postal">
+                        </div>
+                    </div>
+
+                    <h3 class="form-subheading">Describe your logistics service</h3>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="businessFacilityName">Business Facility Name</label>
+                            <input type="text" id="businessFacilityName" name="businessFacilityName" placeholder="Business Facility Name">
+                        </div>
+                        <div class="form-group">
+                            <label for="businessTitle">Business Title</label>
+                            <input type="text" id="businessTitle" name="businessTitle" placeholder="Business Title">
+                        </div>
+                    </div>
+
+                    <h3 class="form-subheading">Choose a provider type that best describe your company</h3>
+                    <div class="checkbox-grid">
+                        <label><input type="checkbox" name="providerType" value="Domestic Transportation"> <span>Domestic Transportation</span></label>
+                        <label><input type="checkbox" name="providerType" value="International Freight Forwarding"> <span>International Freight Forwarding</span></label>
+                        <label><input type="checkbox" name="providerType" value="Non-Vessel Operating Common Carrier (NVOCC)"> <span>Non-Vessel Operating Common Carrier (NVOCC)</span></label>
+                        <label><input type="checkbox" name="providerType" value="E-commerce fulfillment"> <span>E-commerce fulfillment</span></label>
+                        <label><input type="checkbox" name="providerType" value="Intermodal"> <span>Intermodal</span></label>
+                        <label><input type="checkbox" name="providerType" value="Local pickup and delivery"> <span>Local pickup and delivery</span></label>
+                        <label><input type="checkbox" name="providerType" value="Licensed medical transport"> <span>Licensed medical transport</span></label>
+                        <label><input type="checkbox" name="providerType" value="Gig Driver home delivery"> <span>Gig Driver home delivery</span></label>
+                        <label><input type="checkbox" name="providerType" value="National parcel"> <span>National parcel</span></label>
+                        <label><input type="checkbox" name="providerType" value="Third-party logistics"> <span>Third-party logistics</span></label>
+                        <label><input type="checkbox" name="providerType" value="Asset-based truckload"> <span>Asset-based truckload</span></label>
+                        <label><input type="checkbox" name="providerType" value="Other"> <span>Other</span></label>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="companyWebsiteLink">Company Website Link for Non-Profits (www.companyName.com/link)</label>
+                        <input type="text" id="companyWebsiteLink" name="companyWebsiteLink" placeholder="Company Website Link for Non-Profits (www.companyName.com/link)">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="briefDescription">Brief Description:</label>
+                        <textarea id="briefDescription" name="briefDescription" rows="5" placeholder="Brief Description:"></textarea>
+                    </div>
+
+                    <h3 class="form-subheading">Delivery transport equipment you offer</h3>
+                    <p class="form-subnote">Equipment types (Check all that applies)</p>
+                    <div class="checkbox-grid">
+                        <label><input type="checkbox" name="equipmentType" value="40 ft Drybed"> <span>40 ft Drybed</span></label>
+                        <label><input type="checkbox" name="equipmentType" value="40 ft Refrigerated Truck"> <span>40 ft Refrigerated Truck</span></label>
+                        <label><input type="checkbox" name="equipmentType" value="90 ft box truck"> <span>90 ft box truck</span></label>
+                        <label><input type="checkbox" name="equipmentType" value="90 ft Refrigerated Truck"> <span>90 ft Refrigerated Truck</span></label>
+                        <label><input type="checkbox" name="equipmentType" value="Flatbed trailer"> <span>Flatbed trailer</span></label>
+                        <label><input type="checkbox" name="equipmentType" value="Step deck"> <span>Step deck</span></label>
+                        <label><input type="checkbox" name="equipmentType" value="28 ft pup"> <span>28 ft pup</span></label>
+                        <label><input type="checkbox" name="equipmentType" value="Cargo van (Splurger van)"> <span>Cargo van (Splurger van)</span></label>
+                        <label><input type="checkbox" name="equipmentType" value="Box truck (Straight truck)"> <span>Box truck (Straight truck)</span></label>
+                        <label><input type="checkbox" name="equipmentType" value="Straight truck with tailgate"> <span>Straight truck with tailgate</span></label>
+                        <label><input type="checkbox" name="equipmentType" value="20 and 40 ft Ocean containers"> <span>20 and 40 ft Ocean containers</span></label>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="captcha">To prevent spam, please tell us: What is 5 + 4 ?*</label>
+                        <input type="number" id="captcha" name="captcha" placeholder="What is 5 + 4 ?*">
+                    </div>
+
+                    <div class="form-buttons">
+                        <a href="https://app.thesupplychainproject.org" class="btn-save-later">SAVE FOR LATER</a>
+                        <a href="https://app.thesupplychainproject.org" class="btn-become-member" style="margin-bottom: 0;">CREATE PROFILE</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Activities Section -->
+    <section class="activities-section">
+        <div class="container">
+            <h2 class="activities-title">The Supply Chain Project Activities</h2>
+            <div class="activities-divider"></div>
+
+            <div class="activities-grid">
+                <div class="activity-card">
+                    <div class="activity-img-wrap">
+                        <img src="images/team/splash-square-tscp-64.jpg" alt="Logistics">
+                    </div>
+                    <h3>Logistics</h3>
+                    <p class="activity-subtitle">Distribution and Transportation Solutions</p>
+                    <p class="activity-desc">We help nonprofits to mobilize donations or project materials at a national and international level. With the help of our allies we can do it efficiently and at a reduced cost.</p>
+                    <div class="activity-social">
+                        <a href="javascript:void(0)" aria-label="Twitter"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"/></svg></a>
+                        <a href="javascript:void(0)" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
+                        <a href="javascript:void(0)" aria-label="Pinterest"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.4 0 0 5.4 0 12c0 5.1 3.2 9.4 7.6 11.2-.1-.9-.2-2.4 0-3.4.2-.9 1.4-6 1.4-6s-.4-.7-.4-1.8c0-1.7 1-2.9 2.2-2.9 1 0 1.5.8 1.5 1.7 0 1-.7 2.6-1 4-.3 1.2.6 2.2 1.8 2.2 2.1 0 3.7-2.2 3.7-5.5 0-2.9-2.1-4.9-5-4.9-3.4 0-5.4 2.6-5.4 5.2 0 1 .4 2.1.9 2.7.1.1.1.2.1.3-.1.4-.3 1.2-.3 1.4-.1.2-.2.3-.4.2-1.5-.7-2.4-2.9-2.4-4.6 0-3.8 2.8-7.3 7.9-7.3 4.2 0 7.4 3 7.4 6.9 0 4.1-2.6 7.5-6.2 7.5-1.2 0-2.4-.6-2.8-1.4l-.8 2.9c-.3 1.1-1 2.4-1.5 3.2 1.1.3 2.3.5 3.5.5 6.6 0 12-5.4 12-12S18.6 0 12 0z"/></svg></a>
+                        <a href="javascript:void(0)" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2zM4 2a2 2 0 1 1 0 4 2 2 0 0 1 0-4z"/></svg></a>
+                        <a href="javascript:void(0)" aria-label="YouTube"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19.1c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.43z"/><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02" fill="#fff"/></svg></a>
+                    </div>
+                </div>
+
+                <div class="activity-card">
+                    <div class="activity-img-wrap">
+                        <img src="images/team/splash-square-tscp-62.jpg" alt="Project Management">
+                    </div>
+                    <h3>Project Management</h3>
+                    <p class="activity-subtitle">Streamlining Missions with Efficiency</p>
+                    <p class="activity-desc">With a network of professionals in supply chain, logistics, project management and others, we help improve project management in nonprofits and charity organizations.</p>
+                    <div class="activity-social">
+                        <a href="javascript:void(0)" aria-label="Twitter"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"/></svg></a>
+                        <a href="javascript:void(0)" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
+                        <a href="javascript:void(0)" aria-label="Pinterest"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.4 0 0 5.4 0 12c0 5.1 3.2 9.4 7.6 11.2-.1-.9-.2-2.4 0-3.4.2-.9 1.4-6 1.4-6s-.4-.7-.4-1.8c0-1.7 1-2.9 2.2-2.9 1 0 1.5.8 1.5 1.7 0 1-.7 2.6-1 4-.3 1.2.6 2.2 1.8 2.2 2.1 0 3.7-2.2 3.7-5.5 0-2.9-2.1-4.9-5-4.9-3.4 0-5.4 2.6-5.4 5.2 0 1 .4 2.1.9 2.7.1.1.1.2.1.3-.1.4-.3 1.2-.3 1.4-.1.2-.2.3-.4.2-1.5-.7-2.4-2.9-2.4-4.6 0-3.8 2.8-7.3 7.9-7.3 4.2 0 7.4 3 7.4 6.9 0 4.1-2.6 7.5-6.2 7.5-1.2 0-2.4-.6-2.8-1.4l-.8 2.9c-.3 1.1-1 2.4-1.5 3.2 1.1.3 2.3.5 3.5.5 6.6 0 12-5.4 12-12S18.6 0 12 0z"/></svg></a>
+                        <a href="javascript:void(0)" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2zM4 2a2 2 0 1 1 0 4 2 2 0 0 1 0-4z"/></svg></a>
+                        <a href="javascript:void(0)" aria-label="YouTube"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19.1c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.43z"/><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02" fill="#fff"/></svg></a>
+                    </div>
+                </div>
+
+                <div class="activity-card">
+                    <div class="activity-img-wrap">
+                        <img src="images/team/splash-square-tscp-79.jpg" alt="Technology">
+                    </div>
+                    <h3>Technology</h3>
+                    <p class="activity-subtitle">Bridge between technology and mission</p>
+                    <p class="activity-desc">The technology that makes large companies successful available to nonprofits. We are bridge between the knowledge generated in companies and nonprofits.</p>
+                    <div class="activity-social">
+                        <a href="javascript:void(0)" aria-label="Twitter"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"/></svg></a>
+                        <a href="javascript:void(0)" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
+                        <a href="javascript:void(0)" aria-label="Pinterest"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.4 0 0 5.4 0 12c0 5.1 3.2 9.4 7.6 11.2-.1-.9-.2-2.4 0-3.4.2-.9 1.4-6 1.4-6s-.4-.7-.4-1.8c0-1.7 1-2.9 2.2-2.9 1 0 1.5.8 1.5 1.7 0 1-.7 2.6-1 4-.3 1.2.6 2.2 1.8 2.2 2.1 0 3.7-2.2 3.7-5.5 0-2.9-2.1-4.9-5-4.9-3.4 0-5.4 2.6-5.4 5.2 0 1 .4 2.1.9 2.7.1.1.1.2.1.3-.1.4-.3 1.2-.3 1.4-.1.2-.2.3-.4.2-1.5-.7-2.4-2.9-2.4-4.6 0-3.8 2.8-7.3 7.9-7.3 4.2 0 7.4 3 7.4 6.9 0 4.1-2.6 7.5-6.2 7.5-1.2 0-2.4-.6-2.8-1.4l-.8 2.9c-.3 1.1-1 2.4-1.5 3.2 1.1.3 2.3.5 3.5.5 6.6 0 12-5.4 12-12S18.6 0 12 0z"/></svg></a>
+                        <a href="javascript:void(0)" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2zM4 2a2 2 0 1 1 0 4 2 2 0 0 1 0-4z"/></svg></a>
+                        <a href="javascript:void(0)" aria-label="YouTube"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19.1c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.43z"/><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02" fill="#fff"/></svg></a>
+                    </div>
+                </div>
+
+                <div class="activity-card">
+                    <div class="activity-img-wrap">
+                        <img src="images/team/splash-square-tscp-128.jpg" alt="Consulting">
+                    </div>
+                    <h3>Consulting</h3>
+                    <p class="activity-subtitle">Solution Oriented Processes (SOP)</p>
+                    <p class="activity-desc">Our network of professionals and volunteers have vast experience that allows them to provide solutions that are suitable for your needs.</p>
+                    <div class="activity-social">
+                        <a href="javascript:void(0)" aria-label="Twitter"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"/></svg></a>
+                        <a href="javascript:void(0)" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
+                        <a href="javascript:void(0)" aria-label="Pinterest"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.4 0 0 5.4 0 12c0 5.1 3.2 9.4 7.6 11.2-.1-.9-.2-2.4 0-3.4.2-.9 1.4-6 1.4-6s-.4-.7-.4-1.8c0-1.7 1-2.9 2.2-2.9 1 0 1.5.8 1.5 1.7 0 1-.7 2.6-1 4-.3 1.2.6 2.2 1.8 2.2 2.1 0 3.7-2.2 3.7-5.5 0-2.9-2.1-4.9-5-4.9-3.4 0-5.4 2.6-5.4 5.2 0 1 .4 2.1.9 2.7.1.1.1.2.1.3-.1.4-.3 1.2-.3 1.4-.1.2-.2.3-.4.2-1.5-.7-2.4-2.9-2.4-4.6 0-3.8 2.8-7.3 7.9-7.3 4.2 0 7.4 3 7.4 6.9 0 4.1-2.6 7.5-6.2 7.5-1.2 0-2.4-.6-2.8-1.4l-.8 2.9c-.3 1.1-1 2.4-1.5 3.2 1.1.3 2.3.5 3.5.5 6.6 0 12-5.4 12-12S18.6 0 12 0z"/></svg></a>
+                        <a href="javascript:void(0)" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2zM4 2a2 2 0 1 1 0 4 2 2 0 0 1 0-4z"/></svg></a>
+                        <a href="javascript:void(0)" aria-label="YouTube"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19.1c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.43z"/><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02" fill="#fff"/></svg></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Leadership Quotes Section -->
+    <section class="quotes-section">
+        <div class="container">
+            <div class="quotes-grid">
+                <div class="quote-card">
+                    <blockquote>&ldquo;Our focus is to take the best from the for-profit supply chain world and marry it with the best of the nonprofit arena to create solutions that evens the playing field for Nonprofits. Today no NGO is too small or too big to benefit from an improved supply chain.&rdquo;</blockquote>
+                    <cite>Steve Robinson, CEO and Founder</cite>
+                </div>
+                <div class="quote-card">
+                    <blockquote>&ldquo;Improving and streamlining supply chain activities is critical to non-profit organizations. Simplifying work, streamlining operations, and professionalizing services allow non-profits to spend more of their scarce resources on their mission.&rdquo;</blockquote>
+                    <cite>Carol Wylie, Co-Founder and COO</cite>
+                </div>
+                <div class="quote-card">
+                    <blockquote>&ldquo;The TSCP team partnered with one of its portfolio companies Kountable, and found a local distributor in Rwanda. The Supply Chain Project brought together its network of global experts and logistics partners to to deliver over 9 million malaria test kits to Rwanda.&rdquo;</blockquote>
+                    <cite>Christopher Hale, CEO and Founder Kountable</cite>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer" id="footer">
+        <div class="footer-top">
+            <div class="container">
+                <div class="footer-grid">
+                    <div class="footer-col footer-about">
+                        <a href="/" class="footer-logo">
+                            <img src="images/logo-white-text.png" alt="The Supply Chain Project">
+                        </a>
+                        <p>The Supply Chain Project enables innovative partnerships between non-profits, businesses, service providers, and industry professionals that helps them drive measurable improvements.</p>
+                        <form class="footer-newsletter" id="newsletterForm">
+                            <input type="email" placeholder="Your Email" required>
+                            <input type="number" placeholder="What is 6 + 3 ?" required>
+                            <button type="submit" class="btn-newsletter">Mailing List</button>
+                        </form>
+                    </div>
+                    <div class="footer-col">
+                        <h4>Recent Posts</h4>
+                        <ul class="footer-posts">
+                            <li>
+                                <a href="/blog-widget/turning-waste-into-impact-dmsca-and-the-supply-chain-project">Turning Waste into Impact: DMSCA and The Supply Chain Project</a>
+                                <span class="post-meta">February 23, 2026</span>
+                            </li>
+                            <li>
+                                <a href="/blog-widget/non-profit-supply-chains-why-do-they-need-capability-and-why-now">Non-Profit Supply Chains - Why Do They Need Capability? And Why Now?</a>
+                                <span class="post-meta">June 6, 2024</span>
+                            </li>
+                            <li>
+                                <a href="/blog-widget/the-dominican-republic-logistics-summit-a-proof-of-the-dra-s-commitment-to-the-regional-development">The Dominican Republic Logistics Summit</a>
+                                <span class="post-meta">April 26, 2024</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="footer-col">
+                        <h4>Resources</h4>
+                        <ul class="footer-links">
+                            <li><a href="/policy">Privacy Policy</a></li>
+                            <li><a href="/terms-of-use">Terms of Use</a></li>
+                            <li><a href="/nfpo-level">Non-For-Profit Organization Solutions</a></li>
+                            <li><a href="https://networked.co/c/the-supply-chain-project/">Community Discussions</a></li>
+                            <li><a href="https://supplino.com/tscp-supply-chain-assessment-questionnaire/">Supply Chain Assessment</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-col">
+                        <h4>Upcoming Events</h4>
+                        <p class="no-events">There are no upcoming calendar events.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container">
+                <div class="footer-bottom-inner">
+                    <p>&copy; The Supply Chain Project | <a href="/policy">Policy</a> | <a href="/terms-of-use">Terms of Use</a></p>
+                    <div class="social-links">
+                        <a href="https://www.facebook.com/thesupplychainproject" aria-label="Facebook" target="_blank" rel="noopener">
+                            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+                        </a>
+                        <a href="javascript:void(0)" aria-label="Twitter">
+                            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"/></svg>
+                        </a>
+                        <a href="javascript:void(0)" aria-label="LinkedIn">
+                            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2zM4 2a2 2 0 1 1 0 4 2 2 0 0 1 0-4z"/></svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- GSAP CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script src="js/emergency.js"></script>
+</body>
+</html>

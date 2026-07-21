@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Our Team - The Supply Chain Project</title>
+    <title>Join Professionals - The Supply Chain Project</title>
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="css/ourstory.css">
     <link rel="stylesheet" href="css/responsive.css">
@@ -11,81 +11,187 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@700;800;900&display=swap" rel="stylesheet">
     <style>
-        /* Team Section Styles */
-        .team-section {
-            padding: 80px 0;
-            background: var(--white);
+        .quotes-section {
+            background: var(--dark);
+            padding: 64px 0;
+            color: white;
         }
-
-        .team-grid {
+        .quotes-grid {
             display: grid;
-            grid-template-columns: repeat(5, 1fr);
-            gap: 28px;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            max-width: 1000px;
+            margin: 0 auto;
         }
-
-        .team-card {
+        .quote-card {
             text-align: center;
             padding: 24px;
         }
-
-        .team-avatar {
-            width: 100px;
-            height: 100px;
-            border-radius: 50%;
-            background: var(--primary);
-            color: white;
+        .quote-card blockquote {
+            font-size: 1.0625rem;
+            line-height: 1.8;
+            color: rgba(255, 255, 255, 0.85);
+            font-style: italic;
+            margin-bottom: 20px;
+            position: relative;
+        }
+        .quote-card cite {
+            font-size: 0.875rem;
+            font-weight: 600;
+            color: var(--accent);
+            font-style: normal;
+        }
+        .intro-eyebrow {
+            font-size: 0.9375rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+            color: var(--accent);
+            margin-bottom: 12px;
+        }
+        .benefits-section {
+            padding: 80px 0;
+            background: var(--gray-100);
+        }
+        .benefits-list {
+            max-width: 860px;
+            margin: 0 auto;
+        }
+        .profile-form-section {
+            padding: 80px 0;
+            background: var(--white);
+        }
+        .profile-form-card {
+            background: var(--white);
+            border: 1px solid var(--gray-200);
+            border-top: 3px solid var(--primary);
+            border-radius: 12px;
+            padding: 48px;
+            box-shadow: 0 4px 16px rgba(26, 26, 46, 0.06);
+            max-width: 980px;
+            margin: 0 auto;
+        }
+        .form-section-title {
+            font-size: 1.375rem;
+            font-weight: 800;
+            color: var(--dark);
+            margin-bottom: 12px;
+        }
+        .form-subheading {
+            font-size: 1.0625rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin: 24px 0 4px;
+        }
+        .contact-form {
             display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+        }
+        .form-group label {
+            display: block;
+            font-size: 0.8125rem;
+            font-weight: 600;
+            color: var(--dark);
+            margin-bottom: 6px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px 16px;
+            border: 1px solid var(--gray-300);
+            border-radius: 8px;
+            font-family: var(--font-primary);
+            font-size: 0.9375rem;
+            transition: border-color 0.3s;
+            outline: none;
+            box-sizing: border-box;
+        }
+        .form-group input:focus,
+        .form-group textarea:focus {
+            border-color: var(--primary);
+        }
+        .form-group textarea {
+            resize: vertical;
+        }
+        .checkbox-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 12px 24px;
+        }
+        .checkbox-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            font-size: 0.9375rem;
+            color: var(--gray-700);
+            line-height: 1.5;
+            cursor: pointer;
+        }
+        .checkbox-item input[type="checkbox"] {
+            width: 17px;
+            height: 17px;
+            margin-top: 2px;
+            flex-shrink: 0;
+            accent-color: var(--primary);
+        }
+        .form-buttons {
+            display: flex;
+            gap: 16px;
+            flex-wrap: wrap;
+            margin-top: 8px;
+        }
+        .form-buttons .btn-become-member {
+            margin-bottom: 0;
+        }
+        .btn-save-later {
+            display: inline-flex;
             align-items: center;
             justify-content: center;
-            font-size: 1.5rem;
-            font-weight: 700;
-            margin: 0 auto 16px;
-            font-family: var(--font-display);
-        }
-
-        .team-photo {
-            width: 120px;
-            height: 120px;
-            border-radius: 50%;
-            object-fit: cover;
-            margin: 0 auto 16px;
-            display: block;
-            border: 3px solid var(--primary);
-        }
-
-        .team-card h3 {
-            font-size: 1rem;
-            font-weight: 700;
+            padding: 16px 48px;
+            background: transparent;
+            border: 2px solid var(--accent);
             color: var(--dark);
-            margin-bottom: 4px;
-        }
-
-        .team-card p {
             font-size: 0.8125rem;
-            color: var(--gray-600);
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            border-radius: 4px;
+            transition: all 0.3s;
         }
-
+        .btn-save-later:hover {
+            background: var(--accent);
+            color: var(--white);
+        }
         @media (max-width: 992px) {
-            .team-grid {
-                grid-template-columns: repeat(3, 1fr);
-            }
-        }
-
-        @media (max-width: 768px) {
-            .team-section {
-                padding: 56px 0;
-            }
-
-            .team-grid {
+            .checkbox-grid {
                 grid-template-columns: repeat(2, 1fr);
             }
         }
-
-        @media (max-width: 480px) {
-            .team-grid {
+        @media (max-width: 768px) {
+            .quotes-grid {
                 grid-template-columns: 1fr;
-                max-width: 300px;
-                margin: 0 auto;
+            }
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+            .profile-form-card {
+                padding: 28px 20px;
+            }
+            .profile-form-section,
+            .benefits-section {
+                padding: 56px 0;
+            }
+        }
+        @media (max-width: 600px) {
+            .checkbox-grid {
+                grid-template-columns: 1fr;
             }
         }
     </style>
@@ -158,12 +264,12 @@
 
     <!-- Page Hero Banner -->
     <section class="page-hero">
-        <div class="page-hero-bg" style="background-image: url('images/team/cover84.jpg')"></div>
+        <div class="page-hero-bg" style="background-image: url('images/our-services/cover-tscp-139.jpg')"></div>
         <div class="page-hero-overlay"></div>
         <div class="page-hero-content">
-            <h1>Our Team</h1>
+            <h1>JOIN PROFESSIONALS</h1>
             <div class="breadcrumb">
-                <a href="/">ABOUT US</a> / <span>OUR TEAM</span>
+                <a href="/">GET INVOLVED</a> / <span>PROFESSIONALS</span>
             </div>
         </div>
     </section>
@@ -171,138 +277,65 @@
     <!-- Intro Section -->
     <section class="story-section">
         <div class="container">
-            <div class="story-grid">
-                <div class="story-col">
-                    <h2 class="story-heading">We are building a consortium of donor enterprises.</h2>
-                    <div class="story-divider"></div>
+            <div class="story-col" style="max-width: 860px; margin: 0 auto;">
+                <p class="intro-eyebrow">Create your account now.</p>
+                <h2 class="story-heading">JOIN PROFESSIONALS</h2>
+                <div class="story-divider"></div>
 
-                    <p class="story-text">Our goal is to engage global supply chains to help address the global disparities in access to food, medical equipment, and medical supplies.</p>
+                <p class="story-highlight"><strong>Join us today and unlock the full potential of your personal impact.</strong></p>
 
-                    <p class="story-text">By creating a consortium of donor enterprises, service providers, supply chain practitioners, and technology solutions. We will together drive a more intelligent solution for other nonprofits engaged in supporting the delivery of basic human needs.</p>
-                </div>
+                <p class="story-text">We seek professionals who are committed to making a positive impact in their communities. By becoming a member, you will have access to exclusive resources, networking opportunities, and consulting projects that can help you make a real difference.</p>
 
-                <div class="story-col">
-                    <h2 class="story-heading">Our goal&mdash;to disrupt and reconfigure the &ldquo;Human Needs Supply Chain&rdquo;!</h2>
-                    <div class="story-divider"></div>
+                <p class="story-text">Our expertise in logistics, warehouse management, inventory control, and transportation planning enables us to provide measurable results for those driving world change. We incorporate training programs to deliver and advance supply chain knowledge and capacity building for NGOs and nonprofits, focusing on train-the-trainer for capacity building and scaling.</p>
 
-                    <p class="story-highlight"><strong>Our aim is to serve those that serve others.</strong></p>
+                <p class="story-highlight"><strong>Join the marketplace as an industry professional.</strong></p>
 
-                    <ul class="story-list">
-                        <li>
-                            <span class="list-icon">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v4M12 16h.01"/></svg>
-                            </span>
-                            <span>Bringing together a group of innovative multinational corporations, regional businesses, and nonprofit partners to develop a technology-based solution to increase supply chain efficiency for Non-Profits dramatically.</span>
-                        </li>
-                    </ul>
-
-                    <p class="story-text">Our team is composed of industry experts that aim to change the current reality of our industry for the benefit of humanity.</p>
-
-                    <p class="story-text">Our goal is to recruit a wide range of members from across the spectrum of food producers, medical equipment, clothing, and medical supply manufacturers. To include professionals from procurement, demand planning, sales, operations planning, distribution, transportation, and logistics. We will provide a matching service where local needs are paired with available advisory and execution resources.</p>
-
-                    <a href="/contact-us.html" class="btn-become-member">BECOME A MEMBER</a>
+                <div class="form-buttons">
+                    <a href="https://app.thesupplychainproject.org" class="btn-become-member">ALREADY A MEMBER?</a>
+                    <a href="/donors.html" class="btn-save-later">MAKE A DONATION</a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Team Grid Section -->
-    <section class="team-section">
+    <!-- Benefits Section -->
+    <section class="benefits-section">
         <div class="container">
-            <h2 class="activities-title">Meet the Team</h2>
+            <h2 class="activities-title">Benefits of our membership as an industry professional you will have access to the following</h2>
             <div class="activities-divider"></div>
 
-            <div class="team-grid">
-                <div class="team-card">
-                    <img src="images/team/staff-001.jpg" alt="Steven Robinson" class="team-photo">
-                    <h3>Steven Robinson</h3>
-                    <p>Founder &amp; CEO</p>
-                </div>
-
-                <div class="team-card">
-                    <img src="images/team/staff-005.jpg" alt="Carol Wylie" class="team-photo">
-                    <h3>Carol Wylie</h3>
-                    <p>Co-Founder &amp; COO</p>
-                </div>
-
-                <div class="team-card">
-                    <img src="images/team/Karen_Henken.jfif" alt="Karen Henken" class="team-photo">
-                    <h3>Karen Henken</h3>
-                    <p>Co-founder - Secretary</p>
-                </div>
-
-                <div class="team-card">
-                    <img src="images/team/alanBarnard.jpg" alt="Dr. Alan Barnhard" class="team-photo">
-                    <h3>Dr. Alan Barnhard</h3>
-                    <p>Advisor: CEO, Goldratt Research Labs</p>
-                </div>
-
-                <div class="team-card">
-                    <img src="images/team/CJ_Nord.jpeg" alt="C.J. Nord" class="team-photo">
-                    <h3>C.J. Nord</h3>
-                    <p>Global Nonprofit Leader</p>
-                </div>
-
-                <div class="team-card">
-                    <img src="images/team/Chad_1.jpg" alt="Chad Stricklin" class="team-photo">
-                    <h3>Chad (&#26102;&#32858;&#26480;) Stricklin</h3>
-                    <p>Global Gifts and Inkind Donations</p>
-                </div>
-
-                <div class="team-card">
-                    <img src="images/team/Hale.jpg" alt="Christopher Hale" class="team-photo">
-                    <h3>Christopher Hale</h3>
-                    <p>Board Advisor</p>
-                </div>
-
-                <div class="team-card">
-                    <img src="images/team/Jill_photo.jpg" alt="Dr. Jillandra Rovaris" class="team-photo">
-                    <h3>Dr. Jillandra Rovaris</h3>
-                    <p>Board of Director</p>
-                </div>
-
-                <div class="team-card">
-                    <img src="images/team/virnia-photo.jpg" alt="Virnia Patzi" class="team-photo">
-                    <h3>Virnia Patzi</h3>
-                    <p>Program Director</p>
-                </div>
-
-                <div class="team-card">
-                    <img src="images/team/Rodger_Cravens.jpg" alt="Rodger Cravens" class="team-photo">
-                    <h3>Rodger Cravens</h3>
-                    <p>Distribution</p>
-                </div>
-
-                <div class="team-card">
-                    <img src="images/team/Simmons_E.jpg" alt="Erica Simmons" class="team-photo">
-                    <h3>Erica Simmons</h3>
-                    <p>Global Partnerships Practitioner Leader</p>
-                </div>
-
-                <div class="team-card">
-                    <img src="images/team/Deasy_Elena.png" alt="Deasy Helena" class="team-photo">
-                    <h3>Deasy Helena</h3>
-                    <p>Marketing &amp; Communications</p>
-                </div>
-
-                <div class="team-card">
-                    <img src="images/team/Elena_Lopez.png" alt="Elena Lopez" class="team-photo">
-                    <h3>Elena Lopez</h3>
-                    <p>Volunteers</p>
-                </div>
-
-                <div class="team-card">
-                    <img src="images/team/Naren_Baliga.png" alt="Naren Baliga" class="team-photo">
-                    <h3>Naren Baliga</h3>
-                    <p>Global Technology Leader</p>
-                </div>
-
-                <div class="team-card">
-                    <img src="images/team/Donnell.jpg" alt="Donnell Moorer Jr" class="team-photo">
-                    <h3>Donnell Moorer Jr</h3>
-                    <p>Consulting Practice Leader</p>
-                </div>
-            </div>
+            <ul class="story-list benefits-list">
+                <li>
+                    <span class="list-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>
+                    </span>
+                    <span>Access to training and consulting opportunities near you.</span>
+                </li>
+                <li>
+                    <span class="list-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>
+                    </span>
+                    <span>Employment opportunities in the nonprofit sector.</span>
+                </li>
+                <li>
+                    <span class="list-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>
+                    </span>
+                    <span>Invitations to meaningful humanitarian projects.</span>
+                </li>
+                <li>
+                    <span class="list-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>
+                    </span>
+                    <span>Provide mentorship and guidance for the next generation of professionals.</span>
+                </li>
+                <li>
+                    <span class="list-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>
+                    </span>
+                    <span>Networking with other industry experts.</span>
+                </li>
+            </ul>
         </div>
     </section>
 
@@ -380,32 +413,22 @@
         </div>
     </section>
 
-    <!-- Marketplace Parallax -->
-    <section class="marketplace-parallax">
-        <div class="marketplace-parallax-bg" style="background-image: url('images/team/cover-tscp-140.jpg')"></div>
-        <div class="marketplace-parallax-overlay"></div>
-        <div class="marketplace-parallax-content">
-            <h2>The Supply Chain Project (TSCP) Multi-Collaborative Marketplace</h2>
-            <p>Did you know that by donating through The Supply Chain Project, you can help support a number of different non-profits? We facilitate contact with different non-profits, so you can be sure that your donation will go to a cause you care about. Plus, you will have access to impact reports that you can customize for your CSR projects. So not only will you be helping out a worthy cause, but you'll also be able to track the impact of your donation.</p>
-            <a href="https://app.thesupplychainproject.org" class="btn-become-member" style="background: var(--accent); color: var(--dark);">MARKETPLACES NEWS</a>
-        </div>
-    </section>
-
-    <!-- Collaborate & Optimize Section -->
-    <section class="collab-section">
+    <!-- Leadership Quotes Section -->
+    <section class="quotes-section">
         <div class="container">
-            <div class="collab-grid">
-                <div class="collab-item">
-                    <h3>Collaborate</h3>
-                    <p>Build strategic relationships with marketplace participants.</p>
+            <div class="quotes-grid">
+                <div class="quote-card">
+                    <blockquote>&ldquo;Our focus is to take the best from the for-profit supply chain world and marry it with the best of the nonprofit arena to create solutions that evens the playing field for Nonprofits. Today no NGO is too small or too big to benefit from an improved supply chain.&rdquo;</blockquote>
+                    <cite>Steve Robinson, CEO and Founder</cite>
                 </div>
-                <div class="collab-item">
-                    <h3>Optimize</h3>
-                    <p>Improve your processes to increase your impact</p>
+                <div class="quote-card">
+                    <blockquote>&ldquo;Improving and streamlining supply chain activities is critical to non-profit organizations. Simplifying work, streamlining operations, and professionalizing services allow non-profits to spend more of their scarce resources on their mission.&rdquo;</blockquote>
+                    <cite>Carol Wylie, Co-Founder and COO</cite>
                 </div>
-            </div>
-            <div class="collab-cta">
-                <a href="/contact-us.html" class="btn-connect">CONNECT WITH US</a>
+                <div class="quote-card">
+                    <blockquote>&ldquo;The TSCP team partnered with one of its portfolio companies Kountable, and found a local distributor in Rwanda. The Supply Chain Project brought together its network of global experts and logistics partners to to deliver over 9 million malaria test kits to Rwanda.&rdquo;</blockquote>
+                    <cite>Christopher Hale, CEO and Founder Kountable</cite>
+                </div>
             </div>
         </div>
     </section>
@@ -430,15 +453,15 @@
                         <h4>Recent Posts</h4>
                         <ul class="footer-posts">
                             <li>
-                                <a href="https://thesupplychainproject.org/blog-widget/turning-waste-into-impact-dmsca-and-the-supply-chain-project">Turning Waste into Impact: DMSCA and The Supply Chain Project</a>
+                                <a href="/blog-widget/turning-waste-into-impact-dmsca-and-the-supply-chain-project">Turning Waste into Impact: DMSCA and The Supply Chain Project</a>
                                 <span class="post-meta">February 23, 2026</span>
                             </li>
                             <li>
-                                <a href="https://thesupplychainproject.org/blog-widget/non-profit-supply-chains-why-do-they-need-capability-and-why-now">Non-Profit Supply Chains - Why Do They Need Capability? And Why Now?</a>
+                                <a href="/blog-widget/non-profit-supply-chains-why-do-they-need-capability-and-why-now">Non-Profit Supply Chains - Why Do They Need Capability? And Why Now?</a>
                                 <span class="post-meta">June 6, 2024</span>
                             </li>
                             <li>
-                                <a href="https://thesupplychainproject.org/blog-widget/the-dominican-republic-logistics-summit-a-proof-of-the-dra-s-commitment-to-the-regional-development">The Dominican Republic Logistics Summit</a>
+                                <a href="/blog-widget/the-dominican-republic-logistics-summit-a-proof-of-the-dra-s-commitment-to-the-regional-development">The Dominican Republic Logistics Summit</a>
                                 <span class="post-meta">April 26, 2024</span>
                             </li>
                         </ul>
@@ -446,8 +469,8 @@
                     <div class="footer-col">
                         <h4>Resources</h4>
                         <ul class="footer-links">
-                            <li><a href="/policy.html">Privacy Policy</a></li>
-                            <li><a href="/terms-of-use.html">Terms of Use</a></li>
+                            <li><a href="/policy">Privacy Policy</a></li>
+                            <li><a href="/terms-of-use">Terms of Use</a></li>
                             <li><a href="/nfpo-level">Non-For-Profit Organization Solutions</a></li>
                             <li><a href="https://networked.co/c/the-supply-chain-project/">Community Discussions</a></li>
                             <li><a href="https://supplino.com/tscp-supply-chain-assessment-questionnaire/">Supply Chain Assessment</a></li>
@@ -463,7 +486,7 @@
         <div class="footer-bottom">
             <div class="container">
                 <div class="footer-bottom-inner">
-                    <p>&copy; The Supply Chain Project | <a href="/policy.html">Policy</a> | <a href="/terms-of-use.html">Terms of Use</a></p>
+                    <p>&copy; The Supply Chain Project | <a href="/policy">Policy</a> | <a href="/terms-of-use">Terms of Use</a></p>
                     <div class="social-links">
                         <a href="https://www.facebook.com/thesupplychainproject" aria-label="Facebook" target="_blank" rel="noopener">
                             <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
@@ -483,6 +506,6 @@
     <!-- GSAP CDN -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
-    <script src="js/ourteam.js"></script>
+    <script src="js/emergency.js"></script>
 </body>
 </html>
