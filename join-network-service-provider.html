@@ -18,7 +18,7 @@
         }
         .quotes-grid {
             display: grid;
-            grid-template-columns: 1fr 1fr;
+            grid-template-columns: repeat(3, 1fr);
             gap: 40px;
             max-width: 1000px;
             margin: 0 auto;
@@ -194,6 +194,20 @@
                 grid-template-columns: 1fr;
             }
         }
+    
+        .quote-card { text-align: center; }
+        .quote-photo {
+            width: 96px;
+            height: 96px;
+            border-radius: 50%;
+            object-fit: cover;
+            display: block;
+            margin: 0 auto 20px;
+            border: 3px solid var(--accent);
+        }
+        @media (max-width: 992px) {
+            .quotes-grid { grid-template-columns: 1fr !important; }
+        }
     </style>
 </head>
 <body>
@@ -207,7 +221,6 @@
             <nav class="main-nav" id="mainNav">
                 <ul class="nav-list">
                     <li><a href="/">Home</a></li>
-                    <li><a href="https://app.thesupplychainproject.org">Marketplace</a></li>
                     <li class="has-dropdown">
                         <a href="javascript:void(0)">About Us <span class="arrow">&#9662;</span></a>
                         <ul class="dropdown">
@@ -562,14 +575,17 @@
         <div class="container">
             <div class="quotes-grid">
                 <div class="quote-card">
+                    <img src="images/team/staff-001.jpg" alt="Steve Robinson" class="quote-photo">
                     <blockquote>&ldquo;Our focus is to take the best from the for-profit supply chain world and marry it with the best of the nonprofit arena to create solutions that evens the playing field for Nonprofits. Today no NGO is too small or too big to benefit from an improved supply chain.&rdquo;</blockquote>
                     <cite>Steve Robinson, CEO and Founder</cite>
                 </div>
                 <div class="quote-card">
+                    <img src="images/team/staff-005.jpg" alt="Carol Wylie" class="quote-photo">
                     <blockquote>&ldquo;Improving and streamlining supply chain activities is critical to non-profit organizations. Simplifying work, streamlining operations, and professionalizing services allow non-profits to spend more of their scarce resources on their mission.&rdquo;</blockquote>
                     <cite>Carol Wylie, Co-Founder and COO</cite>
                 </div>
                 <div class="quote-card">
+                    <img src="images/team/Hale.jpg" alt="Christopher Hale" class="quote-photo">
                     <blockquote>&ldquo;The TSCP team partnered with one of its portfolio companies Kountable, and found a local distributor in Rwanda. The Supply Chain Project brought together its network of global experts and logistics partners to to deliver over 9 million malaria test kits to Rwanda.&rdquo;</blockquote>
                     <cite>Christopher Hale, CEO and Founder Kountable</cite>
                 </div>
@@ -651,5 +667,6 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
     <script src="js/emergency.js"></script>
+    <script src="js/quotes-slider.js"></script>
 </body>
 </html>

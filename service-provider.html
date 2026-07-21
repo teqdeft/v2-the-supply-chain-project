@@ -218,6 +218,20 @@
                 grid-template-columns: 1fr;
             }
         }
+    
+        .quote-card { text-align: center; }
+        .quote-photo {
+            width: 96px;
+            height: 96px;
+            border-radius: 50%;
+            object-fit: cover;
+            display: block;
+            margin: 0 auto 20px;
+            border: 3px solid var(--accent);
+        }
+        @media (max-width: 992px) {
+            .quotes-grid { grid-template-columns: 1fr !important; }
+        }
     </style>
 </head>
 <body>
@@ -231,7 +245,6 @@
             <nav class="main-nav" id="mainNav">
                 <ul class="nav-list">
                     <li><a href="/">Home</a></li>
-                    <li><a href="https://app.thesupplychainproject.org">Marketplace</a></li>
                     <li class="has-dropdown">
                         <a href="javascript:void(0)">About Us <span class="arrow">&#9662;</span></a>
                         <ul class="dropdown">
@@ -350,10 +363,10 @@
                         <h4 style="font-size: 1.0625rem; font-weight: 700; color: var(--dark); margin-bottom: 8px;">Logistics Providers</h4>
                         <p style="font-size: 0.9375rem; color: var(--gray-700); line-height: 1.7; margin-bottom: 12px;">Non-profits are always in need of ways to transport, store, or distribute goods. Become one of our partners that can help non-profits achieve that. We are looking for:</p>
                         <ul style="list-style: none; padding: 0; margin: 0;">
-                            <li style="font-size: 0.9375rem; color: var(--gray-700); padding: 4px 0; padding-left: 16px; position: relative;"><span style="position: absolute; left: 0; color: var(--primary);">•</span> Local-level transportation</li>
-                            <li style="font-size: 0.9375rem; color: var(--gray-700); padding: 4px 0; padding-left: 16px; position: relative;"><span style="position: absolute; left: 0; color: var(--primary);">•</span> National-level transportation</li>
-                            <li style="font-size: 0.9375rem; color: var(--gray-700); padding: 4px 0; padding-left: 16px; position: relative;"><span style="position: absolute; left: 0; color: var(--primary);">•</span> Regional-level transportation</li>
-                            <li style="font-size: 0.9375rem; color: var(--gray-700); padding: 4px 0; padding-left: 16px; position: relative;"><span style="position: absolute; left: 0; color: var(--primary);">•</span> International-level transportation</li>
+                            <li style="font-size: 0.9375rem; color: var(--gray-700); padding: 4px 0; padding-left: 16px; position: relative;"><span style="position: absolute; left: 0; color: var(--primary);">&bull;</span> Local-level transportation</li>
+                            <li style="font-size: 0.9375rem; color: var(--gray-700); padding: 4px 0; padding-left: 16px; position: relative;"><span style="position: absolute; left: 0; color: var(--primary);">&bull;</span> National-level transportation</li>
+                            <li style="font-size: 0.9375rem; color: var(--gray-700); padding: 4px 0; padding-left: 16px; position: relative;"><span style="position: absolute; left: 0; color: var(--primary);">&bull;</span> Regional-level transportation</li>
+                            <li style="font-size: 0.9375rem; color: var(--gray-700); padding: 4px 0; padding-left: 16px; position: relative;"><span style="position: absolute; left: 0; color: var(--primary);">&bull;</span> International-level transportation</li>
                         </ul>
                     </div>
 
@@ -361,10 +374,10 @@
                         <h4 style="font-size: 1.0625rem; font-weight: 700; color: var(--dark); margin-bottom: 8px;">Technology Providers</h4>
                         <p style="font-size: 0.9375rem; color: var(--gray-700); line-height: 1.7; margin-bottom: 12px;">The non-profits we connect with are distribution intense. They are in a constant need of technology to manage their growing impact. Here are the top tech providers we want to work with:</p>
                         <ul style="list-style: none; padding: 0; margin: 0;">
-                            <li style="font-size: 0.9375rem; color: var(--gray-700); padding: 4px 0; padding-left: 16px; position: relative;"><span style="position: absolute; left: 0; color: var(--primary);">•</span> Fulfillment platforms</li>
-                            <li style="font-size: 0.9375rem; color: var(--gray-700); padding: 4px 0; padding-left: 16px; position: relative;"><span style="position: absolute; left: 0; color: var(--primary);">•</span> Logistics management solutions</li>
-                            <li style="font-size: 0.9375rem; color: var(--gray-700); padding: 4px 0; padding-left: 16px; position: relative;"><span style="position: absolute; left: 0; color: var(--primary);">•</span> Dispatch software</li>
-                            <li style="font-size: 0.9375rem; color: var(--gray-700); padding: 4px 0; padding-left: 16px; position: relative;"><span style="position: absolute; left: 0; color: var(--primary);">•</span> Data Analytics providers</li>
+                            <li style="font-size: 0.9375rem; color: var(--gray-700); padding: 4px 0; padding-left: 16px; position: relative;"><span style="position: absolute; left: 0; color: var(--primary);">&bull;</span> Fulfillment platforms</li>
+                            <li style="font-size: 0.9375rem; color: var(--gray-700); padding: 4px 0; padding-left: 16px; position: relative;"><span style="position: absolute; left: 0; color: var(--primary);">&bull;</span> Logistics management solutions</li>
+                            <li style="font-size: 0.9375rem; color: var(--gray-700); padding: 4px 0; padding-left: 16px; position: relative;"><span style="position: absolute; left: 0; color: var(--primary);">&bull;</span> Dispatch software</li>
+                            <li style="font-size: 0.9375rem; color: var(--gray-700); padding: 4px 0; padding-left: 16px; position: relative;"><span style="position: absolute; left: 0; color: var(--primary);">&bull;</span> Data Analytics providers</li>
                         </ul>
                     </div>
 
@@ -377,11 +390,11 @@
                         <h4 style="font-size: 1.0625rem; font-weight: 700; color: var(--dark); margin-bottom: 8px;">Industry Professionals</h4>
                         <p style="font-size: 0.9375rem; color: var(--gray-700); line-height: 1.7; margin-bottom: 12px;">Persons with expertise can help non-profits access knowledge, good practices, and technology so organizations can execute their projects more effectively. Access to consulting in:</p>
                         <ul style="list-style: none; padding: 0; margin: 0;">
-                            <li style="font-size: 0.9375rem; color: var(--gray-700); padding: 4px 0; padding-left: 16px; position: relative;"><span style="position: absolute; left: 0; color: var(--primary);">•</span> Supply chain management</li>
-                            <li style="font-size: 0.9375rem; color: var(--gray-700); padding: 4px 0; padding-left: 16px; position: relative;"><span style="position: absolute; left: 0; color: var(--primary);">•</span> Project management</li>
-                            <li style="font-size: 0.9375rem; color: var(--gray-700); padding: 4px 0; padding-left: 16px; position: relative;"><span style="position: absolute; left: 0; color: var(--primary);">•</span> Logistics planning</li>
-                            <li style="font-size: 0.9375rem; color: var(--gray-700); padding: 4px 0; padding-left: 16px; position: relative;"><span style="position: absolute; left: 0; color: var(--primary);">•</span> Financial consulting</li>
-                            <li style="font-size: 0.9375rem; color: var(--gray-700); padding: 4px 0; padding-left: 16px; position: relative;"><span style="position: absolute; left: 0; color: var(--primary);">•</span> Legal advice</li>
+                            <li style="font-size: 0.9375rem; color: var(--gray-700); padding: 4px 0; padding-left: 16px; position: relative;"><span style="position: absolute; left: 0; color: var(--primary);">&bull;</span> Supply chain management</li>
+                            <li style="font-size: 0.9375rem; color: var(--gray-700); padding: 4px 0; padding-left: 16px; position: relative;"><span style="position: absolute; left: 0; color: var(--primary);">&bull;</span> Project management</li>
+                            <li style="font-size: 0.9375rem; color: var(--gray-700); padding: 4px 0; padding-left: 16px; position: relative;"><span style="position: absolute; left: 0; color: var(--primary);">&bull;</span> Logistics planning</li>
+                            <li style="font-size: 0.9375rem; color: var(--gray-700); padding: 4px 0; padding-left: 16px; position: relative;"><span style="position: absolute; left: 0; color: var(--primary);">&bull;</span> Financial consulting</li>
+                            <li style="font-size: 0.9375rem; color: var(--gray-700); padding: 4px 0; padding-left: 16px; position: relative;"><span style="position: absolute; left: 0; color: var(--primary);">&bull;</span> Legal advice</li>
                         </ul>
                     </div>
                 </div>
@@ -392,9 +405,9 @@
     <!-- Leadership Quotes Section -->
     <section class="quotes-section" style="padding: 80px 0; background: var(--dark); color: var(--white);">
         <div class="container">
-            <div class="quotes-grid" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px;">
+            <div class="quotes-grid">
                 <div class="quote-card" style="background: rgba(255,255,255,0.06); border-radius: 8px; padding: 32px; border: 1px solid rgba(255,255,255,0.1);">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" style="width: 32px; height: 32px; color: #8fb4b7; margin-bottom: 16px;"><path d="M3 21c3 0 7-1 7-8V5c0-1.25-.756-2.017-2-2H4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2 1 0 1 0 1 1v1c0 1-1 2-2 2s-1 .008-1 1.031V20c0 1 0 1 1 1z"/><path d="M15 21c3 0 7-1 7-8V5c0-1.25-.757-2.017-2-2h-4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2h.75c0 2.25.25 4-2.75 4v3c0 1 0 1 1 1z"/></svg>
+                    <img src="images/team/staff-001.jpg" alt="Steve Robinson" class="quote-photo">
                     <p style="font-size: 0.9375rem; color: rgba(255,255,255,0.85); line-height: 1.8; margin-bottom: 24px; font-style: italic;">Our focus is to take the best from the for-profit supply chain world and marry it with the best of the nonprofit arena to create solutions that evens the playing field for Nonprofits. Today no NGO is too small or too big to benefit from an improved supply chain.</p>
                     <div style="border-top: 1px solid rgba(255,255,255,0.1); padding-top: 16px;">
                         <p style="font-weight: 700; font-size: 0.9375rem; color: var(--white); margin-bottom: 4px;">Steve Robinson</p>
@@ -403,7 +416,7 @@
                 </div>
 
                 <div class="quote-card" style="background: rgba(255,255,255,0.06); border-radius: 8px; padding: 32px; border: 1px solid rgba(255,255,255,0.1);">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" style="width: 32px; height: 32px; color: #8fb4b7; margin-bottom: 16px;"><path d="M3 21c3 0 7-1 7-8V5c0-1.25-.756-2.017-2-2H4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2 1 0 1 0 1 1v1c0 1-1 2-2 2s-1 .008-1 1.031V20c0 1 0 1 1 1z"/><path d="M15 21c3 0 7-1 7-8V5c0-1.25-.757-2.017-2-2h-4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2h.75c0 2.25.25 4-2.75 4v3c0 1 0 1 1 1z"/></svg>
+                    <img src="images/team/staff-005.jpg" alt="Carol Wylie" class="quote-photo">
                     <p style="font-size: 0.9375rem; color: rgba(255,255,255,0.85); line-height: 1.8; margin-bottom: 24px; font-style: italic;">Improving and streamlining supply chain activities is critical to non-profit organizations. Simplifying work, streamlining operations, and professionalizing services allow non-profits to spend more of their scarce resources on their mission.</p>
                     <div style="border-top: 1px solid rgba(255,255,255,0.1); padding-top: 16px;">
                         <p style="font-weight: 700; font-size: 0.9375rem; color: var(--white); margin-bottom: 4px;">Carol Wylie</p>
@@ -412,7 +425,7 @@
                 </div>
 
                 <div class="quote-card" style="background: rgba(255,255,255,0.06); border-radius: 8px; padding: 32px; border: 1px solid rgba(255,255,255,0.1);">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" style="width: 32px; height: 32px; color: #8fb4b7; margin-bottom: 16px;"><path d="M3 21c3 0 7-1 7-8V5c0-1.25-.756-2.017-2-2H4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2 1 0 1 0 1 1v1c0 1-1 2-2 2s-1 .008-1 1.031V20c0 1 0 1 1 1z"/><path d="M15 21c3 0 7-1 7-8V5c0-1.25-.757-2.017-2-2h-4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2h.75c0 2.25.25 4-2.75 4v3c0 1 0 1 1 1z"/></svg>
+                    <img src="images/team/Hale.jpg" alt="Christopher Hale" class="quote-photo">
                     <p style="font-size: 0.9375rem; color: rgba(255,255,255,0.85); line-height: 1.8; margin-bottom: 24px; font-style: italic;">The TSCP team partnered with one of its portfolio companies Kountable, and found a local distributor in Rwanda. The Supply Chain Project brought together its network of global experts and logistics partners to to deliver over 9 million malaria test kits to Rwanda.</p>
                     <div style="border-top: 1px solid rgba(255,255,255,0.1); padding-top: 16px;">
                         <p style="font-weight: 700; font-size: 0.9375rem; color: var(--white); margin-bottom: 4px;">Christopher Hale</p>
@@ -726,5 +739,6 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
     <script src="js/serviceprovider.js"></script>
+    <script src="js/quotes-slider.js"></script>
 </body>
 </html>
