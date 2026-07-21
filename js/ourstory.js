@@ -226,8 +226,6 @@ document.addEventListener('DOMContentLoaded', function () {
         // Activity cards
         gsap.from('.activity-card', {
             opacity: 0,
-            y: 50,
-            scale: 0.9,
             duration: 0.7,
             stagger: 0.15,
             ease: 'back.out(1.3)',
@@ -332,4 +330,11 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 
+});
+
+// Recompute scroll-trigger positions once all images have loaded
+window.addEventListener('load', function () {
+    if (typeof ScrollTrigger !== 'undefined') {
+        ScrollTrigger.refresh();
+    }
 });

@@ -215,3 +215,10 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
 });
+
+// Recompute scroll-trigger positions once all images have loaded
+window.addEventListener('load', function () {
+    if (typeof ScrollTrigger !== 'undefined') {
+        ScrollTrigger.refresh();
+    }
+});
