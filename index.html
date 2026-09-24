@@ -43,6 +43,11 @@
             gap: 24px;
         }
 
+        .opportunity-grid-2 {
+            grid-template-columns: repeat(2, minmax(0, 400px));
+            justify-content: center;
+        }
+
         .opportunity-card {
             background: var(--dark);
             border-radius: 16px;
@@ -532,22 +537,14 @@
                 <h2 class="section-title">The Unseen Opportunity. The Urgent Imperative.</h2>
                 <p class="section-subtitle strategy-lede">Every day, billions in resources sit idle while communities and organizations go without.</p>
             </div>
-            <div class="opportunity-grid">
+            <div class="opportunity-grid opportunity-grid-2">
                 <div class="opportunity-card">
                     <span class="strategy-stat-value">$890B+</span>
-                    <p>in returned &amp; excess inventory in the U.S. annually</p>
+                    <p>in U.S. retail returns in 2024 (NRF / Happy Returns)</p>
                 </div>
                 <div class="opportunity-card">
                     <span class="strategy-stat-value">$1T+</span>
-                    <p>in food wasted globally each year</p>
-                </div>
-                <div class="opportunity-card">
-                    <span class="strategy-stat-value">40%</span>
-                    <p>of nonprofits lack consistent access to critical resources</p>
-                </div>
-                <div class="opportunity-card">
-                    <span class="strategy-stat-value">$200B+</span>
-                    <p>in avoidable logistics and disposal costs each year</p>
+                    <p>in global food loss and waste (UNEP / WRAP, 2024)</p>
                 </div>
             </div>
             <div class="strategy-closing">
@@ -758,7 +755,7 @@
     </section>
 
     <!-- Stats Section -->
-    <!-- <section class="stats-section" id="statsSection">
+    <section class="stats-section" id="statsSection">
         <div class="container">
             <div class="stats-grid">
                 <div class="stat-item">
@@ -774,12 +771,13 @@
                     <p class="stat-label">Service Providers</p>
                 </div>
                 <div class="stat-item">
+                    
                     <span class="stat-number" data-target="30">0</span><span class="stat-suffix">+</span>
                     <p class="stat-label">Countries Reached</p>
                 </div>
             </div>
         </div>
-    </section> -->
+    </section>
 
     <!-- The Scale of What's Possible Section -->
     <!-- <section class="strategy-section strategy-dark" id="scaleSection">
@@ -791,22 +789,18 @@
             <div class="scale-grid">
                 <div class="scale-stat">
                     <h3>$890B+</h3>
-                    <p>In returned &amp; excess inventory in the U.S. annually</p>
+                    <p>In U.S. retail returns in 2024 (NRF / Happy Returns)</p>
                 </div>
                 <div class="scale-stat">
                     <h3>$1T+</h3>
-                    <p>In food wasted globally each year</p>
-                </div>
-                <div class="scale-stat">
-                    <h3>$200B+</h3>
-                    <p>In avoidable logistics and disposal costs each year</p>
+                    <p>In global food loss and waste (UNEP / WRAP, 2024)</p>
                 </div>
                 <div class="scale-stat">
                     <h3>1.6B+</h3>
                     <p>People experiencing material hardship worldwide</p>
                 </div>
                 <div class="scale-stat">
-                    <h3>1.6B</h3>
+                    <h3>1.6B</h3> 
                     <p>Tons of CO2e from wasted goods annually</p>
                 </div>
             </div>
@@ -880,23 +874,6 @@
                             <input type="number" placeholder="What is 6 + 3 ?" required>
                             <button type="submit" class="btn-newsletter">Mailing List</button>
                         </form>
-                    </div>
-                    <div class="footer-col">
-                        <h4>Recent Posts</h4>
-                        <ul class="footer-posts">
-                            <li>
-                                <a>Turning Waste into Impact: DMSCA and The Supply Chain Project</a>
-                                <span class="post-meta">February 23, 2026</span>
-                            </li>
-                            <li>
-                                <a>Non-Profit Supply Chains - Why Do They Need Capability? And Why Now?</a>
-                                <span class="post-meta">June 6, 2024</span>
-                            </li>
-                            <li>
-                                <a>The Dominican Republic Logistics Summit</a>
-                                <span class="post-meta">April 26, 2024</span>
-                            </li>
-                        </ul>
                     </div>
                     <div class="footer-col">
                         <h4>Resources</h4>
