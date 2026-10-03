@@ -1,623 +1,1006 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Donors - The Supply Chain Project</title>
-    <link rel="stylesheet" href="css/styles.css">
-    <link rel="stylesheet" href="css/ourstory.css">
-    <link rel="stylesheet" href="css/responsive.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css" />
+    <link rel="stylesheet" href="css/ourstory.css" />
+    <link rel="stylesheet" href="css/responsive.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@700;800;900&display=swap"
+      rel="stylesheet"
+    />
     <style>
-        /* Measuring Success + SWY sections */
-        .measure-sub {
-            text-align: center;
-            font-size: 1.0625rem;
-            font-weight: 600;
-            color: var(--primary, #0d7377);
-            margin-bottom: 16px;
-        }
-        .measure-intro {
-            max-width: 820px;
-            margin: 0 auto 48px;
-            text-align: center;
-        }
+      /* Measuring Success + SWY sections */
+      .measure-sub {
+        text-align: center;
+        font-size: 1.0625rem;
+        font-weight: 600;
+        color: var(--primary, #0d7377);
+        margin-bottom: 16px;
+      }
+      .measure-intro {
+        max-width: 820px;
+        margin: 0 auto 48px;
+        text-align: center;
+      }
+      .metrics-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 28px;
+        margin-bottom: 56px;
+      }
+      .metric-card {
+        background: var(--white, #ffffff);
+        border: 1px solid var(--gray-300, #dee2e6);
+        border-top: 4px solid var(--primary, #0d7377);
+        border-radius: 8px;
+        padding: 28px 24px;
+      }
+      .metric-card h3 {
+        font-size: 0.9375rem;
+        font-weight: 700;
+        letter-spacing: 0.06em;
+        color: var(--primary, #0d7377);
+        margin-bottom: 10px;
+      }
+      .metric-card p {
+        font-size: 0.9375rem;
+        color: var(--gray-700, #495057);
+        line-height: 1.7;
+      }
+      .wellbeing-block {
+        background: var(--dark, #1a1a2e);
+        border-radius: 8px;
+        padding: 48px 40px;
+        margin-bottom: 56px;
+      }
+      .wellbeing-block-title {
+        font-size: 1.0625rem;
+        font-weight: 700;
+        letter-spacing: 0.08em;
+        color: var(--accent, #e8a838);
+        text-align: center;
+        margin-bottom: 32px;
+      }
+      .wellbeing-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 24px;
+      }
+      .wellbeing-card {
+        background: rgba(255, 255, 255, 0.05);
+        border-left: 4px solid var(--accent, #e8a838);
+        border-radius: 8px;
+        padding: 24px 20px;
+      }
+      .wellbeing-card h4 {
+        font-size: 0.875rem;
+        font-weight: 700;
+        letter-spacing: 0.05em;
+        color: #ffffff;
+        margin-bottom: 10px;
+      }
+      .wellbeing-card p {
+        font-size: 0.875rem;
+        color: rgba(255, 255, 255, 0.75);
+        line-height: 1.7;
+      }
+      .measure-principles {
+        max-width: 640px;
+        margin: 0 auto 48px;
+      }
+      .measure-closing {
+        text-align: center;
+        font-size: 1.1875rem;
+        color: var(--dark, #1a1a2e);
+        line-height: 1.6;
+        max-width: 820px;
+        margin: 0 auto;
+      }
+      .swy-formula {
+        display: flex;
+        align-items: stretch;
+        justify-content: center;
+        gap: 16px;
+        flex-wrap: wrap;
+        margin: 32px 0 40px;
+      }
+      .swy-block {
+        flex: 1 1 200px;
+        max-width: 260px;
+        background: var(--white, #ffffff);
+        border: 1px solid var(--gray-300, #dee2e6);
+        border-top: 4px solid var(--primary, #0d7377);
+        border-radius: 8px;
+        padding: 24px 20px;
+        text-align: center;
+      }
+      .swy-block h3 {
+        font-size: 0.9375rem;
+        font-weight: 700;
+        letter-spacing: 0.05em;
+        color: var(--primary, #0d7377);
+        margin-bottom: 10px;
+      }
+      .swy-block p {
+        font-size: 0.875rem;
+        color: var(--gray-700, #495057);
+        line-height: 1.7;
+      }
+      .swy-block.swy-total {
+        background: var(--dark, #1a1a2e);
+        border-color: var(--accent, #e8a838);
+      }
+      .swy-block.swy-total h3 {
+        color: var(--accent, #e8a838);
+      }
+      .swy-block.swy-total p {
+        color: rgba(255, 255, 255, 0.8);
+      }
+      .swy-operator {
+        display: flex;
+        align-items: center;
+        font-size: 1.75rem;
+        font-weight: 800;
+        color: var(--accent, #e8a838);
+      }
+      @media (max-width: 992px) {
         .metrics-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 28px;
-            margin-bottom: 56px;
-        }
-        .metric-card {
-            background: var(--white, #ffffff);
-            border: 1px solid var(--gray-300, #dee2e6);
-            border-top: 4px solid var(--primary, #0d7377);
-            border-radius: 8px;
-            padding: 28px 24px;
-        }
-        .metric-card h3 {
-            font-size: 0.9375rem;
-            font-weight: 700;
-            letter-spacing: 0.06em;
-            color: var(--primary, #0d7377);
-            margin-bottom: 10px;
-        }
-        .metric-card p {
-            font-size: 0.9375rem;
-            color: var(--gray-700, #495057);
-            line-height: 1.7;
-        }
-        .wellbeing-block {
-            background: var(--dark, #1a1a2e);
-            border-radius: 8px;
-            padding: 48px 40px;
-            margin-bottom: 56px;
-        }
-        .wellbeing-block-title {
-            font-size: 1.0625rem;
-            font-weight: 700;
-            letter-spacing: 0.08em;
-            color: var(--accent, #e8a838);
-            text-align: center;
-            margin-bottom: 32px;
+          grid-template-columns: repeat(2, 1fr);
         }
         .wellbeing-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 24px;
+          grid-template-columns: repeat(2, 1fr);
         }
-        .wellbeing-card {
-            background: rgba(255, 255, 255, 0.05);
-            border-left: 4px solid var(--accent, #e8a838);
-            border-radius: 8px;
-            padding: 24px 20px;
+      }
+      @media (max-width: 640px) {
+        .metrics-grid,
+        .wellbeing-grid {
+          grid-template-columns: 1fr;
         }
-        .wellbeing-card h4 {
-            font-size: 0.875rem;
-            font-weight: 700;
-            letter-spacing: 0.05em;
-            color: #ffffff;
-            margin-bottom: 10px;
-        }
-        .wellbeing-card p {
-            font-size: 0.875rem;
-            color: rgba(255, 255, 255, 0.75);
-            line-height: 1.7;
-        }
-        .measure-principles {
-            max-width: 640px;
-            margin: 0 auto 48px;
-        }
-        .measure-closing {
-            text-align: center;
-            font-size: 1.1875rem;
-            color: var(--dark, #1a1a2e);
-            line-height: 1.6;
-            max-width: 820px;
-            margin: 0 auto;
+        .wellbeing-block {
+          padding: 40px 24px;
         }
         .swy-formula {
-            display: flex;
-            align-items: stretch;
-            justify-content: center;
-            gap: 16px;
-            flex-wrap: wrap;
-            margin: 32px 0 40px;
+          flex-direction: column;
+          align-items: center;
         }
         .swy-block {
-            flex: 1 1 200px;
-            max-width: 260px;
-            background: var(--white, #ffffff);
-            border: 1px solid var(--gray-300, #dee2e6);
-            border-top: 4px solid var(--primary, #0d7377);
-            border-radius: 8px;
-            padding: 24px 20px;
-            text-align: center;
+          max-width: 100%;
+          width: 100%;
         }
-        .swy-block h3 {
-            font-size: 0.9375rem;
-            font-weight: 700;
-            letter-spacing: 0.05em;
-            color: var(--primary, #0d7377);
-            margin-bottom: 10px;
+      }
+
+      .quote-card {
+        text-align: center;
+      }
+      .quote-photo {
+        width: 96px;
+        height: 96px;
+        border-radius: 50%;
+        object-fit: cover;
+        display: block;
+        margin: 0 auto 20px;
+        border: 3px solid var(--accent);
+      }
+      @media (max-width: 992px) {
+        .quotes-grid {
+          grid-template-columns: 1fr !important;
         }
-        .swy-block p {
-            font-size: 0.875rem;
-            color: var(--gray-700, #495057);
-            line-height: 1.7;
-        }
-        .swy-block.swy-total {
-            background: var(--dark, #1a1a2e);
-            border-color: var(--accent, #e8a838);
-        }
-        .swy-block.swy-total h3 {
-            color: var(--accent, #e8a838);
-        }
-        .swy-block.swy-total p {
-            color: rgba(255, 255, 255, 0.8);
-        }
-        .swy-operator {
-            display: flex;
-            align-items: center;
-            font-size: 1.75rem;
-            font-weight: 800;
-            color: var(--accent, #e8a838);
-        }
-        @media (max-width: 992px) {
-            .metrics-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-            .wellbeing-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-        }
-        @media (max-width: 640px) {
-            .metrics-grid,
-            .wellbeing-grid {
-                grid-template-columns: 1fr;
-            }
-            .wellbeing-block {
-                padding: 40px 24px;
-            }
-            .swy-formula {
-                flex-direction: column;
-                align-items: center;
-            }
-            .swy-block {
-                max-width: 100%;
-                width: 100%;
-            }
-        }
-    
-        .quote-card { text-align: center; }
-        .quote-photo {
-            width: 96px;
-            height: 96px;
-            border-radius: 50%;
-            object-fit: cover;
-            display: block;
-            margin: 0 auto 20px;
-            border: 3px solid var(--accent);
-        }
-        @media (max-width: 992px) {
-            .quotes-grid { grid-template-columns: 1fr !important; }
-        }
+      }
     </style>
     <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-L0ZLVPTTV1"></script>
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-L0ZLVPTTV1"
+    ></script>
     <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
 
-        gtag('config', 'G-L0ZLVPTTV1');
+      gtag("config", "G-L0ZLVPTTV1");
     </script>
-</head>
-<body>
-
+  </head>
+  <body>
     <!-- Header -->
     <header class="header scrolled" id="header">
-        <div class="header-inner">
-            <a href="/" class="logo">
-                <img src="images/logo-white-text.png" alt="The Supply Chain Project">
-            </a>
-            <nav class="main-nav" id="mainNav">
-                <ul class="nav-list">
-                    <li><a href="/">Home</a></li>
-                    <li class="has-dropdown">
-                        <a href="javascript:void(0)">About Us <span class="arrow">&#9662;</span></a>
-                        <ul class="dropdown">
-                            <li><a href="/our-story.html">Our Story</a></li>
-                            <li><a href="/our-mission.html">Mission</a></li>
-                            <li><a href="/our-services.html">Services</a></li>
-                            <li><a href="/our-technology.html">Technology</a></li>
-                            <li><a href="/our-team.html">Team</a></li>
-                            <li><a href="/contact-us.html">Contact Us</a></li>
-                        </ul>
-                    </li>
-                    <li class="has-dropdown">
-                        <a href="javascript:void(0)">Get Involved <span class="arrow">&#9662;</span></a>
-                        <ul class="dropdown">
-                            <li><a href="/join-network-nonprofits.html">I'm a Nonprofit</a></li>
-                            <li><a href="/donors.html">I'm a Donor</a></li>
-                            <li><a href="/join-network-professional-provider.html">I'm a Professional</a></li>
-                            <li><a href="/cmn-members-access.html">I'm a Corporation</a></li>
-                            <li><a href="/join-network-logistics-provider.html">I'm a Logistics Provider</a></li>
-                            <li><a href="/join-network-service-provider.html">I'm a Service Provider</a></li>
-                            <li><a href="/join-network-technology-provider.html">I'm a Technology Provider</a></li>
-                            <li><a href="/smn-members-access.html">I'm a Student</a></li>
-                            <li><a href="/join-network-volunteer.html">I'm a Volunteer</a></li>
-                        </ul>
-                    </li>
-                    <li class="has-dropdown">
-                        <a href="javascript:void(0)">Support <span class="arrow">&#9662;</span></a>
-                        <ul class="dropdown">
-                            <li><a href="/members-tscp.html">Membership</a></li>
-                            <li><a href="/donors.html">Donations</a></li>
-                            <li><a href="/logistics-tscp.html">Logistics</a></li>
-                            <li><a href="/our-technology.html">Technology</a></li>
-                        </ul>
-                    </li>
-                </ul>
-            </nav>
-            <div class="header-actions">
-                <a href="https://app.thesupplychainproject.org" class="btn-marketplace">Enter Marketplace</a>
-                <button class="hamburger" id="hamburger" aria-label="Toggle menu">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </button>
-            </div>
+      <div class="header-inner">
+        <a href="/" class="logo">
+          <img
+            src="images/logo-white-text.png"
+            alt="The Supply Chain Project"
+          />
+        </a>
+        <nav class="main-nav" id="mainNav">
+          <ul class="nav-list">
+            <li><a href="/">Home</a></li>
+            <li class="has-dropdown">
+              <a href="javascript:void(0)"
+                >About Us <span class="arrow">&#9662;</span></a
+              >
+              <ul class="dropdown">
+                <li><a href="/our-story.html">Our Story</a></li>
+                <li><a href="/our-mission.html">Mission</a></li>
+                <li><a href="/our-services.html">Services</a></li>
+                <li><a href="/our-technology.html">Technology</a></li>
+                <li><a href="/our-team.html">Team</a></li>
+                <li><a href="/contact-us.html">Contact Us</a></li>
+              </ul>
+            </li>
+            <li class="has-dropdown">
+              <a href="javascript:void(0)"
+                >Get Involved <span class="arrow">&#9662;</span></a
+              >
+              <ul class="dropdown">
+                <li>
+                  <a href="/non-profits.html">I'm a Nonprofit</a>
+                </li>
+                <li><a href="/donors.html">I'm a Donor</a></li>
+                <li>
+                  <a href="/join-network-professional-provider.html"
+                    >I'm a Professional</a
+                  >
+                </li>
+                <li>
+                  <a href="/cmn-members-access.html">I'm a Corporation</a>
+                </li>
+                <li>
+                  <a href="/join-network-logistics-provider.html"
+                    >I'm a Logistics Provider</a
+                  >
+                </li>
+                <li>
+                  <a href="/join-network-service-provider.html"
+                    >I'm a Service Provider</a
+                  >
+                </li>
+                <li>
+                  <a href="/join-network-technology-provider.html"
+                    >I'm a Technology Provider</a
+                  >
+                </li>
+                <li><a href="/smn-members-access.html">I'm a Student</a></li>
+                <li>
+                  <a href="/join-network-volunteer.html">I'm a Volunteer</a>
+                </li>
+              </ul>
+            </li>
+            <li class="has-dropdown">
+              <a href="javascript:void(0)"
+                >Support <span class="arrow">&#9662;</span></a
+              >
+              <ul class="dropdown">
+                <li><a href="/members-tscp.html">Membership</a></li>
+                <li><a href="/donors.html">Donations</a></li>
+                <li><a href="/logistics-tscp.html">Logistics</a></li>
+                <li><a href="/our-technology.html">Technology</a></li>
+              </ul>
+            </li>
+          </ul>
+        </nav>
+        <div class="header-actions">
+          <a
+            href="https://app.thesupplychainproject.org"
+            class="btn-marketplace"
+            >Enter Marketplace</a
+          >
+          <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
         </div>
+      </div>
     </header>
 
     <!-- Page Hero Banner -->
     <section class="page-hero">
-        <div class="page-hero-bg" style="background-image: url('images/cover-tscp-1.jpg')"></div>
-        <div class="page-hero-overlay"></div>
-        <div class="page-hero-content">
-            <h1>Pay it Forward</h1>
-            <div class="breadcrumb">
-                <a href="/">GET INVOLVED</a> / <span>DONORS</span>
-            </div>
+      <div
+        class="page-hero-bg"
+        style="background-image: url(&quot;images/cover-tscp-1.jpg&quot;)"
+      ></div>
+      <div class="page-hero-overlay"></div>
+      <div class="page-hero-content">
+        <h1>Pay it Forward</h1>
+        <div class="breadcrumb">
+          <a href="/">GET INVOLVED</a> / <span>DONORS</span>
         </div>
+      </div>
     </section>
 
     <!-- Donors Section -->
     <section class="story-section">
-        <div class="container">
-            <div class="story-grid">
-                <!-- Left Column -->
-                <div class="story-col">
-                    <h2 class="story-heading">Pay it Forward&mdash;Give some Back</h2>
-                    <div class="story-divider"></div>
+      <div class="container">
+        <div class="story-grid">
+          <!-- Left Column -->
+          <div class="story-col">
+            <h2 class="story-heading">Pay it Forward&mdash;Give some Back</h2>
+            <div class="story-divider"></div>
 
-                    <p class="story-text">We're focused on non-profit capability building because every day is a disaster for people below the poverty line.</p>
+            <p class="story-text">
+              We're focused on non-profit capability building because every day
+              is a disaster for people below the poverty line.
+            </p>
 
-                    <h3 style="font-size: 1.1875rem; font-weight: 700; color: var(--dark); margin-bottom: 12px;">Gifts in-kind</h3>
-                    <p class="story-text">Donating gifts and in-kind items is a great way to help others while also getting a tax deduction. When considering a donation, it is important to remember that the IRS has specific rules about what can be deducted. The items must be in good condition, and you must have receipts or other documentation to prove their value. The supply chain project helps you to connect with different nonprofits, can advise what kind of items are applicable for donations, and supports you in your reporting.</p>
+            <h3
+              style="
+                font-size: 1.1875rem;
+                font-weight: 700;
+                color: var(--dark);
+                margin-bottom: 12px;
+              "
+            >
+              Gifts in-kind
+            </h3>
+            <p class="story-text">
+              Donating gifts and in-kind items is a great way to help others
+              while also getting a tax deduction. When considering a donation,
+              it is important to remember that the IRS has specific rules about
+              what can be deducted. The items must be in good condition, and you
+              must have receipts or other documentation to prove their value.
+              The supply chain project helps you to connect with different
+              nonprofits, can advise what kind of items are applicable for
+              donations, and supports you in your reporting.
+            </p>
 
-                    <a href="/donors.html" class="btn-become-member">MAKE YOUR DONATION</a>
+            <a href="/donors.html" class="btn-become-member"
+              >MAKE YOUR DONATION</a
+            >
 
-                    <h3 style="font-size: 1.1875rem; font-weight: 700; color: var(--dark); margin-bottom: 12px; margin-top: 32px;">Financial</h3>
-                    <p class="story-text">When you donate to our cause, you help us provide technology, logistic support, training, and consulting services to different non-profits that work with us. By doing so, you make a valuable contribution to our work and help us achieve our mission. We can increase our impact and support more non-profits at local, national, and international levels.</p>
+            <h3
+              style="
+                font-size: 1.1875rem;
+                font-weight: 700;
+                color: var(--dark);
+                margin-bottom: 12px;
+                margin-top: 32px;
+              "
+            >
+              Financial
+            </h3>
+            <p class="story-text">
+              When you donate to our cause, you help us provide technology,
+              logistic support, training, and consulting services to different
+              non-profits that work with us. By doing so, you make a valuable
+              contribution to our work and help us achieve our mission. We can
+              increase our impact and support more non-profits at local,
+              national, and international levels.
+            </p>
 
-                    <a href="/donors.html" class="btn-become-member">MAKE YOUR CONTRIBUTION</a>
-                </div>
+            <a href="/donors.html" class="btn-become-member"
+              >MAKE YOUR CONTRIBUTION</a
+            >
+          </div>
 
-                <!-- Right Column -->
-                <div class="story-col">
-                    <h2 class="story-heading">How can you contribute?</h2>
-                    <div class="story-divider"></div>
+          <!-- Right Column -->
+          <div class="story-col">
+            <h2 class="story-heading">How can you contribute?</h2>
+            <div class="story-divider"></div>
 
-                    <p class="story-text">Donating to non-profit has many benefits. As a donor, you are entitled to a tax deduction for the total market value of the donated items.</p>
+            <p class="story-text">
+              Donating to non-profit has many benefits. As a donor, Donations
+              may qualify for tax deductions; consult your tax advisor.
+            </p>
 
-                    <h3 style="font-size: 1.1875rem; font-weight: 700; color: var(--dark); margin-bottom: 12px;">How to connect</h3>
-                    <ul class="story-list">
-                        <li>
-                            <span class="list-icon">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v4M12 16h.01"/></svg>
-                            </span>
-                            <span>If you are a <strong>non-profit</strong>: <a href="https://app.thesupplychainproject.org">click here</a> and create an account</span>
-                        </li>
-                        <li>
-                            <span class="list-icon">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v4M12 16h.01"/></svg>
-                            </span>
-                            <span>If you are a <strong>corporate organization</strong>: <a href="https://app.thesupplychainproject.org">click here</a> and create an account</span>
-                        </li>
-                        <li>
-                            <span class="list-icon">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v4M12 16h.01"/></svg>
-                            </span>
-                            <span>If you want to become a <strong>professional member</strong>: <a href="https://app.thesupplychainproject.org">click here</a> and create an account</span>
-                        </li>
-                    </ul>
-                </div>
-            </div>
+            <h3
+              style="
+                font-size: 1.1875rem;
+                font-weight: 700;
+                color: var(--dark);
+                margin-bottom: 12px;
+              "
+            >
+              How to connect
+            </h3>
+            <ul class="story-list">
+              <li>
+                <span class="list-icon">
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <circle cx="12" cy="12" r="10" />
+                    <path d="M12 8v4M12 16h.01" />
+                  </svg>
+                </span>
+                <span
+                  >If you are a <strong>non-profit</strong>:
+                  <a href="https://app.thesupplychainproject.org">click here</a>
+                  and create an account</span
+                >
+              </li>
+              <li>
+                <span class="list-icon">
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <circle cx="12" cy="12" r="10" />
+                    <path d="M12 8v4M12 16h.01" />
+                  </svg>
+                </span>
+                <span
+                  >If you are a <strong>corporate organization</strong>:
+                  <a href="https://app.thesupplychainproject.org">click here</a>
+                  and create an account</span
+                >
+              </li>
+              <li>
+                <span class="list-icon">
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <circle cx="12" cy="12" r="10" />
+                    <path d="M12 8v4M12 16h.01" />
+                  </svg>
+                </span>
+                <span
+                  >If you want to become a <strong>professional member</strong>:
+                  <a href="https://app.thesupplychainproject.org">click here</a>
+                  and create an account</span
+                >
+              </li>
+            </ul>
+          </div>
         </div>
+      </div>
     </section>
 
     <!-- Leadership Quotes Section -->
-    <section class="quotes-section" style="padding: 80px 0; background: var(--dark, #1a1a2e);">
-        <div class="container">
-            <div class="quotes-grid" style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 48px;">
-                <div class="quote-card" style="background: rgba(255,255,255,0.05); border-radius: 8px; padding: 40px; border-left: 4px solid #8fb4b7;">
-                    <img src="images/team/staff-001.jpg" alt="Steve Robinson" class="quote-photo">
-                    <p style="font-size: 1rem; color: rgba(255,255,255,0.85); line-height: 1.8; font-style: italic; margin-bottom: 24px;">"Our focus is to take the best from the for-profit supply chain world and marry it with the best of the nonprofit arena to create solutions that evens the playing field for Nonprofits. Today no NGO is too small or too big to benefit from an improved supply chain."</p>
-                    <div style="display: flex; align-items: center; gap: 12px;">
-                        <div>
-                            <p style="font-weight: 700; color: #fff; margin-bottom: 2px;">Steve Robinson</p>
-                            <p style="font-size: 0.8125rem; color: rgba(255,255,255,0.6);">CEO and Founder</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="quote-card" style="background: rgba(255,255,255,0.05); border-radius: 8px; padding: 40px; border-left: 4px solid #8fb4b7;">
-                    <img src="images/team/staff-005.jpg" alt="Carol Wylie" class="quote-photo">
-                    <p style="font-size: 1rem; color: rgba(255,255,255,0.85); line-height: 1.8; font-style: italic; margin-bottom: 24px;">"Improving and streamlining supply chain activities is critical to non-profit organizations. Simplifying work, streamlining operations, and professionalizing services allow non-profits to spend more of their scarce resources on their mission."</p>
-                    <div style="display: flex; align-items: center; gap: 12px;">
-                        <div>
-                            <p style="font-weight: 700; color: #fff; margin-bottom: 2px;">Carol Wylie</p>
-                            <p style="font-size: 0.8125rem; color: rgba(255,255,255,0.6);">Co-Founder and COO</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="quote-card" style="background: rgba(255,255,255,0.05); border-radius: 8px; padding: 40px; border-left: 4px solid #8fb4b7;">
-                    <img src="images/team/Hale.jpg" alt="Christopher Hale" class="quote-photo">
-                    <p style="font-size: 1rem; color: rgba(255,255,255,0.85); line-height: 1.8; font-style: italic; margin-bottom: 24px;">"The TSCP team partnered with one of its portfolio companies Kountable, and found a local distributor in Rwanda. The Supply Chain Project brought together its network of global experts and logistics partners to deliver over 9 million malaria test kits to Rwanda."</p>
-                    <div style="display: flex; align-items: center; gap: 12px;">
-                        <div>
-                            <p style="font-weight: 700; color: #fff; margin-bottom: 2px;">Christopher Hale</p>
-                            <p style="font-size: 0.8125rem; color: rgba(255,255,255,0.6);">CEO and Founder Kountable</p>
-                        </div>
-                    </div>
-                </div>
+    <section
+      class="quotes-section"
+      style="padding: 80px 0; background: var(--dark, #1a1a2e)"
+    >
+      <div class="container">
+        <div
+          class="quotes-grid"
+          style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 48px"
+        >
+          <div
+            class="quote-card"
+            style="
+              background: rgba(255, 255, 255, 0.05);
+              border-radius: 8px;
+              padding: 40px;
+              border-left: 4px solid #8fb4b7;
+            "
+          >
+            <img
+              src="images/team/staff-001.jpg"
+              alt="Steve Robinson"
+              class="quote-photo"
+            />
+            <p
+              style="
+                font-size: 1rem;
+                color: rgba(255, 255, 255, 0.85);
+                line-height: 1.8;
+                font-style: italic;
+                margin-bottom: 24px;
+              "
+            >
+              "Our focus is to take the best from the for-profit supply chain
+              world and marry it with the best of the nonprofit arena to create
+              solutions that evens the playing field for Nonprofits. Today no
+              NGO is too small or too big to benefit from an improved supply
+              chain."
+            </p>
+            <div style="display: flex; align-items: center; gap: 12px">
+              <div>
+                <p style="font-weight: 700; color: #fff; margin-bottom: 2px">
+                  Steve Robinson
+                </p>
+                <p
+                  style="font-size: 0.8125rem; color: rgba(255, 255, 255, 0.6)"
+                >
+                  CEO and Founder
+                </p>
+              </div>
             </div>
+          </div>
+          <div
+            class="quote-card"
+            style="
+              background: rgba(255, 255, 255, 0.05);
+              border-radius: 8px;
+              padding: 40px;
+              border-left: 4px solid #8fb4b7;
+            "
+          >
+            <img
+              src="images/team/staff-005.jpg"
+              alt="Carol Wylie"
+              class="quote-photo"
+            />
+            <p
+              style="
+                font-size: 1rem;
+                color: rgba(255, 255, 255, 0.85);
+                line-height: 1.8;
+                font-style: italic;
+                margin-bottom: 24px;
+              "
+            >
+              "Improving and streamlining supply chain activities is critical to
+              non-profit organizations. Simplifying work, streamlining
+              operations, and professionalizing services allow non-profits to
+              spend more of their scarce resources on their mission."
+            </p>
+            <div style="display: flex; align-items: center; gap: 12px">
+              <div>
+                <p style="font-weight: 700; color: #fff; margin-bottom: 2px">
+                  Carol Wylie
+                </p>
+                <p
+                  style="font-size: 0.8125rem; color: rgba(255, 255, 255, 0.6)"
+                >
+                  Co-Founder and COO
+                </p>
+              </div>
+            </div>
+          </div>
+          <div
+            class="quote-card"
+            style="
+              background: rgba(255, 255, 255, 0.05);
+              border-radius: 8px;
+              padding: 40px;
+              border-left: 4px solid #8fb4b7;
+            "
+          >
+            <img
+              src="images/team/Hale.jpg"
+              alt="Christopher Hale"
+              class="quote-photo"
+            />
+            <p
+              style="
+                font-size: 1rem;
+                color: rgba(255, 255, 255, 0.85);
+                line-height: 1.8;
+                font-style: italic;
+                margin-bottom: 24px;
+              "
+            >
+              "The TSCP team partnered with one of its portfolio companies
+              Klear, and found a local distributor in Rwanda. The Supply Chain
+              Project brought together its network of global experts and
+              logistics partners to deliver over 9 million malaria test kits to
+              Rwanda."
+            </p>
+            <div style="display: flex; align-items: center; gap: 12px">
+              <div>
+                <p style="font-weight: 700; color: #fff; margin-bottom: 2px">
+                  Christopher Hale
+                </p>
+                <p
+                  style="font-size: 0.8125rem; color: rgba(255, 255, 255, 0.6)"
+                >
+                  CEO and Founder Klear
+                </p>
+              </div>
+            </div>
+          </div>
         </div>
+      </div>
     </section>
 
     <!-- Marketplace Cards Section -->
     <section class="activities-section">
-        <div class="container">
-            <h2 class="activities-title">The Supply Chain Project Marketplace</h2>
-            <div class="activities-divider"></div>
-            <div class="activities-grid">
-                <div class="activity-card">
-                    <div class="activity-img-wrap">
-                        <img src="images/cover-tscp-1.jpg" alt="Consultants">
-                    </div>
-                    <h3>Consultants</h3>
-                    <p class="activity-desc">Consultants bring a wealth of knowledge and experience to the table and help non-profits to identify opportunities for growth and improvement.</p>
-                </div>
-                <div class="activity-card">
-                    <div class="activity-img-wrap">
-                        <img src="images/cover-tscp-2.jpg" alt="Logistics Providers">
-                    </div>
-                    <h3>Logistics Providers</h3>
-                    <p class="activity-desc">Logistics providers are focused on streamlining distribution, allowing you to focus on your mission and vision. Increase operational efficiency, reduce costs, and ultimately make a bigger impact in your community.</p>
-                </div>
-                <div class="activity-card">
-                    <div class="activity-img-wrap">
-                        <img src="images/cover-tscp-3.jpg" alt="Software Providers">
-                    </div>
-                    <h3>Software Providers</h3>
-                    <p class="activity-desc">Software providers are focused on providing you with the tools you need to effectively manage and track your operations, allowing you to focus on achieving your goals.</p>
-                </div>
-                <div class="activity-card">
-                    <div class="activity-img-wrap">
-                        <img src="images/cover-tscp-4.jpg" alt="Industry Professionals">
-                    </div>
-                    <h3>Industry Professionals</h3>
-                    <p class="activity-desc">Industry professionals bring a wealth of knowledge and experience to the table, and their focus is on providing expert guidance and support to help non-profits achieve their goals.</p>
-                </div>
+      <div class="container">
+        <h2 class="activities-title">The Supply Chain Project Marketplace</h2>
+        <div class="activities-divider"></div>
+        <div class="activities-grid">
+          <div class="activity-card">
+            <div class="activity-img-wrap">
+              <img src="images/cover-tscp-1.jpg" alt="Consultants" />
             </div>
+            <h3>Consultants</h3>
+            <p class="activity-desc">
+              Consultants bring a wealth of knowledge and experience to the
+              table and help non-profits to identify opportunities for growth
+              and improvement.
+            </p>
+          </div>
+          <div class="activity-card">
+            <div class="activity-img-wrap">
+              <img src="images/cover-tscp-2.jpg" alt="Logistics Providers" />
+            </div>
+            <h3>Logistics Providers</h3>
+            <p class="activity-desc">
+              Logistics providers are focused on streamlining distribution,
+              allowing you to focus on your mission and vision. Increase
+              operational efficiency, reduce costs, and ultimately make a bigger
+              impact in your community.
+            </p>
+          </div>
+          <div class="activity-card">
+            <div class="activity-img-wrap">
+              <img src="images/cover-tscp-3.jpg" alt="Software Providers" />
+            </div>
+            <h3>Software Providers</h3>
+            <p class="activity-desc">
+              Software providers are focused on providing you with the tools you
+              need to effectively manage and track your operations, allowing you
+              to focus on achieving your goals.
+            </p>
+          </div>
+          <div class="activity-card">
+            <div class="activity-img-wrap">
+              <img src="images/cover-tscp-4.jpg" alt="Industry Professionals" />
+            </div>
+            <h3>Industry Professionals</h3>
+            <p class="activity-desc">
+              Industry professionals bring a wealth of knowledge and experience
+              to the table, and their focus is on providing expert guidance and
+              support to help non-profits achieve their goals.
+            </p>
+          </div>
         </div>
+      </div>
     </section>
 
     <!-- Marketplace Parallax Section -->
     <section class="marketplace-parallax">
-        <div class="marketplace-parallax-bg" style="background-image: url('images/cover-tscp-4.jpg')"></div>
-        <div class="marketplace-parallax-overlay"></div>
-        <div class="marketplace-parallax-content">
-            <h2>The Supply Chain Project Marketplace</h2>
-            <p>Discover a whole new approach to problem-solving for non-profits that can benefit from industry professionals, service providers and distribution software providers.</p>
-        </div>
+      <div
+        class="marketplace-parallax-bg"
+        style="background-image: url(&quot;images/cover-tscp-4.jpg&quot;)"
+      ></div>
+      <div class="marketplace-parallax-overlay"></div>
+      <div class="marketplace-parallax-content">
+        <h2>The Supply Chain Project Marketplace</h2>
+        <p>
+          Discover a whole new approach to problem-solving for non-profits that
+          can benefit from industry professionals, service providers and
+          distribution software providers.
+        </p>
+      </div>
     </section>
 
     <!-- Collaborate & Optimize Section -->
     <section class="collab-section">
-        <div class="container">
-            <div class="collab-grid">
-                <div class="collab-item">
-                    <h3>Collaborate</h3>
-                    <p>Build strategic relationships with marketplace participants.</p>
-                </div>
-                <div class="collab-item">
-                    <h3>Optimize</h3>
-                    <p>Improve your processes to increase your impact</p>
-                </div>
-            </div>
-            <div class="collab-cta">
-                <a href="/contact-us.html" class="btn-connect">CONNECT WITH US</a>
-            </div>
+      <div class="container">
+        <div class="collab-grid">
+          <div class="collab-item">
+            <h3>Collaborate</h3>
+            <p>Build strategic relationships with marketplace participants.</p>
+          </div>
+          <div class="collab-item">
+            <h3>Optimize</h3>
+            <p>Improve your processes to increase your impact</p>
+          </div>
         </div>
+        <div class="collab-cta">
+          <a href="/contact-us.html" class="btn-connect">CONNECT WITH US</a>
+        </div>
+      </div>
     </section>
 
     <!-- Measuring Success Section -->
-    <section class="story-section" style="background: var(--gray-100, #f8f9fa);">
-        <div class="container">
-            <h2 class="activities-title">Measuring Success</h2>
-            <div class="activities-divider"></div>
-            <p class="measure-sub">We measure what matters.</p>
-            <p class="story-text measure-intro">Our metrics capture enterprise value and human well-being&mdash;proving impact, improving performance, and driving continuous improvement.</p>
+    <section class="story-section" style="background: var(--gray-100, #f8f9fa)">
+      <div class="container">
+        <h2 class="activities-title">Measuring Success</h2>
+        <div class="activities-divider"></div>
+        <p class="measure-sub">We measure what matters.</p>
+        <p class="story-text measure-intro">
+          Our metrics capture enterprise value and human
+          well-being&mdash;proving impact, improving performance, and driving
+          continuous improvement.
+        </p>
 
-            <div class="metrics-grid">
-                <div class="metric-card">
-                    <h3>NONPROFITS ONBOARDED</h3>
-                    <p>Number of nonprofits connected to the ecosystem.</p>
-                </div>
-                <div class="metric-card">
-                    <h3>COMMUNITIES SERVED</h3>
-                    <p>Communities receiving resources and support.</p>
-                </div>
-                <div class="metric-card">
-                    <h3>MATCHES COMPLETED</h3>
-                    <p>Successful matches between supply and need.</p>
-                </div>
-                <div class="metric-card">
-                    <h3>VALUE RECOVERED</h3>
-                    <p>Total retail value of resources repurposed, shared, or recovered.</p>
-                </div>
-                <div class="metric-card">
-                    <h3>COSTS AVOIDED</h3>
-                    <p>Cost savings achieved through reuse and efficiency.</p>
-                </div>
-                <div class="metric-card">
-                    <h3>TRANSPORTATION CAPACITY MOBILIZED</h3>
-                    <p>Miles, trips, and capacity leveraged for mission impact.</p>
-                </div>
-                <div class="metric-card">
-                    <h3>WASTE DIVERTED</h3>
-                    <p>Tons of materials kept out of landfills and incinerators.</p>
-                </div>
-                <div class="metric-card">
-                    <h3>VOLUNTEER &amp; OPERATIONAL CAPACITY CREATED</h3>
-                    <p>Volunteer hours, skills, and operational support activated.</p>
-                </div>
-                <div class="metric-card">
-                    <h3>INDUSTRY ADOPTION</h3>
-                    <p>Businesses and partners actively engaged in the model.</p>
-                </div>
-            </div>
-
-            <div class="wellbeing-block">
-                <h3 class="wellbeing-block-title">HUMAN WELL-BEING MEASURES</h3>
-                <div class="wellbeing-grid">
-                    <div class="wellbeing-card">
-                        <h4>LIVES IMPROVED</h4>
-                        <p>People who receive resources and services that improve their quality of life.</p>
-                    </div>
-                    <div class="wellbeing-card">
-                        <h4>SUFFERING REDUCED</h4>
-                        <p>Measure reductions in hardship, instability, and unmet essential needs.</p>
-                    </div>
-                    <div class="wellbeing-card">
-                        <h4>WELL-BEING GAINED</h4>
-                        <p>Improvements in health, safety, education, and opportunity for individuals and families.</p>
-                    </div>
-                    <div class="wellbeing-card">
-                        <h4>WELLBY&trade; IMPACT SCORE</h4>
-                        <p>A composite well-being measure (WELLBY) that captures multi-dimensional human impact.</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="measure-principles">
-                <h3 style="font-size: 1.1875rem; font-weight: 700; color: var(--dark); margin-bottom: 12px;">MEASUREMENT PRINCIPLES</h3>
-                <ul class="story-list">
-                    <li>
-                        <span class="list-icon">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v4M12 16h.01"/></svg>
-                        </span>
-                        <span>Outcome-focused, not activity-focused</span>
-                    </li>
-                    <li>
-                        <span class="list-icon">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v4M12 16h.01"/></svg>
-                        </span>
-                        <span>Balanced: enterprise value + human well-being</span>
-                    </li>
-                    <li>
-                        <span class="list-icon">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v4M12 16h.01"/></svg>
-                        </span>
-                        <span>Transparent, verified, and comparable</span>
-                    </li>
-                    <li>
-                        <span class="list-icon">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v4M12 16h.01"/></svg>
-                        </span>
-                        <span>Actionable insights that drive better decisions</span>
-                    </li>
-                    <li>
-                        <span class="list-icon">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v4M12 16h.01"/></svg>
-                        </span>
-                        <span>Continuous learning and improvement</span>
-                    </li>
-                </ul>
-            </div>
-
-            <p class="measure-closing"><strong>Real impact. Real numbers. Real change.</strong> We measure success by the value we recover and the lives we improve.</p>
+        <div class="metrics-grid">
+          <div class="metric-card">
+            <h3>NONPROFITS ONBOARDED</h3>
+            <p>Number of nonprofits connected to the ecosystem.</p>
+          </div>
+          <div class="metric-card">
+            <h3>COMMUNITIES SERVED</h3>
+            <p>Communities receiving resources and support.</p>
+          </div>
+          <div class="metric-card">
+            <h3>MATCHES COMPLETED</h3>
+            <p>Successful matches between supply and need.</p>
+          </div>
+          <div class="metric-card">
+            <h3>VALUE RECOVERED</h3>
+            <p>
+              Total retail value of resources repurposed, shared, or recovered.
+            </p>
+          </div>
+          <div class="metric-card">
+            <h3>COSTS AVOIDED</h3>
+            <p>Cost savings achieved through reuse and efficiency.</p>
+          </div>
+          <div class="metric-card">
+            <h3>TRANSPORTATION CAPACITY MOBILIZED</h3>
+            <p>Miles, trips, and capacity leveraged for mission impact.</p>
+          </div>
+          <div class="metric-card">
+            <h3>WASTE DIVERTED</h3>
+            <p>Tons of materials kept out of landfills and incinerators.</p>
+          </div>
+          <div class="metric-card">
+            <h3>VOLUNTEER &amp; OPERATIONAL CAPACITY CREATED</h3>
+            <p>Volunteer hours, skills, and operational support activated.</p>
+          </div>
+          <div class="metric-card">
+            <h3>INDUSTRY ADOPTION</h3>
+            <p>Businesses and partners actively engaged in the model.</p>
+          </div>
         </div>
+
+        <div class="wellbeing-block">
+          <h3 class="wellbeing-block-title">HUMAN WELL-BEING MEASURES</h3>
+          <div class="wellbeing-grid">
+            <div class="wellbeing-card">
+              <h4>LIVES IMPROVED</h4>
+              <p>
+                People who receive resources and services that improve their
+                quality of life.
+              </p>
+            </div>
+            <div class="wellbeing-card">
+              <h4>SUFFERING REDUCED</h4>
+              <p>
+                Measure reductions in hardship, instability, and unmet essential
+                needs.
+              </p>
+            </div>
+            <div class="wellbeing-card">
+              <h4>WELL-BEING GAINED</h4>
+              <p>
+                Improvements in health, safety, education, and opportunity for
+                individuals and families.
+              </p>
+            </div>
+            <div class="wellbeing-card">
+              <h4>WELLBY IMPACT SCORE</h4>
+              <p>
+                A composite well-being measure (WELLBY) that captures
+                multi-dimensional human impact.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="measure-principles">
+          <h3
+            style="
+              font-size: 1.1875rem;
+              font-weight: 700;
+              color: var(--dark);
+              margin-bottom: 12px;
+            "
+          >
+            MEASUREMENT PRINCIPLES
+          </h3>
+          <ul class="story-list">
+            <li>
+              <span class="list-icon">
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <circle cx="12" cy="12" r="10" />
+                  <path d="M12 8v4M12 16h.01" />
+                </svg>
+              </span>
+              <span>Outcome-focused, not activity-focused</span>
+            </li>
+            <li>
+              <span class="list-icon">
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <circle cx="12" cy="12" r="10" />
+                  <path d="M12 8v4M12 16h.01" />
+                </svg>
+              </span>
+              <span>Balanced: enterprise value + human well-being</span>
+            </li>
+            <li>
+              <span class="list-icon">
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <circle cx="12" cy="12" r="10" />
+                  <path d="M12 8v4M12 16h.01" />
+                </svg>
+              </span>
+              <span>Transparent, verified, and comparable</span>
+            </li>
+            <li>
+              <span class="list-icon">
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <circle cx="12" cy="12" r="10" />
+                  <path d="M12 8v4M12 16h.01" />
+                </svg>
+              </span>
+              <span>Actionable insights that drive better decisions</span>
+            </li>
+            <li>
+              <span class="list-icon">
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <circle cx="12" cy="12" r="10" />
+                  <path d="M12 8v4M12 16h.01" />
+                </svg>
+              </span>
+              <span>Continuous learning and improvement</span>
+            </li>
+          </ul>
+        </div>
+
+        <p class="measure-closing">
+          <strong>Real impact. Real numbers. Real change.</strong> We measure
+          success by the value we recover and the lives we improve.
+        </p>
+      </div>
     </section>
 
     <!-- Surplus Wellbeing Yield (SWY) Section -->
     <section class="story-section">
-        <div class="container">
-            <h2 class="activities-title">Surplus Wellbeing Yield (SWY)&trade;</h2>
-            <div class="activities-divider"></div>
-            <p class="measure-sub">We measure both enterprise value and human well-being.</p>
+      <div class="container">
+        <h2 class="activities-title">Surplus Wellbeing Yield (SWY)&trade;</h2>
+        <div class="activities-divider"></div>
+        <p class="measure-sub">
+          We measure both enterprise value and human well-being.
+        </p>
 
-            <div class="swy-formula">
-                <div class="swy-block">
-                    <h3>WELL-BEING IMPACT</h3>
-                    <p>Health + dignity + stability from a more-resilient lives improved</p>
-                </div>
-                <div class="swy-operator" aria-hidden="true">+</div>
-                <div class="swy-block">
-                    <h3>LIVES &amp; LIVELIHOODS AFFECTED</h3>
-                    <p>More lives impacted + skills enabled</p>
-                </div>
-                <div class="swy-operator" aria-hidden="true">+</div>
-                <div class="swy-block">
-                    <h3>SOCIAL VALUE CREATED</h3>
-                    <p>Strengthened systems and community resilience built</p>
-                </div>
-                <div class="swy-operator" aria-hidden="true">=</div>
-                <div class="swy-block swy-total">
-                    <h3>TOTAL SWY</h3>
-                    <p>Enterprise + Social + Human value (outcomes)</p>
-                </div>
-            </div>
-
-            <p class="measure-closing"><strong>Real impact. Real numbers. Real change.</strong></p>
+        <div class="swy-formula">
+          <div class="swy-block">
+            <h3>WELL-BEING IMPACT</h3>
+            <p>
+              Health + dignity + stability from a more-resilient lives improved
+            </p>
+          </div>
+          <div class="swy-operator" aria-hidden="true">+</div>
+          <div class="swy-block">
+            <h3>LIVES &amp; LIVELIHOODS AFFECTED</h3>
+            <p>More lives impacted + skills enabled</p>
+          </div>
+          <div class="swy-operator" aria-hidden="true">+</div>
+          <div class="swy-block">
+            <h3>SOCIAL VALUE CREATED</h3>
+            <p>Strengthened systems and community resilience built</p>
+          </div>
+          <div class="swy-operator" aria-hidden="true">=</div>
+          <div class="swy-block swy-total">
+            <h3>TOTAL SWY</h3>
+            <p>Enterprise + Social + Human value (outcomes)</p>
+          </div>
         </div>
+
+        <p class="measure-closing">
+          <strong>Real impact. Real numbers. Real change.</strong>
+        </p>
+      </div>
     </section>
 
     <!-- Footer -->
     <footer class="footer" id="footer">
-        <div class="footer-top">
-            <div class="container">
-                <div class="footer-grid">
-                    <div class="footer-col footer-about">
-                        <a href="/" class="footer-logo">
-                            <img src="images/logo-white-text.png" alt="The Supply Chain Project">
-                        </a>
-                        <p>The Supply Chain Project enables innovative partnerships between non-profits, businesses, service providers, and industry professionals that helps them drive measurable improvements.</p>
-                        <form class="footer-newsletter" id="newsletterForm">
-                            <input type="email" placeholder="Your Email" required>
-                            <input type="number" placeholder="What is 6 + 3 ?" required>
-                            <button type="submit" class="btn-newsletter">Mailing List</button>
-                        </form>
-                    </div>
-                    <div class="footer-col">
-                        <h4>Resources</h4>
-                        <ul class="footer-links">
-                            <li><a href="/policy.html">Privacy Policy</a></li>
-                            <li><a href="/terms-of-use.html">Terms of Use</a></li>
-                            <li><a href="/join-network-nonprofits.html">Non-For-Profit Organization Solutions</a></li>
-                            <li><a href="https://networked.co/c/the-supply-chain-project/">Community Discussions</a></li>
-                            <li><a href="https://supplino.com/tscp-supply-chain-assessment-questionnaire/">Supply Chain Assessment</a></li>
-                        </ul>
-                    </div>
-                    <div class="footer-col">
-                        <h4>Upcoming Events</h4>
-                        <p class="no-events">There are no upcoming calendar events.</p>
-                    </div>
-                </div>
+      <div class="footer-top">
+        <div class="container">
+          <div class="footer-grid">
+            <div class="footer-col footer-about">
+              <a href="/" class="footer-logo">
+                <img
+                  src="images/logo-white-text.png"
+                  alt="The Supply Chain Project"
+                />
+              </a>
+              <p>
+                The Supply Chain Project enables innovative partnerships between
+                non-profits, businesses, service providers, and industry
+                professionals that helps them drive measurable improvements.
+              </p>
+              <form class="footer-newsletter" id="newsletterForm">
+                <input type="email" placeholder="Your Email" required />
+                <input type="number" placeholder="What is 6 + 3 ?" required />
+                <button type="submit" class="btn-newsletter">
+                  Mailing List
+                </button>
+              </form>
             </div>
-        </div>
-        <div class="footer-bottom">
-            <div class="container">
-                <div class="footer-bottom-inner">
-                    <p>&copy; The Supply Chain Project | <a href="/policy.html">Policy</a> | <a href="/terms-of-use.html">Terms of Use</a></p>
-                    <div class="social-links">
-                        <a href="https://www.facebook.com/thesupplychainproject" aria-label="Facebook" target="_blank" rel="noopener">
-                            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
-                        </a>
-                        <a href="javascript:void(0)" aria-label="Twitter">
-                            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"/></svg>
-                        </a>
-                        <a href="javascript:void(0)" aria-label="LinkedIn">
-                            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2zM4 2a2 2 0 1 1 0 4 2 2 0 0 1 0-4z"/></svg>
-                        </a>
-                    </div>
-                </div>
+            <div class="footer-col">
+              <h4>Resources</h4>
+              <ul class="footer-links">
+                <li><a href="/policy.html">Privacy Policy</a></li>
+                <li><a href="/terms-of-use.html">Terms of Use</a></li>
+                <li>
+                  <a href="/non-profits.html"
+                    >Non-For-Profit Organization Solutions</a
+                  >
+                </li>
+                <li>
+                  <a href="https://networked.co/c/the-supply-chain-project/"
+                    >Community Discussions</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="https://supplino.com/tscp-supply-chain-assessment-questionnaire/"
+                    >Supply Chain Assessment</a
+                  >
+                </li>
+              </ul>
             </div>
+            <div class="footer-col">
+              <h4>Upcoming Events</h4>
+              <p class="no-events">There are no upcoming calendar events.</p>
+            </div>
+          </div>
         </div>
+      </div>
+      <div class="footer-bottom">
+        <div class="container">
+          <div class="footer-bottom-inner">
+            <p>
+              &copy; The Supply Chain Project |
+              <a href="/policy.html">Policy</a> |
+              <a href="/terms-of-use.html">Terms of Use</a>
+            </p>
+            <div class="social-links">
+              <a
+                href="https://www.facebook.com/thesupplychainproject"
+                aria-label="Facebook"
+                target="_blank"
+                rel="noopener"
+              >
+                <svg viewBox="0 0 24 24" fill="currentColor">
+                  <path
+                    d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"
+                  />
+                </svg>
+              </a>
+              <a href="javascript:void(0)" aria-label="Twitter">
+                <svg viewBox="0 0 24 24" fill="currentColor">
+                  <path
+                    d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"
+                  />
+                </svg>
+              </a>
+              <a href="javascript:void(0)" aria-label="LinkedIn">
+                <svg viewBox="0 0 24 24" fill="currentColor">
+                  <path
+                    d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2zM4 2a2 2 0 1 1 0 4 2 2 0 0 1 0-4z"
+                  />
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
     </footer>
 
     <!-- GSAP CDN -->
@@ -625,5 +1008,5 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
     <script src="js/donors.js"></script>
     <script src="js/quotes-slider.js"></script>
-</body>
+  </body>
 </html>

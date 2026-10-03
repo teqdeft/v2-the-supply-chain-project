@@ -1,676 +1,979 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Nonprofits - The Supply Chain Project</title>
-    <link rel="stylesheet" href="css/styles.css">
-    <link rel="stylesheet" href="css/ourstory.css">
-    <link rel="stylesheet" href="css/responsive.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css" />
+    <link rel="stylesheet" href="css/ourstory.css" />
+    <link rel="stylesheet" href="css/responsive.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@700;800;900&display=swap"
+      rel="stylesheet"
+    />
     <style>
-        .quotes-section {
-            background: var(--dark);
-            padding: 64px 0;
-            color: white;
-        }
+      .quotes-section {
+        background: var(--dark);
+        padding: 64px 0;
+        color: white;
+      }
+      .quotes-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 40px;
+        max-width: 1000px;
+        margin: 0 auto;
+      }
+      .quote-card {
+        text-align: center;
+        padding: 24px;
+      }
+      .quote-card blockquote {
+        font-size: 1.0625rem;
+        line-height: 1.8;
+        color: rgba(255, 255, 255, 0.85);
+        font-style: italic;
+        margin-bottom: 20px;
+        position: relative;
+      }
+      .quote-card cite {
+        font-size: 0.875rem;
+        font-weight: 600;
+        color: var(--accent);
+        font-style: normal;
+      }
+      .service-block {
+        padding: 20px 0;
+        border-bottom: 1px solid var(--gray-200);
+      }
+      .service-block:last-child {
+        border-bottom: none;
+      }
+      .service-block h4 {
+        font-size: 1rem;
+        font-weight: 700;
+        color: var(--dark);
+        margin-bottom: 8px;
+      }
+      .service-block p {
+        font-size: 0.9375rem;
+        color: var(--gray-700);
+        line-height: 1.7;
+      }
+      @media (max-width: 768px) {
         .quotes-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 40px;
-            max-width: 1000px;
-            margin: 0 auto;
+          grid-template-columns: 1fr;
         }
-        .quote-card {
-            text-align: center;
-            padding: 24px;
-        }
-        .quote-card blockquote {
-            font-size: 1.0625rem;
-            line-height: 1.8;
-            color: rgba(255, 255, 255, 0.85);
-            font-style: italic;
-            margin-bottom: 20px;
-            position: relative;
-        }
-        .quote-card cite {
-            font-size: 0.875rem;
-            font-weight: 600;
-            color: var(--accent);
-            font-style: normal;
-        }
-        .service-block {
-            padding: 20px 0;
-            border-bottom: 1px solid var(--gray-200);
-        }
-        .service-block:last-child {
-            border-bottom: none;
-        }
-        .service-block h4 {
-            font-size: 1rem;
-            font-weight: 700;
-            color: var(--dark);
-            margin-bottom: 8px;
-        }
-        .service-block p {
-            font-size: 0.9375rem;
-            color: var(--gray-700);
-            line-height: 1.7;
-        }
-        @media (max-width: 768px) {
-            .quotes-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-        /* Tier 1: Reshape Demand */
-        .tier-section {
-            padding: 80px 0;
-            background: var(--gray-100);
-        }
-        .section-sub {
-            font-size: 1.0625rem;
-            color: var(--gray-600);
-            font-style: italic;
-            text-align: center;
-            margin-bottom: 16px;
-        }
-        .section-intro {
-            font-size: 1rem;
-            color: var(--gray-700);
-            line-height: 1.8;
-            text-align: center;
-            max-width: 760px;
-            margin: 0 auto 48px;
-        }
-        .tier-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 28px;
-            margin-bottom: 48px;
-        }
-        .tier-card,
-        .eco-step {
-            background: var(--white);
-            border-top: 3px solid var(--primary);
-            border-radius: 8px;
-            padding: 28px 24px;
-            box-shadow: 0 4px 16px rgba(26, 26, 46, 0.06);
-        }
-        .tier-card h4,
-        .eco-step h4,
-        .eco-side h4 {
-            font-size: 0.8125rem;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 1.5px;
-            color: var(--primary);
-            margin-bottom: 12px;
-        }
-        .tier-card p,
-        .eco-step p,
-        .eco-side p {
-            font-size: 0.9375rem;
-            color: var(--gray-700);
-            line-height: 1.7;
-        }
-        .section-closing {
-            font-size: 1.0625rem;
-            color: var(--dark);
-            line-height: 1.7;
-            text-align: center;
-            max-width: 760px;
-            margin: 0 auto;
-        }
-        /* The Complete TSCP Ecosystem */
-        .ecosystem-section {
-            padding: 80px 0;
-            background: var(--gray-100);
-        }
+      }
+      /* Tier 1: Reshape Demand */
+      .tier-section {
+        padding: 80px 0;
+        background: var(--gray-100);
+      }
+      .section-sub {
+        font-size: 1.0625rem;
+        color: var(--gray-600);
+        font-style: italic;
+        text-align: center;
+        margin-bottom: 16px;
+      }
+      .section-intro {
+        font-size: 1rem;
+        color: var(--gray-700);
+        line-height: 1.8;
+        text-align: center;
+        max-width: 760px;
+        margin: 0 auto 48px;
+      }
+      .tier-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 28px;
+        margin-bottom: 48px;
+      }
+      .tier-card,
+      .eco-step {
+        background: var(--white);
+        border-top: 3px solid var(--primary);
+        border-radius: 8px;
+        padding: 28px 24px;
+        box-shadow: 0 4px 16px rgba(26, 26, 46, 0.06);
+      }
+      .tier-card h4,
+      .eco-step h4,
+      .eco-side h4 {
+        font-size: 0.8125rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 1.5px;
+        color: var(--primary);
+        margin-bottom: 12px;
+      }
+      .tier-card p,
+      .eco-step p,
+      .eco-side p {
+        font-size: 0.9375rem;
+        color: var(--gray-700);
+        line-height: 1.7;
+      }
+      .section-closing {
+        font-size: 1.0625rem;
+        color: var(--dark);
+        line-height: 1.7;
+        text-align: center;
+        max-width: 760px;
+        margin: 0 auto;
+      }
+      /* The Complete TSCP Ecosystem */
+      .ecosystem-section {
+        padding: 80px 0;
+        background: var(--gray-100);
+      }
+      .eco-flow {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 28px;
+        margin-bottom: 32px;
+      }
+      .eco-step {
+        border-top-color: var(--accent);
+      }
+      .eco-step-num {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 32px;
+        height: 32px;
+        border-radius: 50%;
+        background: var(--primary);
+        color: var(--white);
+        font-size: 0.875rem;
+        font-weight: 700;
+        margin-bottom: 14px;
+      }
+      .eco-govern {
+        background: var(--dark);
+        border-radius: 8px;
+        padding: 32px;
+        text-align: center;
+        margin-bottom: 32px;
+      }
+      .eco-govern h4 {
+        font-size: 0.9375rem;
+        font-weight: 800;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        color: var(--accent);
+        margin-bottom: 8px;
+      }
+      .eco-govern p {
+        font-size: 1rem;
+        color: rgba(255, 255, 255, 0.85);
+      }
+      .eco-sides {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 28px;
+        margin-bottom: 48px;
+      }
+      .eco-side {
+        background: var(--white);
+        border-left: 3px solid var(--primary);
+        border-radius: 8px;
+        padding: 24px 28px;
+        box-shadow: 0 4px 16px rgba(26, 26, 46, 0.06);
+      }
+      .eco-banner {
+        background: var(--primary);
+        border-radius: 8px;
+        padding: 40px;
+        text-align: center;
+        margin-bottom: 48px;
+      }
+      .eco-banner h3 {
+        font-family: var(--font-display);
+        font-size: 1.375rem;
+        font-weight: 800;
+        letter-spacing: 1px;
+        color: var(--white);
+        margin-bottom: 12px;
+      }
+      .eco-banner > p {
+        font-size: 1rem;
+        color: rgba(255, 255, 255, 0.9);
+        line-height: 1.7;
+        max-width: 640px;
+        margin: 0 auto 28px;
+      }
+      .eco-checklist {
+        list-style: none;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 16px;
+        max-width: 900px;
+        margin: 0 auto;
+        text-align: left;
+      }
+      .eco-checklist li {
+        display: flex;
+        align-items: flex-start;
+        gap: 10px;
+        font-size: 0.9375rem;
+        color: rgba(255, 255, 255, 0.95);
+      }
+      .eco-checklist .list-icon {
+        color: var(--accent);
+      }
+      @media (max-width: 992px) {
+        .tier-grid,
         .eco-flow {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 28px;
-            margin-bottom: 32px;
-        }
-        .eco-step {
-            border-top-color: var(--accent);
-        }
-        .eco-step-num {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            width: 32px;
-            height: 32px;
-            border-radius: 50%;
-            background: var(--primary);
-            color: var(--white);
-            font-size: 0.875rem;
-            font-weight: 700;
-            margin-bottom: 14px;
-        }
-        .eco-govern {
-            background: var(--dark);
-            border-radius: 8px;
-            padding: 32px;
-            text-align: center;
-            margin-bottom: 32px;
-        }
-        .eco-govern h4 {
-            font-size: 0.9375rem;
-            font-weight: 800;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            color: var(--accent);
-            margin-bottom: 8px;
-        }
-        .eco-govern p {
-            font-size: 1rem;
-            color: rgba(255, 255, 255, 0.85);
-        }
-        .eco-sides {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 28px;
-            margin-bottom: 48px;
-        }
-        .eco-side {
-            background: var(--white);
-            border-left: 3px solid var(--primary);
-            border-radius: 8px;
-            padding: 24px 28px;
-            box-shadow: 0 4px 16px rgba(26, 26, 46, 0.06);
-        }
-        .eco-banner {
-            background: var(--primary);
-            border-radius: 8px;
-            padding: 40px;
-            text-align: center;
-            margin-bottom: 48px;
-        }
-        .eco-banner h3 {
-            font-family: var(--font-display);
-            font-size: 1.375rem;
-            font-weight: 800;
-            letter-spacing: 1px;
-            color: var(--white);
-            margin-bottom: 12px;
-        }
-        .eco-banner > p {
-            font-size: 1rem;
-            color: rgba(255, 255, 255, 0.9);
-            line-height: 1.7;
-            max-width: 640px;
-            margin: 0 auto 28px;
+          grid-template-columns: repeat(2, 1fr);
         }
         .eco-checklist {
-            list-style: none;
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 16px;
-            max-width: 900px;
-            margin: 0 auto;
-            text-align: left;
+          grid-template-columns: repeat(2, 1fr);
         }
-        .eco-checklist li {
-            display: flex;
-            align-items: flex-start;
-            gap: 10px;
-            font-size: 0.9375rem;
-            color: rgba(255, 255, 255, 0.95);
+      }
+      @media (max-width: 768px) {
+        .tier-section,
+        .ecosystem-section {
+          padding: 56px 0;
         }
-        .eco-checklist .list-icon {
-            color: var(--accent);
+        .tier-grid,
+        .eco-flow,
+        .eco-sides,
+        .eco-checklist {
+          grid-template-columns: 1fr;
         }
-        @media (max-width: 992px) {
-            .tier-grid,
-            .eco-flow {
-                grid-template-columns: repeat(2, 1fr);
-            }
-            .eco-checklist {
-                grid-template-columns: repeat(2, 1fr);
-            }
+      }
+
+      .quote-card {
+        text-align: center;
+      }
+      .quote-photo {
+        width: 96px;
+        height: 96px;
+        border-radius: 50%;
+        object-fit: cover;
+        display: block;
+        margin: 0 auto 20px;
+        border: 3px solid var(--accent);
+      }
+      @media (max-width: 992px) {
+        .quotes-grid {
+          grid-template-columns: 1fr !important;
         }
-        @media (max-width: 768px) {
-            .tier-section,
-            .ecosystem-section {
-                padding: 56px 0;
-            }
-            .tier-grid,
-            .eco-flow,
-            .eco-sides,
-            .eco-checklist {
-                grid-template-columns: 1fr;
-            }
-        }
-    
-        .quote-card { text-align: center; }
-        .quote-photo {
-            width: 96px;
-            height: 96px;
-            border-radius: 50%;
-            object-fit: cover;
-            display: block;
-            margin: 0 auto 20px;
-            border: 3px solid var(--accent);
-        }
-        @media (max-width: 992px) {
-            .quotes-grid { grid-template-columns: 1fr !important; }
-        }
+      }
     </style>
     <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-L0ZLVPTTV1"></script>
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-L0ZLVPTTV1"
+    ></script>
     <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
 
-        gtag('config', 'G-L0ZLVPTTV1');
+      gtag("config", "G-L0ZLVPTTV1");
     </script>
-</head>
-<body>
-
+  </head>
+  <body>
     <!-- Header -->
     <header class="header scrolled" id="header">
-        <div class="header-inner">
-            <a href="/" class="logo">
-                <img src="images/logo-white-text.png" alt="The Supply Chain Project">
-            </a>
-            <nav class="main-nav" id="mainNav">
-                <ul class="nav-list">
-                    <li><a href="/">Home</a></li>
-                    <li class="has-dropdown">
-                        <a href="javascript:void(0)">About Us <span class="arrow">&#9662;</span></a>
-                        <ul class="dropdown">
-                            <li><a href="/our-story.html">Our Story</a></li>
-                            <li><a href="/our-mission.html">Mission</a></li>
-                            <li><a href="/our-services.html">Services</a></li>
-                            <li><a href="/our-technology.html">Technology</a></li>
-                            <li><a href="/our-team.html">Team</a></li>
-                            <li><a href="/contact-us.html">Contact Us</a></li>
-                        </ul>
-                    </li>
-                    <li class="has-dropdown">
-                        <a href="javascript:void(0)">Get Involved <span class="arrow">&#9662;</span></a>
-                        <ul class="dropdown">
-                            <li><a href="/join-network-nonprofits.html">I'm a Nonprofit</a></li>
-                            <li><a href="/donors.html">I'm a Donor</a></li>
-                            <li><a href="/join-network-professional-provider.html">I'm a Professional</a></li>
-                            <li><a href="/cmn-members-access.html">I'm a Corporation</a></li>
-                            <li><a href="/join-network-logistics-provider.html">I'm a Logistics Provider</a></li>
-                            <li><a href="/join-network-service-provider.html">I'm a Service Provider</a></li>
-                            <li><a href="/join-network-technology-provider.html">I'm a Technology Provider</a></li>
-                            <li><a href="/smn-members-access.html">I'm a Student</a></li>
-                            <li><a href="/join-network-volunteer.html">I'm a Volunteer</a></li>
-                        </ul>
-                    </li>
-                    <li class="has-dropdown">
-                        <a href="javascript:void(0)">Support <span class="arrow">&#9662;</span></a>
-                        <ul class="dropdown">
-                            <li><a href="/members-tscp.html">Membership</a></li>
-                            <li><a href="/donors.html">Donations</a></li>
-                            <li><a href="/logistics-tscp.html">Logistics</a></li>
-                            <li><a href="/our-technology.html">Technology</a></li>
-                        </ul>
-                    </li>
-                </ul>
-            </nav>
-            <div class="header-actions">
-                <a href="https://app.thesupplychainproject.org" class="btn-marketplace">Enter Marketplace</a>
-                <button class="hamburger" id="hamburger" aria-label="Toggle menu">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </button>
-            </div>
+      <div class="header-inner">
+        <a href="/" class="logo">
+          <img
+            src="images/logo-white-text.png"
+            alt="The Supply Chain Project"
+          />
+        </a>
+        <nav class="main-nav" id="mainNav">
+          <ul class="nav-list">
+            <li><a href="/">Home</a></li>
+            <li class="has-dropdown">
+              <a href="javascript:void(0)"
+                >About Us <span class="arrow">&#9662;</span></a
+              >
+              <ul class="dropdown">
+                <li><a href="/our-story.html">Our Story</a></li>
+                <li><a href="/our-mission.html">Mission</a></li>
+                <li><a href="/our-services.html">Services</a></li>
+                <li><a href="/our-technology.html">Technology</a></li>
+                <li><a href="/our-team.html">Team</a></li>
+                <li><a href="/contact-us.html">Contact Us</a></li>
+              </ul>
+            </li>
+            <li class="has-dropdown">
+              <a href="javascript:void(0)"
+                >Get Involved <span class="arrow">&#9662;</span></a
+              >
+              <ul class="dropdown">
+                <li>
+                  <a href="/non-profits.html">I'm a Nonprofit</a>
+                </li>
+                <li><a href="/donors.html">I'm a Donor</a></li>
+                <li>
+                  <a href="/join-network-professional-provider.html"
+                    >I'm a Professional</a
+                  >
+                </li>
+                <li>
+                  <a href="/cmn-members-access.html">I'm a Corporation</a>
+                </li>
+                <li>
+                  <a href="/join-network-logistics-provider.html"
+                    >I'm a Logistics Provider</a
+                  >
+                </li>
+                <li>
+                  <a href="/join-network-service-provider.html"
+                    >I'm a Service Provider</a
+                  >
+                </li>
+                <li>
+                  <a href="/join-network-technology-provider.html"
+                    >I'm a Technology Provider</a
+                  >
+                </li>
+                <li><a href="/smn-members-access.html">I'm a Student</a></li>
+                <li>
+                  <a href="/join-network-volunteer.html">I'm a Volunteer</a>
+                </li>
+              </ul>
+            </li>
+            <li class="has-dropdown">
+              <a href="javascript:void(0)"
+                >Support <span class="arrow">&#9662;</span></a
+              >
+              <ul class="dropdown">
+                <li><a href="/members-tscp.html">Membership</a></li>
+                <li><a href="/donors.html">Donations</a></li>
+                <li><a href="/logistics-tscp.html">Logistics</a></li>
+                <li><a href="/our-technology.html">Technology</a></li>
+              </ul>
+            </li>
+          </ul>
+        </nav>
+        <div class="header-actions">
+          <a
+            href="https://app.thesupplychainproject.org"
+            class="btn-marketplace"
+            >Enter Marketplace</a
+          >
+          <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
         </div>
+      </div>
     </header>
 
     <!-- Page Hero Banner -->
     <section class="page-hero">
-        <div class="page-hero-bg" style="background-image: url('images/cover-tscp-2.jpg')"></div>
-        <div class="page-hero-overlay"></div>
-        <div class="page-hero-content">
-            <h1>Empowering Nonprofits</h1>
-            <div class="breadcrumb">
-                <a href="/">GET INVOLVED</a> / <span>NONPROFITS</span>
-            </div>
+      <div
+        class="page-hero-bg"
+        style="background-image: url(&quot;images/cover-tscp-2.jpg&quot;)"
+      ></div>
+      <div class="page-hero-overlay"></div>
+      <div class="page-hero-content">
+        <h1>Empowering Nonprofits</h1>
+        <div class="breadcrumb">
+          <a href="/">GET INVOLVED</a> / <span>NONPROFITS</span>
         </div>
+      </div>
     </section>
 
     <!-- Nonprofits Intro Section -->
     <section class="story-section">
-        <div class="container">
-            <div class="story-grid">
-                <!-- Left Column -->
-                <div class="story-col">
-                    <h2 class="story-heading">Empowering Nonprofits</h2>
-                    <div class="story-divider"></div>
+      <div class="container">
+        <div class="story-grid">
+          <!-- Left Column -->
+          <div class="story-col">
+            <h2 class="story-heading">Empowering Nonprofits</h2>
+            <div class="story-divider"></div>
 
-                    <p class="story-text">We're focused on non-profit capability building&mdash;because every day is a disaster for persons below the poverty line and the non-profits that support them.</p>
+            <p class="story-text">
+              We're focused on non-profit capability building&mdash;because
+              every day is a disaster for persons below the poverty line and the
+              non-profits that support them.
+            </p>
 
-                    <p class="story-highlight"><strong>What support are you seeking?</strong></p>
+            <p class="story-highlight">
+              <strong>What support are you seeking?</strong>
+            </p>
 
-                    <p class="story-text">If you are needing marketplace support you must have an account.</p>
+            <p class="story-text">
+              If you are needing marketplace support you must have an account.
+            </p>
 
-                    <ul class="story-list">
-                        <li>
-                            <span class="list-icon">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v4M12 16h.01"/></svg>
-                            </span>
-                            <span>Logistics support</span>
-                        </li>
-                        <li>
-                            <span class="list-icon">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v4M12 16h.01"/></svg>
-                            </span>
-                            <span>Technology support</span>
-                        </li>
-                        <li>
-                            <span class="list-icon">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v4M12 16h.01"/></svg>
-                            </span>
-                            <span>Specialized training</span>
-                        </li>
-                        <li>
-                            <span class="list-icon">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v4M12 16h.01"/></svg>
-                            </span>
-                            <span>Consulting</span>
-                        </li>
-                    </ul>
+            <ul class="story-list">
+              <li>
+                <span class="list-icon">
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <circle cx="12" cy="12" r="10" />
+                    <path d="M12 8v4M12 16h.01" />
+                  </svg>
+                </span>
+                <span>Logistics support</span>
+              </li>
+              <li>
+                <span class="list-icon">
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <circle cx="12" cy="12" r="10" />
+                    <path d="M12 8v4M12 16h.01" />
+                  </svg>
+                </span>
+                <span>Technology support</span>
+              </li>
+              <li>
+                <span class="list-icon">
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <circle cx="12" cy="12" r="10" />
+                    <path d="M12 8v4M12 16h.01" />
+                  </svg>
+                </span>
+                <span>Specialized training</span>
+              </li>
+              <li>
+                <span class="list-icon">
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <circle cx="12" cy="12" r="10" />
+                    <path d="M12 8v4M12 16h.01" />
+                  </svg>
+                </span>
+                <span>Consulting</span>
+              </li>
+            </ul>
 
-                    <p class="story-highlight"><strong>Start here.</strong></p>
-                    <p class="story-text">We have everything a distribution-intense non-profit needs to make a greater impact!</p>
+            <p class="story-highlight"><strong>Start here.</strong></p>
+            <p class="story-text">
+              We have everything a distribution-intense non-profit needs to make
+              a greater impact!
+            </p>
 
-                    <a href="/non-profits.html" class="btn-become-member">CREATE A PROFILE</a>
-                    <a href="/contact-us.html" class="inline-link" style="margin-left: 16px;">Already a Member?</a>
-                </div>
+            <a href="/join-network-nonprofits.html" class="btn-become-member"
+              >CREATE A PROFILE</a
+            >
+            <a
+              href="https://app.thesupplychainproject.org"
+              class="inline-link"
+              style="margin-left: 16px"
+              >Already a Member?</a
+            >
+          </div>
 
-                <!-- Right Column -->
-                <div class="story-col">
-                    <h2 class="story-heading">Our Services for Nonprofits</h2>
-                    <div class="story-divider"></div>
+          <!-- Right Column -->
+          <div class="story-col">
+            <h2 class="story-heading">Our Services for Nonprofits</h2>
+            <div class="story-divider"></div>
 
-                    <div class="service-block">
-                        <h4>Logistics Support</h4>
-                        <p>We provide the tools to facilitate local, regional and international transportation and distribution - on your behalf. We streamline the burden of finding logistics service providers off your shoulders, which allows you to focus on your core mission. Join to take advantage of our support to save funds and reach new levels of impact.</p>
-                    </div>
-
-                    <div class="service-block">
-                        <h4>Technology Support</h4>
-                        <p>We provide a network of technology and solution providers that provide great tools to help facilitate and streamline your operations. Join our marketplace and expose your non-profit to world-class software.</p>
-                    </div>
-
-                    <div class="service-block">
-                        <h4>Specialized Training</h4>
-                        <p>We facilitate basic training designed to equip your team with industry best practices. Join our marketplace to gain access to the skills and knowledge needed to optimize your operations and reach new heights of success.</p>
-                    </div>
-
-                    <div class="service-block">
-                        <h4>Consulting</h4>
-                        <p>Let us match you to consultants and/or industry professionals that can advise you on how to better manage on how to evolve your supply chain and logistics processes. By leveraging our community, you can elevate your non-profit organization to new heights of efficiency and impact.</p>
-                    </div>
-                </div>
+            <div class="service-block">
+              <h4>Logistics Support</h4>
+              <p>
+                We provide the tools to facilitate local, regional and
+                international transportation and distribution - on your behalf.
+                We streamline the burden of finding logistics service providers
+                off your shoulders, which allows you to focus on your core
+                mission. Join to take advantage of our support to save funds and
+                reach new levels of impact.
+              </p>
             </div>
+
+            <div class="service-block">
+              <h4>Technology Support</h4>
+              <p>
+                We provide a network of technology and solution providers that
+                provide great tools to help facilitate and streamline your
+                operations. Join our marketplace and expose your non-profit to
+                world-class software.
+              </p>
+            </div>
+
+            <div class="service-block">
+              <h4>Specialized Training</h4>
+              <p>
+                We facilitate basic training designed to equip your team with
+                industry best practices. Join our marketplace to gain access to
+                the skills and knowledge needed to optimize your operations and
+                reach new heights of success.
+              </p>
+            </div>
+
+            <div class="service-block">
+              <h4>Consulting</h4>
+              <p>
+                Let us match you to consultants and/or industry professionals
+                that can advise you on how to better manage on how to evolve
+                your supply chain and logistics processes. By leveraging our
+                community, you can elevate your non-profit organization to new
+                heights of efficiency and impact.
+              </p>
+            </div>
+          </div>
         </div>
+      </div>
     </section>
 
     <!-- Tier 1: Reshape Demand Section -->
     <section class="tier-section">
-        <div class="container">
-            <h2 class="activities-title">Tier 1: Reshape Demand</h2>
-            <p class="section-sub">We begin with the needs of communities.</p>
-            <div class="activities-divider"></div>
-            <p class="section-intro">Nonprofits function as differently configured retail or distribution operations&mdash;focused on serving people, not profit.</p>
+      <div class="container">
+        <h2 class="activities-title">Tier 1: Reshape Demand</h2>
+        <p class="section-sub">We begin with the needs of communities.</p>
+        <div class="activities-divider"></div>
+        <p class="section-intro">
+          Nonprofits function as differently configured retail or distribution
+          operations&mdash;focused on serving people, not profit.
+        </p>
 
-            <div class="tier-grid">
-                <div class="tier-card">
-                    <h4>Community Needs</h4>
-                    <p>Understand real needs on the ground. Include who is affected, what is needed, and why.</p>
-                </div>
-                <div class="tier-card">
-                    <h4>Receiving, Storage, &amp; Fulfillment Capacity</h4>
-                    <p>Assess ability to receive, store, and fulfill goods. Consider space, equipment, people, and processes. Ensure safe, efficient, and equitable distribution.</p>
-                </div>
-                <div class="tier-card">
-                    <h4>Operational Preparedness</h4>
-                    <p>Evaluate operational readiness across people, processes, and systems. Plan for surge, continuity, and reliability.</p>
-                </div>
-                <div class="tier-card">
-                    <h4>Local Demand Planning</h4>
-                    <p>Define assortment and service discipline. Set categories, trade lanes, seasonality, and priorities. Avoid "send us anything" models.</p>
-                </div>
-            </div>
-
-            <p class="section-closing">We start by listening&mdash;so we can deliver what's needed, not what's left. <strong>Right resources. Right place. Right time.</strong></p>
+        <div class="tier-grid">
+          <div class="tier-card">
+            <h4>Community Needs</h4>
+            <p>
+              Understand real needs on the ground. Include who is affected, what
+              is needed, and why.
+            </p>
+          </div>
+          <div class="tier-card">
+            <h4>Receiving, Storage, &amp; Fulfillment Capacity</h4>
+            <p>
+              Assess ability to receive, store, and fulfill goods. Consider
+              space, equipment, people, and processes. Ensure safe, efficient,
+              and equitable distribution.
+            </p>
+          </div>
+          <div class="tier-card">
+            <h4>Operational Preparedness</h4>
+            <p>
+              Evaluate operational readiness across people, processes, and
+              systems. Plan for surge, continuity, and reliability.
+            </p>
+          </div>
+          <div class="tier-card">
+            <h4>Local Demand Planning</h4>
+            <p>
+              Define assortment and service discipline. Set categories, trade
+              lanes, seasonality, and priorities. Avoid "send us anything"
+              models.
+            </p>
+          </div>
         </div>
+
+        <p class="section-closing">
+          We start by listening&mdash;so we can deliver what's needed, not
+          what's left.
+          <strong>Right resources. Right place. Right time.</strong>
+        </p>
+      </div>
     </section>
 
     <!-- Leadership Quotes Section -->
     <section class="quotes-section">
-        <div class="container">
-            <div class="quotes-grid">
-                <div class="quote-card">
-                    <img src="images/team/staff-001.jpg" alt="Steve Robinson" class="quote-photo">
-                    <blockquote>&ldquo;Our focus is to take the best from the for-profit supply chain world and marry it with the best of the nonprofit arena to create solutions that evens the playing field for Nonprofits. Today no NGO is too small or too big to benefit from an improved supply chain.&rdquo;</blockquote>
-                    <cite>Steve Robinson, CEO and Founder</cite>
-                </div>
-                <div class="quote-card">
-                    <img src="images/team/staff-005.jpg" alt="Carol Wylie" class="quote-photo">
-                    <blockquote>&ldquo;Improving and streamlining supply chain activities is critical to non-profit organizations. Simplifying work, streamlining operations, and professionalizing services allow non-profits to spend more of their scarce resources on their mission.&rdquo;</blockquote>
-                    <cite>Carol Wylie, Co-Founder and COO</cite>
-                </div>
-                <div class="quote-card">
-                    <img src="images/team/Hale.jpg" alt="Christopher Hale" class="quote-photo">
-                    <blockquote>&ldquo;The TSCP team partnered with one of its portfolio companies Kountable, and found a local distributor in Rwanda. The Supply Chain Project brought together its network of global experts and logistics partners to to deliver over 9 million malaria test kits to Rwanda.&rdquo;</blockquote>
-                    <cite>Christopher Hale, CEO and Founder Kountable</cite>
-                </div>
-            </div>
+      <div class="container">
+        <div class="quotes-grid">
+          <div class="quote-card">
+            <img
+              src="images/team/staff-001.jpg"
+              alt="Steve Robinson"
+              class="quote-photo"
+            />
+            <blockquote>
+              &ldquo;Our focus is to take the best from the for-profit supply
+              chain world and marry it with the best of the nonprofit arena to
+              create solutions that evens the playing field for Nonprofits.
+              Today no NGO is too small or too big to benefit from an improved
+              supply chain.&rdquo;
+            </blockquote>
+            <cite>Steve Robinson, CEO and Founder</cite>
+          </div>
+          <div class="quote-card">
+            <img
+              src="images/team/staff-005.jpg"
+              alt="Carol Wylie"
+              class="quote-photo"
+            />
+            <blockquote>
+              &ldquo;Improving and streamlining supply chain activities is
+              critical to non-profit organizations. Simplifying work,
+              streamlining operations, and professionalizing services allow
+              non-profits to spend more of their scarce resources on their
+              mission.&rdquo;
+            </blockquote>
+            <cite>Carol Wylie, Co-Founder and COO</cite>
+          </div>
+          <div class="quote-card">
+            <img
+              src="images/team/Hale.jpg"
+              alt="Christopher Hale"
+              class="quote-photo"
+            />
+            <blockquote>
+              &ldquo;The TSCP team partnered with one of its portfolio companies
+              Klear, and found a local distributor in Rwanda. The Supply Chain
+              Project brought together its network of global experts and
+              logistics partners to to deliver over 9 million malaria test kits
+              to Rwanda.&rdquo;
+            </blockquote>
+            <cite>Christopher Hale, CEO and Founder Klear</cite>
+          </div>
         </div>
+      </div>
     </section>
 
     <!-- Marketplace Parallax Section -->
     <section class="marketplace-parallax">
-        <div class="marketplace-parallax-bg" style="background-image: url('images/cover-tscp-4.jpg')"></div>
-        <div class="marketplace-parallax-overlay"></div>
-        <div class="marketplace-parallax-content">
-            <h2>The Supply Chain Project Marketplace</h2>
-            <p>Discover a whole new approach to problem-solving for non-profits that can benefit from industry professionals, service providers and distribution software providers.</p>
-        </div>
+      <div
+        class="marketplace-parallax-bg"
+        style="background-image: url(&quot;images/cover-tscp-4.jpg&quot;)"
+      ></div>
+      <div class="marketplace-parallax-overlay"></div>
+      <div class="marketplace-parallax-content">
+        <h2>The Supply Chain Project Marketplace</h2>
+        <p>
+          Discover a whole new approach to problem-solving for non-profits that
+          can benefit from industry professionals, service providers and
+          distribution software providers.
+        </p>
+      </div>
     </section>
 
     <!-- Marketplace Provider Categories -->
     <section class="story-section">
-        <div class="container">
-            <div class="story-grid" style="grid-template-columns: 1fr 1fr;">
-                <div class="story-col">
-                    <div class="service-block">
-                        <h4>Consultants</h4>
-                        <p>Consultants bring a wealth of knowledge and experience to the table and help non-profits to identify opportunities for growth and improvement.</p>
-                    </div>
-                    <div class="service-block">
-                        <h4>Logistics Providers</h4>
-                        <p>Logistics providers are focused on streamlining distribution, allowing you to focus on your mission and vision. Increase operational efficiency, reduce costs, and ultimately make a bigger impact in your community.</p>
-                    </div>
-                </div>
-                <div class="story-col">
-                    <div class="service-block">
-                        <h4>Software providers</h4>
-                        <p>Software providers are focused on providing you with the tools you need to effectively manage and track your operations, allowing you to focus on achieving your goals.</p>
-                    </div>
-                    <div class="service-block">
-                        <h4>Industry Professionals</h4>
-                        <p>Industry professionals bring a wealth of knowledge and experience to the table, and their focus is on providing expert guidance and support to help non-profits achieve their goals.</p>
-                    </div>
-                </div>
+      <div class="container">
+        <div class="story-grid" style="grid-template-columns: 1fr 1fr">
+          <div class="story-col">
+            <div class="service-block">
+              <h4>Consultants</h4>
+              <p>
+                Consultants bring a wealth of knowledge and experience to the
+                table and help non-profits to identify opportunities for growth
+                and improvement.
+              </p>
             </div>
+            <div class="service-block">
+              <h4>Logistics Providers</h4>
+              <p>
+                Logistics providers are focused on streamlining distribution,
+                allowing you to focus on your mission and vision. Increase
+                operational efficiency, reduce costs, and ultimately make a
+                bigger impact in your community.
+              </p>
+            </div>
+          </div>
+          <div class="story-col">
+            <div class="service-block">
+              <h4>Software providers</h4>
+              <p>
+                Software providers are focused on providing you with the tools
+                you need to effectively manage and track your operations,
+                allowing you to focus on achieving your goals.
+              </p>
+            </div>
+            <div class="service-block">
+              <h4>Industry Professionals</h4>
+              <p>
+                Industry professionals bring a wealth of knowledge and
+                experience to the table, and their focus is on providing expert
+                guidance and support to help non-profits achieve their goals.
+              </p>
+            </div>
+          </div>
         </div>
+      </div>
     </section>
 
     <!-- The Complete TSCP Ecosystem Section -->
     <section class="ecosystem-section">
-        <div class="container">
-            <h2 class="activities-title">The Complete TSCP Ecosystem</h2>
-            <p class="section-sub">From visibility to impact&mdash;powered by people, technology, and collaboration.</p>
-            <div class="activities-divider"></div>
-            <p class="section-intro">An integrated system that connects supply to need, mobilizes resources, and delivers measurable, sustainable impact for people, communities, and the planet.</p>
+      <div class="container">
+        <h2 class="activities-title">The Complete TSCP Ecosystem</h2>
+        <p class="section-sub">
+          From visibility to impact&mdash;powered by people, technology, and
+          collaboration.
+        </p>
+        <div class="activities-divider"></div>
+        <p class="section-intro">
+          An integrated system that connects supply to need, mobilizes
+          resources, and delivers measurable, sustainable impact for people,
+          communities, and the planet.
+        </p>
 
-            <div class="eco-flow">
-                <div class="eco-step">
-                    <span class="eco-step-num">1</span>
-                    <h4>See</h4>
-                    <p>See hidden supply and waste. Know what's available and where it exists.</p>
-                </div>
-                <div class="eco-step">
-                    <span class="eco-step-num">2</span>
-                    <h4>Understand</h4>
-                    <p>Understand local demand. Identify needs, priorities, and opportunities.</p>
-                </div>
-                <div class="eco-step">
-                    <span class="eco-step-num">3</span>
-                    <h4>Assess</h4>
-                    <p>Assess readiness and capacity. Evaluate assets, capabilities, and constraints.</p>
-                </div>
-                <div class="eco-step">
-                    <span class="eco-step-num">4</span>
-                    <h4>Match &amp; Mobilize</h4>
-                    <p>Match resources to needs. Mobilize people, partners, and capacity.</p>
-                </div>
-                <div class="eco-step">
-                    <span class="eco-step-num">5</span>
-                    <h4>Deliver</h4>
-                    <p>Coordinate and deliver efficiently. Move resources safely and effectively.</p>
-                </div>
-                <div class="eco-step">
-                    <span class="eco-step-num">6</span>
-                    <h4>Measure Impact</h4>
-                    <p>Deliver measurable, sustainable impact. Prove value. Improve outcomes. Strengthen resilience.</p>
-                </div>
-            </div>
-
-            <div class="eco-govern">
-                <h4>Govern with Human Reasoning and AI</h4>
-                <p>Human insight. AI capability. Purpose-driven outcomes.</p>
-            </div>
-
-            <div class="eco-sides">
-                <div class="eco-side">
-                    <h4>Reshape Demand</h4>
-                    <p>Understand needs, context, and capacity. Focus on outcomes that matter.</p>
-                </div>
-                <div class="eco-side">
-                    <h4>Reshape Supply</h4>
-                    <p>Mobilize resources. Deliver impact. Strengthen communities.</p>
-                </div>
-            </div>
-
-            <div class="eco-banner">
-                <h3>YOU ARE PART OF THE ECOSYSTEM.</h3>
-                <p>Every organization has resources, capabilities, and relationships that can strengthen this system.</p>
-                <ul class="eco-checklist">
-                    <li>
-                        <span class="list-icon">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>
-                        </span>
-                        <span>Resources &amp; assets</span>
-                    </li>
-                    <li>
-                        <span class="list-icon">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>
-                        </span>
-                        <span>Capabilities &amp; services</span>
-                    </li>
-                    <li>
-                        <span class="list-icon">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>
-                        </span>
-                        <span>Relationships &amp; networks</span>
-                    </li>
-                    <li>
-                        <span class="list-icon">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>
-                        </span>
-                        <span>Innovation &amp; technology</span>
-                    </li>
-                </ul>
-            </div>
-
-            <p class="section-closing"><strong>What are you doing today&mdash;and how will you strengthen the system?</strong></p>
+        <div class="eco-flow">
+          <div class="eco-step">
+            <span class="eco-step-num">1</span>
+            <h4>See</h4>
+            <p>
+              See hidden supply and waste. Know what's available and where it
+              exists.
+            </p>
+          </div>
+          <div class="eco-step">
+            <span class="eco-step-num">2</span>
+            <h4>Understand</h4>
+            <p>
+              Understand local demand. Identify needs, priorities, and
+              opportunities.
+            </p>
+          </div>
+          <div class="eco-step">
+            <span class="eco-step-num">3</span>
+            <h4>Assess</h4>
+            <p>
+              Assess readiness and capacity. Evaluate assets, capabilities, and
+              constraints.
+            </p>
+          </div>
+          <div class="eco-step">
+            <span class="eco-step-num">4</span>
+            <h4>Match &amp; Mobilize</h4>
+            <p>
+              Match resources to needs. Mobilize people, partners, and capacity.
+            </p>
+          </div>
+          <div class="eco-step">
+            <span class="eco-step-num">5</span>
+            <h4>Deliver</h4>
+            <p>
+              Coordinate and deliver efficiently. Move resources safely and
+              effectively.
+            </p>
+          </div>
+          <div class="eco-step">
+            <span class="eco-step-num">6</span>
+            <h4>Measure Impact</h4>
+            <p>
+              Deliver measurable, sustainable impact. Prove value. Improve
+              outcomes. Strengthen resilience.
+            </p>
+          </div>
         </div>
+
+        <div class="eco-govern">
+          <h4>Govern with Human Reasoning and AI</h4>
+          <p>Human insight. AI capability. Purpose-driven outcomes.</p>
+        </div>
+
+        <div class="eco-sides">
+          <div class="eco-side">
+            <h4>Reshape Demand</h4>
+            <p>
+              Understand needs, context, and capacity. Focus on outcomes that
+              matter.
+            </p>
+          </div>
+          <div class="eco-side">
+            <h4>Reshape Supply</h4>
+            <p>Mobilize resources. Deliver impact. Strengthen communities.</p>
+          </div>
+        </div>
+
+        <div class="eco-banner">
+          <h3>YOU ARE PART OF THE ECOSYSTEM.</h3>
+          <p>
+            Every organization has resources, capabilities, and relationships
+            that can strengthen this system.
+          </p>
+          <ul class="eco-checklist">
+            <li>
+              <span class="list-icon">
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path d="M20 6L9 17l-5-5" />
+                </svg>
+              </span>
+              <span>Resources &amp; assets</span>
+            </li>
+            <li>
+              <span class="list-icon">
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path d="M20 6L9 17l-5-5" />
+                </svg>
+              </span>
+              <span>Capabilities &amp; services</span>
+            </li>
+            <li>
+              <span class="list-icon">
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path d="M20 6L9 17l-5-5" />
+                </svg>
+              </span>
+              <span>Relationships &amp; networks</span>
+            </li>
+            <li>
+              <span class="list-icon">
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path d="M20 6L9 17l-5-5" />
+                </svg>
+              </span>
+              <span>Innovation &amp; technology</span>
+            </li>
+          </ul>
+        </div>
+
+        <p class="section-closing">
+          <strong
+            >What are you doing today&mdash;and how will you strengthen the
+            system?</strong
+          >
+        </p>
+      </div>
     </section>
 
     <!-- Collaborate & Optimize Section -->
     <section class="collab-section">
-        <div class="container">
-            <div class="collab-grid">
-                <div class="collab-item">
-                    <h3>Collaborate</h3>
-                    <p>Build strategic relationships with marketplace participants.</p>
-                </div>
-                <div class="collab-item">
-                    <h3>Optimize</h3>
-                    <p>Improve your processes to increase your impact</p>
-                </div>
-            </div>
-            <div class="collab-cta">
-                <a href="/contact-us.html" class="btn-connect">CONNECT WITH US</a>
-            </div>
+      <div class="container">
+        <div class="collab-grid">
+          <div class="collab-item">
+            <h3>Collaborate</h3>
+            <p>Build strategic relationships with marketplace participants.</p>
+          </div>
+          <div class="collab-item">
+            <h3>Optimize</h3>
+            <p>Improve your processes to increase your impact</p>
+          </div>
         </div>
+        <div class="collab-cta">
+          <a href="/contact-us.html" class="btn-connect">CONNECT WITH US</a>
+        </div>
+      </div>
     </section>
 
     <!-- Footer -->
     <footer class="footer" id="footer">
-        <div class="footer-top">
-            <div class="container">
-                <div class="footer-grid">
-                    <div class="footer-col footer-about">
-                        <a href="/" class="footer-logo">
-                            <img src="images/logo-white-text.png" alt="The Supply Chain Project">
-                        </a>
-                        <p>The Supply Chain Project enables innovative partnerships between non-profits, businesses, service providers, and industry professionals that helps them drive measurable improvements.</p>
-                        <form class="footer-newsletter" id="newsletterForm">
-                            <input type="email" placeholder="Your Email" required>
-                            <input type="number" placeholder="What is 6 + 3 ?" required>
-                            <button type="submit" class="btn-newsletter">Mailing List</button>
-                        </form>
-                    </div>
-                    <div class="footer-col">
-                        <h4>Resources</h4>
-                        <ul class="footer-links">
-                            <li><a href="/policy.html">Privacy Policy</a></li>
-                            <li><a href="/terms-of-use.html">Terms of Use</a></li>
-                            <li><a href="/join-network-nonprofits.html">Non-For-Profit Organization Solutions</a></li>
-                            <li><a href="https://networked.co/c/the-supply-chain-project/">Community Discussions</a></li>
-                            <li><a href="https://supplino.com/tscp-supply-chain-assessment-questionnaire/">Supply Chain Assessment</a></li>
-                        </ul>
-                    </div>
-                    <div class="footer-col">
-                        <h4>Upcoming Events</h4>
-                        <p class="no-events">There are no upcoming calendar events.</p>
-                    </div>
-                </div>
+      <div class="footer-top">
+        <div class="container">
+          <div class="footer-grid">
+            <div class="footer-col footer-about">
+              <a href="/" class="footer-logo">
+                <img
+                  src="images/logo-white-text.png"
+                  alt="The Supply Chain Project"
+                />
+              </a>
+              <p>
+                The Supply Chain Project enables innovative partnerships between
+                non-profits, businesses, service providers, and industry
+                professionals that helps them drive measurable improvements.
+              </p>
+              <form class="footer-newsletter" id="newsletterForm">
+                <input type="email" placeholder="Your Email" required />
+                <input type="number" placeholder="What is 6 + 3 ?" required />
+                <button type="submit" class="btn-newsletter">
+                  Mailing List
+                </button>
+              </form>
             </div>
-        </div>
-        <div class="footer-bottom">
-            <div class="container">
-                <div class="footer-bottom-inner">
-                    <p>&copy; The Supply Chain Project | <a href="/policy.html">Policy</a> | <a href="/terms-of-use.html">Terms of Use</a></p>
-                    <div class="social-links">
-                        <a href="https://www.facebook.com/thesupplychainproject" aria-label="Facebook" target="_blank" rel="noopener">
-                            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
-                        </a>
-                        <a href="javascript:void(0)" aria-label="Twitter">
-                            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"/></svg>
-                        </a>
-                        <a href="javascript:void(0)" aria-label="LinkedIn">
-                            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2zM4 2a2 2 0 1 1 0 4 2 2 0 0 1 0-4z"/></svg>
-                        </a>
-                    </div>
-                </div>
+            <div class="footer-col">
+              <h4>Resources</h4>
+              <ul class="footer-links">
+                <li><a href="/policy.html">Privacy Policy</a></li>
+                <li><a href="/terms-of-use.html">Terms of Use</a></li>
+                <li>
+                  <a href="/non-profits.html"
+                    >Non-For-Profit Organization Solutions</a
+                  >
+                </li>
+                <li>
+                  <a href="https://networked.co/c/the-supply-chain-project/"
+                    >Community Discussions</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="https://supplino.com/tscp-supply-chain-assessment-questionnaire/"
+                    >Supply Chain Assessment</a
+                  >
+                </li>
+              </ul>
             </div>
+            <div class="footer-col">
+              <h4>Upcoming Events</h4>
+              <p class="no-events">There are no upcoming calendar events.</p>
+            </div>
+          </div>
         </div>
+      </div>
+      <div class="footer-bottom">
+        <div class="container">
+          <div class="footer-bottom-inner">
+            <p>
+              &copy; The Supply Chain Project |
+              <a href="/policy.html">Policy</a> |
+              <a href="/terms-of-use.html">Terms of Use</a>
+            </p>
+            <div class="social-links">
+              <a
+                href="https://www.facebook.com/thesupplychainproject"
+                aria-label="Facebook"
+                target="_blank"
+                rel="noopener"
+              >
+                <svg viewBox="0 0 24 24" fill="currentColor">
+                  <path
+                    d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"
+                  />
+                </svg>
+              </a>
+              <a href="javascript:void(0)" aria-label="Twitter">
+                <svg viewBox="0 0 24 24" fill="currentColor">
+                  <path
+                    d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"
+                  />
+                </svg>
+              </a>
+              <a href="javascript:void(0)" aria-label="LinkedIn">
+                <svg viewBox="0 0 24 24" fill="currentColor">
+                  <path
+                    d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2zM4 2a2 2 0 1 1 0 4 2 2 0 0 1 0-4z"
+                  />
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
     </footer>
 
     <!-- GSAP CDN -->
@@ -678,5 +981,5 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
     <script src="js/nonprofits.js"></script>
     <script src="js/quotes-slider.js"></script>
-</body>
+  </body>
 </html>
