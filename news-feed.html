@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>News Feed - The Supply Chain Project</title>
+    <link rel="icon" type="image/png" href="/images/logomark-h-color-outline.png">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/ourstory.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@700;800;900&display=swap" rel="stylesheet">
+    <style>
+        /* News feed layout */
+        .feed-section {
+            padding: 80px 0;
+            background: var(--gray-100);
+        }
+
+        .feed-intro {
+            text-align: center;
+            max-width: 720px;
+            margin: 0 auto 48px;
+        }
+
+        .feed-layout {
+            display: grid;
+            grid-template-columns: minmax(0, 1fr) 280px;
+            gap: 32px;
+            align-items: start;
+        }
+
+        .feed-card {
+            background: var(--white);
+            border-radius: 8px;
+            box-shadow: var(--shadow-sm);
+            padding: 32px;
+            margin-bottom: 28px;
+            scroll-margin-top: 110px;
+        }
+
+        .feed-card:last-child {
+            margin-bottom: 0;
+        }
+
+        .feed-tag {
+            display: inline-block;
+            font-size: 0.6875rem;
+            font-weight: 800;
+            letter-spacing: 2px;
+            padding: 5px 14px;
+            border-radius: 50px;
+            margin-bottom: 14px;
+        }
+
+        .feed-tag-video {
+            background: var(--primary);
+            color: var(--white);
+        }
+
+        .feed-tag-article {
+            background: var(--accent);
+            color: var(--dark);
+        }
+
+        .feed-meta {
+            font-size: 0.8125rem;
+            color: var(--gray-600);
+            margin-bottom: 10px;
+        }
+
+        .feed-meta span + span::before {
+            content: "\00b7";
+            margin: 0 8px;
+            color: var(--gray-400);
+        }
+
+        .feed-card h3 {
+            font-family: var(--font-display);
+            font-size: 1.375rem;
+            font-weight: 800;
+            color: var(--dark);
+            line-height: 1.35;
+            margin-bottom: 14px;
+        }
+
+        .feed-card h3 a {
+            color: inherit;
+            transition: color var(--transition);
+        }
+
+        .feed-card h3 a:hover {
+            color: var(--primary);
+        }
+
+        .feed-card p {
+            font-size: 0.9375rem;
+            color: var(--gray-700);
+            line-height: 1.8;
+            margin-bottom: 16px;
+        }
+
+        .feed-embed {
+            max-width: 605px;
+            margin: 0 auto 20px;
+        }
+
+        .feed-actions {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            flex-wrap: wrap;
+            margin-top: 20px;
+        }
+
+        .feed-actions .btn-become-member {
+            margin-bottom: 0;
+            padding: 13px 28px;
+        }
+
+        .btn-copy-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 11px 24px;
+            border: 2px solid var(--primary);
+            border-radius: 4px;
+            background: transparent;
+            color: var(--primary);
+            font-family: var(--font-primary);
+            font-size: 0.75rem;
+            font-weight: 700;
+            letter-spacing: 1.5px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .btn-copy-link:hover {
+            background: var(--primary);
+            color: var(--white);
+        }
+
+        /* Sidebar */
+        .feed-sidebar {
+            background: var(--white);
+            border-radius: 8px;
+            box-shadow: var(--shadow-sm);
+            padding: 28px 24px;
+            position: sticky;
+            top: 100px;
+        }
+
+        .feed-sidebar h4 {
+            font-size: 0.8125rem;
+            font-weight: 800;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--dark);
+            margin-bottom: 16px;
+        }
+
+        .feed-filter {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+            padding: 10px 14px;
+            margin-bottom: 8px;
+            border: 1px solid var(--gray-200);
+            border-radius: 6px;
+            background: transparent;
+            font-family: var(--font-primary);
+            font-size: 0.875rem;
+            font-weight: 600;
+            color: var(--gray-700);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .feed-filter .count {
+            font-size: 0.75rem;
+            font-weight: 700;
+            background: var(--gray-100);
+            border-radius: 50px;
+            padding: 2px 10px;
+            color: var(--gray-600);
+        }
+
+        .feed-filter:hover {
+            border-color: var(--primary);
+            color: var(--primary);
+        }
+
+        .feed-filter.active {
+            background: var(--primary);
+            border-color: var(--primary);
+            color: var(--white);
+        }
+
+        .feed-filter.active .count {
+            background: rgba(255, 255, 255, 0.2);
+            color: var(--white);
+        }
+
+        .feed-toc {
+            list-style: none;
+            margin: 20px 0 0;
+            padding: 16px 0 0;
+            border-top: 1px solid var(--gray-200);
+        }
+
+        .feed-toc li {
+            margin-bottom: 10px;
+        }
+
+        .feed-toc a {
+            font-size: 0.8438rem;
+            color: var(--gray-700);
+            line-height: 1.5;
+            transition: color var(--transition);
+        }
+
+        .feed-toc a:hover {
+            color: var(--primary);
+        }
+
+        @media (max-width: 992px) {
+            .feed-layout {
+                grid-template-columns: 1fr;
+            }
+
+            .feed-sidebar {
+                position: static;
+                order: -1;
+            }
+
+            .feed-toc {
+                display: none;
+            }
+        }
+
+        @media (max-width: 640px) {
+            .feed-section {
+                padding: 56px 0;
+            }
+
+            .feed-card {
+                padding: 24px 20px;
+            }
+        }
+    </style>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-L0ZLVPTTV1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-L0ZLVPTTV1');
+    </script>
+</head>
+<body>
+
+    <!-- Header -->
+    <header class="header scrolled" id="header">
+        <div class="header-inner">
+            <a href="/" class="logo">
+                <img src="images/logo-white-text.png" alt="The Supply Chain Project">
+            </a>
+            <nav class="main-nav" id="mainNav">
+                <ul class="nav-list">
+                    <li><a href="/">Home</a></li>
+                    <li class="has-dropdown">
+                        <a href="javascript:void(0)">About Us <span class="arrow">&#9662;</span></a>
+                        <ul class="dropdown">
+                            <li><a href="/our-story.html">Our Story</a></li>
+                            <li><a href="/our-mission.html">Mission</a></li>
+                            <li><a href="/our-services.html">Services</a></li>
+                            <li><a href="/our-technology.html">Technology</a></li>
+                            <li><a href="/our-team.html">Team</a></li>
+                            <li><a href="/news-feed.html">News Feed</a></li>
+                            <li><a href="/contact-us.html">Contact Us</a></li>
+                        </ul>
+                    </li>
+                    <li class="has-dropdown">
+                        <a href="javascript:void(0)">Get Involved <span class="arrow">&#9662;</span></a>
+                        <ul class="dropdown">
+                            <li><a href="/join-network-nonprofits.html">I'm a Nonprofit</a></li>
+                            <li><a href="/donors.html">I'm a Donor</a></li>
+                            <li><a href="/join-network-professional-provider.html">I'm a Professional</a></li>
+                            <li><a href="/cmn-members-access.html">I'm a Corporation</a></li>
+                            <li><a href="/join-network-logistics-provider.html">I'm a Logistics Provider</a></li>
+                            <li><a href="/join-network-service-provider.html">I'm a Service Provider</a></li>
+                            <li><a href="/join-network-technology-provider.html">I'm a Technology Provider</a></li>
+                            <li><a href="/smn-members-access.html">I'm a Student</a></li>
+                            <li><a href="/join-network-volunteer.html">I'm a Volunteer</a></li>
+                        </ul>
+                    </li>
+                    <li class="has-dropdown">
+                        <a href="javascript:void(0)">Support <span class="arrow">&#9662;</span></a>
+                        <ul class="dropdown">
+                            <li><a href="/members-tscp.html">Membership</a></li>
+                            <li><a href="/donors.html">Donations</a></li>
+                            <li><a href="/logistics-tscp.html">Logistics</a></li>
+                            <li><a href="/our-technology.html">Technology</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+            <div class="header-actions">
+                <a href="https://app.thesupplychainproject.org" class="btn-marketplace">Enter Marketplace</a>
+                <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Page Hero Banner -->
+    <section class="page-hero">
+        <div class="page-hero-bg" style="background-image: url('images/cover-tscp-4.jpg')"></div>
+        <div class="page-hero-overlay"></div>
+        <div class="page-hero-content">
+            <h1>News Feed</h1>
+            <div class="breadcrumb">
+                <a href="/">ABOUT US</a> / <span>NEWS FEED</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- News Feed Section -->
+    <section class="feed-section">
+        <div class="container">
+            <p class="story-text feed-intro">News, research and media on the issues our network of nonprofits, businesses and volunteers works on every day.</p>
+
+            <div class="feed-layout">
+                <div class="feed-list" id="feedList">
+
+                    <!-- Video: US Cities with the most homeless populations -->
+                    <article class="feed-card" id="us-cities-homeless-video" data-type="video">
+                        <span class="feed-tag feed-tag-video">VIDEO</span>
+                        <div class="feed-meta">
+                            <span>September 28, 2026</span>
+                            <span>TikTok, @impetusog</span>
+                        </div>
+                        <h3><a href="https://www.tiktok.com/@impetusog/video/7690728231435046174" target="_blank" rel="noopener">US Cities with the most homeless populations</a></h3>
+                        <p>A short video from @impetusog on TikTok on the three US cities with the most homeless people.</p>
+
+                        <div class="feed-embed">
+                            <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@impetusog/video/7690728231435046174" data-video-id="7690728231435046174" style="max-width: 605px; min-width: 325px;">
+                                <section>
+                                    <a target="_blank" rel="noopener" title="@impetusog" href="https://www.tiktok.com/@impetusog?refer=embed">@impetusog</a>
+                                    The 3 cities in USA with the most homeless
+                                    <a target="_blank" rel="noopener" title="&#9836; Minimal for news / news suspense(1169746) - Hiraoka Kotaro" href="https://www.tiktok.com/music/Minimal-for-news-news-suspense-1169746-7055051802865862658?refer=embed">&#9836; Minimal for news / news suspense(1169746) - Hiraoka Kotaro</a>
+                                </section>
+                            </blockquote>
+                        </div>
+
+                        <div class="feed-actions">
+                            <a href="https://www.tiktok.com/@impetusog/video/7690728231435046174" target="_blank" rel="noopener" class="btn-become-member">Watch on TikTok</a>
+                            <button type="button" class="btn-copy-link" data-anchor="us-cities-homeless-video">COPY LINK TO POST</button>
+                        </div>
+                    </article>
+
+                    <!-- Article: LA homeless encampment cleanups -->
+                    <article class="feed-card" id="la-encampment-cleanups-rand" data-type="article">
+                        <span class="feed-tag feed-tag-article">ARTICLE</span>
+                        <div class="feed-meta">
+                            <span>July 25, 2024</span>
+                            <span>ABC7 Los Angeles, Leo Stallworth</span>
+                        </div>
+                        <h3><a href="https://abc7.com/post/los-angeles-homeless-encampment-cleanups-provide-temporary-relief/15092069/" target="_blank" rel="noopener">LA homeless encampment cleanups provide only temporary relief, report says</a></h3>
+
+                        <p>A RAND Corporation study of three Los Angeles neighborhoods (Hollywood, Venice and Skid Row) between 2021 and 2023 found that encampment cleanups gave only short-lived relief. Cleared areas were typically repopulated within two to three months, and the report's lead author said the sweeps tend to move people around rather than reduce the number of unsheltered residents.</p>
+
+                        <p>The unhoused population in the study areas held steady over the period, after growing about 10% a year before. In 2023 surveys, more than half of the people interviewed reported a chronic mental health condition, and roughly half reported a chronic physical health condition or a substance use disorder.</p>
+
+                        <p>Mayor Karen Bass's office pointed to the citywide 2024 point-in-time count, which showed street homelessness down 10% and more people moving into permanent housing. Across Los Angeles County, the count found 75,312 people homeless on a given night, down about 0.3% from 2023, with about 45,252 of them in the city of Los Angeles.</p>
+
+                        <div class="feed-actions">
+                            <a href="https://abc7.com/post/los-angeles-homeless-encampment-cleanups-provide-temporary-relief/15092069/" target="_blank" rel="noopener" class="btn-become-member">Read the full story on ABC7 Los Angeles</a>
+                            <button type="button" class="btn-copy-link" data-anchor="la-encampment-cleanups-rand">COPY LINK TO POST</button>
+                        </div>
+                    </article>
+
+                </div>
+
+                <!-- Sidebar -->
+                <aside class="feed-sidebar">
+                    <h4>Browse by type</h4>
+                    <button type="button" class="feed-filter active" data-filter="all">All posts <span class="count">2</span></button>
+                    <button type="button" class="feed-filter" data-filter="article">Articles <span class="count">1</span></button>
+                    <button type="button" class="feed-filter" data-filter="video">Videos <span class="count">1</span></button>
+
+                    <ul class="feed-toc">
+                        <li><a href="#us-cities-homeless-video">US Cities with the most homeless populations</a></li>
+                        <li><a href="#la-encampment-cleanups-rand">LA homeless encampment cleanups provide only temporary relief, report says</a></li>
+                    </ul>
+                </aside>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer" id="footer">
+        <div class="footer-top">
+            <div class="container">
+                <div class="footer-grid">
+                    <div class="footer-col footer-about">
+                        <a href="/" class="footer-logo">
+                            <img src="images/logo-white-text.png" alt="The Supply Chain Project">
+                        </a>
+                        <p>The Supply Chain Project enables innovative partnerships between non-profits, businesses, service providers, and industry professionals that helps them drive measurable improvements.</p>
+                        <form class="footer-newsletter" id="newsletterForm">
+                            <input type="email" placeholder="Your Email" required>
+                            <input type="number" placeholder="What is 6 + 3 ?" required>
+                            <button type="submit" class="btn-newsletter">Mailing List</button>
+                        </form>
+                    </div>
+                    <div class="footer-col">
+                        <h4>Resources</h4>
+                        <ul class="footer-links">
+                            <li><a href="/policy.html">Privacy Policy</a></li>
+                            <li><a href="/terms-of-use.html">Terms of Use</a></li>
+                            <li><a href="/join-network-nonprofits.html">Non-For-Profit Organization Solutions</a></li>
+                            <li><a href="https://networked.co/c/the-supply-chain-project/">Community Discussions</a></li>
+                            <li><a href="https://supplino.com/tscp-supply-chain-assessment-questionnaire/">Supply Chain Assessment</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-col">
+                        <h4>Upcoming Events</h4>
+                        <p class="no-events">There are no upcoming calendar events.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container">
+                <div class="footer-bottom-inner">
+                    <p>&copy; The Supply Chain Project | <a href="/policy.html">Policy</a> | <a href="/terms-of-use.html">Terms of Use</a></p>
+                    <div class="social-links">
+                        <a href="https://www.facebook.com/thesupplychainproject" aria-label="Facebook" target="_blank" rel="noopener">
+                            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+                        </a>
+                        <a href="javascript:void(0)" aria-label="Twitter">
+                            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"/></svg>
+                        </a>
+                        <a href="javascript:void(0)" aria-label="LinkedIn">
+                            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2zM4 2a2 2 0 1 1 0 4 2 2 0 0 1 0-4z"/></svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- GSAP CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script src="js/emergency.js"></script>
+    <!-- TikTok embed -->
+    <script async src="https://www.tiktok.com/embed.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Browse-by-type filter
+            var filters = document.querySelectorAll('.feed-filter');
+            var cards = document.querySelectorAll('.feed-card');
+
+            filters.forEach(function (btn) {
+                btn.addEventListener('click', function () {
+                    filters.forEach(function (b) { b.classList.remove('active'); });
+                    btn.classList.add('active');
+                    var type = btn.getAttribute('data-filter');
+                    cards.forEach(function (card) {
+                        card.style.display = (type === 'all' || card.getAttribute('data-type') === type) ? '' : 'none';
+                    });
+                });
+            });
+
+            // Copy link to post
+            document.querySelectorAll('.btn-copy-link').forEach(function (btn) {
+                btn.addEventListener('click', function () {
+                    var url = window.location.origin + window.location.pathname + '#' + btn.getAttribute('data-anchor');
+                    var done = function () {
+                        var original = btn.textContent;
+                        btn.textContent = 'LINK COPIED!';
+                        setTimeout(function () { btn.textContent = original; }, 2000);
+                    };
+                    if (navigator.clipboard && navigator.clipboard.writeText) {
+                        navigator.clipboard.writeText(url).then(done).catch(function () {
+                            window.prompt('Copy this link:', url);
+                        });
+                    } else {
+                        window.prompt('Copy this link:', url);
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
