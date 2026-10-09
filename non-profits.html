@@ -265,6 +265,72 @@
           grid-template-columns: 1fr !important;
         }
       }
+      /* Mission statement + five pillars */
+      .strategy-statement {
+        font-family: var(--font-display);
+        font-size: clamp(1.25rem, 2.2vw, 1.75rem);
+        font-weight: 700;
+        color: var(--dark);
+        text-align: center;
+        line-height: 1.5;
+        max-width: 860px;
+        margin: 0 auto 48px;
+      }
+      .strategy-steps {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        gap: 24px;
+        margin-bottom: 48px;
+      }
+      .strategy-step {
+        background: var(--gray-100);
+        border-radius: 8px;
+        padding: 28px 16px;
+        text-align: center;
+      }
+      .strategy-step-num {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 44px;
+        height: 44px;
+        border-radius: 50%;
+        background: var(--primary);
+        color: var(--white);
+        font-weight: 800;
+        font-size: 1.125rem;
+        margin-bottom: 14px;
+      }
+      .strategy-card-title {
+        font-family: var(--font-primary);
+        font-size: 0.9375rem;
+        font-weight: 800;
+        letter-spacing: 1.5px;
+        color: var(--dark);
+        margin-bottom: 10px;
+      }
+      .strategy-card-text {
+        font-size: 0.9375rem;
+        color: var(--gray-700);
+        line-height: 1.7;
+      }
+      .strategy-closing {
+        font-family: var(--font-display);
+        font-size: clamp(1.125rem, 2vw, 1.5rem);
+        font-weight: 800;
+        color: var(--primary);
+        text-align: center;
+      }
+      @media (max-width: 992px) {
+        .strategy-steps {
+          grid-template-columns: repeat(2, 1fr);
+        }
+      }
+      @media (max-width: 768px) {
+        .strategy-steps {
+          grid-template-columns: 1fr;
+        }
+      }
     </style>
     <!-- Google tag (gtag.js) -->
     <script
@@ -707,158 +773,43 @@
       </div>
     </section>
 
-    <!-- The Complete TSCP Ecosystem Section -->
-    <section class="ecosystem-section">
+    <!-- Our Mission Statement Section -->
+    <section class="story-section">
       <div class="container">
-        <h2 class="activities-title">The Complete TSCP Ecosystem</h2>
-        <p class="section-sub">
-          From visibility to impact&mdash;powered by people, technology, and
-          collaboration.
-        </p>
+        <h2 class="activities-title">Our Mission</h2>
         <div class="activities-divider"></div>
-        <p class="section-intro">
-          An integrated system that connects supply to need, mobilizes
-          resources, and delivers measurable, sustainable impact for people,
-          communities, and the planet.
-        </p>
 
-        <div class="eco-flow">
-          <div class="eco-step">
-            <span class="eco-step-num">1</span>
-            <h4>See</h4>
-            <p>
-              See hidden supply and waste. Know what's available and where it
-              exists.
-            </p>
+        <p class="strategy-statement">To orchestrate the movement of surplus and underutilized resources to strengthen communities, reduce waste, and create measurable impact.</p>
+
+        <div class="strategy-steps">
+          <div class="strategy-step">
+            <span class="strategy-step-num">1</span>
+            <h3 class="strategy-card-title">SEE</h3>
+            <p class="strategy-card-text">Make hidden resources visible.</p>
           </div>
-          <div class="eco-step">
-            <span class="eco-step-num">2</span>
-            <h4>Understand</h4>
-            <p>
-              Understand local demand. Identify needs, priorities, and
-              opportunities.
-            </p>
+          <div class="strategy-step">
+            <span class="strategy-step-num">2</span>
+            <h3 class="strategy-card-title">ASSESS</h3>
+            <p class="strategy-card-text">Understand needs and capacity.</p>
           </div>
-          <div class="eco-step">
-            <span class="eco-step-num">3</span>
-            <h4>Assess</h4>
-            <p>
-              Assess readiness and capacity. Evaluate assets, capabilities, and
-              constraints.
-            </p>
+          <div class="strategy-step">
+            <span class="strategy-step-num">3</span>
+            <h3 class="strategy-card-title">MATCH</h3>
+            <p class="strategy-card-text">Intelligently connect supply to need.</p>
           </div>
-          <div class="eco-step">
-            <span class="eco-step-num">4</span>
-            <h4>Match &amp; Mobilize</h4>
-            <p>
-              Match resources to needs. Mobilize people, partners, and capacity.
-            </p>
+          <div class="strategy-step">
+            <span class="strategy-step-num">4</span>
+            <h3 class="strategy-card-title">MOBILIZE</h3>
+            <p class="strategy-card-text">Move resources efficiently.</p>
           </div>
-          <div class="eco-step">
-            <span class="eco-step-num">5</span>
-            <h4>Deliver</h4>
-            <p>
-              Coordinate and deliver efficiently. Move resources safely and
-              effectively.
-            </p>
-          </div>
-          <div class="eco-step">
-            <span class="eco-step-num">6</span>
-            <h4>Measure Impact</h4>
-            <p>
-              Deliver measurable, sustainable impact. Prove value. Improve
-              outcomes. Strengthen resilience.
-            </p>
+          <div class="strategy-step">
+            <span class="strategy-step-num">5</span>
+            <h3 class="strategy-card-title">MEASURE</h3>
+            <p class="strategy-card-text">Prove impact and drive improvement.</p>
           </div>
         </div>
 
-        <div class="eco-govern">
-          <h4>Govern with Human Reasoning and AI</h4>
-          <p>Human insight. AI capability. Purpose-driven outcomes.</p>
-        </div>
-
-        <div class="eco-sides">
-          <div class="eco-side">
-            <h4>Reshape Demand</h4>
-            <p>
-              Understand needs, context, and capacity. Focus on outcomes that
-              matter.
-            </p>
-          </div>
-          <div class="eco-side">
-            <h4>Reshape Supply</h4>
-            <p>Mobilize resources. Deliver impact. Strengthen communities.</p>
-          </div>
-        </div>
-
-        <div class="eco-banner">
-          <h3>YOU ARE PART OF THE ECOSYSTEM.</h3>
-          <p>
-            Every organization has resources, capabilities, and relationships
-            that can strengthen this system.
-          </p>
-          <ul class="eco-checklist">
-            <li>
-              <span class="list-icon">
-                <svg
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="2"
-                >
-                  <path d="M20 6L9 17l-5-5" />
-                </svg>
-              </span>
-              <span>Resources &amp; assets</span>
-            </li>
-            <li>
-              <span class="list-icon">
-                <svg
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="2"
-                >
-                  <path d="M20 6L9 17l-5-5" />
-                </svg>
-              </span>
-              <span>Capabilities &amp; services</span>
-            </li>
-            <li>
-              <span class="list-icon">
-                <svg
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="2"
-                >
-                  <path d="M20 6L9 17l-5-5" />
-                </svg>
-              </span>
-              <span>Relationships &amp; networks</span>
-            </li>
-            <li>
-              <span class="list-icon">
-                <svg
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="2"
-                >
-                  <path d="M20 6L9 17l-5-5" />
-                </svg>
-              </span>
-              <span>Innovation &amp; technology</span>
-            </li>
-          </ul>
-        </div>
-
-        <p class="section-closing">
-          <strong
-            >What are you doing today&mdash;and how will you strengthen the
-            system?</strong
-          >
-        </p>
+        <p class="strategy-closing">Right resource. Right place. Right time. Right impact.</p>
       </div>
     </section>
 

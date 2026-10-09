@@ -236,6 +236,137 @@
         color: var(--gray-800);
       }
 
+      /* The Second Supply Chain band */
+      .ssc-kicker {
+        display: block;
+        font-size: 0.75rem;
+        font-weight: 800;
+        letter-spacing: 3px;
+        color: var(--accent);
+        margin-bottom: 10px;
+      }
+
+      .ssc-statement {
+        font-family: var(--font-display);
+        font-size: clamp(1.25rem, 2.4vw, 1.875rem);
+        font-weight: 700;
+        font-style: italic;
+        color: rgba(255, 255, 255, 0.92);
+        line-height: 1.55;
+        margin: 28px auto 32px;
+      }
+
+      .ssc-link {
+        display: inline-block;
+        font-size: 0.8125rem;
+        font-weight: 700;
+        letter-spacing: 2px;
+        color: var(--accent);
+        border: 2px solid var(--accent);
+        border-radius: 4px;
+        padding: 12px 28px;
+        transition: all 0.3s ease;
+      }
+
+      .ssc-link:hover {
+        background: var(--accent);
+        color: var(--dark);
+      }
+
+      /* Seven doors */
+      .doors-grid {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 20px;
+      }
+
+      .door-card {
+        position: relative;
+        flex: 1 1 240px;
+        max-width: 300px;
+        display: flex;
+        align-items: center;
+        gap: 14px;
+        background: var(--white);
+        border: 1px solid var(--gray-200);
+        border-left: 4px solid var(--primary);
+        border-radius: 10px;
+        padding: 20px 22px;
+        box-shadow: var(--shadow-sm);
+        transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.4s ease;
+      }
+
+      .door-card:nth-child(even) {
+        border-left-color: var(--accent);
+      }
+
+      .door-card:hover {
+        transform: translateY(-6px);
+        box-shadow: var(--shadow-md);
+      }
+
+      .door-icon {
+        flex-shrink: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 48px;
+        height: 48px;
+        border-radius: 50%;
+        background: rgba(13, 115, 119, 0.1);
+        color: var(--primary);
+      }
+
+      .door-card:nth-child(even) .door-icon {
+        background: rgba(232, 168, 56, 0.16);
+        color: #c4881d;
+      }
+
+      .door-icon svg {
+        width: 22px;
+        height: 22px;
+      }
+
+      .door-card h3 {
+        flex: 1;
+        font-size: 0.9375rem;
+        font-weight: 700;
+        color: var(--dark);
+        line-height: 1.35;
+      }
+
+      .door-arrow {
+        font-size: 1.125rem;
+        font-weight: 700;
+        color: var(--accent);
+        transition: transform 0.3s ease;
+      }
+
+      .door-card:hover .door-arrow {
+        transform: translateX(5px);
+      }
+
+      .doors-note {
+        margin-top: 36px;
+        text-align: center;
+        font-size: 0.9375rem;
+        color: var(--gray-600);
+      }
+
+      .doors-note a {
+        color: var(--primary);
+        font-weight: 700;
+        text-decoration: underline;
+      }
+
+      @media (max-width: 640px) {
+        .door-card {
+          max-width: 100%;
+          flex-basis: 100%;
+        }
+      }
+
       /* Why pillars */
       .why-grid {
         display: grid;
@@ -960,6 +1091,16 @@
       </div>
     </section>
 
+    <!-- The Second Supply Chain Section -->
+    <section class="strategy-section strategy-dark" id="secondSupplyChainSection">
+      <div class="container" style="text-align: center; max-width: 920px;">
+        <span class="ssc-kicker">WHY TSCP EXISTS</span>
+        <h2 class="section-title" style="color: var(--white);">The Second Supply Chain&trade;</h2>
+        <p class="ssc-statement">The first supply chain moves goods to demand backed by money. The Second Supply Chain&trade; moves stranded capacity to human need &mdash; and TSCP is its scoreboard.</p>
+        <a href="/our-story.html" class="ssc-link">READ THE FULL STORY &rarr;</a>
+      </div>
+    </section>
+
     <!-- Why No One Else Can Do This Section -->
     <section class="strategy-section strategy-alt" id="whySection">
       <div class="container">
@@ -992,6 +1133,70 @@
             <p>Creates enterprise value and human well-being.</p>
           </div>
         </div>
+      </div>
+    </section>
+
+    <!-- Seven Doors / Get Involved Section -->
+    <section class="strategy-section" id="doorsSection">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">Get Involved</h2>
+          <p class="section-subtitle">Choose your door.</p>
+        </div>
+
+        <div class="doors-grid">
+          <a href="/non-profits.html" class="door-card">
+            <span class="door-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+            </span>
+            <h3>Nonprofits</h3>
+            <span class="door-arrow">&rarr;</span>
+          </a>
+          <a href="/donors.html#gifts-in-kind" class="door-card">
+            <span class="door-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg>
+            </span>
+            <h3>Goods Donors</h3>
+            <span class="door-arrow">&rarr;</span>
+          </a>
+          <a href="/join-network-logistics-provider.html" class="door-card">
+            <span class="door-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+            </span>
+            <h3>Carriers and Warehouses</h3>
+            <span class="door-arrow">&rarr;</span>
+          </a>
+          <a href="/donors.html#financial" class="door-card">
+            <span class="door-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+            </span>
+            <h3>Financial Donors</h3>
+            <span class="door-arrow">&rarr;</span>
+          </a>
+          <a href="/join-network-professional-provider.html" class="door-card">
+            <span class="door-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
+            </span>
+            <h3>Professionals</h3>
+            <span class="door-arrow">&rarr;</span>
+          </a>
+          <a href="/join-network-technology-provider.html" class="door-card">
+            <span class="door-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+            </span>
+            <h3>Technology Partners</h3>
+            <span class="door-arrow">&rarr;</span>
+          </a>
+          <a href="/members-tscp.html" class="door-card">
+            <span class="door-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="7"/><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"/></svg>
+            </span>
+            <h3>Volunteers and Students</h3>
+            <span class="door-arrow">&rarr;</span>
+          </a>
+        </div>
+
+        <p class="doors-note">Agencies and universities: please reach us through our <a href="/contact-us.html">contact form</a>.</p>
       </div>
     </section>
 

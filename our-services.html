@@ -89,6 +89,138 @@
             color: var(--gray-700);
             line-height: 1.8;
         }
+        /* How It Works flow graphic */
+        .hiw-flow {
+            display: flex;
+            align-items: stretch;
+            justify-content: center;
+            gap: 18px;
+            flex-wrap: wrap;
+            margin-top: 48px;
+        }
+
+        .hiw-node {
+            position: relative;
+            flex: 1 1 240px;
+            max-width: 320px;
+            background: var(--white);
+            border-radius: 12px;
+            border-top: 4px solid var(--primary);
+            box-shadow: var(--shadow-sm);
+            padding: 40px 26px 30px;
+            text-align: center;
+            transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.4s ease;
+        }
+
+        .hiw-node:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .hiw-node-2 { border-top-color: var(--accent); }
+        .hiw-node-3 { border-top-color: var(--dark); }
+
+        .hiw-num {
+            position: absolute;
+            top: -18px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            background: var(--primary);
+            color: var(--white);
+            font-weight: 800;
+            font-size: 0.9375rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 10px rgba(26, 26, 46, 0.18);
+        }
+
+        .hiw-node-2 .hiw-num { background: var(--accent); color: var(--dark); }
+        .hiw-node-3 .hiw-num { background: var(--dark); }
+
+        .hiw-icon {
+            width: 72px;
+            height: 72px;
+            margin: 0 auto 18px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(13, 115, 119, 0.1);
+            color: var(--primary);
+        }
+
+        .hiw-node-2 .hiw-icon { background: rgba(232, 168, 56, 0.14); color: #c4881d; }
+        .hiw-node-3 .hiw-icon { background: rgba(26, 26, 46, 0.08); color: var(--dark); }
+
+        .hiw-icon svg {
+            width: 34px;
+            height: 34px;
+        }
+
+        .hiw-node h3 {
+            font-size: 0.8125rem;
+            font-weight: 800;
+            letter-spacing: 2px;
+            color: var(--gray-600);
+            margin-bottom: 6px;
+        }
+
+        .hiw-node h4 {
+            font-family: var(--font-display);
+            font-size: 1.25rem;
+            font-weight: 800;
+            color: var(--dark);
+            margin-bottom: 10px;
+        }
+
+        .hiw-node p {
+            font-size: 0.875rem;
+            color: var(--gray-700);
+            line-height: 1.6;
+            margin-bottom: 16px;
+        }
+
+        .hiw-node .hiw-more {
+            font-size: 0.75rem;
+            font-weight: 700;
+            letter-spacing: 1.5px;
+            color: var(--primary);
+        }
+
+        .hiw-arrow {
+            align-self: center;
+            font-size: 1.875rem;
+            font-weight: 700;
+            color: var(--accent);
+            animation: hiwPulse 1.8s ease-in-out infinite;
+        }
+
+        @keyframes hiwPulse {
+            0%, 100% { transform: translateX(0); opacity: 0.7; }
+            50% { transform: translateX(6px); opacity: 1; }
+        }
+
+        @media (max-width: 992px) {
+            .hiw-flow {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .hiw-node {
+                max-width: 420px;
+                width: 100%;
+            }
+
+            .hiw-arrow {
+                transform: rotate(90deg);
+                animation: none;
+            }
+        }
+
         .tier-grid {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
@@ -362,6 +494,73 @@
         /* Show the logo in its brand colors */
         .story-logo-img {
             filter: none;
+        }
+
+        /* Tier section graphics */
+        .tier-card {
+            position: relative;
+            transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.4s ease;
+        }
+
+        .tier-card:hover {
+            transform: translateY(-6px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .tier-icon {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 56px;
+            height: 56px;
+            border-radius: 50%;
+            background: rgba(13, 115, 119, 0.1);
+            color: var(--primary);
+            margin-bottom: 16px;
+        }
+
+        .tier-icon svg {
+            width: 26px;
+            height: 26px;
+        }
+
+        .tier-grid .tier-card:nth-child(even) .tier-icon,
+        .tier-grid-flex .tier-card:nth-child(even) .tier-icon {
+            background: rgba(232, 168, 56, 0.16);
+            color: #c4881d;
+        }
+
+        .tier-grid .tier-card,
+        .tier-grid-flex .tier-card {
+            border-top: 3px solid var(--primary);
+        }
+
+        .tier-grid .tier-card:nth-child(even),
+        .tier-grid-flex .tier-card:nth-child(even) {
+            border-top-color: var(--accent);
+        }
+
+        .story-list .list-icon svg [stroke-linecap],
+        .story-list .list-icon svg {
+            stroke-linecap: round;
+            stroke-linejoin: round;
+        }
+
+        .mobilize-icon {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 52px;
+            height: 52px;
+            border-radius: 50%;
+            background: rgba(232, 168, 56, 0.2);
+            color: var(--accent);
+            margin: 0 auto 14px;
+        }
+
+        .mobilize-icon svg {
+            width: 24px;
+            height: 24px;
         }
     </style>
     <!-- Google tag (gtag.js) -->
@@ -638,8 +837,55 @@
         </div>
     </section>
 
+    <!-- How It Works -->
+    <section class="story-section" style="background: var(--gray-100); padding-bottom: 60px;">
+        <div class="container" style="text-align: center;">
+            <h2 class="activities-title" style="font-size: clamp(1.75rem, 3.5vw, 2.5rem);">How It Works</h2>
+            <div class="activities-divider"></div>
+
+            <div class="hiw-flow">
+                <a href="#tier-1" class="hiw-node hiw-node-1">
+                    <span class="hiw-num">1</span>
+                    <span class="hiw-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+                    </span>
+                    <h3>TIER 1</h3>
+                    <h4>Reshape Demand</h4>
+                    <p>We begin with the needs of communities.</p>
+                    <span class="hiw-more">LEARN MORE &darr;</span>
+                </a>
+
+                <span class="hiw-arrow" aria-hidden="true">&rarr;</span>
+
+                <a href="#tier-2" class="hiw-node hiw-node-2">
+                    <span class="hiw-num">2</span>
+                    <span class="hiw-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+                    </span>
+                    <h3>TIER 2</h3>
+                    <h4>Match + Mobilize</h4>
+                    <p>We orchestrate the right match and mobilize resources.</p>
+                    <span class="hiw-more">LEARN MORE &darr;</span>
+                </a>
+
+                <span class="hiw-arrow" aria-hidden="true">&rarr;</span>
+
+                <a href="#tier-3" class="hiw-node hiw-node-3">
+                    <span class="hiw-num">3</span>
+                    <span class="hiw-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+                    </span>
+                    <h3>TIER 3</h3>
+                    <h4>Reshape Supply</h4>
+                    <p>We bring visibility and strategy to supply.</p>
+                    <span class="hiw-more">LEARN MORE &darr;</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
     <!-- Tier 1: Reshape Demand -->
-    <section class="story-section">
+    <section class="story-section" id="tier-1" style="scroll-margin-top: 90px;">
         <div class="container">
             <h2 class="activities-title">Tier 1: Reshape Demand</h2>
             <p class="strategy-sub">We begin with the needs of communities.</p>
@@ -649,6 +895,7 @@
 
             <div class="tier-grid">
                 <div class="tier-card">
+                    <span class="tier-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></span>
                     <h3>COMMUNITY NEEDS</h3>
                     <ul>
                         <li>Understand real needs on the ground.</li>
@@ -656,6 +903,7 @@
                     </ul>
                 </div>
                 <div class="tier-card">
+                    <span class="tier-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg></span>
                     <h3>RECEIVING, STORAGE, &amp; FULFILLMENT CAPACITY</h3>
                     <ul>
                         <li>Assess ability to receive, store, and fulfill goods.</li>
@@ -664,6 +912,7 @@
                     </ul>
                 </div>
                 <div class="tier-card">
+                    <span class="tier-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><rect x="8" y="2" width="8" height="4" rx="1" ry="1"/><path d="M9 14l2 2 4-4"/></svg></span>
                     <h3>OPERATIONAL PREPAREDNESS</h3>
                     <ul>
                         <li>Evaluate operational readiness across people, processes, and systems.</li>
@@ -671,6 +920,7 @@
                     </ul>
                 </div>
                 <div class="tier-card">
+                    <span class="tier-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></span>
                     <h3>LOCAL DEMAND PLANNING</h3>
                     <ul>
                         <li>Define assortment and service discipline.</li>
@@ -688,7 +938,7 @@
     </section>
 
     <!-- Tier 2: Match + Mobilize -->
-    <section class="community-section">
+    <section class="community-section" id="tier-2" style="scroll-margin-top: 90px;">
         <div class="container">
             <h2 class="activities-title">Tier 2: Match + Mobilize</h2>
             <p class="strategy-sub">We orchestrate the right match and mobilize resources.</p>
@@ -703,31 +953,31 @@
                     <ul class="story-list">
                         <li>
                             <span class="list-icon">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v4M12 16h.01"/></svg>
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg>
                             </span>
                             <span><strong>AVAILABLE GOODS &amp; INVENTORY</strong> &mdash; Identify and prepare excess goods, materials, and products for a purposeful second life.</span>
                         </li>
                         <li>
                             <span class="list-icon">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v4M12 16h.01"/></svg>
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
                             </span>
                             <span><strong>STORAGE &amp; FACILITY CAPACITY</strong> &mdash; Leverage warehouse space, storage, and facilities to receive, stage, and distribute.</span>
                         </li>
                         <li>
                             <span class="list-icon">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v4M12 16h.01"/></svg>
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
                             </span>
                             <span><strong>TRANSPORTATION CAPACITY</strong> &mdash; Mobilize fleet capacity, routes, and transportation assets to move resources efficiently.</span>
                         </li>
                         <li>
                             <span class="list-icon">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v4M12 16h.01"/></svg>
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18h6"/><path d="M10 22h4"/><path d="M12 2a7 7 0 0 1 7 7c0 2.38-1.19 4.47-3 5.74V16a1 1 0 0 1-1 1H9a1 1 0 0 1-1-1v-1.26C6.19 13.47 5 11.38 5 9a7 7 0 0 1 7-7z"/></svg>
                             </span>
                             <span><strong>EXPERTISE</strong> &mdash; Engage knowledge and skills to solve complex operational and community challenges.</span>
                         </li>
                         <li>
                             <span class="list-icon">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v4M12 16h.01"/></svg>
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
                             </span>
                             <span><strong>TECHNOLOGY PARTNERS</strong> &mdash; Apply platforms and tools for visibility, matching, coordination, and reporting.</span>
                         </li>
@@ -740,31 +990,31 @@
                     <ul class="story-list">
                         <li>
                             <span class="list-icon">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v4M12 16h.01"/></svg>
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
                             </span>
                             <span><strong>VETTED NONPROFITS</strong> &mdash; Trusted nonprofit partners who understand local needs and deliver to the communities they serve.</span>
                         </li>
                         <li>
                             <span class="list-icon">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v4M12 16h.01"/></svg>
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="21 8 21 21 3 21 3 8"/><rect x="1" y="3" width="22" height="5"/><line x1="10" y1="12" x2="14" y2="12"/></svg>
                             </span>
                             <span><strong>LOGISTICS PARTNERS</strong> &mdash; 3PLs, warehouse operators, and fulfillment providers that enhance capacity and efficiency.</span>
                         </li>
                         <li>
                             <span class="list-icon">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v4M12 16h.01"/></svg>
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
                             </span>
                             <span><strong>TRANSPORTATION PARTNERS</strong> &mdash; Carriers, fleet operators, and mobility networks that expand reach and reduce cost.</span>
                         </li>
                         <li>
                             <span class="list-icon">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v4M12 16h.01"/></svg>
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>
                             </span>
                             <span><strong>STRATEGIC MARKETPLACE PARTNERS</strong> &mdash; Retailers, manufacturers, and suppliers who provide product, funding, or in-kind support.</span>
                         </li>
                         <li>
                             <span class="list-icon">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v4M12 16h.01"/></svg>
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>
                             </span>
                             <span><strong>OUTCOMES</strong> &mdash; Drive measurable results that improve lives, strengthen communities, and protect the planet.</span>
                         </li>
@@ -773,6 +1023,9 @@
             </div>
 
             <div class="mobilize-note">
+                <span class="mobilize-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>
+                </span>
                 <h4>WE MOBILIZE, NOT OWN</h4>
                 <p>TSCP does not own every asset or function. We mobilize our network to deliver impact at scale.</p>
             </div>
@@ -784,7 +1037,7 @@
     </section>
 
     <!-- Tier 3: Reshape Supply -->
-    <section class="story-section">
+    <section class="story-section" id="tier-3" style="scroll-margin-top: 90px;">
         <div class="container">
             <h2 class="activities-title">Tier 3: Reshape Supply</h2>
             <p class="strategy-sub">We bring visibility and strategy to supply.</p>
@@ -792,30 +1045,37 @@
 
             <div class="tier-grid-flex">
                 <div class="tier-card">
+                    <span class="tier-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></span>
                     <h3>INVENTORY</h3>
                     <p>See what's available to repurpose, mobilize, share, recover, or redirect.</p>
                 </div>
                 <div class="tier-card">
+                    <span class="tier-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg></span>
                     <h3>TRANSPORTATION</h3>
                     <p>Leverage existing assets and networks to move resources efficiently.</p>
                 </div>
                 <div class="tier-card">
+                    <span class="tier-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></span>
                     <h3>STORAGE AND FACILITIES</h3>
                     <p>Maximize existing space and facilities to increase utilization.</p>
                 </div>
                 <div class="tier-card">
+                    <span class="tier-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></span>
                     <h3>LABOR AND EXPERTISE</h3>
                     <p>Mobilize skills and expertise to strengthen capacity and delivery.</p>
                 </div>
                 <div class="tier-card">
+                    <span class="tier-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></span>
                     <h3>TIME AND MONEY</h3>
                     <p>Align financial resources and time to drive greater impact faster.</p>
                 </div>
                 <div class="tier-card">
+                    <span class="tier-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="1 4 1 10 7 10"/><polyline points="23 20 23 14 17 14"/><path d="M20.49 9A9 9 0 0 0 5.64 5.64L1 10m22 4l-4.64 4.36A9 9 0 0 1 3.51 15"/></svg></span>
                     <h3>MATERIALS AND RECOVERABLE WASTE</h3>
                     <p>Reduce waste by capturing and redirecting recoverable materials.</p>
                 </div>
                 <div class="tier-card">
+                    <span class="tier-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg></span>
                     <h3>TECHNOLOGY AND DATA</h3>
                     <p>Use data and technology to match resources with needs in real time.</p>
                 </div>
