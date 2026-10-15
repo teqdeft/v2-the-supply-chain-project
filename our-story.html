@@ -358,6 +358,169 @@
                 grid-template-columns: 1fr;
             }
         }
+
+        /* =============================================
+           Finding Hidden Value (restored from our-services)
+           ============================================= */
+        .tier-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 28px;
+            margin-top: 48px;
+        }
+
+        .tier-card {
+            background: var(--white);
+            border-radius: 8px;
+            padding: 32px 28px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+            border-top: 4px solid var(--primary);
+            position: relative;
+            transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.4s ease;
+        }
+
+        .tier-card:hover {
+            transform: translateY(-6px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .tier-card h3 {
+            font-size: 1rem;
+            font-weight: 800;
+            letter-spacing: 1px;
+            color: var(--dark);
+            margin-bottom: 14px;
+        }
+
+        .tier-card p {
+            font-size: 0.9375rem;
+            color: var(--gray-700);
+            line-height: 1.7;
+        }
+
+        .tier-card ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .tier-card ul li {
+            position: relative;
+            padding-left: 18px;
+            font-size: 0.9375rem;
+            color: var(--gray-700);
+            line-height: 1.7;
+            margin-bottom: 10px;
+        }
+
+        .tier-card ul li::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 10px;
+            width: 7px;
+            height: 7px;
+            border-radius: 50%;
+            background: var(--accent);
+        }
+
+        .tier-grid .tier-card {
+            border-top: 3px solid var(--primary);
+        }
+
+        .tier-grid .tier-card:nth-child(even) {
+            border-top-color: var(--accent);
+        }
+
+        .value-form-sub {
+            font-size: 0.8125rem;
+            color: var(--gray-600);
+            font-style: italic;
+            margin-bottom: 4px;
+        }
+
+        .pathway-label {
+            font-size: 0.6875rem;
+            font-weight: 800;
+            letter-spacing: 1.5px;
+            color: var(--primary);
+            margin: 14px 0 10px;
+        }
+
+        .pathway-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .pathway-tags span {
+            background: var(--gray-100);
+            color: var(--dark);
+            font-size: 0.75rem;
+            font-weight: 600;
+            padding: 5px 12px;
+            border-radius: 100px;
+        }
+
+        .value-band {
+            background: var(--dark);
+            border-radius: 8px;
+            padding: 40px;
+            margin-top: 48px;
+            text-align: center;
+        }
+
+        .value-band h3 {
+            font-family: var(--font-display);
+            font-size: clamp(1.25rem, 2.5vw, 1.75rem);
+            font-weight: 900;
+            color: var(--accent);
+            margin-bottom: 12px;
+        }
+
+        .value-band p {
+            font-size: 1rem;
+            color: rgba(255, 255, 255, 0.8);
+            line-height: 1.7;
+            max-width: 760px;
+            margin: 0 auto;
+        }
+
+        .value-cols {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 28px;
+            margin-top: 48px;
+        }
+
+        .value-impact {
+            font-family: var(--font-display);
+            font-size: 1.5rem;
+            font-weight: 900;
+            color: var(--primary);
+            text-align: center;
+            margin-top: 32px;
+        }
+
+        .strategy-closing .closing-accent {
+            color: var(--accent);
+            font-weight: 800;
+            letter-spacing: 1px;
+            margin-top: 10px;
+        }
+
+        @media (max-width: 992px) {
+            .tier-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 640px) {
+            .tier-grid,
+            .value-cols {
+                grid-template-columns: 1fr;
+            }
+        }
     </style>
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-L0ZLVPTTV1"></script>
@@ -385,10 +548,11 @@
                         <ul class="dropdown">
                             <li><a href="/our-story.html">Our Story</a></li>
                             <li><a href="/our-mission.html">Mission</a></li>
-                            <li><a href="/our-services.html">Services</a></li>
-                            <li><a href="/our-technology.html">Technology</a></li>
+                            <li><a href="/how-it-works.html">How It Works</a></li>
+                            <li><a href="/technology.html">Technology</a></li>
                             <li><a href="/our-team.html">Team</a></li>
                             <li><a href="/news-feed.html">News Feed</a></li>
+                            <li><a href="/academia.html">Academia</a></li>
                             <li><a href="/contact-us.html">Contact Us</a></li>
                         </ul>
                     </li>
@@ -412,7 +576,7 @@
                             <li><a href="/members-tscp.html">Membership</a></li>
                             <li><a href="/donors.html">Donations</a></li>
                             <li><a href="/logistics-tscp.html">Logistics</a></li>
-                            <li><a href="/our-technology.html">Technology</a></li>
+                            <li><a href="/technology.html">Technology</a></li>
                         </ul>
                     </li>
                 </ul>
@@ -562,6 +726,149 @@
             <div class="core-problem-banner">
                 <span class="core-problem-label">THE CORE PROBLEM</span>
                 <p>Lack of visibility and inability to respond prevent resources from reaching the people who need them.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Finding Hidden Value -->
+    <section class="story-section" style="background: var(--gray-100);">
+        <div class="container">
+            <h2 class="activities-title">Finding Hidden Value</h2>
+            <p class="strategy-sub">We recover value in many forms.</p>
+            <div class="activities-divider"></div>
+
+            <p class="strategy-intro">Every organization holds resources with untapped potential. Earlier visibility and response turn what could be waste into impact&mdash;creating value for businesses and communities.</p>
+
+            <div class="tier-grid">
+                <div class="tier-card">
+                    <h3>INVENTORY</h3>
+                    <p class="value-form-sub">Excess, slow-moving, or seasonal goods</p>
+                    <p class="pathway-label">RECOVERY PATHWAYS</p>
+                    <div class="pathway-tags">
+                        <span>Donate</span>
+                        <span>Redistribute</span>
+                        <span>Resell</span>
+                        <span>Repurpose</span>
+                        <span>Recycle</span>
+                    </div>
+                </div>
+                <div class="tier-card">
+                    <h3>REAL ESTATE</h3>
+                    <p class="value-form-sub">Underutilized space &amp; infrastructure</p>
+                    <p class="pathway-label">RECOVERY PATHWAYS</p>
+                    <div class="pathway-tags">
+                        <span>Share</span>
+                        <span>Sublease</span>
+                        <span>Repurpose</span>
+                        <span>Co-locate</span>
+                        <span>Community use</span>
+                    </div>
+                </div>
+                <div class="tier-card">
+                    <h3>TRANSPORTATION</h3>
+                    <p class="value-form-sub">Vehicles, routes, &amp; capacity</p>
+                    <p class="pathway-label">RECOVERY PATHWAYS</p>
+                    <div class="pathway-tags">
+                        <span>Share capacity</span>
+                        <span>Backhaul use</span>
+                        <span>Route optimization</span>
+                        <span>Volunteer transport</span>
+                        <span>Asset repurposing</span>
+                    </div>
+                </div>
+                <div class="tier-card">
+                    <h3>LABOR</h3>
+                    <p class="value-form-sub">Skills, time, &amp; workforce</p>
+                    <p class="pathway-label">RECOVERY PATHWAYS</p>
+                    <div class="pathway-tags">
+                        <span>Volunteer</span>
+                        <span>Skills-based support</span>
+                        <span>Pro bono services</span>
+                        <span>Mentorship</span>
+                        <span>Workforce sharing</span>
+                    </div>
+                </div>
+                <div class="tier-card">
+                    <h3>KNOWLEDGE</h3>
+                    <p class="value-form-sub">Expertise, insights, &amp; know-how</p>
+                    <p class="pathway-label">RECOVERY PATHWAYS</p>
+                    <div class="pathway-tags">
+                        <span>Share expertise</span>
+                        <span>Training</span>
+                        <span>Best practices</span>
+                        <span>Advisory</span>
+                        <span>Open knowledge</span>
+                    </div>
+                </div>
+                <div class="tier-card">
+                    <h3>MATERIALS</h3>
+                    <p class="value-form-sub">Raw, used, or by-product materials</p>
+                    <p class="pathway-label">RECOVERY PATHWAYS</p>
+                    <div class="pathway-tags">
+                        <span>Recycle</span>
+                        <span>Reprocess</span>
+                        <span>Remanufacture</span>
+                        <span>Upcycle</span>
+                        <span>Industrial reuse</span>
+                    </div>
+                </div>
+                <div class="tier-card">
+                    <h3>TECHNOLOGY</h3>
+                    <p class="value-form-sub">Systems, tools, &amp; data assets</p>
+                    <p class="pathway-label">RECOVERY PATHWAYS</p>
+                    <div class="pathway-tags">
+                        <span>Share platforms</span>
+                        <span>Repurpose tools</span>
+                        <span>Open data</span>
+                        <span>Digital enablement</span>
+                        <span>Tech donation</span>
+                    </div>
+                </div>
+                <div class="tier-card">
+                    <h3>FINANCIAL CAPACITY</h3>
+                    <p class="value-form-sub">Funds, credit, &amp; financial assets</p>
+                    <p class="pathway-label">RECOVERY PATHWAYS</p>
+                    <div class="pathway-tags">
+                        <span>Grants</span>
+                        <span>Impact investing</span>
+                        <span>Loan programs</span>
+                        <span>Matching funds</span>
+                        <span>Guarantee support</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="value-band">
+                <h3>EARLIER VISIBILITY. FASTER RESPONSE. GREATER VALUE.</h3>
+                <p>The earlier we see what's available, the more value we can recover&mdash;and the more we can prevent from being lost.</p>
+            </div>
+
+            <div class="value-cols">
+                <div class="tier-card">
+                    <h3>BUSINESS VALUE</h3>
+                    <ul>
+                        <li>Lower costs</li>
+                        <li>New revenue</li>
+                        <li>Risk reduction</li>
+                        <li>Stronger resilience</li>
+                    </ul>
+                </div>
+                <div class="tier-card">
+                    <h3>COMMUNITY VALUE</h3>
+                    <ul>
+                        <li>More resources</li>
+                        <li>Greater access</li>
+                        <li>Better outcomes</li>
+                        <li>Stronger communities</li>
+                    </ul>
+                </div>
+            </div>
+
+            <p class="value-impact">= EXPONENTIAL IMPACT</p>
+
+            <div class="strategy-closing">
+                <p>Nothing is waste until its value is lost. Visibility reveals potential. Strategy unlocks value. Collaboration multiplies impact.</p>
+                <p class="closing-accent">We don't just move goods. We unlock the value that moves communities forward.</p>
             </div>
         </div>
     </section>

@@ -1,0 +1,5 @@
+# Permanent redirects after the How It Works / Technology restructure
+Redirect 301 /our-services.html /how-it-works.html
+Redirect 301 /our-technology.html /technology.html
+Redirect 301 /our-services /how-it-works.html
+Redirect 301 /our-technology /technology.html

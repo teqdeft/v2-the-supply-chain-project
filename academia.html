@@ -1,0 +1,1633 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Academia & Universities</title>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;0,900;1,400&display=swap"
+    />
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/ourstory.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@700;800;900&display=swap" rel="stylesheet">
+    <style>
+      /* Layout: mirrors non-profits.html. Hero → how to engage → what you get → impact engine → how it works → the path → proof → sign-up form → close. Single column, 1120px max, brand colour per section. */
+      :root {
+        --bg: #ffffff;
+        --bg2: #f3f6f9;
+        --fg: #0c243c;
+        --fg2: #3b4a5c;
+        --muted: #6b7a8c;
+        --line: #d9e1ea;
+        --navy: #0c243c;
+        --teal: #0f766e;
+        --teal2: #00a8a8;
+        --orange: #ea580c;
+        --green: #78c030;
+        --pink: #d83060;
+        --yellow: #f0c060;
+        --sky: #2e9bd6;
+        --card: #ffffff;
+        --hero-fg: #ffffff;
+        --display: "Lato", Arial, Helvetica, sans-serif;
+        --body: "Lato", Arial, Helvetica, sans-serif;
+      }
+      @media (prefers-color-scheme: dark) {
+        :root:not([data-theme="light"]) {
+          --bg: #0b1724;
+          --bg2: #122236;
+          --fg: #eef3f8;
+          --fg2: #c5d0dc;
+          --muted: #8fa0b3;
+          --line: #263b52;
+          --card: #142a42;
+          --navy: #0c243c;
+          color-scheme: dark;
+        }
+      }
+      :root[data-theme="dark"] {
+        --bg: #0b1724;
+        --bg2: #122236;
+        --fg: #eef3f8;
+        --fg2: #c5d0dc;
+        --muted: #8fa0b3;
+        --line: #263b52;
+        --card: #142a42;
+        --navy: #0c243c;
+        color-scheme: dark;
+      }
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        background: var(--bg);
+        color: var(--fg);
+        font-family: var(--body);
+        font-size: 16px;
+        line-height: 1.55;
+        margin: 0;
+      }
+      .wrap {
+        max-width: 1120px;
+        margin: 0 auto;
+        padding-inline: 20px;
+      }
+      h1,
+      h2,
+      h3 {
+        font-family: var(--display);
+        text-wrap: balance;
+        margin: 0;
+      }
+      h1 {
+        font-weight: 900;
+        font-size: clamp(30px, 4.6vw, 50px);
+        line-height: 1.06;
+        letter-spacing: -0.01em;
+      }
+      h2 {
+        font-weight: 900;
+        font-size: clamp(24px, 3vw, 34px);
+        line-height: 1.12;
+      }
+      h3 {
+        font-weight: 700;
+        font-size: 18px;
+      }
+      p {
+        margin: 0;
+      }
+      .eyebrow {
+        font-size: 12px;
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+        font-weight: 700;
+        color: var(--teal);
+      }
+      .sub {
+        font-size: 18px;
+        color: var(--fg2);
+        max-width: 62ch;
+        font-weight: 300;
+      }
+      .sub b {
+        font-weight: 700;
+        color: var(--fg);
+      }
+      section {
+        padding-block: 64px;
+      }
+      section.alt {
+        background: var(--bg2);
+      }
+      .head {
+        display: grid;
+        gap: 12px;
+        margin-bottom: 36px;
+        max-width: 760px;
+      }
+      .mock {
+        position: sticky;
+        top: env(safe-area-inset-top, 0px);
+        z-index: 5;
+        background: var(--yellow);
+        color: #3a2500;
+        font-size: 13px;
+        font-weight: 700;
+        text-align: center;
+        padding: 8px 16px;
+      }
+      .btn {
+        display: inline-block;
+        padding: 14px 24px;
+        border-radius: 6px;
+        font-weight: 900;
+        font-size: 15px;
+        text-decoration: none;
+        cursor: pointer;
+        border: 2px solid transparent;
+        font-family: var(--body);
+        letter-spacing: 0.01em;
+      }
+      .btn.p {
+        background: var(--orange);
+        color: #fff;
+      }
+      .btn.s {
+        background: transparent;
+        color: var(--hero-fg);
+        border-color: rgba(255, 255, 255, 0.55);
+      }
+      .btn.t {
+        background: var(--teal);
+        color: #fff;
+      }
+      .btn:focus-visible {
+        outline: 3px solid var(--sky);
+        outline-offset: 2px;
+      }
+      /* hero */
+      .hero {
+        background: var(--navy);
+        color: var(--hero-fg);
+        padding-block: 72px 64px;
+        position: relative;
+        overflow: hidden;
+      }
+      .hero .wrap {
+        display: grid;
+        grid-template-columns: 1.2fr 0.8fr;
+        gap: 48px;
+        align-items: center;
+      }
+      .hero .eyebrow {
+        color: var(--yellow);
+      }
+      .hero h1 {
+        color: #fff;
+        margin: 12px 0 18px;
+      }
+      .hero .sub {
+        color: #cbd5e1;
+      }
+      .hero .sub b {
+        color: #fff;
+      }
+      .hero .cta {
+        display: flex;
+        gap: 12px;
+        flex-wrap: wrap;
+        margin-top: 28px;
+      }
+      .engine {
+        background: #123a5e;
+        border-radius: 10px;
+        padding: 26px;
+        display: grid;
+        gap: 14px;
+      }
+      .engine .row {
+        display: grid;
+        grid-template-columns: 48px 1fr;
+        gap: 14px;
+        align-items: center;
+        background: rgba(255, 255, 255, 0.06);
+        border-radius: 8px;
+        padding: 14px;
+      }
+      .engine .row b {
+        display: block;
+        font-size: 15px;
+      }
+      .engine .row span {
+        font-size: 13px;
+        color: #c5d0dc;
+      }
+      .dot {
+        width: 48px;
+        height: 48px;
+        border-radius: 50%;
+        display: grid;
+        place-items: center;
+        font-weight: 900;
+        color: #fff;
+        font-size: 18px;
+      }
+      .engine .arrow {
+        text-align: center;
+        color: var(--yellow);
+        font-size: 22px;
+        line-height: 1;
+      }
+      .pill-row {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 8px;
+        margin-top: 4px;
+      }
+      .pill-row div {
+        background: rgba(255, 255, 255, 0.08);
+        border-radius: 6px;
+        padding: 10px 8px;
+        font-size: 12px;
+        text-align: center;
+        font-weight: 700;
+      }
+      .pill-row div i {
+        display: block;
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        margin: 0 auto 6px;
+      }
+      /* grids */
+      .g4 {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 18px;
+      }
+      .g3 {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 18px;
+      }
+      .g5 {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        gap: 14px;
+      }
+      .g2 {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 28px;
+      }
+      .card {
+        background: var(--card);
+        border: 1px solid var(--line);
+        border-radius: 10px;
+        padding: 22px;
+        min-width: 0;
+        display: grid;
+        gap: 10px;
+        align-content: start;
+      }
+      .card .ic {
+        width: 44px;
+        height: 44px;
+        border-radius: 50%;
+        display: grid;
+        place-items: center;
+        color: #fff;
+        font-weight: 900;
+        font-size: 17px;
+      }
+      .card p {
+        font-size: 14.5px;
+        color: var(--fg2);
+      }
+      .card a {
+        color: var(--teal);
+        font-weight: 700;
+        font-size: 14px;
+        text-decoration: none;
+      }
+      .card a:hover {
+        text-decoration: underline;
+      }
+      .inst {
+        border-top: 6px solid var(--c);
+        padding-top: 18px;
+      }
+      .inst .k {
+        font-size: 11px;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        color: var(--muted);
+        font-weight: 700;
+      }
+      .inst h3 {
+        color: var(--c);
+      }
+      /* steps */
+      .steps {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        gap: 0;
+        border: 1px solid var(--line);
+        border-radius: 10px;
+        overflow: hidden;
+      }
+      .steps div {
+        padding: 20px 18px;
+        border-right: 1px solid var(--line);
+        background: var(--card);
+        min-width: 0;
+      }
+      .steps div:last-child {
+        border-right: 0;
+      }
+      .steps b {
+        display: block;
+        font-size: 17px;
+        color: var(--c);
+        font-weight: 900;
+        margin-bottom: 6px;
+      }
+      .steps small {
+        display: block;
+        font-size: 11px;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        color: var(--muted);
+        font-weight: 700;
+        margin-bottom: 8px;
+      }
+      .steps p {
+        font-size: 14px;
+        color: var(--fg2);
+      }
+      .fits {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 14px;
+        margin-top: 22px;
+      }
+      .fits div {
+        background: var(--bg2);
+        border-radius: 8px;
+        padding: 16px 18px;
+        border-left: 5px solid var(--c);
+        min-width: 0;
+      }
+      .fits b {
+        color: var(--c);
+        display: block;
+        margin-bottom: 4px;
+      }
+      .fits p {
+        font-size: 14px;
+        color: var(--fg2);
+      }
+      .path {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        gap: 10px;
+      }
+      .path div {
+        background: var(--c);
+        color: #fff;
+        padding: 18px 16px;
+        border-radius: 8px;
+        min-width: 0;
+      }
+      .path b {
+        display: block;
+        font-size: 16px;
+        font-weight: 900;
+        letter-spacing: 0.04em;
+      }
+      .path p {
+        font-size: 13px;
+        color: rgba(255, 255, 255, 0.9);
+        margin-top: 6px;
+      }
+      .quote {
+        background: var(--card);
+        border: 1px solid var(--line);
+        border-radius: 10px;
+        padding: 26px;
+        display: grid;
+        gap: 10px;
+      }
+      .quote p {
+        font-size: 17px;
+        font-weight: 300;
+        color: var(--fg);
+      }
+      .quote cite {
+        font-style: normal;
+        font-size: 13px;
+        color: var(--muted);
+        font-weight: 700;
+      }
+      .honest {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 18px;
+      }
+      .honest div {
+        border-radius: 10px;
+        padding: 22px;
+        border: 1px solid var(--line);
+        background: var(--card);
+      }
+      .honest h3 {
+        margin-bottom: 8px;
+      }
+      .honest p {
+        color: var(--fg2);
+        font-size: 15px;
+      }
+      ul.q {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        display: grid;
+        gap: 12px;
+      }
+      ul.q li {
+        padding-left: 22px;
+        position: relative;
+        color: var(--fg2);
+        font-size: 15px;
+      }
+      ul.q li:before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 0.55em;
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        background: var(--teal);
+      }
+      ul.q li b {
+        color: var(--fg);
+      }
+      /* form */
+      .form {
+        background: var(--card);
+        border: 1px solid var(--line);
+        border-radius: 12px;
+        padding: 32px;
+        display: grid;
+        gap: 22px;
+        max-width: 860px;
+      }
+      .fs {
+        display: grid;
+        gap: 14px;
+      }
+      .fs legend,
+      .fs .lg {
+        font-weight: 900;
+        font-size: 16px;
+        color: var(--fg);
+        padding: 0;
+        margin-bottom: 4px;
+      }
+      .fs .hint {
+        font-size: 13px;
+        color: var(--muted);
+        margin-top: -8px;
+      }
+      .r2 {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 14px;
+      }
+      label {
+        display: grid;
+        gap: 6px;
+        font-size: 14px;
+        font-weight: 700;
+        color: var(--fg);
+      }
+      label span.o {
+        font-weight: 400;
+        color: var(--muted);
+      }
+      input[type="text"],
+      input[type="email"],
+      input[type="url"],
+      select,
+      textarea {
+        width: 100%;
+        padding: 12px 14px;
+        border: 1px solid var(--line);
+        border-radius: 6px;
+        background: var(--bg);
+        color: var(--fg);
+        font: inherit;
+        font-size: 15px;
+      }
+      input:focus,
+      select:focus,
+      textarea:focus {
+        outline: 3px solid rgba(0, 168, 168, 0.35);
+        border-color: var(--teal2);
+      }
+      .chk {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+      }
+      .chk label {
+        grid-template-columns: 20px 1fr;
+        align-items: start;
+        font-weight: 400;
+        color: var(--fg2);
+      }
+      .chk label b {
+        color: var(--fg);
+      }
+      .chk input {
+        margin-top: 3px;
+        accent-color: var(--teal);
+      }
+      .consent {
+        display: grid;
+        grid-template-columns: 20px 1fr;
+        gap: 10px;
+        font-size: 14px;
+        color: var(--fg2);
+        font-weight: 400;
+        align-items: start;
+      }
+      .consent input {
+        margin-top: 3px;
+        accent-color: var(--teal);
+      }
+      .ok {
+        display: none;
+        background: #dcfce7;
+        color: #14532d;
+        border-radius: 8px;
+        padding: 18px 20px;
+        font-size: 15px;
+      }
+      .ok.show {
+        display: block;
+      }
+      .err {
+        color: #b91c1c;
+        font-size: 13px;
+        display: none;
+      }
+      .err.show {
+        display: block;
+      }
+      .devnote {
+        background: var(--bg2);
+        border-left: 5px solid var(--yellow);
+        padding: 16px 18px;
+        font-size: 13.5px;
+        color: var(--fg2);
+        border-radius: 6px;
+        margin-top: 28px;
+      }
+      .devnote b {
+        color: var(--fg);
+      }
+      .sec-close {
+        background: var(--navy);
+        color: #fff;
+        text-align: center;
+      }
+      .sec-close h2 {
+        color: #fff;
+      }
+      .sec-close p {
+        color: #cbd5e1;
+        max-width: 60ch;
+        margin: 14px auto 0;
+        font-size: 17px;
+      }
+      @media (max-width: 900px) {
+        .hero .wrap,
+        .g4,
+        .g3,
+        .g5,
+        .g2,
+        .steps,
+        .fits,
+        .path,
+        .honest,
+        .r2,
+        .chk,
+        .pill-row,
+        .steps div {
+          border-right: 0;
+          border-bottom: 1px solid var(--line);
+        }
+      }
+      @media (max-width: 600px) {
+        .hero .wrap,
+        .g4,
+        .g3,
+        .g5,
+        .g2,
+        .steps,
+        .fits,
+        .path,
+        .honest,
+        .r2,
+        .chk,
+        .pill-row {
+          grid-template-columns: 1fr 1fr;
+        }
+        section {
+          padding-block: 48px;
+        }
+        .form {
+          padding: 22px;
+        }
+      }
+      @media (prefers-reduced-motion: no-preference) {
+        html {
+          scroll-behavior: smooth;
+        }
+      }
+    
+      /* Site chrome integration */
+      .hero {
+        padding-top: calc(72px + var(--header-height, 80px));
+      }
+      body {
+        margin: 0;
+      }
+    </style>
+    <link
+      rel="icon"
+      type="image/png"
+      href="/images/logomark-h-color-outline.png"
+    />
+    <!-- Google tag (gtag.js) -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-L0ZLVPTTV1"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+
+      gtag("config", "G-L0ZLVPTTV1");
+    </script>
+  </head>
+  <body style="margin: 0">
+    <!-- Header -->
+    <header class="header scrolled" id="header">
+      <div class="header-inner">
+        <a href="/" class="logo">
+          <img
+            src="images/logo-white-text.png"
+            alt="The Supply Chain Project"
+          />
+        </a>
+        <nav class="main-nav" id="mainNav">
+          <ul class="nav-list">
+            <li><a href="/">Home</a></li>
+            <li class="has-dropdown">
+              <a href="javascript:void(0)"
+                >About Us <span class="arrow">&#9662;</span></a
+              >
+              <ul class="dropdown">
+                <li><a href="/our-story.html">Our Story</a></li>
+                <li><a href="/our-mission.html">Mission</a></li>
+                <li><a href="/how-it-works.html">How It Works</a></li>
+                <li><a href="/technology.html">Technology</a></li>
+                <li><a href="/our-team.html">Team</a></li>
+                <li><a href="/news-feed.html">News Feed</a></li>
+                <li><a href="/academia.html">Academia</a></li>
+                <li><a href="/contact-us.html">Contact Us</a></li>
+              </ul>
+            </li>
+            <li class="has-dropdown">
+              <a href="javascript:void(0)"
+                >Get Involved <span class="arrow">&#9662;</span></a
+              >
+              <ul class="dropdown">
+                <li>
+                  <a href="/non-profits.html">I'm a Nonprofit</a>
+                </li>
+                <li><a href="/donors.html">I'm a Donor</a></li>
+                <li>
+                  <a href="/join-network-professional-provider.html"
+                    >I'm a Professional</a
+                  >
+                </li>
+                <li>
+                  <a href="/cmn-members-access.html">I'm a Corporation</a>
+                </li>
+                <li>
+                  <a href="/join-network-logistics-provider.html"
+                    >I'm a Logistics Provider</a
+                  >
+                </li>
+                <li>
+                  <a href="/join-network-service-provider.html"
+                    >I'm a Service Provider</a
+                  >
+                </li>
+                <li>
+                  <a href="/join-network-technology-provider.html"
+                    >I'm a Technology Provider</a
+                  >
+                </li>
+                <li><a href="/smn-members-access.html">I'm a Student</a></li>
+                <li>
+                  <a href="/join-network-volunteer.html">I'm a Volunteer</a>
+                </li>
+              </ul>
+            </li>
+            <li class="has-dropdown">
+              <a href="javascript:void(0)"
+                >Support <span class="arrow">&#9662;</span></a
+              >
+              <ul class="dropdown">
+                <li><a href="/members-tscp.html">Membership</a></li>
+                <li><a href="/donors.html">Donations</a></li>
+                <li><a href="/logistics-tscp.html">Logistics</a></li>
+                <li><a href="/technology.html">Technology</a></li>
+              </ul>
+            </li>
+          </ul>
+        </nav>
+        <div class="header-actions">
+          <a
+            href="https://app.thesupplychainproject.org"
+            class="btn-marketplace"
+            >Enter Marketplace</a
+          >
+          <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <header class="hero">
+      <div class="wrap">
+        <div>
+          <div class="eyebrow">For universities, faculty and students</div>
+          <h1>
+            The world does not have a scarcity problem. It has a coordination
+            problem.
+          </h1>
+          <p class="sub">
+            The Supply Chain Project is building the operating system for the
+            Second Supply Chain™: connecting surplus goods and unused capacity
+            with verified human need.
+            <b
+              >Universities help develop the intelligence, frameworks and
+              evidence that make this possible.</b
+            >
+            We call that the University Impact Engine.
+          </p>
+          <div class="cta">
+            <a class="btn p" href="#signup"
+              >Join the University Impact Engine</a
+            >
+            <a class="btn s" href="#engage">See how to engage</a>
+          </div>
+        </div>
+        <div class="engine" aria-label="The University Impact Engine">
+          <div class="row">
+            <div class="dot" style="background: var(--sky)">1</div>
+            <div>
+              <b>The Second Supply Chain</b
+              ><span
+                >Operating system for underutilized assets: goods, space, time
+                and capacity.</span
+              >
+            </div>
+          </div>
+          <div class="arrow">↓</div>
+          <div class="row">
+            <div class="dot" style="background: var(--pink)">2</div>
+            <div>
+              <b>University Impact Engine</b
+              ><span
+                >Research, structured problem solving, talent, pilots and
+                measurement.</span
+              >
+            </div>
+          </div>
+          <div class="pill-row">
+            <div>
+              <i style="background: var(--pink)"></i>Underutilized assets
+            </div>
+            <div><i style="background: var(--orange)"></i>Operating proof</div>
+            <div><i style="background: var(--green)"></i>Human impact</div>
+            <div><i style="background: var(--sky)"></i>Future leaders</div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <section id="engage">
+      <div class="wrap">
+        <div class="head">
+          <div class="eyebrow">How do you want to engage?</div>
+          <h2>Five ways a university adds to the Second Supply Chain</h2>
+          <p class="sub">
+            Pick one to start. Most partners begin with a single course, lab or
+            student team and grow from there.
+          </p>
+        </div>
+        <div class="g5">
+          <div class="card">
+            <div class="ic" style="background: var(--sky)">R</div>
+            <h3>Research</h3>
+            <p>
+              Study the coordination problem as a system: market design without
+              a price signal, scoring surplus risk and need urgency, decision
+              rights, impact measurement.
+            </p>
+            <a href="#signup">Propose a study →</a>
+          </div>
+          <div class="card">
+            <div class="ic" style="background: var(--pink)">P</div>
+            <h3>Structured problem solving</h3>
+            <p>
+              Capstones, hackathons and case competitions on a live problem from
+              a real territory, with real data and a partner who will use the
+              answer.
+            </p>
+            <a href="#signup">Bring a class →</a>
+          </div>
+          <div class="card">
+            <div class="ic" style="background: var(--orange)">T</div>
+            <h3>Talent</h3>
+            <p>
+              Students and graduates work inside the network as analysts,
+              project leads and field support, and leave with operating
+              experience employers recognize.
+            </p>
+            <a href="#signup">Place students →</a>
+          </div>
+          <div class="card">
+            <div class="ic" style="background: var(--green)">L</div>
+            <h3>Pilots</h3>
+            <p>
+              Co-design a pilot in a territory: pair a supply-side test with its
+              demand-side twin, set the thresholds, run it, and publish what it
+              shows.
+            </p>
+            <a href="#signup">Join a pilot →</a>
+          </div>
+          <div class="card">
+            <div class="ic" style="background: var(--navy)">M</div>
+            <h3>Measurement</h3>
+            <p>
+              Help build the evidence standard: Surplus Wellbeing Yield (SWY),
+              WELLBYs per $1,000 of rescued surplus, evidence-gated and honest
+              about attribution.
+            </p>
+            <a href="#signup">Shape the standard →</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="alt">
+      <div class="wrap">
+        <div class="head">
+          <div class="eyebrow">What your institution gets</div>
+          <h2>
+            Real problems, real data, and a partner that publishes the result
+          </h2>
+        </div>
+        <div class="g4">
+          <div class="card">
+            <div class="ic" style="background: var(--teal)">1</div>
+            <h3>Problems worth a thesis</h3>
+            <p>
+              Documented, unsolved operational questions from a working network,
+              with the data behind them and a named practitioner contact.
+            </p>
+          </div>
+          <div class="card">
+            <div class="ic" style="background: var(--teal)">2</div>
+            <h3>Frameworks to test</h3>
+            <p>
+              Three working frameworks (supply side, demand side, marketplace)
+              shared with reviewers under agreement. Every critique and its
+              answer is printed in the next revision.
+            </p>
+          </div>
+          <div class="card">
+            <div class="ic" style="background: var(--teal)">3</div>
+            <h3>Pilot territories</h3>
+            <p>
+              A seat in the proof program: pre-registered pilots with published
+              thresholds and stop rules. Your measurement design, our network.
+            </p>
+          </div>
+          <div class="card">
+            <div class="ic" style="background: var(--teal)">4</div>
+            <h3>Recognition for students</h3>
+            <p>
+              Named contributions, co-authorship where it is earned, and a
+              reference from the practitioners the students worked with.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="wrap">
+        <div class="head">
+          <div class="eyebrow">The University Impact Engine</div>
+          <h2>Five impact areas. Choose the one that fits your faculty.</h2>
+          <p class="sub">
+            A capability model that strengthens the Second Supply Chain. Beyond
+            excess inventory, it covers any underutilized asset: goods, space,
+            time, labor and capacity.
+          </p>
+        </div>
+        <div class="g5">
+          <div class="card inst" style="--c: var(--navy)">
+            <div class="k">Impact area A</div>
+            <h3>Research &amp; Design</h3>
+            <p>
+              Research operating models and next-generation solution design.
+            </p>
+          </div>
+          <div class="card inst" style="--c: var(--sky)">
+            <div class="k">Impact area B</div>
+            <h3>Industry &amp; Business Case</h3>
+            <p>
+              Economic analysis, prediction and re-pricing of surplus, partner
+              collaboration.
+            </p>
+          </div>
+          <div class="card inst" style="--c: var(--pink)">
+            <div class="k">Impact area C</div>
+            <h3>Community Need &amp; Engagement</h3>
+            <p>Verified need, the nonprofit network, dignity in fulfillment.</p>
+          </div>
+          <div class="card inst" style="--c: var(--orange)">
+            <div class="k">Impact area D</div>
+            <h3>Flow &amp; Recovery Operations</h3>
+            <p>Logistics, repurposing pathways, execution design.</p>
+          </div>
+          <div class="card inst" style="--c: var(--green)">
+            <div class="k">Impact area E</div>
+            <h3>Impact Intelligence &amp; Analytics</h3>
+            <p>
+              Data, artificial intelligence with human reasoning, measurement,
+              proof.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="alt">
+      <div class="wrap">
+        <div class="head">
+          <div class="eyebrow">How the Second Supply Chain works</div>
+          <h2>Five moves, and where the university model fits</h2>
+          <p class="sub">
+            One sequence, applied to what is at risk and to what is needed,
+            until the two meet.
+          </p>
+        </div>
+        <div class="steps">
+          <div style="--c: var(--sky)">
+            <small>01</small><b>See it</b>
+            <p>
+              Identify unused goods, space, time or capacity, and verified
+              community need.
+            </p>
+          </div>
+          <div style="--c: var(--teal2)">
+            <small>02</small><b>Assess it</b>
+            <p>
+              Score how likely value is to be lost, how urgent the need is, and
+              whether it can actually move.
+            </p>
+          </div>
+          <div style="--c: var(--pink)">
+            <small>03</small><b>Match it</b>
+            <p>
+              Compare every option on the numbers and connect available
+              resources to verified need.
+            </p>
+          </div>
+          <div style="--c: var(--orange)">
+            <small>04</small><b>Move it</b>
+            <p>
+              Coordinate the partners who own the trucks, docks and warehouses.
+              A match is complete only when movement is scheduled.
+            </p>
+          </div>
+          <div style="--c: var(--green)">
+            <small>05</small><b>Measure it</b>
+            <p>
+              Track value, impact and outcomes, and claim only what the evidence
+              supports.
+            </p>
+          </div>
+        </div>
+        <div class="fits">
+          <div style="--c: var(--sky)">
+            <b>Reveal &amp; predict</b>
+            <p>Uncover waste and predict where surplus will appear.</p>
+          </div>
+          <div style="--c: var(--pink)">
+            <b>Value &amp; match</b>
+            <p>Prioritize and match solutions to needs.</p>
+          </div>
+          <div style="--c: var(--orange)">
+            <b>Enable execution</b>
+            <p>Deploy and scale pathway pilots.</p>
+          </div>
+          <div style="--c: var(--green)">
+            <b>Verify impact</b>
+            <p>Measure outcomes and drive continuous improvement.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="wrap">
+        <div class="head">
+          <div class="eyebrow">The path for a university partner</div>
+          <h2>Research → Design → Test → Prove → Scale</h2>
+          <p class="sub">
+            The same path every pilot follows. A faculty team can enter at any
+            step and carry a question through to a published result.
+          </p>
+        </div>
+        <div class="path">
+          <div style="--c: var(--navy)">
+            <b>RESEARCH</b>
+            <p>Understand assets, opportunities and needs in a territory.</p>
+          </div>
+          <div style="--c: var(--sky)">
+            <b>DESIGN</b>
+            <p>Create solutions and operating models with practitioners.</p>
+          </div>
+          <div style="--c: var(--pink)">
+            <b>TEST</b>
+            <p>Pilot, validate and refine against published thresholds.</p>
+          </div>
+          <div style="--c: var(--orange)">
+            <b>PROVE</b>
+            <p>
+              Demonstrate impact and value, including when the answer is no.
+            </p>
+          </div>
+          <div style="--c: var(--green)">
+            <b>SCALE</b>
+            <p>
+              Grow, replicate and multiply impact. The standards are open so
+              others can run them.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="alt">
+      <div class="wrap">
+        <div class="g2">
+          <div>
+            <div class="eyebrow">Open research questions</div>
+            <h2 style="margin: 10px 0 18px">
+              Questions we would like help answering
+            </h2>
+            <ul class="q">
+              <li>
+                <b>Market design.</b> A two-sided matching market with no price
+                signal, clearing inside three time windows: the life of the
+                goods, the life of the need, and the receiver's ability to take
+                delivery. Where does it fail to clear?
+              </li>
+              <li>
+                <b>Scoring.</b> Can surplus risk and need urgency be calibrated
+                as real probabilities across product classes and regions? What
+                data would it take?
+              </li>
+              <li>
+                <b>Decision rights.</b> Our working view is that the leak is an
+                ownership problem, not an information problem. Does naming an
+                owner for every at-risk asset change disposal rates?
+              </li>
+              <li>
+                <b>Visibility and response.</b> All supply chain disruptions and
+                hidden inefficiencies stem from the same place: the lack of
+                visibility to changes in demand and supply, coupled with the
+                inability to respond in time. How is that measured on the second
+                supply chain?
+              </li>
+              <li>
+                <b>Impact measurement.</b> Wellbeing gained per $1,000 of
+                rescued surplus, claimed only at the level of evidence reached.
+                Is it strong enough to replace activity counts?
+              </li>
+            </ul>
+          </div>
+          <div
+            class="honest"
+            style="grid-template-columns: 1fr; align-content: start"
+          >
+            <div>
+              <h3>What is true today</h3>
+              <p>
+                The Supply Chain Project is defining the Second Supply Chain and
+                building its operating system. Three frameworks have been
+                through a structured critique cycle: 85 critiques answered, each
+                printed with its resolution. The model is documented and
+                buildable now.
+              </p>
+            </div>
+            <div>
+              <h3>What still has to be proven</h3>
+              <p>
+                Claims about results wait for pilots with published thresholds.
+                When the pilots run, we publish what they show, including if the
+                answer is no. Independent academic review is the next step, and
+                we welcome it.
+              </p>
+            </div>
+            <div class="quote">
+              <p>
+                "Our focus is to take the best from the for-profit supply chain
+                world and marry it with the nonprofit arena."
+              </p>
+              <cite
+                >Steve Robinson, Chairman &amp; CEO, The Supply Chain
+                Project</cite
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="signup">
+      <div class="wrap">
+        <div class="head">
+          <div class="eyebrow">Sign up</div>
+          <h2>Join the University Impact Engine</h2>
+          <p class="sub">
+            Name a faculty lead, select an impact area of focus, and tell us how
+            you want to engage. We reply within a week with the research brief
+            and the reviewer's pack.
+          </p>
+        </div>
+        <form class="form" id="acadForm" novalidate>
+          <div class="fs">
+            <div class="lg">1. Your institution</div>
+            <div class="r2">
+              <label
+                >University or institution<input
+                  type="text"
+                  id="inst"
+                  name="institution"
+                  required
+                  placeholder="e.g. University name"
+              /></label>
+              <label
+                >Department, school or lab<input
+                  type="text"
+                  id="dept"
+                  name="department"
+                  placeholder="e.g. Supply Chain Management, Engineering, Public Health"
+              /></label>
+            </div>
+            <div class="r2">
+              <label
+                >Country<input type="text" id="country" name="country" required
+              /></label>
+              <label
+                >City or region<input type="text" id="region" name="region"
+              /></label>
+            </div>
+          </div>
+          <div class="fs">
+            <div class="lg">2. Faculty lead</div>
+            <div class="hint">
+              The person who will own the relationship on your side.
+            </div>
+            <div class="r2">
+              <label
+                >Full name<input
+                  type="text"
+                  id="lead"
+                  name="lead_name"
+                  required
+              /></label>
+              <label
+                >Title or role<input
+                  type="text"
+                  id="title"
+                  name="lead_title"
+                  required
+                  placeholder="e.g. Associate Professor"
+              /></label>
+            </div>
+            <div class="r2">
+              <label
+                >Email<input
+                  type="email"
+                  id="email"
+                  name="lead_email"
+                  required
+                  placeholder="name@university.edu"
+              /></label>
+              <label
+                >Profile or faculty page <span class="o">(optional)</span
+                ><input
+                  type="url"
+                  id="url"
+                  name="lead_url"
+                  placeholder="https://"
+              /></label>
+            </div>
+          </div>
+          <fieldset class="fs" style="border: 0; padding: 0; margin: 0">
+            <legend>3. Impact area of focus</legend>
+            <div class="hint">
+              Choose one primary area. You can add a second.
+            </div>
+            <div class="chk">
+              <label
+                ><input type="checkbox" name="area" value="A" /><span
+                  ><b>A · Research &amp; Design</b> operating models, solution
+                  design</span
+                ></label
+              >
+              <label
+                ><input type="checkbox" name="area" value="B" /><span
+                  ><b>B · Industry &amp; Business Case</b> economics,
+                  prediction, re-pricing</span
+                ></label
+              >
+              <label
+                ><input type="checkbox" name="area" value="C" /><span
+                  ><b>C · Community Need &amp; Engagement</b> verified need,
+                  nonprofits, dignity</span
+                ></label
+              >
+              <label
+                ><input type="checkbox" name="area" value="D" /><span
+                  ><b>D · Flow &amp; Recovery Operations</b> logistics,
+                  repurposing, execution</span
+                ></label
+              >
+              <label
+                ><input type="checkbox" name="area" value="E" /><span
+                  ><b>E · Impact Intelligence &amp; Analytics</b> data, AI with
+                  human reasoning, measurement</span
+                ></label
+              >
+            </div>
+            <div class="err" id="errArea">Select at least one impact area.</div>
+          </fieldset>
+          <fieldset class="fs" style="border: 0; padding: 0; margin: 0">
+            <legend>4. How you want to engage</legend>
+            <div class="chk">
+              <label
+                ><input type="checkbox" name="mode" value="research" /><span
+                  ><b>Research study</b> faculty-led, with publication in
+                  mind</span
+                ></label
+              >
+              <label
+                ><input type="checkbox" name="mode" value="course" /><span
+                  ><b>Capstone, course project or hackathon</b> a student team
+                  on a live problem</span
+                ></label
+              >
+              <label
+                ><input type="checkbox" name="mode" value="talent" /><span
+                  ><b>Student placements</b> interns, analysts, field
+                  support</span
+                ></label
+              >
+              <label
+                ><input type="checkbox" name="mode" value="pilot" /><span
+                  ><b>Pilot partnership</b> design or measure a pilot in a
+                  territory</span
+                ></label
+              >
+              <label
+                ><input type="checkbox" name="mode" value="review" /><span
+                  ><b>Framework review</b> critique the papers under a reviewer
+                  agreement</span
+                ></label
+              >
+              <label
+                ><input type="checkbox" name="mode" value="teach" /><span
+                  ><b>Teaching</b> use the model in a course or executive
+                  program</span
+                ></label
+              >
+            </div>
+            <div class="err" id="errMode">
+              Select at least one way to engage.
+            </div>
+          </fieldset>
+          <div class="fs">
+            <div class="lg">5. Your team and timing</div>
+            <div class="r2">
+              <label
+                >Team you can form<select id="team" name="team">
+                  <option value="">Choose one</option>
+                  <option>Faculty only</option>
+                  <option>Faculty and graduate students</option>
+                  <option>Faculty and undergraduate students</option>
+                  <option>Multidisciplinary team across departments</option>
+                  <option>Not sure yet</option>
+                </select></label
+              >
+              <label
+                >Approximate team size<select id="size" name="size">
+                  <option value="">Choose one</option>
+                  <option>1 to 3</option>
+                  <option>4 to 8</option>
+                  <option>9 to 20</option>
+                  <option>More than 20</option>
+                </select></label
+              >
+            </div>
+            <div class="r2">
+              <label
+                >When could you start?<select id="start" name="start">
+                  <option value="">Choose one</option>
+                  <option>This semester</option>
+                  <option>Next semester</option>
+                  <option>Within 12 months</option>
+                  <option>Exploring for now</option>
+                </select></label
+              >
+              <label
+                >Existing partners in this space
+                <span class="o">(optional)</span
+                ><input
+                  type="text"
+                  id="partners"
+                  name="partners"
+                  placeholder="food banks, companies, other universities"
+              /></label>
+            </div>
+          </div>
+          <div class="fs">
+            <div class="lg">6. The question you want to put to the model</div>
+            <label
+              >Describe the problem, dataset or course you have in mind
+              <span class="o">(a few sentences is enough)</span
+              ><textarea id="q" name="question" rows="4"></textarea>
+            </label>
+            <div class="chk">
+              <label
+                ><input type="checkbox" name="want" value="brief" /><span
+                  >Send me the research brief</span
+                ></label
+              >
+              <label
+                ><input type="checkbox" name="want" value="pack" /><span
+                  >Send me the reviewer's pack (requires a reviewer
+                  agreement)</span
+                ></label
+              >
+              <label
+                ><input type="checkbox" name="want" value="call" /><span
+                  >Book a 20-minute conversation with the team</span
+                ></label
+              >
+              <label
+                ><input type="checkbox" name="want" value="news" /><span
+                  >Keep me informed about pilots and publications</span
+                ></label
+              >
+            </div>
+          </div>
+          <label class="consent"
+            ><input type="checkbox" id="consent" required /><span
+              >I agree that The Supply Chain Project may contact me about this
+              request and keep my details in line with its
+              <u>Privacy Policy</u>. Framework documents are shared under a
+              reviewer agreement and are not for redistribution.</span
+            ></label
+          >
+          <div class="err" id="errConsent">
+            Please tick the consent box to continue.
+          </div>
+          <div>
+            <button class="btn t" type="submit" id="submitBtn">
+              Submit and join
+            </button>
+          </div>
+          <div class="ok" id="okMsg" role="status"></div>
+        </form>
+        <div class="devnote">
+          <b>Note for the build (remove before publishing):</b> this form is a
+          prototype. Connect the submit to the CRM (Tasneem to confirm tracking
+          before go-live, Gate 2) and route new entries to Chad for university
+          partnerships. Suggested confirmation email: subject "Welcome to the
+          University Impact Engine", with the research brief attached and a
+          calendar link.
+        </div>
+      </div>
+    </section>
+
+    <section class="sec-close">
+      <div class="wrap">
+        <div class="eyebrow" style="color: var(--yellow)">Call to action</div>
+        <h2 style="margin-top: 10px">
+          Name a faculty lead. Select an impact area. Form a multidisciplinary
+          team.
+        </h2>
+        <p>
+          Success looks like a validated model connecting predictable supply
+          with visible, verified demand, and a cohort of graduates who know how
+          to run it.
+        </p>
+        <div style="margin-top: 26px">
+          <a class="btn p" href="#signup">Join the University Impact Engine</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer" id="footer">
+      <div class="footer-top">
+        <div class="container">
+          <div class="footer-grid">
+            <div class="footer-col footer-about">
+              <a href="/" class="footer-logo">
+                <img
+                  src="images/logo-white-text.png"
+                  alt="The Supply Chain Project"
+                />
+              </a>
+              <p>
+                The Supply Chain Project enables innovative partnerships between
+                non-profits, businesses, service providers, and industry
+                professionals that helps them drive measurable improvements.
+              </p>
+              <form class="footer-newsletter" id="newsletterForm">
+                <input type="email" placeholder="Your Email" required />
+                <input type="number" placeholder="What is 6 + 3 ?" required />
+                <button type="submit" class="btn-newsletter">
+                  Mailing List
+                </button>
+              </form>
+            </div>
+            <div class="footer-col">
+              <h4>Resources</h4>
+              <ul class="footer-links">
+                <li><a href="/policy.html">Privacy Policy</a></li>
+                <li><a href="/terms-of-use.html">Terms of Use</a></li>
+                <li>
+                  <a href="/non-profits.html"
+                    >Non-For-Profit Organization Solutions</a
+                  >
+                </li>
+                <li>
+                  <a href="https://networked.co/c/the-supply-chain-project/"
+                    >Community Discussions</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="https://supplino.com/tscp-supply-chain-assessment-questionnaire/"
+                    >Supply Chain Assessment</a
+                  >
+                </li>
+              </ul>
+            </div>
+            <div class="footer-col">
+              <h4>Upcoming Events</h4>
+              <p class="no-events">There are no upcoming calendar events.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div class="container">
+          <div class="footer-bottom-inner">
+            <p>
+              &copy; The Supply Chain Project |
+              <a href="/policy.html">Policy</a> |
+              <a href="/terms-of-use.html">Terms of Use</a>
+            </p>
+            <div class="social-links">
+              <a
+                href="https://www.facebook.com/thesupplychainproject"
+                aria-label="Facebook"
+                target="_blank"
+                rel="noopener"
+              >
+                <svg viewBox="0 0 24 24" fill="currentColor">
+                  <path
+                    d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"
+                  />
+                </svg>
+              </a>
+              <a href="javascript:void(0)" aria-label="Twitter">
+                <svg viewBox="0 0 24 24" fill="currentColor">
+                  <path
+                    d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"
+                  />
+                </svg>
+              </a>
+              <a href="javascript:void(0)" aria-label="LinkedIn">
+                <svg viewBox="0 0 24 24" fill="currentColor">
+                  <path
+                    d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2zM4 2a2 2 0 1 1 0 4 2 2 0 0 1 0-4z"
+                  />
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      (function () {
+        var f = document.getElementById("acadForm");
+        if (!f) return;
+        f.addEventListener("submit", function (e) {
+          e.preventDefault();
+          var ok = true;
+          var area = f.querySelectorAll("input[name=area]:checked").length > 0;
+          var mode = f.querySelectorAll("input[name=mode]:checked").length > 0;
+          var consent = document.getElementById("consent").checked;
+          document.getElementById("errArea").classList.toggle("show", !area);
+          document.getElementById("errMode").classList.toggle("show", !mode);
+          document
+            .getElementById("errConsent")
+            .classList.toggle("show", !consent);
+          var req = ["inst", "country", "lead", "title", "email"];
+          req.forEach(function (id) {
+            var el = document.getElementById(id);
+            if (!el.value.trim()) {
+              el.style.borderColor = "#B91C1C";
+              ok = false;
+            } else {
+              el.style.borderColor = "";
+            }
+          });
+          var em = document.getElementById("email");
+          if (em.value && !/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(em.value)) {
+            em.style.borderColor = "#B91C1C";
+            ok = false;
+          }
+          if (!(ok && area && mode && consent)) {
+            (f.querySelector(".show") || f).scrollIntoView({ block: "center" });
+            return;
+          }
+          var lead = document.getElementById("lead").value.trim(),
+            inst = document.getElementById("inst").value.trim();
+          var areas = [].map
+            .call(f.querySelectorAll("input[name=area]:checked"), function (c) {
+              return c.value;
+            })
+            .join(", ");
+          var box = document.getElementById("okMsg");
+          box.textContent =
+            "Thank you, " +
+            lead +
+            ". We have your request for " +
+            inst +
+            " (impact area " +
+            areas +
+            "). You will hear from Chad, university partnerships, within a week with the research brief. Prototype: nothing was sent yet.";
+          box.classList.add("show");
+          document.getElementById("submitBtn").disabled = true;
+          box.scrollIntoView({ block: "center" });
+        });
+      })();
+    </script>
+    <!-- GSAP CDN -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="js/emergency.js"></script>
+</body>
+</html>
