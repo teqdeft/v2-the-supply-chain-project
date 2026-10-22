@@ -199,6 +199,132 @@
           grid-template-columns: 1fr !important;
         }
       }
+      /* Join form */
+      .join-form-section {
+        padding: 80px 0;
+        background: var(--gray-100);
+      }
+      .join-form-card {
+        background: white;
+        border-radius: 12px;
+        padding: 48px;
+        max-width: 900px;
+        margin: 0 auto;
+        box-shadow: 0 4px 16px rgba(26, 26, 46, 0.06);
+      }
+      .contact-form {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+      }
+      .form-row {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 16px;
+      }
+      .form-group label {
+        display: block;
+        font-size: 0.8125rem;
+        font-weight: 600;
+        color: var(--dark);
+        margin-bottom: 6px;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+      }
+      .form-group input,
+      .form-group textarea {
+        width: 100%;
+        padding: 12px 16px;
+        border: 1px solid var(--gray-300);
+        border-radius: 8px;
+        font-family: var(--font-primary);
+        font-size: 0.9375rem;
+        transition: border-color 0.3s;
+        outline: none;
+        box-sizing: border-box;
+      }
+      .form-group input:focus,
+      .form-group textarea:focus {
+        border-color: var(--primary);
+      }
+      .form-group textarea {
+        resize: vertical;
+      }
+      .form-subheading {
+        font-size: 1rem;
+        font-weight: 700;
+        color: var(--primary);
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        margin: 16px 0 0;
+        padding-top: 16px;
+        border-top: 1px solid var(--gray-200);
+      }
+      .form-subnote {
+        font-size: 0.875rem;
+        color: var(--gray-600);
+        margin: 0;
+      }
+      /* Checkbox grids */
+      .checkbox-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 10px 16px;
+      }
+      .checkbox-grid label {
+        display: flex;
+        align-items: flex-start;
+        gap: 8px;
+        font-size: 0.875rem;
+        color: var(--gray-700);
+        cursor: pointer;
+        line-height: 1.5;
+      }
+      .checkbox-grid input[type="checkbox"] {
+        width: 16px;
+        height: 16px;
+        margin-top: 2px;
+        flex-shrink: 0;
+        accent-color: var(--primary);
+      }
+      .form-buttons {
+        display: flex;
+        gap: 16px;
+        flex-wrap: wrap;
+        margin-top: 8px;
+      }
+      .btn-save-later {
+        display: inline-block;
+        padding: 14px 32px;
+        border: 2px solid var(--primary);
+        border-radius: 8px;
+        background: transparent;
+        color: var(--primary);
+        font-family: var(--font-primary);
+        font-size: 0.875rem;
+        font-weight: 700;
+        letter-spacing: 1px;
+        text-decoration: none;
+        transition: all 0.3s;
+      }
+      .btn-save-later:hover {
+        background: var(--primary);
+        color: white;
+      }
+      @media (max-width: 768px) {
+        .form-row {
+          grid-template-columns: 1fr;
+        }
+        .checkbox-grid {
+          grid-template-columns: 1fr;
+        }
+        .join-form-section {
+          padding: 56px 0;
+        }
+        .join-form-card {
+          padding: 32px 24px;
+        }
+      }
     </style>
     <!-- Google tag (gtag.js) -->
     <script
@@ -234,8 +360,8 @@
               >
               <ul class="dropdown">
                 <li><a href="/our-story.html">Our Story</a></li>
-                <li><a href="/our-mission.html">Mission</a></li>
                 <li><a href="/how-it-works.html">How It Works</a></li>
+                <li><a href="/framework.html">Framework</a></li>
                 <li><a href="/technology.html">Technology</a></li>
                 <li><a href="/our-team.html">Team</a></li>
                 <li><a href="/news-feed.html">News Feed</a></li>
@@ -358,14 +484,9 @@
           </p>
           <div class="results-actions">
             <a
-              href="join-network-logistics-provider.html"
+              href="/join-network-logistics-provider.html"
               class="btn-become-member"
-              >CREATE A PROFILE</a
-            >
-            <a
-              href="https://app.thesupplychainproject.org"
-              class="btn-outline-dark"
-              >ALREADY A MEMBER</a
+              >JOIN AS A LOGISTICS PROVIDER</a
             >
           </div>
         </div>
@@ -462,6 +583,350 @@
               partnerships, which can help to expand their reach and impact.
             </p>
           </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Information Form Section -->
+    <section class="join-form-section">
+      <div class="container">
+        <div class="join-form-card">
+          <h2 class="story-heading">Contact information</h2>
+          <div class="story-divider"></div>
+
+          <form class="contact-form" id="logisticsProviderForm">
+            <div class="form-row">
+              <div class="form-group">
+                <label for="firstName">First Name:</label>
+                <input
+                  type="text"
+                  id="firstName"
+                  name="firstName"
+                  placeholder="First Name:"
+                />
+              </div>
+              <div class="form-group">
+                <label for="lastName">Last Name:</label>
+                <input
+                  type="text"
+                  id="lastName"
+                  name="lastName"
+                  placeholder="Last Name:"
+                />
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="mainPhone">Main Phone</label>
+                <input
+                  type="tel"
+                  id="mainPhone"
+                  name="mainPhone"
+                  placeholder="Main Phone"
+                />
+              </div>
+              <div class="form-group">
+                <label for="businessFax">Business Fax</label>
+                <input
+                  type="tel"
+                  id="businessFax"
+                  name="businessFax"
+                  placeholder="Business Fax"
+                />
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="email">E-mail Address:</label>
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  placeholder="E-mail Address:"
+                />
+              </div>
+              <div class="form-group">
+                <label for="companyWebsite"
+                  >Company Website Address (www.companyName.com)</label
+                >
+                <input
+                  type="text"
+                  id="companyWebsite"
+                  name="companyWebsite"
+                  placeholder="Company Website Address (www.companyName.com)"
+                />
+              </div>
+            </div>
+
+            <h3 class="form-subheading">Physical address</h3>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="businessAddress">Business Address</label>
+                <input
+                  type="text"
+                  id="businessAddress"
+                  name="businessAddress"
+                  placeholder="Business Address"
+                />
+              </div>
+              <div class="form-group">
+                <label for="businessCity">Business City:</label>
+                <input
+                  type="text"
+                  id="businessCity"
+                  name="businessCity"
+                  placeholder="Business City:"
+                />
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="businessState">Business State</label>
+                <input
+                  type="text"
+                  id="businessState"
+                  name="businessState"
+                  placeholder="Business State"
+                />
+              </div>
+              <div class="form-group">
+                <label for="businessPostal">Business Postal</label>
+                <input
+                  type="text"
+                  id="businessPostal"
+                  name="businessPostal"
+                  placeholder="Business Postal"
+                />
+              </div>
+            </div>
+
+            <h3 class="form-subheading">Describe your logistics service</h3>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="businessFacilityName">Business Facility Name</label>
+                <input
+                  type="text"
+                  id="businessFacilityName"
+                  name="businessFacilityName"
+                  placeholder="Business Facility Name"
+                />
+              </div>
+              <div class="form-group">
+                <label for="businessTitle">Business Title</label>
+                <input
+                  type="text"
+                  id="businessTitle"
+                  name="businessTitle"
+                  placeholder="Business Title"
+                />
+              </div>
+            </div>
+
+            <h3 class="form-subheading">
+              Choose a provider type that best describe your company
+            </h3>
+            <div class="checkbox-grid">
+              <label
+                ><input
+                  type="checkbox"
+                  name="providerType"
+                  value="Domestic Transportation"
+                />
+                <span>Domestic Transportation</span></label
+              >
+              <label
+                ><input
+                  type="checkbox"
+                  name="providerType"
+                  value="International Freight Forwarding"
+                />
+                <span>International Freight Forwarding</span></label
+              >
+              <label
+                ><input
+                  type="checkbox"
+                  name="providerType"
+                  value="Non-Vessel Operating Common Carrier (NVOCC)"
+                />
+                <span>Non-Vessel Operating Common Carrier (NVOCC)</span></label
+              >
+              <label
+                ><input
+                  type="checkbox"
+                  name="providerType"
+                  value="E-commerce fulfillment"
+                />
+                <span>E-commerce fulfillment</span></label
+              >
+              <label
+                ><input
+                  type="checkbox"
+                  name="providerType"
+                  value="Intermodal"
+                />
+                <span>Intermodal</span></label
+              >
+              <label
+                ><input
+                  type="checkbox"
+                  name="providerType"
+                  value="Local pickup and delivery"
+                />
+                <span>Local pickup and delivery</span></label
+              >
+              <label
+                ><input
+                  type="checkbox"
+                  name="providerType"
+                  value="Gig Driver home delivery"
+                />
+                <span>Gig Driver home delivery</span></label
+              >
+              <label
+                ><input
+                  type="checkbox"
+                  name="providerType"
+                  value="National parcel"
+                />
+                <span>National parcel</span></label
+              >
+              <label
+                ><input
+                  type="checkbox"
+                  name="providerType"
+                  value="Third-party logistics"
+                />
+                <span>Third-party logistics</span></label
+              >
+              <label
+                ><input
+                  type="checkbox"
+                  name="providerType"
+                  value="Asset-based truckload"
+                />
+                <span>Asset-based truckload</span></label
+              >
+              <label
+                ><input type="checkbox" name="providerType" value="Other" />
+                <span>Other</span></label
+              >
+            </div>
+
+            <div class="form-group">
+              <label for="companyWebsiteLink"
+                >Company Website Link for Non-Profits
+                (www.companyName.com/link)</label
+              >
+              <input
+                type="text"
+                id="companyWebsiteLink"
+                name="companyWebsiteLink"
+                placeholder="Company Website Link for Non-Profits (www.companyName.com/link)"
+              />
+            </div>
+
+            <div class="form-group">
+              <label for="briefDescription">Brief Description:</label>
+              <textarea
+                id="briefDescription"
+                name="briefDescription"
+                rows="5"
+                placeholder="Brief Description:"
+              ></textarea>
+            </div>
+
+            <h3 class="form-subheading">
+              Delivery transport equipment you offer
+            </h3>
+            <p class="form-subnote">Equipment types (Check all that applies)</p>
+            <div class="checkbox-grid">
+              <label
+                ><input
+                  type="checkbox"
+                  name="equipmentType"
+                  value="53-foot dry van"
+                />
+                <span>53-foot dry van</span></label
+              >
+              <label
+                ><input
+                  type="checkbox"
+                  name="equipmentType"
+                  value="53-foot refrigerated trailer"
+                />
+                <span>53-foot refrigerated trailer</span></label
+              >
+              <label
+                ><input
+                  type="checkbox"
+                  name="equipmentType"
+                  value="26-foot box truck"
+                />
+                <span>26-foot box truck</span></label
+              >
+              <label
+                ><input
+                  type="checkbox"
+                  name="equipmentType"
+                  value="Sprinter / cargo van"
+                />
+                <span>Sprinter / cargo van</span></label
+              >
+              <label
+                ><input type="checkbox" name="equipmentType" value="Flatbed" />
+                <span>Flatbed</span></label
+              >
+              <label
+                ><input
+                  type="checkbox"
+                  name="equipmentType"
+                  value="Step deck"
+                />
+                <span>Step deck</span></label
+              >
+              <label
+                ><input
+                  type="checkbox"
+                  name="equipmentType"
+                  value="28-foot pup"
+                />
+                <span>28-foot pup</span></label
+              >
+            </div>
+
+            <div class="form-group">
+              <label for="captcha"
+                >To prevent spam, please tell us: What is 5 + 4 ?*</label
+              >
+              <input
+                type="number"
+                id="captcha"
+                name="captcha"
+                placeholder="What is 5 + 4 ?*"
+              />
+            </div>
+
+            <div class="form-buttons">
+              <a
+                href="https://app.thesupplychainproject.org"
+                class="btn-save-later"
+                >SAVE FOR LATER</a
+              >
+              <button
+                type="submit"
+                id="logisticsSubmitBtn"
+                class="btn-become-member"
+                style="margin-bottom: 0; border: none; cursor: pointer"
+              >
+                CREATE PROFILE
+              </button>
+            </div>
+            <p
+              id="logisticsFormStatus"
+              class="form-status-msg"
+              style="display: none; margin-top: 14px; font-size: 0.9375rem; font-weight: 600"
+            ></p>
+          </form>
         </div>
       </div>
     </section>
@@ -712,6 +1177,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
     <script src="js/emergency.js"></script>
+    <script src="js/logistics-form.js"></script>
     <script src="js/quotes-slider.js"></script>
   </body>
 </html>

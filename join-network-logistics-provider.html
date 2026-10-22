@@ -226,8 +226,8 @@
               >
               <ul class="dropdown">
                 <li><a href="/our-story.html">Our Story</a></li>
-                <li><a href="/our-mission.html">Mission</a></li>
                 <li><a href="/how-it-works.html">How It Works</a></li>
+                <li><a href="/framework.html">Framework</a></li>
                 <li><a href="/technology.html">Technology</a></li>
                 <li><a href="/our-team.html">Team</a></li>
                 <li><a href="/news-feed.html">News Feed</a></li>
@@ -346,9 +346,9 @@
             </p>
 
             <a
-              href="https://app.thesupplychainproject.org"
+              href="#join-form"
               class="btn-become-member"
-              >ALREADY A MEMBER?</a
+              >CREATE A PROFILE</a
             >
             <a
               href="/donors.html"
@@ -514,7 +514,11 @@
     </section>
 
     <!-- Contact Information Form Section -->
-    <section class="join-form-section">
+    <section
+      class="join-form-section"
+      id="join-form"
+      style="scroll-margin-top: 90px"
+    >
       <div class="container">
         <div class="join-form-card">
           <h2 class="story-heading">Contact information</h2>
@@ -838,13 +842,20 @@
                 class="btn-save-later"
                 >SAVE FOR LATER</a
               >
-              <a
-                href="https://app.thesupplychainproject.org"
+              <button
+                type="submit"
+                id="logisticsSubmitBtn"
                 class="btn-become-member"
-                style="margin-bottom: 0"
-                >CREATE PROFILE</a
+                style="margin-bottom: 0; border: none; cursor: pointer"
               >
+                CREATE PROFILE
+              </button>
             </div>
+            <p
+              id="logisticsFormStatus"
+              class="form-status-msg"
+              style="display: none; margin-top: 14px; font-size: 0.9375rem; font-weight: 600"
+            ></p>
           </form>
         </div>
       </div>
@@ -1226,6 +1237,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
     <script src="js/emergency.js"></script>
+    <script src="js/logistics-form.js"></script>
     <script src="js/quotes-slider.js"></script>
   </body>
 </html>

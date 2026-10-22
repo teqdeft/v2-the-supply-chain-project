@@ -331,6 +331,30 @@
           grid-template-columns: 1fr;
         }
       }
+      /* Get-started steps (merged from join page) */
+      .np-steps {
+        margin-top: 24px;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+      }
+      .np-step {
+        display: flex;
+        align-items: flex-start;
+        gap: 14px;
+        background: var(--gray-100);
+        border-radius: 8px;
+        padding: 20px;
+      }
+      .np-step h4 {
+        font-size: 1rem;
+        font-weight: 700;
+        color: var(--dark);
+        margin: 8px 0 6px;
+      }
+      .np-step .strategy-step-num {
+        flex-shrink: 0;
+      }
     </style>
     <!-- Google tag (gtag.js) -->
     <script
@@ -366,8 +390,8 @@
               >
               <ul class="dropdown">
                 <li><a href="/our-story.html">Our Story</a></li>
-                <li><a href="/our-mission.html">Mission</a></li>
                 <li><a href="/how-it-works.html">How It Works</a></li>
+                <li><a href="/framework.html">Framework</a></li>
                 <li><a href="/technology.html">Technology</a></li>
                 <li><a href="/our-team.html">Team</a></li>
                 <li><a href="/news-feed.html">News Feed</a></li>
@@ -544,15 +568,48 @@
               a greater impact!
             </p>
 
-            <a href="/join-network-nonprofits.html" class="btn-become-member"
-              >CREATE A PROFILE</a
-            >
-            <a
-              href="https://app.thesupplychainproject.org"
-              class="inline-link"
-              style="margin-left: 16px"
-              >Already a Member?</a
-            >
+            <p class="story-highlight">
+              <strong>Non-Profits get access to our marketplace.</strong>
+            </p>
+            <p class="story-text">
+              The Supply Chain Project membership offers a platform for
+              businesses and non-profits to gain access to each other's
+              services, technology, and knowledge.
+            </p>
+
+            <div class="np-steps">
+              <div class="np-step">
+                <span class="strategy-step-num">1</span>
+                <div>
+                  <h4>Register</h4>
+                  <p class="story-text" style="margin-bottom: 10px">
+                    Create your non-profit account on the TSCP Marketplace.
+                  </p>
+                  <a
+                    href="https://app.thesupplychainproject.org/register"
+                    class="btn-become-member"
+                    style="margin-bottom: 0"
+                    >REGISTER ON THE MARKETPLACE</a
+                  >
+                </div>
+              </div>
+              <div class="np-step">
+                <span class="strategy-step-num">2</span>
+                <div>
+                  <h4>Readiness assessment</h4>
+                  <p class="story-text" style="margin-bottom: 0">
+                    After you register,
+                    <a
+                      href="https://supplino.com/tscp-supply-chain-assessment-questionnaire/"
+                      class="inline-link"
+                      target="_blank"
+                      rel="noopener"
+                      >take the supply chain assessment survey</a
+                    >.
+                  </p>
+                </div>
+              </div>
+            </div>
           </div>
 
           <!-- Right Column -->

@@ -250,8 +250,8 @@
               >
               <ul class="dropdown">
                 <li><a href="/our-story.html">Our Story</a></li>
-                <li><a href="/our-mission.html">Mission</a></li>
                 <li><a href="/how-it-works.html">How It Works</a></li>
+                <li><a href="/framework.html">Framework</a></li>
                 <li><a href="/technology.html">Technology</a></li>
                 <li><a href="/our-team.html">Team</a></li>
                 <li><a href="/news-feed.html">News Feed</a></li>
@@ -378,10 +378,8 @@
           </p>
 
           <div class="form-buttons">
-            <a
-              href="https://app.thesupplychainproject.org"
-              class="btn-become-member"
-              >ALREADY A MEMBER?</a
+            <a href="#join-form" class="btn-become-member"
+              >CREATE A PROFILE</a
             >
             <a href="/donors.html" class="btn-save-later">MAKE A DONATION</a>
           </div>
@@ -470,6 +468,173 @@
             <span>Networking with other industry experts.</span>
           </li>
         </ul>
+      </div>
+    </section>
+
+    <!-- Profile Form Section -->
+    <section
+      class="profile-form-section"
+      id="join-form"
+      style="scroll-margin-top: 90px"
+    >
+      <div class="container">
+        <div class="profile-form-card">
+          <h2 class="form-section-title">Professional Profile Information</h2>
+          <div class="story-divider"></div>
+
+          <form class="contact-form" id="professionalProviderForm">
+            <div class="form-row">
+              <div class="form-group">
+                <label for="pp-first-name">First Name</label>
+                <input type="text" id="pp-first-name" name="firstName" />
+              </div>
+              <div class="form-group">
+                <label for="pp-last-name">Last Name</label>
+                <input type="text" id="pp-last-name" name="lastName" />
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="pp-email">E-mail Address</label>
+                <input type="email" id="pp-email" name="email" />
+              </div>
+              <div class="form-group">
+                <label for="pp-mobile">Mobile Phone</label>
+                <input type="tel" id="pp-mobile" name="mobilePhone" />
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="pp-company">Company / Organization</label>
+                <input type="text" id="pp-company" name="companyName" />
+              </div>
+              <div class="form-group">
+                <label for="pp-title">Business Title</label>
+                <input type="text" id="pp-title" name="businessTitle" />
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="pp-website"
+                >Website or LinkedIn Profile (www.example.com)</label
+              >
+              <input type="text" id="pp-website" name="companyWebsite" />
+            </div>
+
+            <h3 class="form-subheading">Physical address</h3>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="pp-address">Address</label>
+                <input type="text" id="pp-address" name="address" />
+              </div>
+              <div class="form-group">
+                <label for="pp-city">City</label>
+                <input type="text" id="pp-city" name="city" />
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="pp-state">State</label>
+                <input type="text" id="pp-state" name="state" />
+              </div>
+              <div class="form-group">
+                <label for="pp-postal">Postal Code</label>
+                <input type="text" id="pp-postal" name="postalCode" />
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="pp-country">Country</label>
+              <input type="text" id="pp-country" name="providerCountry" />
+            </div>
+
+            <h3 class="form-subheading">Areas of expertise</h3>
+            <div class="checkbox-grid">
+              <label class="checkbox-item"
+                ><input type="checkbox" name="providerType" value="Supply Chain Management" />
+                <span>Supply Chain Management</span></label
+              >
+              <label class="checkbox-item"
+                ><input type="checkbox" name="providerType" value="Logistics &amp; Transportation" />
+                <span>Logistics &amp; Transportation</span></label
+              >
+              <label class="checkbox-item"
+                ><input type="checkbox" name="providerType" value="Warehouse &amp; Inventory Management" />
+                <span>Warehouse &amp; Inventory Management</span></label
+              >
+              <label class="checkbox-item"
+                ><input type="checkbox" name="providerType" value="Procurement &amp; Sourcing" />
+                <span>Procurement &amp; Sourcing</span></label
+              >
+              <label class="checkbox-item"
+                ><input type="checkbox" name="providerType" value="Demand Planning &amp; Forecasting" />
+                <span>Demand Planning &amp; Forecasting</span></label
+              >
+              <label class="checkbox-item"
+                ><input type="checkbox" name="providerType" value="Project Management" />
+                <span>Project Management</span></label
+              >
+              <label class="checkbox-item"
+                ><input type="checkbox" name="providerType" value="Consulting &amp; Advisory" />
+                <span>Consulting &amp; Advisory</span></label
+              >
+              <label class="checkbox-item"
+                ><input type="checkbox" name="providerType" value="Training &amp; Education" />
+                <span>Training &amp; Education</span></label
+              >
+              <label class="checkbox-item"
+                ><input type="checkbox" name="providerType" value="Technology &amp; Data Analytics" />
+                <span>Technology &amp; Data Analytics</span></label
+              >
+              <label class="checkbox-item"
+                ><input type="checkbox" name="providerType" value="Finance &amp; Accounting" />
+                <span>Finance &amp; Accounting</span></label
+              >
+              <label class="checkbox-item"
+                ><input type="checkbox" name="providerType" value="Marketing &amp; Communications" />
+                <span>Marketing &amp; Communications</span></label
+              >
+              <label class="checkbox-item"
+                ><input type="checkbox" name="providerType" value="Other" />
+                <span>Other</span></label
+              >
+            </div>
+
+            <div class="form-group" style="margin-top: 16px">
+              <label for="pp-summary">Summary (Brief):</label>
+              <textarea id="pp-summary" name="summary" rows="5"></textarea>
+            </div>
+
+            <div class="form-group" style="margin-top: 16px">
+              <label for="pp-captcha"
+                >To prevent spam, please tell us: What is 5 + 4 ?*</label
+              >
+              <input
+                type="number"
+                id="pp-captcha"
+                name="captcha"
+                placeholder="What is 5 + 4 ?*"
+              />
+            </div>
+
+            <div class="form-buttons">
+              <a
+                href="https://app.thesupplychainproject.org"
+                class="btn-save-later"
+                >SAVE FOR LATER</a
+              >
+              <button
+                type="submit"
+                class="btn-become-member"
+                style="margin-bottom: 0; border: none; cursor: pointer"
+              >
+                CREATE PROFILE
+              </button>
+            </div>
+            <p
+              class="form-status-msg"
+              style="display: none; margin-top: 14px; font-size: 0.9375rem; font-weight: 600"
+            ></p>
+          </form>
+        </div>
       </div>
     </section>
 
@@ -849,6 +1014,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
     <script src="js/emergency.js"></script>
+    <script src="js/logistics-form.js"></script>
     <script src="js/quotes-slider.js"></script>
   </body>
 </html>

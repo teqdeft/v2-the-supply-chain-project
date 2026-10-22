@@ -3,3 +3,6 @@ Redirect 301 /our-services.html /how-it-works.html
 Redirect 301 /our-technology.html /technology.html
 Redirect 301 /our-services /how-it-works.html
 Redirect 301 /our-technology /technology.html
+Redirect 301 /join-network-nonprofits.html /non-profits.html
+Redirect 301 /our-mission.html /our-story.html
+Redirect 301 /our-mission /our-story.html

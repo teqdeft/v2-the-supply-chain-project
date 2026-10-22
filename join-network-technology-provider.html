@@ -250,8 +250,8 @@
               >
               <ul class="dropdown">
                 <li><a href="/our-story.html">Our Story</a></li>
-                <li><a href="/our-mission.html">Mission</a></li>
                 <li><a href="/how-it-works.html">How It Works</a></li>
+                <li><a href="/framework.html">Framework</a></li>
                 <li><a href="/technology.html">Technology</a></li>
                 <li><a href="/our-team.html">Team</a></li>
                 <li><a href="/news-feed.html">News Feed</a></li>
@@ -387,10 +387,8 @@
           </p>
 
           <div class="form-buttons">
-            <a
-              href="https://app.thesupplychainproject.org"
-              class="btn-become-member"
-              >ALREADY A MEMBER?</a
+            <a href="#join-form" class="btn-become-member"
+              >CREATE A PROFILE</a
             >
             <a href="/donors.html" class="btn-save-later">MAKE A DONATION</a>
           </div>
@@ -553,7 +551,11 @@
     </section>
 
     <!-- Profile Form Section -->
-    <section class="profile-form-section">
+    <section
+      class="profile-form-section"
+      id="join-form"
+      style="scroll-margin-top: 90px"
+    >
       <div class="container">
         <div class="profile-form-card">
           <h2 class="form-section-title">
@@ -561,7 +563,7 @@
           </h2>
           <div class="story-divider"></div>
 
-          <form class="contact-form">
+          <form class="contact-form" id="technologyProviderForm">
             <div class="form-row">
               <div class="form-group">
                 <label for="tp-title-name">Company Title Name</label>
@@ -639,73 +641,73 @@
             <h3 class="form-subheading">Composition Technology Type(s)</h3>
             <div class="checkbox-grid">
               <label class="checkbox-item"
-                ><input type="checkbox" name="technologyType" />
+                ><input type="checkbox" name="technologyType" value="Electronic Data Interchange (EDI)" />
                 <span>Electronic Data Interchange (EDI)</span></label
               >
               <label class="checkbox-item"
-                ><input type="checkbox" name="technologyType" />
+                ><input type="checkbox" name="technologyType" value="Cloud Computing Providers" />
                 <span>Cloud Computing Providers</span></label
               >
               <label class="checkbox-item"
-                ><input type="checkbox" name="technologyType" />
+                ><input type="checkbox" name="technologyType" value="Last-Mile Delivery Technology" />
                 <span>Last-Mile Delivery Technology</span></label
               >
               <label class="checkbox-item"
-                ><input type="checkbox" name="technologyType" />
+                ><input type="checkbox" name="technologyType" value="Transportation Management System (TMS)" />
                 <span>Transportation Management System (TMS)</span></label
               >
               <label class="checkbox-item"
-                ><input type="checkbox" name="technologyType" />
+                ><input type="checkbox" name="technologyType" value="Warehouse Management System (WMS)" />
                 <span>Warehouse Management System (WMS)</span></label
               >
               <label class="checkbox-item"
-                ><input type="checkbox" name="technologyType" />
+                ><input type="checkbox" name="technologyType" value="Inventory Management System (IMS)" />
                 <span>Inventory Management System (IMS)</span></label
               >
               <label class="checkbox-item"
-                ><input type="checkbox" name="technologyType" />
+                ><input type="checkbox" name="technologyType" value="Supply Chain Visibility and Analytics" />
                 <span>Supply Chain Visibility and Analytics</span></label
               >
               <label class="checkbox-item"
-                ><input type="checkbox" name="technologyType" />
+                ><input type="checkbox" name="technologyType" value="Supplier Relationship Management (SRM)" />
                 <span>Supplier Relationship Management (SRM)</span></label
               >
               <label class="checkbox-item"
-                ><input type="checkbox" name="technologyType" />
+                ><input type="checkbox" name="technologyType" value="Supply Chain Planning and Optimization" />
                 <span>Supply Chain Planning and Optimization</span></label
               >
               <label class="checkbox-item"
-                ><input type="checkbox" name="technologyType" />
+                ><input type="checkbox" name="technologyType" value="Blockchain Technology" />
                 <span>Blockchain Technology</span></label
               >
               <label class="checkbox-item"
-                ><input type="checkbox" name="technologyType" />
+                ><input type="checkbox" name="technologyType" value="Demand Forecasting" />
                 <span>Demand Forecasting</span></label
               >
               <label class="checkbox-item"
-                ><input type="checkbox" name="technologyType" />
+                ><input type="checkbox" name="technologyType" value="Robotic Process Automation (RPA)" />
                 <span>Robotic Process Automation (RPA)</span></label
               >
               <label class="checkbox-item"
-                ><input type="checkbox" name="technologyType" />
+                ><input type="checkbox" name="technologyType" value="Internet of Things (IoT)" />
                 <span>Internet of Things (IoT)</span></label
               >
               <label class="checkbox-item"
-                ><input type="checkbox" name="technologyType" />
+                ><input type="checkbox" name="technologyType" value="Artificial Intelligence (AI) and Machine Learning" />
                 <span
                   >Artificial Intelligence (AI) and Machine Learning</span
                 ></label
               >
               <label class="checkbox-item"
-                ><input type="checkbox" name="technologyType" />
+                ><input type="checkbox" name="technologyType" value="Last-Mile Delivery Platform (Whitelabel)" />
                 <span>Last-Mile Delivery Platform (Whitelabel)</span></label
               >
               <label class="checkbox-item"
-                ><input type="checkbox" name="technologyType" />
+                ><input type="checkbox" name="technologyType" value="Global Freight Forwarding Platform" />
                 <span>Global Freight Forwarding Platform</span></label
               >
               <label class="checkbox-item"
-                ><input type="checkbox" name="technologyType" />
+                ><input type="checkbox" name="technologyType" value="Other" />
                 <span>Other</span></label
               >
             </div>
@@ -715,18 +717,36 @@
               <textarea id="tp-summary" name="summary" rows="5"></textarea>
             </div>
 
+            <div class="form-group" style="margin-top: 16px">
+              <label for="tp-captcha"
+                >To prevent spam, please tell us: What is 5 + 4 ?*</label
+              >
+              <input
+                type="number"
+                id="tp-captcha"
+                name="captcha"
+                placeholder="What is 5 + 4 ?*"
+              />
+            </div>
+
             <div class="form-buttons">
               <a
                 href="https://app.thesupplychainproject.org"
                 class="btn-save-later"
                 >SAVE FOR LATER</a
               >
-              <a
-                href="https://app.thesupplychainproject.org"
+              <button
+                type="submit"
                 class="btn-become-member"
-                >CREATE PROFILE</a
+                style="margin-bottom: 0; border: none; cursor: pointer"
               >
+                CREATE PROFILE
+              </button>
             </div>
+          <p
+              class="form-status-msg"
+              style="display: none; margin-top: 14px; font-size: 0.9375rem; font-weight: 600"
+            ></p>
           </form>
         </div>
       </div>
@@ -1108,6 +1128,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
     <script src="js/emergency.js"></script>
+    <script src="js/logistics-form.js"></script>
     <script src="js/quotes-slider.js"></script>
   </body>
 </html>
